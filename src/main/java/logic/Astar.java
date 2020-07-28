@@ -1,5 +1,7 @@
 package logic;
 
+import datastructures.PathMap;
+
 public class Astar {
     public Astar() {
     }
@@ -8,5 +10,7 @@ public class Astar {
         return "yes";
     }
 
-    
+    public void findPath(PathMap map, int startLineNumber, int startColun, int goalLineNumber, int goalColum) {
+
+    }
 }

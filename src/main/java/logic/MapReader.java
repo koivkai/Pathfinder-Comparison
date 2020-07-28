@@ -3,28 +3,52 @@ package logic;
 import java.io.File;
 import java.util.Scanner;
 
-import datastructures.Map;
+import datastructures.PathMap;
+import jdk.jshell.SourceCodeAnalysis;
 
 public class MapReader {
 
     public MapReader() {
     }
     
-    public Map Read(String path) {
-        Map newMap = new Map();
+    public PathMap Read(String path) {
+        PathMap newMap = new PathMap();
         File file;
         Scanner scanner;
         try {
             file = new File(path);
             scanner = new Scanner(file);
 
-            while(scanner.hasNextLine()) {
-                System.out.println(scanner.nextLine());
+            String mapType = scanner.nextLine();
+            String heigtLine = scanner.nextLine();
+            String widthLine = scanner.nextLine();
+            heigtLine = heigtLine.substring(7);
+            widthLine = widthLine.substring(6);
+
+            int height = Integer.parseInt(heigtLine);
+            int width = Integer.parseInt(widthLine);
+            char[][] lines = new char[height][width];
+            scanner.nextLine();
+            for(int i = 0; i<height;i++) {
+                if(scanner.hasNextLine()) {
+                    String line = scanner.nextLine();
+                    char[] lineContent = line.toCharArray();
+                    lines[i] = lineContent;
+                }
+                
             }
+
+            newMap.setHeight(height);
+            newMap.setWidth(width);
+            newMap.setMap(lines);
+            scanner.close();
         } catch (Exception e) {
+            System.out.println("failed to read file");
+            System.out.println(e.toString());
+            return null;
             //TODO: handle exception
         }
-
+        
         
 
     
