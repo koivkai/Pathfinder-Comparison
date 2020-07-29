@@ -1,10 +1,14 @@
-logic/Astar.java
- logic.Astar
-datastructures/PathMap.java
- datastructures.PathMap
-Main.java
- Main
 textUI/PCTextUI.java
  textUI.PCTextUI
+Main.java
+ Main
+datastructures/PathMap.java
+ datastructures.PathMap
+logic/Astar.java
+ logic.Astar
 logic/MapReader.java
  logic.MapReader
+datastructures/Cordinate.java
+ datastructures.Cordinate
+logic/BFS.java
+ logic.BFS

@@ -41,8 +41,8 @@ public class PathMap {
         this.width = width;
     }
 
-    public char cordinate(int lineNumber; int colum) {
-        if(lineNumber >= this.width || colum >= this.height) {
+    public char terrainAt(int lineNumber, int colum) {
+        if(lineNumber >= this.width || colum >= this.height || lineNumber < 0 || colum < 0) {
             return '@';
         } 
         return (this.map[lineNumber][colum]);
