@@ -1,4 +1,4 @@
-logicTest/AstarTest.java
- logicTest.AstarTest
 logicTest/BFSTest.java
  logicTest.BFSTest
+logicTest/AstarTest.java
+ logicTest.AstarTest
