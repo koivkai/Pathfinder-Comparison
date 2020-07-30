@@ -15,10 +15,6 @@ public class Astar {
         this.goalColum = 0;
     }
 
-    public String isAstar() {
-        return "yes";
-    }
-
     public int findPath(PathMap map, int startLineNumber, int startColum, int goalLineNumber, int goalColum) {
         this.que = new PriorityQueue<Cordinate>();
         boolean[][] visited = new boolean[map.getHeight()][map.getWidth()];

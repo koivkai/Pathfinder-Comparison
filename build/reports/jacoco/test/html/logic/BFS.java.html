@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fi"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BFS.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pathfinder-Comparison</a> &gt; <a href="index.source.html" class="el_package">logic</a> &gt; <span class="el_source">BFS.java</span></div><h1>BFS.java</h1><pre class="source lang-java linenums">package logic;
+
+import java.util.ArrayDeque;
+import java.util.Queue;
+
+import datastructures.Cordinate;
+import datastructures.PathMap;
+
+public class BFS {
+
+<span class="fc" id="L11">    public BFS() {</span>
+<span class="fc" id="L12">    }</span>
+
+    public int findPath(PathMap map, int startLinenumber, int startColum, int goalLineNumber, int goalColum) {
+<span class="fc" id="L15">        int[][]distance = new int[map.getHeight()][map.getWidth()];</span>
+<span class="fc" id="L16">        boolean[][]visited = new boolean[map.getHeight()][map.getWidth()];</span>
+<span class="fc" id="L17">        Cordinate[][]prev = new Cordinate[map.getHeight()][map.getWidth()];</span>
+<span class="fc" id="L18">        Queue&lt;Cordinate&gt; que = new ArrayDeque&lt;Cordinate&gt;();</span>
+<span class="fc" id="L19">        Cordinate start = new Cordinate(startLinenumber, startColum);</span>
+<span class="fc" id="L20">        que.add(start);</span>
+
+<span class="fc" id="L22">        Cordinate current = new Cordinate(0, 0);</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        while(!que.isEmpty()) {</span>
+<span class="fc" id="L24">            current = que.poll();</span>
+<span class="fc" id="L25">            int line = current.getLineNumber();</span>
+<span class="fc" id="L26">            int colum = current.getColum();</span>
+            
+<span class="fc" id="L28">            System.out.println(current);</span>
+<span class="fc bfc" id="L29" title="All 4 branches covered.">            if(line == goalLineNumber &amp;&amp; colum == goalColum) {</span>
+                //path found
+<span class="fc" id="L31">                return distance[line][colum];</span>
+            }
+
+<span class="fc bfc" id="L34" title="All 2 branches covered.">            if(visited[line][colum]) {</span>
+                // do nothing
+            } else  {
+<span class="fc" id="L37">                visited[line][colum] = true;</span>
+<span class="fc" id="L38">                char terrain = 'a';</span>
+                // up
+<span class="fc" id="L40">                terrain = map.terrainAt(line-1, colum);</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">                if (passable(terrain)) {</span>
+<span class="fc" id="L42">                    que.add(new Cordinate(line-1,colum));</span>
+<span class="fc" id="L43">                   prev[line-1][colum] = current;</span>
+<span class="fc" id="L44">                    distance[line-1][colum] = distance[line][colum] +1;</span>
+                }
+                // down
+<span class="fc" id="L47">                terrain = map.terrainAt(line+1, colum);</span>
+<span class="fc bfc" id="L48" title="All 2 branches covered.">                if (passable(terrain)) {</span>
+<span class="fc" id="L49">                    que.add(new Cordinate(line+1,colum));</span>
+<span class="fc" id="L50">                   prev[line+1][colum] = current;</span>
+<span class="fc" id="L51">                    distance[line+1][colum] = distance[line][colum] +1;</span>
+                }
+                // right
+<span class="fc" id="L54">                terrain = map.terrainAt(line, colum+1);</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">                if (passable(terrain)) {</span>
+<span class="fc" id="L56">                    que.add(new Cordinate(line,colum+1));</span>
+<span class="fc" id="L57">                   prev[line][colum+1] = current;</span>
+<span class="fc" id="L58">                    distance[line][colum+1] = distance[line][colum] +1;</span>
+                }
+                // left
+<span class="fc" id="L61">                terrain = map.terrainAt(line, colum-1);</span>
+<span class="fc bfc" id="L62" title="All 2 branches covered.">                if (passable(terrain)) {</span>
+<span class="fc" id="L63">                    que.add(new Cordinate(line,colum-1));</span>
+<span class="fc" id="L64">                   prev[line][colum-1] = current;</span>
+<span class="fc" id="L65">                    distance[line][colum+1] = distance[line][colum] +1;</span>
+                }
+            }
+<span class="fc" id="L68">        }</span>
+<span class="fc" id="L69">        return -1; // no path found</span>
+    }
+
+    private boolean passable(char terrain) {
+<span class="pc bpc" id="L73" title="1 of 4 branches missed.">        if(terrain == '.' || terrain == 'G') {</span>
+<span class="fc" id="L74">            return true;</span>
+        }
+<span class="fc" id="L76">        return false;</span>
+    }
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fi"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Astar.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pathfinder-Comparison</a> &gt; <a href="index.source.html" class="el_package">logic</a> &gt; <span class="el_source">Astar.java</span></div><h1>Astar.java</h1><pre class="source lang-java linenums">package logic;
+
+import java.util.PriorityQueue;
+
+import datastructures.Cordinate;
+import datastructures.PathMap;
+
+public class Astar {
+    int goalLine;
+    int goalColum;
+    PriorityQueue&lt;Cordinate&gt; que;
+
+<span class="fc" id="L13">    public Astar() {</span>
+<span class="fc" id="L14">        this.goalLine = 0;</span>
+<span class="fc" id="L15">        this.goalColum = 0;</span>
+<span class="fc" id="L16">    }</span>
+
+    public String isAstar() {
+<span class="nc" id="L19">        return &quot;yes&quot;;</span>
+    }
+
+    public int findPath(PathMap map, int startLineNumber, int startColum, int goalLineNumber, int goalColum) {
+<span class="fc" id="L23">        this.que = new PriorityQueue&lt;Cordinate&gt;();</span>
+<span class="fc" id="L24">        boolean[][] visited = new boolean[map.getHeight()][map.getWidth()];</span>
+<span class="fc" id="L25">        Cordinate[][] prev = new Cordinate[map.getHeight()][map.getWidth()];</span>
+<span class="fc" id="L26">        int[][]distance = new int[map.getHeight()][map.getWidth()];</span>
+<span class="fc" id="L27">        que.add(new Cordinate(startLineNumber, startColum));</span>
+<span class="fc" id="L28">        this.goalLine = goalLineNumber;</span>
+<span class="fc" id="L29">        this.goalColum =goalColum;</span>
+<span class="fc" id="L30">        Cordinate current = new Cordinate (0,0);</span>
+<span class="fc" id="L31">        char terrain = 't';</span>
+<span class="fc" id="L32">        int fscore = 0;</span>
+
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        while(!que.isEmpty()) {</span>
+<span class="fc" id="L35">            current = que.poll();</span>
+<span class="fc" id="L36">            System.out.println(current);</span>
+<span class="fc" id="L37">            int line = current.getLineNumber();</span>
+<span class="fc" id="L38">            int colum = current.getColum();</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">            if(visited[line][colum]) {</span>
+                // do nothing
+            } else {
+<span class="fc" id="L42">                visited[line][colum] = true;</span>
+                // up
+<span class="fc" id="L44">                terrain = map.terrainAt(line-1, colum);</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">                if (passable(terrain)) {</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">                    if(visited[line-1][colum]) {</span>
+<span class="pc bpc" id="L47" title="1 of 2 branches missed.">                        if (distance[line][colum]+1 &lt; distance[line-1][colum]) { //path from here is shorter than old path</span>
+<span class="nc" id="L48">                            prev[line-1][colum] = current;</span>
+<span class="nc" id="L49">                            distance[line-1][colum] = distance[line][colum] +1;</span>
+                        }
+   
+                    } else {
+<span class="fc" id="L53">                    prev[line-1][colum] = current;</span>
+<span class="fc" id="L54">                    distance[line-1][colum] = distance[line][colum] +1;</span>
+<span class="pc bpc" id="L55" title="1 of 2 branches missed.">                    if(foundGoal(line-1, colum)) {</span>
+<span class="nc" id="L56">                        return distance[line-1][colum];</span>
+                    }
+<span class="fc" id="L58">                    fscore = distance[line-1][colum] + estimate(line-1, colum);</span>
+<span class="fc" id="L59">                    que.add(new Cordinate(line-1,colum, fscore));</span>
+                    }
+                    
+                } 
+                // down 
+<span class="fc" id="L64">                terrain = map.terrainAt(line+1, colum);</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">                if (passable(terrain)) {</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">                    if(visited[line+1][colum]) {</span>
+<span class="pc bpc" id="L67" title="1 of 2 branches missed.">                        if (distance[line][colum]+1 &lt; distance[line+1][colum]) { //path from here is shorter than old path</span>
+<span class="nc" id="L68">                            prev[line+1][colum] = current;</span>
+<span class="nc" id="L69">                            distance[line+1][colum] = distance[line][colum] +1;</span>
+                        }
+                    } else {
+<span class="fc" id="L72">                        prev[line+1][colum] = current;</span>
+<span class="fc" id="L73">                        distance[line+1][colum] = distance[line][colum] +1;</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">                        if(foundGoal(line+1, colum)) {</span>
+<span class="fc" id="L75">                            return distance[line+1][colum];</span>
+                        }
+<span class="fc" id="L77">                        fscore = distance[line+1][colum] + estimate(line+1, colum);</span>
+<span class="fc" id="L78">                        que.add(new Cordinate(line+1,colum, fscore));</span>
+                    }
+                    
+                }
+                // right 
+<span class="fc" id="L83">                terrain = map.terrainAt(line, colum+1);</span>
+<span class="fc bfc" id="L84" title="All 2 branches covered.">                if(passable(terrain)) {</span>
+<span class="fc bfc" id="L85" title="All 2 branches covered.">                    if(visited[line][colum+1]) {</span>
+<span class="pc bpc" id="L86" title="1 of 2 branches missed.">                        if (distance[line][colum]+1 &lt; distance[line][colum+1]) { //path from here is shorter than old path</span>
+<span class="nc" id="L87">                            prev[line][colum+1] = current;</span>
+<span class="nc" id="L88">                            distance[line][colum+1] = distance[line][colum] +1;</span>
+                        }
+   
+                    } else {
+<span class="fc" id="L92">                        prev[line][colum+1] = current;</span>
+<span class="fc" id="L93">                        distance[line][colum+1] = distance[line][colum]+1;</span>
+<span class="fc bfc" id="L94" title="All 2 branches covered.">                        if(foundGoal(line, colum+1)) {</span>
+<span class="fc" id="L95">                            return distance[line][colum+1];</span>
+                        }
+<span class="fc" id="L97">                        fscore = distance[line][colum+1] +estimate(line, colum+1);</span>
+<span class="fc" id="L98">                        que.add(new Cordinate(line, colum+1,fscore));</span>
+                    }
+                    
+                }
+                // left 
+<span class="fc" id="L103">                terrain = map.terrainAt(line, colum-1);</span>
+<span class="fc bfc" id="L104" title="All 2 branches covered.">                if(passable(terrain)) {</span>
+<span class="fc bfc" id="L105" title="All 2 branches covered.">                    if(visited[line][colum-1]) {</span>
+<span class="pc bpc" id="L106" title="1 of 2 branches missed.">                        if (distance[line][colum]+1 &lt; distance[line][colum-1]) { //path from here is shorter than old path</span>
+<span class="nc" id="L107">                            prev[line][colum-1] = current;</span>
+<span class="nc" id="L108">                            distance[line][colum-1] = distance[line][colum] +1;</span>
+                        }
+   
+                    } else {
+<span class="fc" id="L112">                        prev[line][colum-1] = current;</span>
+<span class="fc" id="L113">                        distance[line][colum-1] = distance[line][colum]+1;</span>
+<span class="pc bpc" id="L114" title="1 of 2 branches missed.">                        if(foundGoal(line, colum-1)) {</span>
+<span class="nc" id="L115">                            return distance[line][colum-1];</span>
+                        }
+<span class="fc" id="L117">                        fscore = distance[line][colum-1] +estimate(line, colum-1);</span>
+<span class="fc" id="L118">                        que.add(new Cordinate(line, colum-1,fscore));</span>
+                    }
+                    
+                }
+            }
+<span class="fc" id="L123">    }</span>
+        
+<span class="fc" id="L125">        return -1;</span>
+    }
+
+    private boolean passable(char terrain) {
+<span class="pc bpc" id="L129" title="1 of 4 branches missed.">        if(terrain == '.' || terrain == 'G') {</span>
+<span class="fc" id="L130">            return true;</span>
+        }
+<span class="fc" id="L132">        return false;</span>
+    }
+
+    private boolean foundGoal(int line, int colum) {
+<span class="fc bfc" id="L136" title="All 4 branches covered.">        if (line == this.goalLine &amp;&amp; colum == this.goalColum) {</span>
+<span class="fc" id="L137">            return true;</span>
+        }
+<span class="fc" id="L139">        return false;</span>
+    }
+
+    private int estimate(int line, int colum) {
+<span class="fc" id="L143">        return Math.abs((line -this.goalLine)) + Math.abs((colum - goalColum));</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
