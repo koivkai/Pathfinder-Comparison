@@ -1,0 +1,12 @@
+-d '/Users/Kaius/TiraLabra/Pathfinder-Comparison/build/docs/javadoc'
+-doctitle 'Pathfinder-Comparison API'
+-notimestamp 
+-quiet 
+-windowtitle 'Pathfinder-Comparison API'
+'/Users/Kaius/TiraLabra/Pathfinder-Comparison/src/main/java/textUI/PCTextUI.java'
+'/Users/Kaius/TiraLabra/Pathfinder-Comparison/src/main/java/datastructures/Cordinate.java'
+'/Users/Kaius/TiraLabra/Pathfinder-Comparison/src/main/java/datastructures/PathMap.java'
+'/Users/Kaius/TiraLabra/Pathfinder-Comparison/src/main/java/logic/BFS.java'
+'/Users/Kaius/TiraLabra/Pathfinder-Comparison/src/main/java/logic/MapReader.java'
+'/Users/Kaius/TiraLabra/Pathfinder-Comparison/src/main/java/logic/Astar.java'
+'/Users/Kaius/TiraLabra/Pathfinder-Comparison/src/main/java/Main.java'

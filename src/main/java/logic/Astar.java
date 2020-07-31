@@ -5,6 +5,9 @@ import java.util.PriorityQueue;
 import datastructures.Cordinate;
 import datastructures.PathMap;
 
+/**
+ * 
+ */
 public class Astar {
     int goalLine;
     int goalColum;

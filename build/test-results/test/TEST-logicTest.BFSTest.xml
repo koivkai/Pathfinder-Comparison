@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="logicTest.BFSTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-07-30T15:45:43" hostname="Kaius-MBP" time="0.023">
+<testsuite name="logicTest.BFSTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-07-30T16:10:12" hostname="Kaius-MBP" time="0.027">
   <properties/>
-  <testcase name="findsPathTreeline" classname="logicTest.BFSTest" time="0.009"/>
+  <testcase name="findsPathTreeline" classname="logicTest.BFSTest" time="0.012"/>
   <testcase name="noPathExits" classname="logicTest.BFSTest" time="0.006"/>
   <testcase name="findsPathNoObstacle" classname="logicTest.BFSTest" time="0.008"/>
   <system-out><![CDATA[Cordinate [colum=1, lineNumber=4]

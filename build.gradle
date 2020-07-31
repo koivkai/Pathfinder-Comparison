@@ -24,6 +24,11 @@ jacocoTestReport {
 
 check.dependsOn jacocoTestReport
 
+javadoc {
+    source = sourceSets.main.allJava
+    classpath = configurations.compile
+}
+
 dependencies {
     testCompile 'junit:junit:4.12'
 }
