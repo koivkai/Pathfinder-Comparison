@@ -38,28 +38,28 @@ public class BFS {
                 char terrain = 'a';
                 // up
                 terrain = map.terrainAt(line-1, colum);
-                if (passable(terrain)) {
+                if (Helpers.passable(terrain)) {
                     que.add(new Cordinate(line-1,colum));
                    prev[line-1][colum] = current;
                     distance[line-1][colum] = distance[line][colum] +1;
                 }
                 // down
                 terrain = map.terrainAt(line+1, colum);
-                if (passable(terrain)) {
+                if (Helpers.passable(terrain)) {
                     que.add(new Cordinate(line+1,colum));
                    prev[line+1][colum] = current;
                     distance[line+1][colum] = distance[line][colum] +1;
                 }
                 // right
                 terrain = map.terrainAt(line, colum+1);
-                if (passable(terrain)) {
+                if (Helpers.passable(terrain)) {
                     que.add(new Cordinate(line,colum+1));
                    prev[line][colum+1] = current;
                     distance[line][colum+1] = distance[line][colum] +1;
                 }
                 // left
                 terrain = map.terrainAt(line, colum-1);
-                if (passable(terrain)) {
+                if (Helpers.passable(terrain)) {
                     que.add(new Cordinate(line,colum-1));
                    prev[line][colum-1] = current;
                     distance[line][colum+1] = distance[line][colum] +1;
@@ -69,11 +69,4 @@ public class BFS {
         return -1; // no path found
     }
 
-    private boolean passable(char terrain) {
-        if(terrain == '.' || terrain == 'G') {
-            return true;
-        }
-        return false;
-    }
-    
 }

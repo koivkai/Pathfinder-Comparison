@@ -41,27 +41,27 @@ public class Astar {
                 visited[line][colum] = true;
                 // up
                 terrain = map.terrainAt(line-1, colum);
-                if (passable(terrain)) {
+                if (Helpers.passable(terrain)) {
                     if(visited[line-1][colum]) {
                         if (distance[line][colum]+1 < distance[line-1][colum]) { //path from here is shorter than old path
                             prev[line-1][colum] = current;
                             distance[line-1][colum] = distance[line][colum] +1;
                         }
    
-                    } else {
-                    prev[line-1][colum] = current;
-                    distance[line-1][colum] = distance[line][colum] +1;
-                    if(foundGoal(line-1, colum)) {
-                        return distance[line-1][colum];
-                    }
-                    fscore = distance[line-1][colum] + estimate(line-1, colum);
-                    que.add(new Cordinate(line-1,colum, fscore));
-                    }
+                        } else {
+                        prev[line-1][colum] = current;
+                        distance[line-1][colum] = distance[line][colum] +1;
+                            if(foundGoal(line-1, colum)) {
+                                return distance[line-1][colum];
+                            }
+                        fscore = distance[line-1][colum] + estimate(line-1, colum);
+                        que.add(new Cordinate(line-1,colum, fscore));
+                        }
                     
                 } 
                 // down 
                 terrain = map.terrainAt(line+1, colum);
-                if (passable(terrain)) {
+                if (Helpers.passable(terrain)) {
                     if(visited[line+1][colum]) {
                         if (distance[line][colum]+1 < distance[line+1][colum]) { //path from here is shorter than old path
                             prev[line+1][colum] = current;
@@ -80,7 +80,7 @@ public class Astar {
                 }
                 // right 
                 terrain = map.terrainAt(line, colum+1);
-                if(passable(terrain)) {
+                if(Helpers.passable(terrain)) {
                     if(visited[line][colum+1]) {
                         if (distance[line][colum]+1 < distance[line][colum+1]) { //path from here is shorter than old path
                             prev[line][colum+1] = current;
@@ -100,7 +100,7 @@ public class Astar {
                 }
                 // left 
                 terrain = map.terrainAt(line, colum-1);
-                if(passable(terrain)) {
+                if(Helpers.passable(terrain)) {
                     if(visited[line][colum-1]) {
                         if (distance[line][colum]+1 < distance[line][colum-1]) { //path from here is shorter than old path
                             prev[line][colum-1] = current;
@@ -122,13 +122,6 @@ public class Astar {
     }
         
         return -1;
-    }
-
-    private boolean passable(char terrain) {
-        if(terrain == '.' || terrain == 'G') {
-            return true;
-        }
-        return false;
     }
 
     private boolean foundGoal(int line, int colum) {

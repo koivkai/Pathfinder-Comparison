@@ -2,3 +2,5 @@ logicTest/BFSTest.java
  logicTest.BFSTest
 logicTest/AstarTest.java
  logicTest.AstarTest
+logicTest/DijkstraTest.java
+ logicTest.DijkstraTest

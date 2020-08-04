@@ -38,28 +38,28 @@ public class BFS {
 <span class="fc" id="L38">                char terrain = 'a';</span>
                 // up
 <span class="fc" id="L40">                terrain = map.terrainAt(line-1, colum);</span>
-<span class="fc bfc" id="L41" title="All 2 branches covered.">                if (passable(terrain)) {</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">                if (Helpers.passable(terrain)) {</span>
 <span class="fc" id="L42">                    que.add(new Cordinate(line-1,colum));</span>
 <span class="fc" id="L43">                   prev[line-1][colum] = current;</span>
 <span class="fc" id="L44">                    distance[line-1][colum] = distance[line][colum] +1;</span>
                 }
                 // down
 <span class="fc" id="L47">                terrain = map.terrainAt(line+1, colum);</span>
-<span class="fc bfc" id="L48" title="All 2 branches covered.">                if (passable(terrain)) {</span>
+<span class="fc bfc" id="L48" title="All 2 branches covered.">                if (Helpers.passable(terrain)) {</span>
 <span class="fc" id="L49">                    que.add(new Cordinate(line+1,colum));</span>
 <span class="fc" id="L50">                   prev[line+1][colum] = current;</span>
 <span class="fc" id="L51">                    distance[line+1][colum] = distance[line][colum] +1;</span>
                 }
                 // right
 <span class="fc" id="L54">                terrain = map.terrainAt(line, colum+1);</span>
-<span class="fc bfc" id="L55" title="All 2 branches covered.">                if (passable(terrain)) {</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">                if (Helpers.passable(terrain)) {</span>
 <span class="fc" id="L56">                    que.add(new Cordinate(line,colum+1));</span>
 <span class="fc" id="L57">                   prev[line][colum+1] = current;</span>
 <span class="fc" id="L58">                    distance[line][colum+1] = distance[line][colum] +1;</span>
                 }
                 // left
 <span class="fc" id="L61">                terrain = map.terrainAt(line, colum-1);</span>
-<span class="fc bfc" id="L62" title="All 2 branches covered.">                if (passable(terrain)) {</span>
+<span class="fc bfc" id="L62" title="All 2 branches covered.">                if (Helpers.passable(terrain)) {</span>
 <span class="fc" id="L63">                    que.add(new Cordinate(line,colum-1));</span>
 <span class="fc" id="L64">                   prev[line][colum-1] = current;</span>
 <span class="fc" id="L65">                    distance[line][colum+1] = distance[line][colum] +1;</span>
@@ -69,12 +69,5 @@ public class BFS {
 <span class="fc" id="L69">        return -1; // no path found</span>
     }
 
-    private boolean passable(char terrain) {
-<span class="pc bpc" id="L73" title="1 of 4 branches missed.">        if(terrain == '.' || terrain == 'G') {</span>
-<span class="fc" id="L74">            return true;</span>
-        }
-<span class="fc" id="L76">        return false;</span>
-    }
-    
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
