@@ -1,733 +1,1007 @@
-"Cordinate [colum=1, lineNumber=4]
-"Cordinate [colum=2, lineNumber=4]
-"Cordinate [colum=3, lineNumber=4]
-"Cordinate [colum=4, lineNumber=4]
-"Cordinate [colum=2, lineNumber=3]
-"Cordinate [colum=4, lineNumber=5]
-"Cordinate [colum=1, lineNumber=3]
-"Cordinate [colum=2, lineNumber=5]
-"Cordinate [colum=3, lineNumber=3]
-"Cordinate [colum=3, lineNumber=3]
-"Cordinate [colum=4, lineNumber=3]
-"Cordinate [colum=1, lineNumber=5]
-"Cordinate [colum=3, lineNumber=5]
-"Cordinate [colum=3, lineNumber=5]
-"Cordinate [colum=4, lineNumber=3]
-"Cordinate [colum=3, lineNumber=2]
-"Cordinate [colum=2, lineNumber=6]
-"Cordinate [colum=1, lineNumber=5]
-"Cordinate [colum=3, lineNumber=5]
-"Cordinate [colum=2, lineNumber=2]
-"Cordinate [colum=1, lineNumber=3]
-"Cordinate [colum=4, lineNumber=6]
-"Cordinate [colum=3, lineNumber=6]
-"Cordinate [colum=4, lineNumber=2]
-"Cordinate [colum=4, lineNumber=2]
-"Cordinate [colum=3, lineNumber=6]
-"Cordinate [colum=1, lineNumber=6]
-"Cordinate [colum=2, lineNumber=2]
-"Cordinate [colum=1, lineNumber=6]
-"Cordinate [colum=3, lineNumber=1]
-"Cordinate [colum=2, lineNumber=7]
-"Cordinate [colum=1, lineNumber=2]
-"Cordinate [colum=4, lineNumber=1]
-"Cordinate [colum=3, lineNumber=6]
-"Cordinate [colum=5, lineNumber=1]
-"Cordinate [colum=4, lineNumber=7]
-"Cordinate [colum=3, lineNumber=7]
-"Cordinate [colum=6, lineNumber=1]
-"Cordinate [colum=4, lineNumber=1]
-"Cordinate [colum=6, lineNumber=2]
-"Cordinate [colum=7, lineNumber=1]
-"Cordinate [colum=6, lineNumber=3]
-"Cordinate [colum=8, lineNumber=1]
-"Cordinate [colum=7, lineNumber=3]
-"Cordinate [colum=8, lineNumber=2]
-"Cordinate [colum=7, lineNumber=4]
-"Cordinate [colum=2, lineNumber=1]
-"Cordinate [colum=2, lineNumber=2]
-"Cordinate [colum=1, lineNumber=1]
-"Cordinate [colum=1, lineNumber=2]
-"Cordinate [colum=1, lineNumber=2]
-"Cordinate [colum=2, lineNumber=3]
-"Cordinate [colum=1, lineNumber=3]
-"Cordinate [colum=1, lineNumber=3]
-"Cordinate [colum=2, lineNumber=4]
-"Cordinate [colum=1, lineNumber=4]
-"Cordinate [colum=1, lineNumber=4]
-"Cordinate [colum=2, lineNumber=5]
-"Cordinate [colum=1, lineNumber=5]
-"Cordinate [colum=1, lineNumber=5]
-"Cordinate [colum=2, lineNumber=6]
-"Cordinate [colum=1, lineNumber=6]
-"Cordinate [colum=1, lineNumber=6]
-"Cordinate [colum=2, lineNumber=7]
-"Cordinate [colum=1, lineNumber=7]
-"Cordinate [colum=1, lineNumber=7]
-"Cordinate [colum=2, lineNumber=8]
-"Cordinate [colum=3, lineNumber=8]
-"Cordinate [colum=4, lineNumber=8]
-"Cordinate [colum=4, lineNumber=7]
-"Cordinate [colum=4, lineNumber=6]
-"Cordinate [colum=4, lineNumber=5]
-"Cordinate [colum=4, lineNumber=4]
-"Cordinate [colum=4, lineNumber=3]
-"Cordinate [colum=4, lineNumber=2]
-"Cordinate [colum=4, lineNumber=1]
-"Cordinate [colum=5, lineNumber=1]
-"Cordinate [colum=6, lineNumber=1]
-"Cordinate [colum=1, lineNumber=8]
-"Cordinate [colum=6, lineNumber=2]
-"Cordinate [colum=1, lineNumber=8]
-"Cordinate [colum=6, lineNumber=3]
-"Cordinate [colum=6, lineNumber=4]
-"Cordinate [colum=6, lineNumber=5]
-"Cordinate [colum=6, lineNumber=6]
-"Cordinate [colum=6, lineNumber=7]
-"Cordinate [colum=6, lineNumber=8]
-"Cordinate [colum=7, lineNumber=8]
-"Cordinate [colum=8, lineNumber=8]
-"Cordinate [colum=8, lineNumber=7]
-"Cordinate [colum=8, lineNumber=6]
-"Cordinate [colum=8, lineNumber=5]
-"Cordinate [colum=8, lineNumber=4]
-"Cordinate [colum=8, lineNumber=3]
-"Cordinate [colum=8, lineNumber=2]
-"Cordinate [colum=1, lineNumber=4]
-"Cordinate [colum=2, lineNumber=4]
-"Cordinate [colum=3, lineNumber=4]
-"Cordinate [colum=4, lineNumber=4]
-"Cordinate [colum=5, lineNumber=4]
-"Cordinate [colum=6, lineNumber=4]
-"Cordinate [colum=7, lineNumber=4]
-"Cordinate [colum=1, lineNumber=4]
-"Cordinate [colum=2, lineNumber=4]
-"Cordinate [colum=3, lineNumber=4]
-"Cordinate [colum=4, lineNumber=4]
-"Cordinate [colum=2, lineNumber=3]
-"Cordinate [colum=4, lineNumber=5]
-"Cordinate [colum=1, lineNumber=3]
-"Cordinate [colum=2, lineNumber=5]
-"Cordinate [colum=3, lineNumber=3]
-"Cordinate [colum=3, lineNumber=3]
-"Cordinate [colum=4, lineNumber=3]
-"Cordinate [colum=1, lineNumber=5]
-"Cordinate [colum=3, lineNumber=5]
-"Cordinate [colum=3, lineNumber=5]
-"Cordinate [colum=4, lineNumber=3]
-"Cordinate [colum=3, lineNumber=2]
-"Cordinate [colum=2, lineNumber=6]
-"Cordinate [colum=1, lineNumber=5]
-"Cordinate [colum=3, lineNumber=5]
-"Cordinate [colum=2, lineNumber=2]
-"Cordinate [colum=1, lineNumber=3]
-"Cordinate [colum=4, lineNumber=6]
-"Cordinate [colum=3, lineNumber=6]
-"Cordinate [colum=4, lineNumber=2]
-"Cordinate [colum=4, lineNumber=2]
-"Cordinate [colum=3, lineNumber=6]
-"Cordinate [colum=1, lineNumber=6]
-"Cordinate [colum=2, lineNumber=2]
-"Cordinate [colum=1, lineNumber=6]
-"Cordinate [colum=3, lineNumber=1]
-"Cordinate [colum=2, lineNumber=7]
-"Cordinate [colum=1, lineNumber=2]
-"Cordinate [colum=4, lineNumber=1]
-"Cordinate [colum=3, lineNumber=6]
-"Cordinate [colum=4, lineNumber=7]
-"Cordinate [colum=3, lineNumber=7]
-"Cordinate [colum=4, lineNumber=1]
-"Cordinate [colum=1, lineNumber=7]
-"Cordinate [colum=4, lineNumber=8]
-"Cordinate [colum=2, lineNumber=1]
-"Cordinate [colum=1, lineNumber=2]
-"Cordinate [colum=3, lineNumber=7]
-"Cordinate [colum=2, lineNumber=1]
-"Cordinate [colum=1, lineNumber=7]
-"Cordinate [colum=3, lineNumber=7]
-"Cordinate [colum=2, lineNumber=8]
-"Cordinate [colum=3, lineNumber=8]
-"Cordinate [colum=1, lineNumber=8]
-"Cordinate [colum=3, lineNumber=8]
-"Cordinate [colum=1, lineNumber=1]
-"Cordinate [colum=3, lineNumber=8]
-"Cordinate [colum=1, lineNumber=1]
-"Cordinate [colum=1, lineNumber=8]
-"Cordinate [colum=1, lineNumber=4]
-"Cordinate [colum=2, lineNumber=4]
-"Cordinate [colum=1, lineNumber=3]
-"Cordinate [colum=2, lineNumber=5]
-"Cordinate [colum=2, lineNumber=3]
-"Cordinate [colum=1, lineNumber=5]
-"Cordinate [colum=2, lineNumber=3]
-"Cordinate [colum=1, lineNumber=5]
-"Cordinate [colum=2, lineNumber=6]
-"Cordinate [colum=1, lineNumber=2]
-"Cordinate [colum=2, lineNumber=2]
-"Cordinate [colum=2, lineNumber=2]
-"Cordinate [colum=2, lineNumber=1]
-"Cordinate [colum=1, lineNumber=1]
-"Cordinate [colum=1, lineNumber=6]
-"Cordinate [colum=2, lineNumber=7]
-"Cordinate [colum=1, lineNumber=6]
-"Cordinate [colum=1, lineNumber=7]
-"Cordinate [colum=2, lineNumber=8]
-"Cordinate [colum=1, lineNumber=1]
-"Cordinate [colum=3, lineNumber=8]
-"Cordinate [colum=1, lineNumber=7]
-"Cordinate [colum=4, lineNumber=8]
-"Cordinate [colum=4, lineNumber=7]
-"Cordinate [colum=4, lineNumber=6]
-"Cordinate [colum=4, lineNumber=5]
-"Cordinate [colum=4, lineNumber=4]
-"Cordinate [colum=1, lineNumber=8]
-"Cordinate [colum=4, lineNumber=3]
-"Cordinate [colum=1, lineNumber=8]
-"Cordinate [colum=4, lineNumber=2]
-"Cordinate [colum=4, lineNumber=1]
-"Cordinate [colum=5, lineNumber=1]
-"Cordinate [colum=6, lineNumber=1]
-"Cordinate [colum=6, lineNumber=2]
-"Cordinate [colum=7, lineNumber=1]
-"Cordinate [colum=7, lineNumber=2]
-"Cordinate [colum=8, lineNumber=1]
-"Cordinate [colum=8, lineNumber=2]
-"Cordinate [colum=8, lineNumber=2]
-"Cordinate [colum=8, lineNumber=3]
-"Cordinate [colum=1, lineNumber=4]
-"Cordinate [colum=1, lineNumber=3]
-"Cordinate [colum=1, lineNumber=5]
-"Cordinate [colum=2, lineNumber=4]
-"Cordinate [colum=1, lineNumber=2]
-"Cordinate [colum=1, lineNumber=4]
-"Cordinate [colum=2, lineNumber=3]
-"Cordinate [colum=1, lineNumber=4]
-"Cordinate [colum=1, lineNumber=6]
-"Cordinate [colum=2, lineNumber=5]
-"Cordinate [colum=2, lineNumber=3]
-"Cordinate [colum=2, lineNumber=5]
-"Cordinate [colum=3, lineNumber=4]
-"Cordinate [colum=1, lineNumber=4]
-"Cordinate [colum=1, lineNumber=1]
-"Cordinate [colum=1, lineNumber=3]
-"Cordinate [colum=2, lineNumber=2]
-"Cordinate [colum=2, lineNumber=2]
-"Cordinate [colum=2, lineNumber=4]
-"Cordinate [colum=3, lineNumber=3]
-"Cordinate [colum=1, lineNumber=3]
-"Cordinate [colum=1, lineNumber=5]
-"Cordinate [colum=1, lineNumber=7]
-"Cordinate [colum=2, lineNumber=6]
-"Cordinate [colum=2, lineNumber=4]
-"Cordinate [colum=2, lineNumber=6]
-"Cordinate [colum=3, lineNumber=5]
-"Cordinate [colum=1, lineNumber=5]
-"Cordinate [colum=3, lineNumber=3]
-"Cordinate [colum=3, lineNumber=5]
-"Cordinate [colum=4, lineNumber=4]
-"Cordinate [colum=2, lineNumber=4]
-"Cordinate [colum=1, lineNumber=2]
-"Cordinate [colum=2, lineNumber=1]
-"Cordinate [colum=2, lineNumber=1]
-"Cordinate [colum=2, lineNumber=3]
-"Cordinate [colum=3, lineNumber=2]
-"Cordinate [colum=1, lineNumber=2]
-"Cordinate [colum=3, lineNumber=2]
-"Cordinate [colum=3, lineNumber=4]
-"Cordinate [colum=4, lineNumber=3]
-"Cordinate [colum=2, lineNumber=3]
-"Cordinate [colum=1, lineNumber=6]
-"Cordinate [colum=1, lineNumber=8]
-"Cordinate [colum=2, lineNumber=7]
-"Cordinate [colum=2, lineNumber=5]
-"Cordinate [colum=2, lineNumber=7]
-"Cordinate [colum=3, lineNumber=6]
-"Cordinate [colum=1, lineNumber=6]
-"Cordinate [colum=3, lineNumber=4]
-"Cordinate [colum=3, lineNumber=6]
-"Cordinate [colum=4, lineNumber=5]
-"Cordinate [colum=2, lineNumber=5]
-"Cordinate [colum=4, lineNumber=3]
-"Cordinate [colum=4, lineNumber=5]
-"Cordinate [colum=3, lineNumber=4]
-"Cordinate [colum=2, lineNumber=2]
-"Cordinate [colum=3, lineNumber=1]
-"Cordinate [colum=1, lineNumber=1]
-"Cordinate [colum=3, lineNumber=1]
-"Cordinate [colum=3, lineNumber=3]
-"Cordinate [colum=4, lineNumber=2]
-"Cordinate [colum=2, lineNumber=2]
-"Cordinate [colum=4, lineNumber=2]
-"Cordinate [colum=4, lineNumber=4]
-"Cordinate [colum=3, lineNumber=3]
-"Cordinate [colum=1, lineNumber=7]
-"Cordinate [colum=2, lineNumber=8]
-"Cordinate [colum=2, lineNumber=6]
-"Cordinate [colum=2, lineNumber=8]
-"Cordinate [colum=3, lineNumber=7]
-"Cordinate [colum=1, lineNumber=7]
-"Cordinate [colum=3, lineNumber=5]
-"Cordinate [colum=3, lineNumber=7]
-"Cordinate [colum=4, lineNumber=6]
-"Cordinate [colum=2, lineNumber=6]
-"Cordinate [colum=4, lineNumber=4]
-"Cordinate [colum=4, lineNumber=6]
-"Cordinate [colum=3, lineNumber=5]
-"Cordinate [colum=3, lineNumber=2]
-"Cordinate [colum=4, lineNumber=1]
-"Cordinate [colum=2, lineNumber=1]
-"Cordinate [colum=4, lineNumber=1]
-"Cordinate [colum=4, lineNumber=3]
-"Cordinate [colum=3, lineNumber=2]
-"Cordinate [colum=2, lineNumber=7]
-"Cordinate [colum=3, lineNumber=8]
-"Cordinate [colum=1, lineNumber=8]
-"Cordinate [colum=3, lineNumber=6]
-"Cordinate [colum=3, lineNumber=8]
-"Cordinate [colum=4, lineNumber=7]
-"Cordinate [colum=2, lineNumber=7]
-"Cordinate [colum=4, lineNumber=5]
-"Cordinate [colum=4, lineNumber=7]
-"Cordinate [colum=3, lineNumber=6]
-"Cordinate [colum=4, lineNumber=2]
-"Cordinate [colum=5, lineNumber=1]
-"Cordinate [colum=3, lineNumber=1]
-"Cordinate [colum=3, lineNumber=7]
-"Cordinate [colum=4, lineNumber=8]
-"Cordinate [colum=2, lineNumber=8]
-"Cordinate [colum=4, lineNumber=6]
-"Cordinate [colum=4, lineNumber=8]
-"Cordinate [colum=3, lineNumber=7]
-"Cordinate [colum=6, lineNumber=1]
-"Cordinate [colum=4, lineNumber=1]
-"Cordinate [colum=4, lineNumber=7]
-"Cordinate [colum=3, lineNumber=8]
-"Cordinate [colum=6, lineNumber=2]
-"Cordinate [colum=7, lineNumber=1]
-"Cordinate [colum=5, lineNumber=1]
-"Cordinate [colum=6, lineNumber=1]
-"Cordinate [colum=6, lineNumber=3]
-"Cordinate [colum=7, lineNumber=2]
-"Cordinate [colum=7, lineNumber=2]
-"Cordinate [colum=8, lineNumber=1]
-"Cordinate [colum=6, lineNumber=1]
-"Cordinate [colum=6, lineNumber=2]
-"Cordinate [colum=6, lineNumber=4]
-"Cordinate [colum=7, lineNumber=3]
-"Cordinate [colum=7, lineNumber=1]
-"Cordinate [colum=7, lineNumber=3]
-"Cordinate [colum=8, lineNumber=2]
-"Cordinate [colum=6, lineNumber=2]
-"Cordinate [colum=8, lineNumber=2]
-"Cordinate [colum=7, lineNumber=1]
-"Cordinate [colum=6, lineNumber=3]
-"Cordinate [colum=6, lineNumber=5]
-"Cordinate [colum=7, lineNumber=4]
-"Cordinate [colum=7, lineNumber=2]
-"Cordinate [colum=7, lineNumber=4]
-"Cordinate [colum=8, lineNumber=3]
-"Cordinate [colum=6, lineNumber=3]
-"Cordinate [colum=8, lineNumber=1]
-"Cordinate [colum=8, lineNumber=3]
-"Cordinate [colum=7, lineNumber=2]
-"Cordinate [colum=6, lineNumber=4]
-"Cordinate [colum=6, lineNumber=6]
-"Cordinate [colum=7, lineNumber=5]
-"Cordinate [colum=7, lineNumber=3]
-"Cordinate [colum=7, lineNumber=5]
-"Cordinate [colum=8, lineNumber=4]
-	"Cordinate [colum=1, lineNumber=4]
-	"Cordinate [colum=1, lineNumber=3]
-	"Cordinate [colum=1, lineNumber=5]
-	"Cordinate [colum=2, lineNumber=4]
-	"Cordinate [colum=1, lineNumber=2]
-	"Cordinate [colum=1, lineNumber=4]
-	"Cordinate [colum=2, lineNumber=3]
-	"Cordinate [colum=1, lineNumber=4]
-	"Cordinate [colum=1, lineNumber=6]
-	"Cordinate [colum=2, lineNumber=5]
-	"Cordinate [colum=2, lineNumber=3]
-	"Cordinate [colum=2, lineNumber=5]
-	"Cordinate [colum=3, lineNumber=4]
-	"Cordinate [colum=1, lineNumber=4]
-	"Cordinate [colum=1, lineNumber=1]
-	"Cordinate [colum=1, lineNumber=3]
-	"Cordinate [colum=2, lineNumber=2]
-	"Cordinate [colum=2, lineNumber=2]
-	"Cordinate [colum=2, lineNumber=4]
-	"Cordinate [colum=3, lineNumber=3]
-	"Cordinate [colum=1, lineNumber=3]
-	"Cordinate [colum=1, lineNumber=5]
-	"Cordinate [colum=1, lineNumber=7]
-	"Cordinate [colum=2, lineNumber=6]
-	"Cordinate [colum=2, lineNumber=4]
-	"Cordinate [colum=2, lineNumber=6]
-	"Cordinate [colum=3, lineNumber=5]
-	"Cordinate [colum=1, lineNumber=5]
-	"Cordinate [colum=3, lineNumber=3]
-	"Cordinate [colum=3, lineNumber=5]
-	"Cordinate [colum=4, lineNumber=4]
-	"Cordinate [colum=2, lineNumber=4]
-	"Cordinate [colum=1, lineNumber=2]
-	"Cordinate [colum=2, lineNumber=1]
-	"Cordinate [colum=2, lineNumber=1]
-	"Cordinate [colum=2, lineNumber=3]
-	"Cordinate [colum=3, lineNumber=2]
-	"Cordinate [colum=1, lineNumber=2]
-	"Cordinate [colum=3, lineNumber=2]
-	"Cordinate [colum=3, lineNumber=4]
-	"Cordinate [colum=4, lineNumber=3]
-	"Cordinate [colum=2, lineNumber=3]
-	"Cordinate [colum=1, lineNumber=6]
-	"Cordinate [colum=1, lineNumber=8]
-	"Cordinate [colum=2, lineNumber=7]
-	"Cordinate [colum=2, lineNumber=5]
-	"Cordinate [colum=2, lineNumber=7]
-	"Cordinate [colum=3, lineNumber=6]
-	"Cordinate [colum=1, lineNumber=6]
-	"Cordinate [colum=3, lineNumber=4]
-	"Cordinate [colum=3, lineNumber=6]
-	"Cordinate [colum=4, lineNumber=5]
-	"Cordinate [colum=2, lineNumber=5]
-	"Cordinate [colum=4, lineNumber=3]
-	"Cordinate [colum=4, lineNumber=5]
-	"Cordinate [colum=3, lineNumber=4]
-	"Cordinate [colum=2, lineNumber=2]
-	"Cordinate [colum=3, lineNumber=1]
-	"Cordinate [colum=1, lineNumber=1]
-	"Cordinate [colum=3, lineNumber=1]
-	"Cordinate [colum=3, lineNumber=3]
-	"Cordinate [colum=4, lineNumber=2]
-	"Cordinate [colum=2, lineNumber=2]
-	"Cordinate [colum=4, lineNumber=2]
-	"Cordinate [colum=4, lineNumber=4]
-	"Cordinate [colum=3, lineNumber=3]
-	"Cordinate [colum=1, lineNumber=7]
-	"Cordinate [colum=2, lineNumber=8]
-	"Cordinate [colum=2, lineNumber=6]
-	"Cordinate [colum=2, lineNumber=8]
-	"Cordinate [colum=3, lineNumber=7]
-	"Cordinate [colum=1, lineNumber=7]
-	"Cordinate [colum=3, lineNumber=5]
-	"Cordinate [colum=3, lineNumber=7]
-	"Cordinate [colum=4, lineNumber=6]
-	"Cordinate [colum=2, lineNumber=6]
-	"Cordinate [colum=4, lineNumber=4]
-	"Cordinate [colum=4, lineNumber=6]
-	"Cordinate [colum=3, lineNumber=5]
-	"Cordinate [colum=3, lineNumber=2]
-	"Cordinate [colum=4, lineNumber=1]
-	"Cordinate [colum=2, lineNumber=1]
-	"Cordinate [colum=4, lineNumber=1]
-	"Cordinate [colum=4, lineNumber=3]
-	"Cordinate [colum=3, lineNumber=2]
-	"Cordinate [colum=2, lineNumber=7]
-	"Cordinate [colum=3, lineNumber=8]
-	"Cordinate [colum=1, lineNumber=8]
-	"Cordinate [colum=3, lineNumber=6]
-	"Cordinate [colum=3, lineNumber=8]
-	"Cordinate [colum=4, lineNumber=7]
-	"Cordinate [colum=2, lineNumber=7]
-	"Cordinate [colum=4, lineNumber=5]
-	"Cordinate [colum=4, lineNumber=7]
-	"Cordinate [colum=3, lineNumber=6]
-	"Cordinate [colum=4, lineNumber=2]
-	"Cordinate [colum=3, lineNumber=1]
-	"Cordinate [colum=3, lineNumber=7]
-	"Cordinate [colum=4, lineNumber=8]
-	"Cordinate [colum=2, lineNumber=8]
-	"Cordinate [colum=4, lineNumber=6]
-	"Cordinate [colum=4, lineNumber=8]
-	"Cordinate [colum=3, lineNumber=7]
-	"Cordinate [colum=4, lineNumber=7]
-	"Cordinate [colum=3, lineNumber=8]
-
-"Cordinate [colum=1, lineNumber=4]
-
-"Cordinate [colum=1, lineNumber=3]
-
-"Cordinate [colum=1, lineNumber=5]
-
-"Cordinate [colum=2, lineNumber=4]
-
-"Cordinate [colum=1, lineNumber=2]
-
-"Cordinate [colum=1, lineNumber=4]
-
-"Cordinate [colum=2, lineNumber=3]
-
-"Cordinate [colum=1, lineNumber=4]
-
-"Cordinate [colum=1, lineNumber=6]
-
-"Cordinate [colum=2, lineNumber=5]
-
-"Cordinate [colum=2, lineNumber=3]
-
-"Cordinate [colum=2, lineNumber=5]
-
-"Cordinate [colum=3, lineNumber=4]
-
-"Cordinate [colum=1, lineNumber=4]
-
-"Cordinate [colum=1, lineNumber=1]
-
-"Cordinate [colum=1, lineNumber=3]
-
-"Cordinate [colum=2, lineNumber=2]
-
-"Cordinate [colum=2, lineNumber=2]
-
-"Cordinate [colum=2, lineNumber=4]
-
-"Cordinate [colum=3, lineNumber=3]
-
-"Cordinate [colum=1, lineNumber=3]
-
-"Cordinate [colum=1, lineNumber=5]
-
-"Cordinate [colum=1, lineNumber=7]
-
-"Cordinate [colum=2, lineNumber=6]
-
-"Cordinate [colum=2, lineNumber=4]
-
-"Cordinate [colum=2, lineNumber=6]
-
-"Cordinate [colum=3, lineNumber=5]
-
-"Cordinate [colum=1, lineNumber=5]
-
-"Cordinate [colum=3, lineNumber=3]
-
-"Cordinate [colum=3, lineNumber=5]
-
-"Cordinate [colum=4, lineNumber=4]
-
-"Cordinate [colum=2, lineNumber=4]
-
-"Cordinate [colum=1, lineNumber=2]
-
-"Cordinate [colum=2, lineNumber=1]
-
-"Cordinate [colum=2, lineNumber=1]
-
-"Cordinate [colum=2, lineNumber=3]
-
-"Cordinate [colum=3, lineNumber=2]
-
-"Cordinate [colum=1, lineNumber=2]
-
-"Cordinate [colum=3, lineNumber=2]
-
-"Cordinate [colum=3, lineNumber=4]
-
-"Cordinate [colum=4, lineNumber=3]
-
-"Cordinate [colum=2, lineNumber=3]
-
-"Cordinate [colum=1, lineNumber=6]
-
-"Cordinate [colum=1, lineNumber=8]
-
-"Cordinate [colum=2, lineNumber=7]
-
-"Cordinate [colum=2, lineNumber=5]
-
-"Cordinate [colum=2, lineNumber=7]
-
-"Cordinate [colum=3, lineNumber=6]
-
-"Cordinate [colum=1, lineNumber=6]
-
-"Cordinate [colum=3, lineNumber=4]
-
-"Cordinate [colum=3, lineNumber=6]
-
-"Cordinate [colum=4, lineNumber=5]
-
-"Cordinate [colum=2, lineNumber=5]
-
-"Cordinate [colum=4, lineNumber=3]
-
-"Cordinate [colum=4, lineNumber=5]
-
-"Cordinate [colum=5, lineNumber=4]
-
-"Cordinate [colum=3, lineNumber=4]
-
-"Cordinate [colum=2, lineNumber=2]
-
-"Cordinate [colum=3, lineNumber=1]
-
-"Cordinate [colum=1, lineNumber=1]
-
-"Cordinate [colum=3, lineNumber=1]
-
-"Cordinate [colum=3, lineNumber=3]
-
-"Cordinate [colum=4, lineNumber=2]
-
-"Cordinate [colum=2, lineNumber=2]
-
-"Cordinate [colum=4, lineNumber=2]
-
-"Cordinate [colum=4, lineNumber=4]
-
-"Cordinate [colum=5, lineNumber=3]
-
-"Cordinate [colum=3, lineNumber=3]
-
-"Cordinate [colum=1, lineNumber=7]
-
-"Cordinate [colum=2, lineNumber=8]
-
-"Cordinate [colum=2, lineNumber=6]
-
-"Cordinate [colum=2, lineNumber=8]
-
-"Cordinate [colum=3, lineNumber=7]
-
-"Cordinate [colum=1, lineNumber=7]
-
-"Cordinate [colum=3, lineNumber=5]
-
-"Cordinate [colum=3, lineNumber=7]
-
-"Cordinate [colum=4, lineNumber=6]
-
-"Cordinate [colum=2, lineNumber=6]
-
-"Cordinate [colum=4, lineNumber=4]
-
-"Cordinate [colum=4, lineNumber=6]
-
-"Cordinate [colum=5, lineNumber=5]
-
-"Cordinate [colum=3, lineNumber=5]
-
-"Cordinate [colum=5, lineNumber=3]
-
-"Cordinate [colum=5, lineNumber=5]
-
-"Cordinate [colum=6, lineNumber=4]
-
-"Cordinate [colum=4, lineNumber=4]
-
-"Cordinate [colum=3, lineNumber=2]
-
-"Cordinate [colum=4, lineNumber=1]
-
-"Cordinate [colum=2, lineNumber=1]
-
-"Cordinate [colum=4, lineNumber=1]
-
-"Cordinate [colum=4, lineNumber=3]
-
-"Cordinate [colum=5, lineNumber=2]
-
-"Cordinate [colum=3, lineNumber=2]
-
-"Cordinate [colum=5, lineNumber=2]
-
-"Cordinate [colum=5, lineNumber=4]
-
-"Cordinate [colum=6, lineNumber=3]
-
-"Cordinate [colum=4, lineNumber=3]
-
-"Cordinate [colum=2, lineNumber=7]
-
-"Cordinate [colum=3, lineNumber=8]
-
-"Cordinate [colum=1, lineNumber=8]
-
-"Cordinate [colum=3, lineNumber=6]
-
-"Cordinate [colum=3, lineNumber=8]
-
-"Cordinate [colum=4, lineNumber=7]
-
-"Cordinate [colum=2, lineNumber=7]
-
-"Cordinate [colum=4, lineNumber=5]
-
-"Cordinate [colum=4, lineNumber=7]
-
-"Cordinate [colum=5, lineNumber=6]
-
-"Cordinate [colum=3, lineNumber=6]
-
-"Cordinate [colum=5, lineNumber=4]
-
-"Cordinate [colum=5, lineNumber=6]
-
-"Cordinate [colum=6, lineNumber=5]
-
-"Cordinate [colum=4, lineNumber=5]
-
-"Cordinate [colum=6, lineNumber=3]
-
-"Cordinate [colum=6, lineNumber=5]
-
-"Cordinate [colum=7, lineNumber=4]
-
-"Cordinate [colum=5, lineNumber=4]
-
-"Cordinate [colum=4, lineNumber=2]
-
-"Cordinate [colum=5, lineNumber=1]
-
-"Cordinate [colum=3, lineNumber=1]
-
-"Cordinate [colum=5, lineNumber=1]
-
-"Cordinate [colum=5, lineNumber=3]
-
-"Cordinate [colum=6, lineNumber=2]
-
-"Cordinate [colum=4, lineNumber=2]
-
-"Cordinate [colum=6, lineNumber=2]
-
-"Cordinate [colum=6, lineNumber=4]
-
-"Cordinate [colum=7, lineNumber=3]
-
-"Cordinate [colum=5, lineNumber=3]
-
-"Cordinate [colum=3, lineNumber=7]
-
-"Cordinate [colum=4, lineNumber=8]
-
-"Cordinate [colum=2, lineNumber=8]
-
-"Cordinate [colum=4, lineNumber=6]
-
-"Cordinate [colum=4, lineNumber=8]
-
-"Cordinate [colum=5, lineNumber=7]
-
-"Cordinate [colum=3, lineNumber=7]
-
-"Cordinate [colum=5, lineNumber=5]
-
-"Cordinate [colum=5, lineNumber=7]
-
-"Cordinate [colum=6, lineNumber=6]
-
-"Cordinate [colum=4, lineNumber=6]
-
-"Cordinate [colum=6, lineNumber=4]
-
-"Cordinate [colum=6, lineNumber=6]
-
-"Cordinate [colum=7, lineNumber=5]
-
-"Cordinate [colum=5, lineNumber=5]
-
-"Cordinate [colum=7, lineNumber=3]
-
-"Cordinate [colum=7, lineNumber=5]
-
-"Cordinate [colum=8, lineNumber=4]
+checking terrain at 5 1
+t .
+checking terrain at 3 1
+t .
+checking terrain at 4 2
+t .
+checking terrain at 4 0
+t @
+uneighbours [Cordinate [colum=1, lineNumber=5], Cordinate [colum=1, lineNumber=3], Cordinate [colum=2, lineNumber=4]]
+Ejumping, target:Cordinate [colum=1, lineNumber=5] prevCordinate null
+checking terrain at 5 1
+t .
+terrain not passable at 5 1
+
+next null
+Ejumping, target:Cordinate [colum=1, lineNumber=3] prevCordinate null
+checking terrain at 3 1
+t .
+terrain not passable at 3 1
+
+next null
+Ejumping, target:Cordinate [colum=2, lineNumber=4] prevCordinate null
+checking terrain at 4 2
+t .
+terrain not passable at 4 2
+
+next null
+"Cordinate [colum=1, lineNumber=4]
+"Cordinate [colum=2, lineNumber=4]
+"Cordinate [colum=3, lineNumber=4]
+"Cordinate [colum=4, lineNumber=4]
+"Cordinate [colum=2, lineNumber=3]
+"Cordinate [colum=4, lineNumber=5]
+"Cordinate [colum=1, lineNumber=3]
+"Cordinate [colum=2, lineNumber=5]
+"Cordinate [colum=3, lineNumber=3]
+"Cordinate [colum=3, lineNumber=3]
+"Cordinate [colum=4, lineNumber=3]
+"Cordinate [colum=1, lineNumber=5]
+"Cordinate [colum=3, lineNumber=5]
+"Cordinate [colum=3, lineNumber=5]
+"Cordinate [colum=4, lineNumber=3]
+"Cordinate [colum=3, lineNumber=2]
+"Cordinate [colum=2, lineNumber=6]
+"Cordinate [colum=1, lineNumber=5]
+"Cordinate [colum=3, lineNumber=5]
+"Cordinate [colum=2, lineNumber=2]
+"Cordinate [colum=1, lineNumber=3]
+"Cordinate [colum=4, lineNumber=6]
+"Cordinate [colum=3, lineNumber=6]
+"Cordinate [colum=4, lineNumber=2]
+"Cordinate [colum=4, lineNumber=2]
+"Cordinate [colum=3, lineNumber=6]
+"Cordinate [colum=1, lineNumber=6]
+"Cordinate [colum=2, lineNumber=2]
+"Cordinate [colum=1, lineNumber=6]
+"Cordinate [colum=3, lineNumber=1]
+"Cordinate [colum=2, lineNumber=7]
+"Cordinate [colum=1, lineNumber=2]
+"Cordinate [colum=4, lineNumber=1]
+"Cordinate [colum=3, lineNumber=6]
+"Cordinate [colum=5, lineNumber=1]
+"Cordinate [colum=4, lineNumber=7]
+"Cordinate [colum=3, lineNumber=7]
+"Cordinate [colum=6, lineNumber=1]
+"Cordinate [colum=4, lineNumber=1]
+"Cordinate [colum=6, lineNumber=2]
+"Cordinate [colum=7, lineNumber=1]
+"Cordinate [colum=6, lineNumber=3]
+"Cordinate [colum=8, lineNumber=1]
+"Cordinate [colum=7, lineNumber=3]
+"Cordinate [colum=8, lineNumber=2]
+"Cordinate [colum=7, lineNumber=4]
+"Cordinate [colum=2, lineNumber=1]
+"Cordinate [colum=2, lineNumber=2]
+"Cordinate [colum=1, lineNumber=1]
+"Cordinate [colum=1, lineNumber=2]
+"Cordinate [colum=1, lineNumber=2]
+"Cordinate [colum=2, lineNumber=3]
+"Cordinate [colum=1, lineNumber=3]
+"Cordinate [colum=1, lineNumber=3]
+"Cordinate [colum=2, lineNumber=4]
+"Cordinate [colum=1, lineNumber=4]
+"Cordinate [colum=1, lineNumber=4]
+"Cordinate [colum=2, lineNumber=5]
+"Cordinate [colum=1, lineNumber=5]
+"Cordinate [colum=1, lineNumber=5]
+"Cordinate [colum=2, lineNumber=6]
+"Cordinate [colum=1, lineNumber=6]
+"Cordinate [colum=1, lineNumber=6]
+"Cordinate [colum=2, lineNumber=7]
+"Cordinate [colum=1, lineNumber=7]
+"Cordinate [colum=1, lineNumber=7]
+"Cordinate [colum=2, lineNumber=8]
+"Cordinate [colum=3, lineNumber=8]
+"Cordinate [colum=4, lineNumber=8]
+"Cordinate [colum=4, lineNumber=7]
+"Cordinate [colum=4, lineNumber=6]
+"Cordinate [colum=4, lineNumber=5]
+"Cordinate [colum=4, lineNumber=4]
+"Cordinate [colum=4, lineNumber=3]
+"Cordinate [colum=4, lineNumber=2]
+"Cordinate [colum=4, lineNumber=1]
+"Cordinate [colum=5, lineNumber=1]
+"Cordinate [colum=6, lineNumber=1]
+"Cordinate [colum=1, lineNumber=8]
+"Cordinate [colum=6, lineNumber=2]
+"Cordinate [colum=1, lineNumber=8]
+"Cordinate [colum=6, lineNumber=3]
+"Cordinate [colum=6, lineNumber=4]
+"Cordinate [colum=6, lineNumber=5]
+"Cordinate [colum=6, lineNumber=6]
+"Cordinate [colum=6, lineNumber=7]
+"Cordinate [colum=6, lineNumber=8]
+"Cordinate [colum=7, lineNumber=8]
+"Cordinate [colum=8, lineNumber=8]
+"Cordinate [colum=8, lineNumber=7]
+"Cordinate [colum=8, lineNumber=6]
+"Cordinate [colum=8, lineNumber=5]
+"Cordinate [colum=8, lineNumber=4]
+"Cordinate [colum=8, lineNumber=3]
+"Cordinate [colum=8, lineNumber=2]
+"Cordinate [colum=1, lineNumber=4]
+"Cordinate [colum=2, lineNumber=4]
+"Cordinate [colum=3, lineNumber=4]
+"Cordinate [colum=4, lineNumber=4]
+"Cordinate [colum=5, lineNumber=4]
+"Cordinate [colum=6, lineNumber=4]
+"Cordinate [colum=7, lineNumber=4]
+"Cordinate [colum=1, lineNumber=4]
+"Cordinate [colum=2, lineNumber=4]
+"Cordinate [colum=3, lineNumber=4]
+"Cordinate [colum=4, lineNumber=4]
+"Cordinate [colum=2, lineNumber=3]
+"Cordinate [colum=4, lineNumber=5]
+"Cordinate [colum=1, lineNumber=3]
+"Cordinate [colum=2, lineNumber=5]
+"Cordinate [colum=3, lineNumber=3]
+"Cordinate [colum=3, lineNumber=3]
+"Cordinate [colum=4, lineNumber=3]
+"Cordinate [colum=1, lineNumber=5]
+"Cordinate [colum=3, lineNumber=5]
+"Cordinate [colum=3, lineNumber=5]
+"Cordinate [colum=4, lineNumber=3]
+"Cordinate [colum=3, lineNumber=2]
+"Cordinate [colum=2, lineNumber=6]
+"Cordinate [colum=1, lineNumber=5]
+"Cordinate [colum=3, lineNumber=5]
+"Cordinate [colum=2, lineNumber=2]
+"Cordinate [colum=1, lineNumber=3]
+"Cordinate [colum=4, lineNumber=6]
+"Cordinate [colum=3, lineNumber=6]
+"Cordinate [colum=4, lineNumber=2]
+"Cordinate [colum=4, lineNumber=2]
+"Cordinate [colum=3, lineNumber=6]
+"Cordinate [colum=1, lineNumber=6]
+"Cordinate [colum=2, lineNumber=2]
+"Cordinate [colum=1, lineNumber=6]
+"Cordinate [colum=3, lineNumber=1]
+"Cordinate [colum=2, lineNumber=7]
+"Cordinate [colum=1, lineNumber=2]
+"Cordinate [colum=4, lineNumber=1]
+"Cordinate [colum=3, lineNumber=6]
+"Cordinate [colum=4, lineNumber=7]
+"Cordinate [colum=3, lineNumber=7]
+"Cordinate [colum=4, lineNumber=1]
+"Cordinate [colum=1, lineNumber=7]
+"Cordinate [colum=4, lineNumber=8]
+"Cordinate [colum=2, lineNumber=1]
+"Cordinate [colum=1, lineNumber=2]
+"Cordinate [colum=3, lineNumber=7]
+"Cordinate [colum=2, lineNumber=1]
+"Cordinate [colum=1, lineNumber=7]
+"Cordinate [colum=3, lineNumber=7]
+"Cordinate [colum=2, lineNumber=8]
+"Cordinate [colum=3, lineNumber=8]
+"Cordinate [colum=1, lineNumber=8]
+"Cordinate [colum=3, lineNumber=8]
+"Cordinate [colum=1, lineNumber=1]
+"Cordinate [colum=3, lineNumber=8]
+"Cordinate [colum=1, lineNumber=1]
+"Cordinate [colum=1, lineNumber=8]
+"Cordinate [colum=1, lineNumber=4]
+"Cordinate [colum=2, lineNumber=4]
+"Cordinate [colum=1, lineNumber=3]
+"Cordinate [colum=2, lineNumber=5]
+"Cordinate [colum=2, lineNumber=3]
+"Cordinate [colum=1, lineNumber=5]
+"Cordinate [colum=2, lineNumber=3]
+"Cordinate [colum=1, lineNumber=5]
+"Cordinate [colum=2, lineNumber=6]
+"Cordinate [colum=1, lineNumber=2]
+"Cordinate [colum=2, lineNumber=2]
+"Cordinate [colum=2, lineNumber=2]
+"Cordinate [colum=2, lineNumber=1]
+"Cordinate [colum=1, lineNumber=1]
+"Cordinate [colum=1, lineNumber=6]
+"Cordinate [colum=2, lineNumber=7]
+"Cordinate [colum=1, lineNumber=6]
+"Cordinate [colum=1, lineNumber=7]
+"Cordinate [colum=2, lineNumber=8]
+"Cordinate [colum=1, lineNumber=1]
+"Cordinate [colum=3, lineNumber=8]
+"Cordinate [colum=1, lineNumber=7]
+"Cordinate [colum=4, lineNumber=8]
+"Cordinate [colum=4, lineNumber=7]
+"Cordinate [colum=4, lineNumber=6]
+"Cordinate [colum=4, lineNumber=5]
+"Cordinate [colum=4, lineNumber=4]
+"Cordinate [colum=1, lineNumber=8]
+"Cordinate [colum=4, lineNumber=3]
+"Cordinate [colum=1, lineNumber=8]
+"Cordinate [colum=4, lineNumber=2]
+"Cordinate [colum=4, lineNumber=1]
+"Cordinate [colum=5, lineNumber=1]
+"Cordinate [colum=6, lineNumber=1]
+"Cordinate [colum=6, lineNumber=2]
+"Cordinate [colum=7, lineNumber=1]
+"Cordinate [colum=7, lineNumber=2]
+"Cordinate [colum=8, lineNumber=1]
+"Cordinate [colum=8, lineNumber=2]
+"Cordinate [colum=8, lineNumber=2]
+"Cordinate [colum=8, lineNumber=3]
+
+	"Cordinate [colum=1, lineNumber=4]
+
+	"Cordinate [colum=1, lineNumber=3]
+
+	"Cordinate [colum=1, lineNumber=5]
+
+	"Cordinate [colum=2, lineNumber=4]
+
+	"Cordinate [colum=1, lineNumber=2]
+
+	"Cordinate [colum=1, lineNumber=4]
+
+	"Cordinate [colum=2, lineNumber=3]
+
+	"Cordinate [colum=1, lineNumber=4]
+
+	"Cordinate [colum=1, lineNumber=6]
+
+	"Cordinate [colum=2, lineNumber=5]
+
+	"Cordinate [colum=2, lineNumber=3]
+
+	"Cordinate [colum=2, lineNumber=5]
+
+	"Cordinate [colum=3, lineNumber=4]
+
+	"Cordinate [colum=1, lineNumber=4]
+
+	"Cordinate [colum=1, lineNumber=1]
+
+	"Cordinate [colum=1, lineNumber=3]
+
+	"Cordinate [colum=2, lineNumber=2]
+
+	"Cordinate [colum=2, lineNumber=2]
+
+	"Cordinate [colum=2, lineNumber=4]
+
+	"Cordinate [colum=3, lineNumber=3]
+
+	"Cordinate [colum=1, lineNumber=3]
+
+	"Cordinate [colum=1, lineNumber=5]
+
+	"Cordinate [colum=1, lineNumber=7]
+
+	"Cordinate [colum=2, lineNumber=6]
+
+	"Cordinate [colum=2, lineNumber=4]
+
+	"Cordinate [colum=2, lineNumber=6]
+
+	"Cordinate [colum=3, lineNumber=5]
+
+	"Cordinate [colum=1, lineNumber=5]
+
+	"Cordinate [colum=3, lineNumber=3]
+
+	"Cordinate [colum=3, lineNumber=5]
+
+	"Cordinate [colum=4, lineNumber=4]
+
+	"Cordinate [colum=2, lineNumber=4]
+
+	"Cordinate [colum=1, lineNumber=2]
+
+	"Cordinate [colum=2, lineNumber=1]
+
+	"Cordinate [colum=2, lineNumber=1]
+
+	"Cordinate [colum=2, lineNumber=3]
+
+	"Cordinate [colum=3, lineNumber=2]
+
+	"Cordinate [colum=1, lineNumber=2]
+
+	"Cordinate [colum=3, lineNumber=2]
+
+	"Cordinate [colum=3, lineNumber=4]
+
+	"Cordinate [colum=4, lineNumber=3]
+
+	"Cordinate [colum=2, lineNumber=3]
+
+	"Cordinate [colum=1, lineNumber=6]
+
+	"Cordinate [colum=1, lineNumber=8]
+
+	"Cordinate [colum=2, lineNumber=7]
+
+	"Cordinate [colum=2, lineNumber=5]
+
+	"Cordinate [colum=2, lineNumber=7]
+
+	"Cordinate [colum=3, lineNumber=6]
+
+	"Cordinate [colum=1, lineNumber=6]
+
+	"Cordinate [colum=3, lineNumber=4]
+
+	"Cordinate [colum=3, lineNumber=6]
+
+	"Cordinate [colum=4, lineNumber=5]
+
+	"Cordinate [colum=2, lineNumber=5]
+
+	"Cordinate [colum=4, lineNumber=3]
+
+	"Cordinate [colum=4, lineNumber=5]
+
+	"Cordinate [colum=3, lineNumber=4]
+
+	"Cordinate [colum=2, lineNumber=2]
+
+	"Cordinate [colum=3, lineNumber=1]
+
+	"Cordinate [colum=1, lineNumber=1]
+
+	"Cordinate [colum=3, lineNumber=1]
+
+	"Cordinate [colum=3, lineNumber=3]
+
+	"Cordinate [colum=4, lineNumber=2]
+
+	"Cordinate [colum=2, lineNumber=2]
+
+	"Cordinate [colum=4, lineNumber=2]
+
+	"Cordinate [colum=4, lineNumber=4]
+
+	"Cordinate [colum=3, lineNumber=3]
+
+	"Cordinate [colum=1, lineNumber=7]
+
+	"Cordinate [colum=2, lineNumber=8]
+
+	"Cordinate [colum=2, lineNumber=6]
+
+	"Cordinate [colum=2, lineNumber=8]
+
+	"Cordinate [colum=3, lineNumber=7]
+
+	"Cordinate [colum=1, lineNumber=7]
+
+	"Cordinate [colum=3, lineNumber=5]
+
+	"Cordinate [colum=3, lineNumber=7]
+
+	"Cordinate [colum=4, lineNumber=6]
+
+	"Cordinate [colum=2, lineNumber=6]
+
+	"Cordinate [colum=4, lineNumber=4]
+
+	"Cordinate [colum=4, lineNumber=6]
+
+	"Cordinate [colum=3, lineNumber=5]
+
+	"Cordinate [colum=3, lineNumber=2]
+
+	"Cordinate [colum=4, lineNumber=1]
+
+	"Cordinate [colum=2, lineNumber=1]
+
+	"Cordinate [colum=4, lineNumber=1]
+
+	"Cordinate [colum=4, lineNumber=3]
+
+	"Cordinate [colum=3, lineNumber=2]
+
+	"Cordinate [colum=2, lineNumber=7]
+
+	"Cordinate [colum=3, lineNumber=8]
+
+	"Cordinate [colum=1, lineNumber=8]
+
+	"Cordinate [colum=3, lineNumber=6]
+
+	"Cordinate [colum=3, lineNumber=8]
+
+	"Cordinate [colum=4, lineNumber=7]
+
+	"Cordinate [colum=2, lineNumber=7]
+
+	"Cordinate [colum=4, lineNumber=5]
+
+	"Cordinate [colum=4, lineNumber=7]
+
+	"Cordinate [colum=3, lineNumber=6]
+
+	"Cordinate [colum=4, lineNumber=2]
+
+	"Cordinate [colum=5, lineNumber=1]
+
+	"Cordinate [colum=3, lineNumber=1]
+
+	"Cordinate [colum=3, lineNumber=7]
+
+	"Cordinate [colum=4, lineNumber=8]
+
+	"Cordinate [colum=2, lineNumber=8]
+
+	"Cordinate [colum=4, lineNumber=6]
+
+	"Cordinate [colum=4, lineNumber=8]
+
+	"Cordinate [colum=3, lineNumber=7]
+
+	"Cordinate [colum=6, lineNumber=1]
+
+	"Cordinate [colum=4, lineNumber=1]
+
+	"Cordinate [colum=4, lineNumber=7]
+
+	"Cordinate [colum=3, lineNumber=8]
+
+	"Cordinate [colum=6, lineNumber=2]
+
+	"Cordinate [colum=7, lineNumber=1]
+
+	"Cordinate [colum=5, lineNumber=1]
+
+	"Cordinate [colum=6, lineNumber=1]
+
+	"Cordinate [colum=6, lineNumber=3]
+
+	"Cordinate [colum=7, lineNumber=2]
+
+	"Cordinate [colum=7, lineNumber=2]
+
+	"Cordinate [colum=8, lineNumber=1]
+
+	"Cordinate [colum=6, lineNumber=1]
+
+	"Cordinate [colum=6, lineNumber=2]
+
+	"Cordinate [colum=6, lineNumber=4]
+
+	"Cordinate [colum=7, lineNumber=3]
+
+	"Cordinate [colum=7, lineNumber=1]
+
+	"Cordinate [colum=7, lineNumber=3]
+
+	"Cordinate [colum=8, lineNumber=2]
+
+	"Cordinate [colum=6, lineNumber=2]
+
+	"Cordinate [colum=8, lineNumber=2]
+
+	"Cordinate [colum=7, lineNumber=1]
+
+	"Cordinate [colum=6, lineNumber=3]
+
+	"Cordinate [colum=6, lineNumber=5]
+
+	"Cordinate [colum=7, lineNumber=4]
+
+	"Cordinate [colum=7, lineNumber=2]
+
+	"Cordinate [colum=7, lineNumber=4]
+
+	"Cordinate [colum=8, lineNumber=3]
+
+	"Cordinate [colum=6, lineNumber=3]
+
+	"Cordinate [colum=8, lineNumber=1]
+
+	"Cordinate [colum=8, lineNumber=3]
+
+	"Cordinate [colum=7, lineNumber=2]
+
+	"Cordinate [colum=6, lineNumber=4]
+
+	"Cordinate [colum=6, lineNumber=6]
+
+	"Cordinate [colum=7, lineNumber=5]
+
+	"Cordinate [colum=7, lineNumber=3]
+
+	"Cordinate [colum=7, lineNumber=5]
+
+	"Cordinate [colum=8, lineNumber=4]
+
+"Cordinate [colum=1, lineNumber=4]
+
+"Cordinate [colum=1, lineNumber=3]
+
+"Cordinate [colum=1, lineNumber=5]
+
+"Cordinate [colum=2, lineNumber=4]
+
+"Cordinate [colum=1, lineNumber=2]
+
+"Cordinate [colum=1, lineNumber=4]
+
+"Cordinate [colum=2, lineNumber=3]
+
+"Cordinate [colum=1, lineNumber=4]
+
+"Cordinate [colum=1, lineNumber=6]
+
+"Cordinate [colum=2, lineNumber=5]
+
+"Cordinate [colum=2, lineNumber=3]
+
+"Cordinate [colum=2, lineNumber=5]
+
+"Cordinate [colum=3, lineNumber=4]
+
+"Cordinate [colum=1, lineNumber=4]
+
+"Cordinate [colum=1, lineNumber=1]
+
+"Cordinate [colum=1, lineNumber=3]
+
+"Cordinate [colum=2, lineNumber=2]
+
+"Cordinate [colum=2, lineNumber=2]
+
+"Cordinate [colum=2, lineNumber=4]
+
+"Cordinate [colum=3, lineNumber=3]
+
+"Cordinate [colum=1, lineNumber=3]
+
+"Cordinate [colum=1, lineNumber=5]
+
+"Cordinate [colum=1, lineNumber=7]
+
+"Cordinate [colum=2, lineNumber=6]
+
+"Cordinate [colum=2, lineNumber=4]
+
+"Cordinate [colum=2, lineNumber=6]
+
+"Cordinate [colum=3, lineNumber=5]
+
+"Cordinate [colum=1, lineNumber=5]
+
+"Cordinate [colum=3, lineNumber=3]
+
+"Cordinate [colum=3, lineNumber=5]
+
+"Cordinate [colum=4, lineNumber=4]
+
+"Cordinate [colum=2, lineNumber=4]
+
+"Cordinate [colum=1, lineNumber=2]
+
+"Cordinate [colum=2, lineNumber=1]
+
+"Cordinate [colum=2, lineNumber=1]
+
+"Cordinate [colum=2, lineNumber=3]
+
+"Cordinate [colum=3, lineNumber=2]
+
+"Cordinate [colum=1, lineNumber=2]
+
+"Cordinate [colum=3, lineNumber=2]
+
+"Cordinate [colum=3, lineNumber=4]
+
+"Cordinate [colum=4, lineNumber=3]
+
+"Cordinate [colum=2, lineNumber=3]
+
+"Cordinate [colum=1, lineNumber=6]
+
+"Cordinate [colum=1, lineNumber=8]
+
+"Cordinate [colum=2, lineNumber=7]
+
+"Cordinate [colum=2, lineNumber=5]
+
+"Cordinate [colum=2, lineNumber=7]
+
+"Cordinate [colum=3, lineNumber=6]
+
+"Cordinate [colum=1, lineNumber=6]
+
+"Cordinate [colum=3, lineNumber=4]
+
+"Cordinate [colum=3, lineNumber=6]
+
+"Cordinate [colum=4, lineNumber=5]
+
+"Cordinate [colum=2, lineNumber=5]
+
+"Cordinate [colum=4, lineNumber=3]
+
+"Cordinate [colum=4, lineNumber=5]
+
+"Cordinate [colum=3, lineNumber=4]
+
+"Cordinate [colum=2, lineNumber=2]
+
+"Cordinate [colum=3, lineNumber=1]
+
+"Cordinate [colum=1, lineNumber=1]
+
+"Cordinate [colum=3, lineNumber=1]
+
+"Cordinate [colum=3, lineNumber=3]
+
+"Cordinate [colum=4, lineNumber=2]
+
+"Cordinate [colum=2, lineNumber=2]
+
+"Cordinate [colum=4, lineNumber=2]
+
+"Cordinate [colum=4, lineNumber=4]
+
+"Cordinate [colum=3, lineNumber=3]
+
+"Cordinate [colum=1, lineNumber=7]
+
+"Cordinate [colum=2, lineNumber=8]
+
+"Cordinate [colum=2, lineNumber=6]
+
+"Cordinate [colum=2, lineNumber=8]
+
+"Cordinate [colum=3, lineNumber=7]
+
+"Cordinate [colum=1, lineNumber=7]
+
+"Cordinate [colum=3, lineNumber=5]
+
+"Cordinate [colum=3, lineNumber=7]
+
+"Cordinate [colum=4, lineNumber=6]
+
+"Cordinate [colum=2, lineNumber=6]
+
+"Cordinate [colum=4, lineNumber=4]
+
+"Cordinate [colum=4, lineNumber=6]
+
+"Cordinate [colum=3, lineNumber=5]
+
+"Cordinate [colum=3, lineNumber=2]
+
+"Cordinate [colum=4, lineNumber=1]
+
+"Cordinate [colum=2, lineNumber=1]
+
+"Cordinate [colum=4, lineNumber=1]
+
+"Cordinate [colum=4, lineNumber=3]
+
+"Cordinate [colum=3, lineNumber=2]
+
+"Cordinate [colum=2, lineNumber=7]
+
+"Cordinate [colum=3, lineNumber=8]
+
+"Cordinate [colum=1, lineNumber=8]
+
+"Cordinate [colum=3, lineNumber=6]
+
+"Cordinate [colum=3, lineNumber=8]
+
+"Cordinate [colum=4, lineNumber=7]
+
+"Cordinate [colum=2, lineNumber=7]
+
+"Cordinate [colum=4, lineNumber=5]
+
+"Cordinate [colum=4, lineNumber=7]
+
+"Cordinate [colum=3, lineNumber=6]
+
+"Cordinate [colum=4, lineNumber=2]
+
+"Cordinate [colum=3, lineNumber=1]
+
+"Cordinate [colum=3, lineNumber=7]
+
+"Cordinate [colum=4, lineNumber=8]
+
+"Cordinate [colum=2, lineNumber=8]
+
+"Cordinate [colum=4, lineNumber=6]
+
+"Cordinate [colum=4, lineNumber=8]
+
+"Cordinate [colum=3, lineNumber=7]
+
+"Cordinate [colum=4, lineNumber=7]
+
+"Cordinate [colum=3, lineNumber=8]
+
+"Cordinate [colum=1, lineNumber=4]
+
+"Cordinate [colum=1, lineNumber=3]
+
+"Cordinate [colum=1, lineNumber=5]
+
+"Cordinate [colum=2, lineNumber=4]
+
+"Cordinate [colum=1, lineNumber=2]
+
+"Cordinate [colum=1, lineNumber=4]
+
+"Cordinate [colum=2, lineNumber=3]
+
+"Cordinate [colum=1, lineNumber=4]
+
+"Cordinate [colum=1, lineNumber=6]
+
+"Cordinate [colum=2, lineNumber=5]
+
+"Cordinate [colum=2, lineNumber=3]
+
+"Cordinate [colum=2, lineNumber=5]
+
+"Cordinate [colum=3, lineNumber=4]
+
+"Cordinate [colum=1, lineNumber=4]
+
+"Cordinate [colum=1, lineNumber=1]
+
+"Cordinate [colum=1, lineNumber=3]
+
+"Cordinate [colum=2, lineNumber=2]
+
+"Cordinate [colum=2, lineNumber=2]
+
+"Cordinate [colum=2, lineNumber=4]
+
+"Cordinate [colum=3, lineNumber=3]
+
+"Cordinate [colum=1, lineNumber=3]
+
+"Cordinate [colum=1, lineNumber=5]
+
+"Cordinate [colum=1, lineNumber=7]
+
+"Cordinate [colum=2, lineNumber=6]
+
+"Cordinate [colum=2, lineNumber=4]
+
+"Cordinate [colum=2, lineNumber=6]
+
+"Cordinate [colum=3, lineNumber=5]
+
+"Cordinate [colum=1, lineNumber=5]
+
+"Cordinate [colum=3, lineNumber=3]
+
+"Cordinate [colum=3, lineNumber=5]
+
+"Cordinate [colum=4, lineNumber=4]
+
+"Cordinate [colum=2, lineNumber=4]
+
+"Cordinate [colum=1, lineNumber=2]
+
+"Cordinate [colum=2, lineNumber=1]
+
+"Cordinate [colum=2, lineNumber=1]
+
+"Cordinate [colum=2, lineNumber=3]
+
+"Cordinate [colum=3, lineNumber=2]
+
+"Cordinate [colum=1, lineNumber=2]
+
+"Cordinate [colum=3, lineNumber=2]
+
+"Cordinate [colum=3, lineNumber=4]
+
+"Cordinate [colum=4, lineNumber=3]
+
+"Cordinate [colum=2, lineNumber=3]
+
+"Cordinate [colum=1, lineNumber=6]
+
+"Cordinate [colum=1, lineNumber=8]
+
+"Cordinate [colum=2, lineNumber=7]
+
+"Cordinate [colum=2, lineNumber=5]
+
+"Cordinate [colum=2, lineNumber=7]
+
+"Cordinate [colum=3, lineNumber=6]
+
+"Cordinate [colum=1, lineNumber=6]
+
+"Cordinate [colum=3, lineNumber=4]
+
+"Cordinate [colum=3, lineNumber=6]
+
+"Cordinate [colum=4, lineNumber=5]
+
+"Cordinate [colum=2, lineNumber=5]
+
+"Cordinate [colum=4, lineNumber=3]
+
+"Cordinate [colum=4, lineNumber=5]
+
+"Cordinate [colum=5, lineNumber=4]
+
+"Cordinate [colum=3, lineNumber=4]
+
+"Cordinate [colum=2, lineNumber=2]
+
+"Cordinate [colum=3, lineNumber=1]
+
+"Cordinate [colum=1, lineNumber=1]
+
+"Cordinate [colum=3, lineNumber=1]
+
+"Cordinate [colum=3, lineNumber=3]
+
+"Cordinate [colum=4, lineNumber=2]
+
+"Cordinate [colum=2, lineNumber=2]
+
+"Cordinate [colum=4, lineNumber=2]
+
+"Cordinate [colum=4, lineNumber=4]
+
+"Cordinate [colum=5, lineNumber=3]
+
+"Cordinate [colum=3, lineNumber=3]
+
+"Cordinate [colum=1, lineNumber=7]
+
+"Cordinate [colum=2, lineNumber=8]
+
+"Cordinate [colum=2, lineNumber=6]
+
+"Cordinate [colum=2, lineNumber=8]
+
+"Cordinate [colum=3, lineNumber=7]
+
+"Cordinate [colum=1, lineNumber=7]
+
+"Cordinate [colum=3, lineNumber=5]
+
+"Cordinate [colum=3, lineNumber=7]
+
+"Cordinate [colum=4, lineNumber=6]
+
+"Cordinate [colum=2, lineNumber=6]
+
+"Cordinate [colum=4, lineNumber=4]
+
+"Cordinate [colum=4, lineNumber=6]
+
+"Cordinate [colum=5, lineNumber=5]
+
+"Cordinate [colum=3, lineNumber=5]
+
+"Cordinate [colum=5, lineNumber=3]
+
+"Cordinate [colum=5, lineNumber=5]
+
+"Cordinate [colum=6, lineNumber=4]
+
+"Cordinate [colum=4, lineNumber=4]
+
+"Cordinate [colum=3, lineNumber=2]
+
+"Cordinate [colum=4, lineNumber=1]
+
+"Cordinate [colum=2, lineNumber=1]
+
+"Cordinate [colum=4, lineNumber=1]
+
+"Cordinate [colum=4, lineNumber=3]
+
+"Cordinate [colum=5, lineNumber=2]
+
+"Cordinate [colum=3, lineNumber=2]
+
+"Cordinate [colum=5, lineNumber=2]
+
+"Cordinate [colum=5, lineNumber=4]
+
+"Cordinate [colum=6, lineNumber=3]
+
+"Cordinate [colum=4, lineNumber=3]
+
+"Cordinate [colum=2, lineNumber=7]
+
+"Cordinate [colum=3, lineNumber=8]
+
+"Cordinate [colum=1, lineNumber=8]
+
+"Cordinate [colum=3, lineNumber=6]
+
+"Cordinate [colum=3, lineNumber=8]
+
+"Cordinate [colum=4, lineNumber=7]
+
+"Cordinate [colum=2, lineNumber=7]
+
+"Cordinate [colum=4, lineNumber=5]
+
+"Cordinate [colum=4, lineNumber=7]
+
+"Cordinate [colum=5, lineNumber=6]
+
+"Cordinate [colum=3, lineNumber=6]
+
+"Cordinate [colum=5, lineNumber=4]
+
+"Cordinate [colum=5, lineNumber=6]
+
+"Cordinate [colum=6, lineNumber=5]
+
+"Cordinate [colum=4, lineNumber=5]
+
+"Cordinate [colum=6, lineNumber=3]
+
+"Cordinate [colum=6, lineNumber=5]
+
+"Cordinate [colum=7, lineNumber=4]
+
+"Cordinate [colum=5, lineNumber=4]
+
+"Cordinate [colum=4, lineNumber=2]
+
+"Cordinate [colum=5, lineNumber=1]
+
+"Cordinate [colum=3, lineNumber=1]
+
+"Cordinate [colum=5, lineNumber=1]
+
+"Cordinate [colum=5, lineNumber=3]
+
+"Cordinate [colum=6, lineNumber=2]
+
+"Cordinate [colum=4, lineNumber=2]
+
+"Cordinate [colum=6, lineNumber=2]
+
+"Cordinate [colum=6, lineNumber=4]
+
+"Cordinate [colum=7, lineNumber=3]
+
+"Cordinate [colum=5, lineNumber=3]
+
+"Cordinate [colum=3, lineNumber=7]
+
+"Cordinate [colum=4, lineNumber=8]
+
+"Cordinate [colum=2, lineNumber=8]
+
+"Cordinate [colum=4, lineNumber=6]
+
+"Cordinate [colum=4, lineNumber=8]
+
+"Cordinate [colum=5, lineNumber=7]
+
+"Cordinate [colum=3, lineNumber=7]
+
+"Cordinate [colum=5, lineNumber=5]
+
+"Cordinate [colum=5, lineNumber=7]
+
+"Cordinate [colum=6, lineNumber=6]
+
+"Cordinate [colum=4, lineNumber=6]
+
+"Cordinate [colum=6, lineNumber=4]
+
+"Cordinate [colum=6, lineNumber=6]
+
+"Cordinate [colum=7, lineNumber=5]
+
+"Cordinate [colum=5, lineNumber=5]
+
+"Cordinate [colum=7, lineNumber=3]
+
+"Cordinate [colum=7, lineNumber=5]
+
+"Cordinate [colum=8, lineNumber=4]

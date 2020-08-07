@@ -1,18 +1,20 @@
-textUI/PCTextUI.java
- textUI.PCTextUI
-Main.java
- Main
-logic/MapReader.java
- logic.MapReader
-datastructures/PathMap.java
- datastructures.PathMap
 logic/Helpers.java
  logic.Helpers
+Main.java
+ Main
 datastructures/Cordinate.java
  datastructures.Cordinate
-logic/Astar.java
- logic.Astar
-logic/BFS.java
- logic.BFS
+textUI/PCTextUI.java
+ textUI.PCTextUI
+logic/JPS.java
+ logic.JPS
 logic/Dijkstra.java
  logic.Dijkstra
+datastructures/PathMap.java
+ datastructures.PathMap
+logic/MapReader.java
+ logic.MapReader
+logic/BFS.java
+ logic.BFS
+logic/Astar.java
+ logic.Astar

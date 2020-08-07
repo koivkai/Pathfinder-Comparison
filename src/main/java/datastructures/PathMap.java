@@ -48,6 +48,20 @@ public class PathMap {
         return (this.map[lineNumber][colum]);
     }
     
+    public boolean terrainPassableAt(int lineNumber, int colum) {
+        if(lineNumber >= this.width || colum >= this.height || lineNumber < 0 || colum < 0) {
+            return false;
+        } 
+
+        char terrain = this.map[lineNumber][colum];
+        System.out.println("checking terrain at " +lineNumber+" "+colum);
+        System.out.println("t "+terrain);
+        if(terrain == '.' || terrain == 'G') {
+            return true;
+        }
+        return false;
+    }
+
     public void print() {
 
         System.out.println("Printing map");
