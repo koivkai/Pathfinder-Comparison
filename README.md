@@ -6,3 +6,5 @@
 [viikko1](https://github.com/koivkai/Pathfinder-Comparison/blob/master/dokumentaatio/viikkoraportit/viikko1.md)
 
 [viikko2](https://github.com/koivkai/Pathfinder-Comparison/blob/master/dokumentaatio/viikkoraportit/viikko2.md)
+
+[viikko3](https://github.com/koivkai/Pathfinder-Comparison/blob/master/dokumentaatio/viikkoraportit/viikko3.md)
