@@ -77,7 +77,7 @@ public class JPS {
     private void updateDistance(Cordinate fromCordinate, Cordinate targetCordinate) {
         System.out.println("updating distance from "+fromCordinate+" to "+targetCordinate);
         int old = distance[targetCordinate.getLineNumber()][targetCordinate.getColum()];
-        int difference = Math.abs(fromCordinate.getLineNumber()-targetCordinate.getLineNumber())+Math.abs(fromCordinate.getColum()-targetCordinate.getColum());
+        int difference = Helpers.abs(fromCordinate.getLineNumber()-targetCordinate.getLineNumber())+Helpers.abs(fromCordinate.getColum()-targetCordinate.getColum());
         int prevDistance = distance[fromCordinate.getLineNumber()][fromCordinate.getColum()];
 
         if(old == 0 || (prevDistance + difference)<old) {
@@ -93,7 +93,7 @@ public class JPS {
 
     private void updateDistance(int targetLine, int targetColum, int prevLine, int prevColum) {
         int old = distance[targetLine][targetColum];
-        int difference = Math.abs(prevLine-targetLine)+Math.abs(prevColum-targetColum);
+        int difference = Helpers.abs(prevLine-targetLine)+Helpers.abs(prevColum-targetColum);
         int prevDistance = distance[prevLine][prevColum];
 
         if(old == 0 || (prevDistance + difference)<old) {
@@ -105,7 +105,7 @@ public class JPS {
         int targetLine = target.getLineNumber();
         int targetColum = target.getColum();
         int old = distance[targetLine][targetColum];
-        int difference = Math.abs(prevLine-targetLine)+Math.abs(prevColum-targetColum);
+        int difference = Helpers.abs(prevLine-targetLine)+Helpers.abs(prevColum-targetColum);
         int prevDistance = distance[prevLine][prevColum];
 
         if(old == 0 || (prevDistance + difference)<old) {
@@ -295,14 +295,14 @@ public class JPS {
     }
 
     private int getFscore(int line, int colum) {
-        int estimate = Math.abs((line -this.goalLine)) + Math.abs((colum - goalColum));
+        int estimate = Helpers.abs((line -this.goalLine)) + Helpers.abs((colum - goalColum));
         return estimate + distance[line][colum];
     }
     
     private int getFscore(Cordinate c) {
         int line = c.getLineNumber();
         int colum = c.getColum();
-        int estimate = Math.abs((line -this.goalLine)) + Math.abs((colum - goalColum));
+        int estimate = Helpers.abs((line -this.goalLine)) + Helpers.abs((colum - goalColum));
         return estimate + distance[line][colum];
     }
 }

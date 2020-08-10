@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="logicTest.JPSTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-08-10T10:56:22" hostname="Kaius-MBP" time="0.141">
+<testsuite name="logicTest.JPSTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-08-10T11:18:38" hostname="Kaius-MBP" time="0.147">
   <properties/>
-  <testcase name="findsPathTreeline" classname="logicTest.JPSTest" time="0.076"/>
-  <testcase name="findsPathThreeTreelines" classname="logicTest.JPSTest" time="0.027"/>
-  <testcase name="findsPathNoObstacles" classname="logicTest.JPSTest" time="0.018"/>
-  <testcase name="findsPathNoObstaclesReverse" classname="logicTest.JPSTest" time="0.007"/>
-  <testcase name="noPathExits" classname="logicTest.JPSTest" time="0.005"/>
+  <testcase name="findsPathTreeline" classname="logicTest.JPSTest" time="0.081"/>
+  <testcase name="findsPathThreeTreelines" classname="logicTest.JPSTest" time="0.029"/>
+  <testcase name="findsPathNoObstacles" classname="logicTest.JPSTest" time="0.016"/>
+  <testcase name="findsPathNoObstaclesReverse" classname="logicTest.JPSTest" time="0.009"/>
+  <testcase name="noPathExits" classname="logicTest.JPSTest" time="0.004"/>
   <testcase name="findsPathThreeTreelinesReverse" classname="logicTest.JPSTest" time="0.007"/>
   <system-out><![CDATA[findpath
 current Cordinate [colum=1, lineNumber=4]

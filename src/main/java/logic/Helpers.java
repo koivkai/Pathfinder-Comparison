@@ -11,5 +11,13 @@ public class Helpers {
         }
         return false;
     }
+
+    public static int abs(int i) {
+        if(i >= 0) {
+            return i;
+        } 
+        return -i;
+
+    }
     
 }

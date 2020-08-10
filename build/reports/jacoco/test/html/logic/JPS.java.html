@@ -77,7 +77,7 @@ public class JPS {
     private void updateDistance(Cordinate fromCordinate, Cordinate targetCordinate) {
 <span class="fc" id="L78">        System.out.println(&quot;updating distance from &quot;+fromCordinate+&quot; to &quot;+targetCordinate);</span>
 <span class="fc" id="L79">        int old = distance[targetCordinate.getLineNumber()][targetCordinate.getColum()];</span>
-<span class="fc" id="L80">        int difference = Math.abs(fromCordinate.getLineNumber()-targetCordinate.getLineNumber())+Math.abs(fromCordinate.getColum()-targetCordinate.getColum());</span>
+<span class="fc" id="L80">        int difference = Helpers.abs(fromCordinate.getLineNumber()-targetCordinate.getLineNumber())+Helpers.abs(fromCordinate.getColum()-targetCordinate.getColum());</span>
 <span class="fc" id="L81">        int prevDistance = distance[fromCordinate.getLineNumber()][fromCordinate.getColum()];</span>
 
 <span class="pc bpc" id="L83" title="3 of 4 branches missed.">        if(old == 0 || (prevDistance + difference)&lt;old) {</span>
@@ -93,7 +93,7 @@ public class JPS {
 
     private void updateDistance(int targetLine, int targetColum, int prevLine, int prevColum) {
 <span class="nc" id="L95">        int old = distance[targetLine][targetColum];</span>
-<span class="nc" id="L96">        int difference = Math.abs(prevLine-targetLine)+Math.abs(prevColum-targetColum);</span>
+<span class="nc" id="L96">        int difference = Helpers.abs(prevLine-targetLine)+Helpers.abs(prevColum-targetColum);</span>
 <span class="nc" id="L97">        int prevDistance = distance[prevLine][prevColum];</span>
 
 <span class="nc bnc" id="L99" title="All 4 branches missed.">        if(old == 0 || (prevDistance + difference)&lt;old) {</span>
@@ -105,7 +105,7 @@ public class JPS {
 <span class="nc" id="L105">        int targetLine = target.getLineNumber();</span>
 <span class="nc" id="L106">        int targetColum = target.getColum();</span>
 <span class="nc" id="L107">        int old = distance[targetLine][targetColum];</span>
-<span class="nc" id="L108">        int difference = Math.abs(prevLine-targetLine)+Math.abs(prevColum-targetColum);</span>
+<span class="nc" id="L108">        int difference = Helpers.abs(prevLine-targetLine)+Helpers.abs(prevColum-targetColum);</span>
 <span class="nc" id="L109">        int prevDistance = distance[prevLine][prevColum];</span>
 
 <span class="nc bnc" id="L111" title="All 4 branches missed.">        if(old == 0 || (prevDistance + difference)&lt;old) {</span>
@@ -295,14 +295,14 @@ public class JPS {
     }
 
     private int getFscore(int line, int colum) {
-<span class="nc" id="L298">        int estimate = Math.abs((line -this.goalLine)) + Math.abs((colum - goalColum));</span>
+<span class="nc" id="L298">        int estimate = Helpers.abs((line -this.goalLine)) + Helpers.abs((colum - goalColum));</span>
 <span class="nc" id="L299">        return estimate + distance[line][colum];</span>
     }
     
     private int getFscore(Cordinate c) {
 <span class="fc" id="L303">        int line = c.getLineNumber();</span>
 <span class="fc" id="L304">        int colum = c.getColum();</span>
-<span class="fc" id="L305">        int estimate = Math.abs((line -this.goalLine)) + Math.abs((colum - goalColum));</span>
+<span class="fc" id="L305">        int estimate = Helpers.abs((line -this.goalLine)) + Helpers.abs((colum - goalColum));</span>
 <span class="fc" id="L306">        return estimate + distance[line][colum];</span>
     }
 }

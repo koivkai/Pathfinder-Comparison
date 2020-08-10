@@ -132,7 +132,7 @@ public class Astar {
     }
 
     private int estimate(int line, int colum) {
-<span class="fc" id="L135">        return Math.abs((line -this.goalLine)) + Math.abs((colum - goalColum));</span>
+<span class="fc" id="L135">        return Helpers.abs((line -this.goalLine)) + Helpers.abs((colum - goalColum));</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

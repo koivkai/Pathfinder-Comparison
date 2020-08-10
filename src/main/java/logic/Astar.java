@@ -132,6 +132,6 @@ public class Astar {
     }
 
     private int estimate(int line, int colum) {
-        return Math.abs((line -this.goalLine)) + Math.abs((colum - goalColum));
+        return Helpers.abs((line -this.goalLine)) + Helpers.abs((colum - goalColum));
     }
 }
