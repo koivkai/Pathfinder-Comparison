@@ -48,19 +48,33 @@ public class PathMap {
 <span class="fc" id="L48">        return (this.map[lineNumber][colum]);</span>
     }
     
+    public boolean terrainPassableAt(int lineNumber, int colum) {
+<span class="pc bpc" id="L52" title="4 of 8 branches missed.">        if(lineNumber &gt;= this.width || colum &gt;= this.height || lineNumber &lt; 0 || colum &lt; 0) {</span>
+<span class="nc" id="L53">            return false;</span>
+        } 
+
+<span class="fc" id="L56">        char terrain = this.map[lineNumber][colum];</span>
+<span class="fc" id="L57">        System.out.println(&quot;checking terrain at &quot; +lineNumber+&quot; &quot;+colum);</span>
+<span class="fc" id="L58">        System.out.println(&quot;t &quot;+terrain);</span>
+<span class="pc bpc" id="L59" title="1 of 4 branches missed.">        if(terrain == '.' || terrain == 'G') {</span>
+<span class="fc" id="L60">            return true;</span>
+        }
+<span class="fc" id="L62">        return false;</span>
+    }
+
     public void print() {
 
-<span class="nc" id="L53">        System.out.println(&quot;Printing map&quot;);</span>
+<span class="nc" id="L67">        System.out.println(&quot;Printing map&quot;);</span>
         //System.out.println(Arrays.toString(map));
-<span class="nc bnc" id="L55" title="All 2 branches missed.">        for(int lineNumber=0; lineNumber&lt;this.height;lineNumber++){</span>
-<span class="nc bnc" id="L56" title="All 2 branches missed.">            for(int colum = 0; colum &lt;this.width;colum++) {</span>
-<span class="nc" id="L57">                System.out.print(this.map[lineNumber][colum]);</span>
+<span class="nc bnc" id="L69" title="All 2 branches missed.">        for(int lineNumber=0; lineNumber&lt;this.height;lineNumber++){</span>
+<span class="nc bnc" id="L70" title="All 2 branches missed.">            for(int colum = 0; colum &lt;this.width;colum++) {</span>
+<span class="nc" id="L71">                System.out.print(this.map[lineNumber][colum]);</span>
             }
-<span class="nc bnc" id="L59" title="All 2 branches missed.">            if(lineNumber != this.height -1){</span>
-<span class="nc" id="L60">                System.out.println(&quot;&quot;);</span>
+<span class="nc bnc" id="L73" title="All 2 branches missed.">            if(lineNumber != this.height -1){</span>
+<span class="nc" id="L74">                System.out.println(&quot;&quot;);</span>
             }
         }
-<span class="nc" id="L63">    }</span>
+<span class="nc" id="L77">    }</span>
 
 
 }

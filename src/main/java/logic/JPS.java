@@ -31,10 +31,13 @@ public class JPS {
 
         while(!que.isEmpty()) {
             current = que.poll();
+            System.out.println("findpath");
+            System.out.println("current "+current);
             int line = current.getLineNumber();
             int colum = current.getColum();
 
             if(visited[line][colum]) {
+                System.out.println("already visited");
                 // do nothing
             } else { 
                 visited[line][colum] = true;
@@ -49,6 +52,7 @@ public class JPS {
         return -1;
     }
     private void findSuccessors(Cordinate current) {
+        System.out.println("find Successors");
         ArrayList<Cordinate> neigbours = getNeightbours(current);
         System.out.println("neighbours "+ neigbours);
         for(Cordinate c:neigbours) {
@@ -60,7 +64,7 @@ public class JPS {
                 if(visited[next.getLineNumber()][next.getColum()]) {
                     // do nothing
                 } else {
-                    prev[next.getLineNumber()][next.getColum()] = current;
+                    //prev[next.getLineNumber()][next.getColum()] = current;
                     updateDistance(current, next);
                     next.setDistanceEstimate(getFscore(next));
                     que.add(next);
@@ -70,39 +74,70 @@ public class JPS {
 
     }
 
-    private void updateDistance(Cordinate prev, Cordinate target) {
+    private void updateDistance(Cordinate prevCordinate, Cordinate target) {
         int old = distance[target.getLineNumber()][target.getColum()];
-        int difference = Math.abs(prev.getLineNumber()+target.getLineNumber())+Math.abs(prev.getColum()+target.getColum());
-        int prevDistance = distance[prev.getLineNumber()][prev.getColum()];
+        int difference = Math.abs(prevCordinate.getLineNumber()-target.getLineNumber())+Math.abs(prevCordinate.getColum()-target.getColum());
+        int prevDistance = distance[prevCordinate.getLineNumber()][prevCordinate.getColum()];
 
         if(old == 0 || (prevDistance + difference)<old) {
             distance[target.getLineNumber()][target.getColum()] = prevDistance + difference;
+            prev[target.getLineNumber()][target.getColum()] = prevCordinate;
         }
 
     }
 
+    private void updateDistance(int targetLine, int targetColum, int prevLine, int prevColum) {
+        int old = distance[targetLine][targetColum];
+        int difference = Math.abs(prevLine-targetLine)+Math.abs(prevColum-targetColum);
+        int prevDistance = distance[prevLine][prevColum];
+
+        if(old == 0 || (prevDistance + difference)<old) {
+            distance[targetLine][targetColum] = prevDistance + difference;
+        }
+    }
+
+    private void updateDistance(Cordinate target, int prevLine, int prevColum) {
+        int targetLine = target.getLineNumber();
+        int targetColum = target.getColum();
+        int old = distance[targetLine][targetColum];
+        int difference = Math.abs(prevLine-targetLine)+Math.abs(prevColum-targetColum);
+        int prevDistance = distance[prevLine][prevColum];
+
+        if(old == 0 || (prevDistance + difference)<old) {
+            distance[targetLine][targetColum] = prevDistance + difference;
+            prev[targetLine][targetColum] = new Cordinate(prevLine, prevColum);
+        }
+    }
+
     private ArrayList<Cordinate> getNeightbours(Cordinate current) {
+        System.out.println("getNeighbours");
         ArrayList<Cordinate> neighbours = new ArrayList<Cordinate>();
         int cLine = current.getLineNumber();
         int cColum = current.getColum();
         Cordinate parent = prev[cLine][cColum];
-
+        System.out.println("current "+ current);
+        System.out.println("parent "+parent);
+        Cordinate neighbour;
         if(parent == null) { // this is the starting square
             if(map.terrainPassableAt(cLine+1 , cColum)) {
                 neighbours.add(new Cordinate(cLine +1, cColum));
                 distance[cLine+1][cColum] = 1;
+                prev[cLine+1][cColum] = current;
             }
             if(map.terrainPassableAt(cLine-1 , cColum)) {
                 neighbours.add(new Cordinate(cLine -1, cColum));
                 distance[cLine-1][cColum] = 1;
+                prev[cLine-1][cColum] = current;
             }
             if(map.terrainPassableAt(cLine, cColum+1)) {
                 neighbours.add(new Cordinate(cLine, cColum+1));
                 distance[cLine][cColum+1] = 1;
+                prev[cLine][cColum+1] = current;
             }
             if(map.terrainPassableAt(cLine, cColum-1)) {
                 neighbours.add(new Cordinate(cLine, cColum-1));
                 distance[cLine][cColum-1] = 1;
+                prev[cLine][cColum-1] = current;
             }
             
         } else {
@@ -159,7 +194,7 @@ public class JPS {
             return target;
         }
 
-        if (map.terrainPassableAt(tLine,tColum)) {
+        if (!map.terrainPassableAt(tLine,tColum)) {
             System.out.println("terrain not passable at "+tLine+" "+tColum);
             return null;
         }

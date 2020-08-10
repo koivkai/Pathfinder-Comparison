@@ -1,8 +1,8 @@
 logicTest/AstarTest.java
  logicTest.AstarTest
-logicTest/JPSTest.java
- logicTest.JPSTest
-logicTest/BFSTest.java
- logicTest.BFSTest
 logicTest/DijkstraTest.java
  logicTest.DijkstraTest
+logicTest/BFSTest.java
+ logicTest.BFSTest
+logicTest/JPSTest.java
+ logicTest.JPSTest

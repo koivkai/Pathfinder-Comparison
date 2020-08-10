@@ -6,8 +6,8 @@ datastructures/Cordinate.java
  datastructures.Cordinate
 textUI/PCTextUI.java
  textUI.PCTextUI
-logic/JPS.java
- logic.JPS
+logic/Astar.java
+ logic.Astar
 logic/Dijkstra.java
  logic.Dijkstra
 datastructures/PathMap.java
@@ -16,5 +16,5 @@ logic/MapReader.java
  logic.MapReader
 logic/BFS.java
  logic.BFS
-logic/Astar.java
- logic.Astar
+logic/JPS.java
+ logic.JPS
