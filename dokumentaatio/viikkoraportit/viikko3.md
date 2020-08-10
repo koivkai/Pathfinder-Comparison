@@ -1,4 +1,4 @@
-## Viikkoraportti viikko2
+## Viikkoraportti viikko 3
 Tällä viikolla melkein kaikki aika meni JPS-algoritmin parissa. Ensin sen tutkimiseen ja sitten yritin implementoida sen mutta en saanut vielä sitä toimimaan.
 
 ### Kysymys: 
