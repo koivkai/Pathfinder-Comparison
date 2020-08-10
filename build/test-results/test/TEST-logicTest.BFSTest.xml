@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="logicTest.BFSTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-08-10T10:09:44" hostname="Kaius-MBP" time="0.029">
+<testsuite name="logicTest.BFSTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-08-10T10:56:22" hostname="Kaius-MBP" time="0.005">
   <properties/>
-  <testcase name="findsPathTreeline" classname="logicTest.BFSTest" time="0.012"/>
-  <testcase name="noPathExits" classname="logicTest.BFSTest" time="0.007"/>
-  <testcase name="findsPathNoObstacle" classname="logicTest.BFSTest" time="0.01"/>
+  <testcase name="findsPathTreeline" classname="logicTest.BFSTest" time="0.002"/>
+  <testcase name="noPathExits" classname="logicTest.BFSTest" time="0.001"/>
+  <testcase name="findsPathNoObstacle" classname="logicTest.BFSTest" time="0.001"/>
   <system-out><![CDATA[Cordinate [colum=1, lineNumber=4]
 Cordinate [colum=1, lineNumber=3]
 Cordinate [colum=1, lineNumber=5]

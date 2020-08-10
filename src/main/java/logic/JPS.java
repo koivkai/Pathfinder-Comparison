@@ -74,14 +74,19 @@ public class JPS {
 
     }
 
-    private void updateDistance(Cordinate prevCordinate, Cordinate target) {
-        int old = distance[target.getLineNumber()][target.getColum()];
-        int difference = Math.abs(prevCordinate.getLineNumber()-target.getLineNumber())+Math.abs(prevCordinate.getColum()-target.getColum());
-        int prevDistance = distance[prevCordinate.getLineNumber()][prevCordinate.getColum()];
+    private void updateDistance(Cordinate fromCordinate, Cordinate targetCordinate) {
+        System.out.println("updating distance from "+fromCordinate+" to "+targetCordinate);
+        int old = distance[targetCordinate.getLineNumber()][targetCordinate.getColum()];
+        int difference = Math.abs(fromCordinate.getLineNumber()-targetCordinate.getLineNumber())+Math.abs(fromCordinate.getColum()-targetCordinate.getColum());
+        int prevDistance = distance[fromCordinate.getLineNumber()][fromCordinate.getColum()];
 
         if(old == 0 || (prevDistance + difference)<old) {
-            distance[target.getLineNumber()][target.getColum()] = prevDistance + difference;
-            prev[target.getLineNumber()][target.getColum()] = prevCordinate;
+            distance[targetCordinate.getLineNumber()][targetCordinate.getColum()] = prevDistance + difference;
+            prev[targetCordinate.getLineNumber()][targetCordinate.getColum()] = fromCordinate;
+            System.out.println("distance updated");
+            System.out.println("prev["+targetCordinate.getLineNumber()+"]["+targetCordinate.getColum()+"] is now "+ prev[targetCordinate.getLineNumber()][targetCordinate.getColum()]);
+        } else {
+            System.out.println("distance unchanged");
         }
 
     }
@@ -149,34 +154,50 @@ public class JPS {
             if (verticalDistance != 0) { 
                 
                 if(map.terrainPassableAt(cLine, cColum+1)) {
-                    neighbours.add(new Cordinate(cLine, cColum+1));
+                    neighbour = new Cordinate(cLine, cColum+1);
+                    neighbours.add(neighbour);
+                    updateDistance(current, neighbour);
                 }
                 if(map.terrainPassableAt(cLine, cColum-1)) {
-                    neighbours.add(new Cordinate(cLine, cColum-1));
+                    neighbour = new Cordinate(cLine, cColum-1);
+                    neighbours.add(neighbour);
+                    updateDistance(current, neighbour);
                 }
                 if(verticalDistance > 0) { // going down
                     if(map.terrainPassableAt(cLine+1, cColum)) {
-                        neighbours.add(new Cordinate(cLine+1, cColum));
+                        neighbour = new Cordinate(cLine+1, cColum);
+                        neighbours.add(neighbour);
+                        updateDistance(current, neighbour);
                     }
                 } else { // going up
                     if(map.terrainPassableAt(cLine-1, cColum)) {
-                        neighbours.add(new Cordinate(cLine-1, cColum));
+                        neighbour = new Cordinate(cLine-1, cColum);
+                        neighbours.add(neighbour);
+                        updateDistance(current, neighbour);
                     }
                 }
             } else if (horizontalDistance != 0) {
                 if(map.terrainPassableAt(cLine+1, cColum)) {
-                    neighbours.add(new Cordinate(cLine+1, cColum));
+                    neighbour = new Cordinate(cLine+1, cColum);
+                    neighbours.add(neighbour);
+                    updateDistance(current, neighbour);
                 }
                 if(map.terrainPassableAt(cLine-1, cColum)) {
-                    neighbours.add(new Cordinate(cLine-1, cColum));
+                    neighbour = new Cordinate(cLine-1, cColum);
+                    neighbours.add(neighbour);
+                    updateDistance(current, neighbour);
                 }
                 if(horizontalDistance > 0) { // came from left
                     if(map.terrainPassableAt(cLine, cColum+1)) {
-                        neighbours.add(new Cordinate(cLine, cColum+1));
+                        neighbour = new Cordinate(cLine, cColum+1);
+                        neighbours.add(neighbour);
+                        updateDistance(current, neighbour);
                     }
                 } else { // came from right;
                     if(map.terrainPassableAt(cLine, cColum-1)) {
-                        neighbours.add(new Cordinate(cLine, cColum-1));
+                        neighbour = new Cordinate(cLine, cColum-1);
+                        neighbours.add(neighbour);
+                        updateDistance(current, neighbour);
                     }
                 }
             }

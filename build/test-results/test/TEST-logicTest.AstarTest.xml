@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="logicTest.AstarTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-08-10T10:09:44" hostname="Kaius-MBP" time="0.02">
+<testsuite name="logicTest.AstarTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-08-10T10:56:22" hostname="Kaius-MBP" time="0.006">
   <properties/>
-  <testcase name="findsPathTreeline" classname="logicTest.AstarTest" time="0.006"/>
-  <testcase name="findsPathThreeTreelines" classname="logicTest.AstarTest" time="0.005"/>
-  <testcase name="findsPathNoObstacles" classname="logicTest.AstarTest" time="0.001"/>
-  <testcase name="noPathExits" classname="logicTest.AstarTest" time="0.004"/>
-  <testcase name="findsPathTwoTreelines" classname="logicTest.AstarTest" time="0.003"/>
+  <testcase name="findsPathTreeline" classname="logicTest.AstarTest" time="0.002"/>
+  <testcase name="findsPathThreeTreelines" classname="logicTest.AstarTest" time="0.001"/>
+  <testcase name="findsPathNoObstacles" classname="logicTest.AstarTest" time="0.0"/>
+  <testcase name="noPathExits" classname="logicTest.AstarTest" time="0.001"/>
+  <testcase name="findsPathTwoTreelines" classname="logicTest.AstarTest" time="0.001"/>
   <system-out><![CDATA[Cordinate [colum=1, lineNumber=4]
 Cordinate [colum=2, lineNumber=4]
 Cordinate [colum=3, lineNumber=4]
