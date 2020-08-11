@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="logicTest.AstarTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-08-10T11:18:38" hostname="Kaius-MBP" time="0.006">
+<testsuite name="logicTest.AstarTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-08-11T09:57:55" hostname="Kaius-MBP" time="0.006">
   <properties/>
-  <testcase name="findsPathTreeline" classname="logicTest.AstarTest" time="0.002"/>
+  <testcase name="findsPathTreeline" classname="logicTest.AstarTest" time="0.001"/>
   <testcase name="findsPathThreeTreelines" classname="logicTest.AstarTest" time="0.001"/>
-  <testcase name="findsPathNoObstacles" classname="logicTest.AstarTest" time="0.001"/>
+  <testcase name="findsPathNoObstacles" classname="logicTest.AstarTest" time="0.0"/>
   <testcase name="noPathExits" classname="logicTest.AstarTest" time="0.001"/>
   <testcase name="findsPathTwoTreelines" classname="logicTest.AstarTest" time="0.001"/>
   <system-out><![CDATA[Cordinate [colum=1, lineNumber=4]

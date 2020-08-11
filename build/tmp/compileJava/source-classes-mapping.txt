@@ -18,3 +18,5 @@ logic/BFS.java
  logic.BFS
 logic/Astar.java
  logic.Astar
+datastructures/MyDeque.java
+ datastructures.MyDeque
