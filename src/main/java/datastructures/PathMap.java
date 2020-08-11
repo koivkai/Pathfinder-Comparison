@@ -8,14 +8,14 @@ public class PathMap {
     int height;
     int width;
 
+    public PathMap() {
+    }
+
     public PathMap(char[][] map, int height, int width) {
         this.map = map;
         this.height = height;
         this.width = width;
-    }
-
-    public PathMap() {
-    }
+    } 
 
     public char[][] getMap() {
         return map;
@@ -63,9 +63,7 @@ public class PathMap {
     }
 
     public void print() {
-
         System.out.println("Printing map");
-        //System.out.println(Arrays.toString(map));
         for(int lineNumber=0; lineNumber<this.height;lineNumber++){
             for(int colum = 0; colum <this.width;colum++) {
                 System.out.print(this.map[lineNumber][colum]);
@@ -75,6 +73,5 @@ public class PathMap {
             }
         }
     }
-
 
 }

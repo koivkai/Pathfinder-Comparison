@@ -8,42 +8,42 @@ public class PathMap {
     int height;
     int width;
 
-<span class="fc" id="L11">    public PathMap(char[][] map, int height, int width) {</span>
-<span class="fc" id="L12">        this.map = map;</span>
-<span class="fc" id="L13">        this.height = height;</span>
-<span class="fc" id="L14">        this.width = width;</span>
-<span class="fc" id="L15">    }</span>
+<span class="nc" id="L11">    public PathMap() {</span>
+<span class="nc" id="L12">    }</span>
 
-<span class="nc" id="L17">    public PathMap() {</span>
-<span class="nc" id="L18">    }</span>
+<span class="fc" id="L14">    public PathMap(char[][] map, int height, int width) {</span>
+<span class="fc" id="L15">        this.map = map;</span>
+<span class="fc" id="L16">        this.height = height;</span>
+<span class="fc" id="L17">        this.width = width;</span>
+<span class="fc" id="L18">    } </span>
 
     public char[][] getMap() {
-<span class="nc" id="L21">        return map;</span>
+<span class="fc" id="L21">        return map;</span>
     }
 
     public void setMap(char[][] map) {
-<span class="nc" id="L25">        this.map = map;</span>
-<span class="nc" id="L26">    }</span>
+<span class="fc" id="L25">        this.map = map;</span>
+<span class="fc" id="L26">    }</span>
 
     public int getHeight() {
 <span class="fc" id="L29">        return height;</span>
     }
 
     public void setHeight(int height) {
-<span class="nc" id="L33">        this.height = height;</span>
-<span class="nc" id="L34">    }</span>
+<span class="fc" id="L33">        this.height = height;</span>
+<span class="fc" id="L34">    }</span>
 
     public int getWidth() {
 <span class="fc" id="L37">        return width;</span>
     }
 
     public void setWidth(int width) {
-<span class="nc" id="L41">        this.width = width;</span>
-<span class="nc" id="L42">    }</span>
+<span class="fc" id="L41">        this.width = width;</span>
+<span class="fc" id="L42">    }</span>
 
     public char terrainAt(int lineNumber, int colum) {
-<span class="pc bpc" id="L45" title="4 of 8 branches missed.">        if(lineNumber &gt;= this.width || colum &gt;= this.height || lineNumber &lt; 0 || colum &lt; 0) {</span>
-<span class="nc" id="L46">            return '@';</span>
+<span class="fc bfc" id="L45" title="All 8 branches covered.">        if(lineNumber &gt;= this.width || colum &gt;= this.height || lineNumber &lt; 0 || colum &lt; 0) {</span>
+<span class="fc" id="L46">            return '@';</span>
         } 
 <span class="fc" id="L48">        return (this.map[lineNumber][colum]);</span>
     }
@@ -63,19 +63,16 @@ public class PathMap {
     }
 
     public void print() {
-
-<span class="nc" id="L67">        System.out.println(&quot;Printing map&quot;);</span>
-        //System.out.println(Arrays.toString(map));
-<span class="nc bnc" id="L69" title="All 2 branches missed.">        for(int lineNumber=0; lineNumber&lt;this.height;lineNumber++){</span>
-<span class="nc bnc" id="L70" title="All 2 branches missed.">            for(int colum = 0; colum &lt;this.width;colum++) {</span>
-<span class="nc" id="L71">                System.out.print(this.map[lineNumber][colum]);</span>
+<span class="nc" id="L66">        System.out.println(&quot;Printing map&quot;);</span>
+<span class="nc bnc" id="L67" title="All 2 branches missed.">        for(int lineNumber=0; lineNumber&lt;this.height;lineNumber++){</span>
+<span class="nc bnc" id="L68" title="All 2 branches missed.">            for(int colum = 0; colum &lt;this.width;colum++) {</span>
+<span class="nc" id="L69">                System.out.print(this.map[lineNumber][colum]);</span>
             }
-<span class="nc bnc" id="L73" title="All 2 branches missed.">            if(lineNumber != this.height -1){</span>
-<span class="nc" id="L74">                System.out.println(&quot;&quot;);</span>
+<span class="nc bnc" id="L71" title="All 2 branches missed.">            if(lineNumber != this.height -1){</span>
+<span class="nc" id="L72">                System.out.println(&quot;&quot;);</span>
             }
         }
-<span class="nc" id="L77">    }</span>
-
+<span class="nc" id="L75">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

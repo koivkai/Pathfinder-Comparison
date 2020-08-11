@@ -1,12 +1,14 @@
+datastructuresTest/MyDequeTest.java
+ datastructuresTest.MyDequeTest
+datastructuresTest/CordinateQueTest.java
+ datastructuresTest.CordinateQueTest
 logicTest/AstarTest.java
  logicTest.AstarTest
 logicTest/JPSTest.java
  logicTest.JPSTest
+datastructuresTest/PathMapTest.java
+ datastructuresTest.PathMapTest
 logicTest/BFSTest.java
  logicTest.BFSTest
 logicTest/DijkstraTest.java
  logicTest.DijkstraTest
-datastructuresTest/CordinateQueTest.java
- datastructuresTest.CordinateQueTest
-datastructuresTest/MyDequeTest.java
- datastructuresTest.MyDequeTest
