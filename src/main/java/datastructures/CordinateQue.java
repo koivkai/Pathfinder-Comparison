@@ -2,35 +2,32 @@ package datastructures;
 
 import java.util.Arrays;
 
-/*  forgot needed a cordinate que not an int que
-oh well.
-*/
-public class MyDeque {
+public class CordinateQue {
     int size;
     int used;
-    int[] array;
+    Cordinate[] array;
     int head;
     int tail;
 
-    public MyDeque() {
+    public CordinateQue() {
         this.size = 50;
-        this.array = new int[50];
+        this.array = new Cordinate[50];
         this.used = 0;
         this.head = 0;
         this.tail = 0;
     }
 
-    public MyDeque(int size) {
+    public CordinateQue(int size) {
         this.size = size;
-        this.array = new int[size];
+        this.array = new Cordinate[size];
         this.used = 0;
         this.head = 0;
         this.tail = 0;
     }
 
-    public void add(int i) {
+    public void add(Cordinate c) {
         if (used < size) {
-            array[tail] = i;
+            array[tail] = c;
             tail++;
             used++;
             if (tail == size) {
@@ -38,19 +35,19 @@ public class MyDeque {
             }
         } else {
             grow();
-            add(i);
+            add(c);
         }
     }
 
-    public int poll() {
-        int i = array[head];
+    public Cordinate poll() {
+        Cordinate c = array[head];
         head++;
         used--;
         if (head == size) {
             head = 0;
         }
 
-        return i;
+        return c;
     }
 
     public boolean isEmpty() {
@@ -58,7 +55,7 @@ public class MyDeque {
     }
 
     private void grow() {
-        int[] newArray = new int[size * 2];
+        Cordinate[] newArray = new Cordinate[size * 2];
         int pos = 0;
         int i = head;
         while (i < size) {
@@ -81,11 +78,7 @@ public class MyDeque {
 
     @Override
     public String toString() {
-        return "MyDeque " + Arrays.toString(array);
+        return "MyDeque " + Arrays.toString(this.array);
     }
 
-    
-    
-
-    
 }

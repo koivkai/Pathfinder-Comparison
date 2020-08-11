@@ -33,7 +33,7 @@ public class MyDequeTest {
     }
 
     @Test
-    public void isNotEmptyAfterContentsArePolled() {
+    public void isEmptyAfterContentsArePolled() {
         que.add(1);
         que.add(2);
         que.add(3);
@@ -107,7 +107,6 @@ public class MyDequeTest {
         que.add(2);
         que.add(3);
         que.add(4);
-        System.out.println(que);
         assertEquals("MyDeque [1, 2, 3, 4]",que.toString());
         
     }

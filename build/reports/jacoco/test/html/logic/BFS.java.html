@@ -4,69 +4,70 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 import datastructures.Cordinate;
+import datastructures.CordinateQue;
 import datastructures.PathMap;
 
 public class BFS {
 
-<span class="fc" id="L11">    public BFS() {</span>
-<span class="fc" id="L12">    }</span>
+<span class="fc" id="L12">    public BFS() {</span>
+<span class="fc" id="L13">    }</span>
 
     public int findPath(PathMap map, int startLinenumber, int startColum, int goalLineNumber, int goalColum) {
-<span class="fc" id="L15">        int[][]distance = new int[map.getHeight()][map.getWidth()];</span>
-<span class="fc" id="L16">        boolean[][]visited = new boolean[map.getHeight()][map.getWidth()];</span>
-<span class="fc" id="L17">        Cordinate[][]prev = new Cordinate[map.getHeight()][map.getWidth()];</span>
-<span class="fc" id="L18">        Queue&lt;Cordinate&gt; que = new ArrayDeque&lt;Cordinate&gt;();</span>
-<span class="fc" id="L19">        Cordinate start = new Cordinate(startLinenumber, startColum);</span>
-<span class="fc" id="L20">        que.add(start);</span>
+<span class="fc" id="L16">        int[][]distance = new int[map.getHeight()][map.getWidth()];</span>
+<span class="fc" id="L17">        boolean[][]visited = new boolean[map.getHeight()][map.getWidth()];</span>
+<span class="fc" id="L18">        Cordinate[][]prev = new Cordinate[map.getHeight()][map.getWidth()];</span>
+<span class="fc" id="L19">        CordinateQue que = new CordinateQue();</span>
+<span class="fc" id="L20">        Cordinate start = new Cordinate(startLinenumber, startColum);</span>
+<span class="fc" id="L21">        que.add(start);</span>
 
-<span class="fc" id="L22">        Cordinate current = new Cordinate(0, 0);</span>
-<span class="fc bfc" id="L23" title="All 2 branches covered.">        while(!que.isEmpty()) {</span>
-<span class="fc" id="L24">            current = que.poll();</span>
-<span class="fc" id="L25">            int line = current.getLineNumber();</span>
-<span class="fc" id="L26">            int colum = current.getColum();</span>
+<span class="fc" id="L23">        Cordinate current = new Cordinate(0, 0);</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        while(!que.isEmpty()) {</span>
+<span class="fc" id="L25">            current = que.poll();</span>
+<span class="fc" id="L26">            int line = current.getLineNumber();</span>
+<span class="fc" id="L27">            int colum = current.getColum();</span>
             
-<span class="fc" id="L28">            System.out.println(current);</span>
-<span class="fc bfc" id="L29" title="All 4 branches covered.">            if(line == goalLineNumber &amp;&amp; colum == goalColum) {</span>
+<span class="fc" id="L29">            System.out.println(current);</span>
+<span class="fc bfc" id="L30" title="All 4 branches covered.">            if(line == goalLineNumber &amp;&amp; colum == goalColum) {</span>
                 //path found
-<span class="fc" id="L31">                return distance[line][colum];</span>
+<span class="fc" id="L32">                return distance[line][colum];</span>
             }
 
-<span class="fc bfc" id="L34" title="All 2 branches covered.">            if(visited[line][colum]) {</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">            if(visited[line][colum]) {</span>
                 // do nothing
             } else  {
-<span class="fc" id="L37">                visited[line][colum] = true;</span>
-<span class="fc" id="L38">                char terrain = 'a';</span>
+<span class="fc" id="L38">                visited[line][colum] = true;</span>
+<span class="fc" id="L39">                char terrain = 'a';</span>
                 // up
-<span class="fc" id="L40">                terrain = map.terrainAt(line-1, colum);</span>
-<span class="fc bfc" id="L41" title="All 2 branches covered.">                if (Helpers.passable(terrain)) {</span>
-<span class="fc" id="L42">                    que.add(new Cordinate(line-1,colum));</span>
-<span class="fc" id="L43">                   prev[line-1][colum] = current;</span>
-<span class="fc" id="L44">                    distance[line-1][colum] = distance[line][colum] +1;</span>
+<span class="fc" id="L41">                terrain = map.terrainAt(line-1, colum);</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">                if (Helpers.passable(terrain)) {</span>
+<span class="fc" id="L43">                    que.add(new Cordinate(line-1,colum));</span>
+<span class="fc" id="L44">                   prev[line-1][colum] = current;</span>
+<span class="fc" id="L45">                    distance[line-1][colum] = distance[line][colum] +1;</span>
                 }
                 // down
-<span class="fc" id="L47">                terrain = map.terrainAt(line+1, colum);</span>
-<span class="fc bfc" id="L48" title="All 2 branches covered.">                if (Helpers.passable(terrain)) {</span>
-<span class="fc" id="L49">                    que.add(new Cordinate(line+1,colum));</span>
-<span class="fc" id="L50">                   prev[line+1][colum] = current;</span>
-<span class="fc" id="L51">                    distance[line+1][colum] = distance[line][colum] +1;</span>
+<span class="fc" id="L48">                terrain = map.terrainAt(line+1, colum);</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">                if (Helpers.passable(terrain)) {</span>
+<span class="fc" id="L50">                    que.add(new Cordinate(line+1,colum));</span>
+<span class="fc" id="L51">                   prev[line+1][colum] = current;</span>
+<span class="fc" id="L52">                    distance[line+1][colum] = distance[line][colum] +1;</span>
                 }
                 // right
-<span class="fc" id="L54">                terrain = map.terrainAt(line, colum+1);</span>
-<span class="fc bfc" id="L55" title="All 2 branches covered.">                if (Helpers.passable(terrain)) {</span>
-<span class="fc" id="L56">                    que.add(new Cordinate(line,colum+1));</span>
-<span class="fc" id="L57">                   prev[line][colum+1] = current;</span>
-<span class="fc" id="L58">                    distance[line][colum+1] = distance[line][colum] +1;</span>
+<span class="fc" id="L55">                terrain = map.terrainAt(line, colum+1);</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">                if (Helpers.passable(terrain)) {</span>
+<span class="fc" id="L57">                    que.add(new Cordinate(line,colum+1));</span>
+<span class="fc" id="L58">                   prev[line][colum+1] = current;</span>
+<span class="fc" id="L59">                    distance[line][colum+1] = distance[line][colum] +1;</span>
                 }
                 // left
-<span class="fc" id="L61">                terrain = map.terrainAt(line, colum-1);</span>
-<span class="fc bfc" id="L62" title="All 2 branches covered.">                if (Helpers.passable(terrain)) {</span>
-<span class="fc" id="L63">                    que.add(new Cordinate(line,colum-1));</span>
-<span class="fc" id="L64">                   prev[line][colum-1] = current;</span>
-<span class="fc" id="L65">                    distance[line][colum+1] = distance[line][colum] +1;</span>
+<span class="fc" id="L62">                terrain = map.terrainAt(line, colum-1);</span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">                if (Helpers.passable(terrain)) {</span>
+<span class="fc" id="L64">                    que.add(new Cordinate(line,colum-1));</span>
+<span class="fc" id="L65">                   prev[line][colum-1] = current;</span>
+<span class="fc" id="L66">                    distance[line][colum+1] = distance[line][colum] +1;</span>
                 }
             }
-<span class="fc" id="L68">        }</span>
-<span class="fc" id="L69">        return -1; // no path found</span>
+<span class="fc" id="L69">        }</span>
+<span class="fc" id="L70">        return -1; // no path found</span>
     }
 
 }

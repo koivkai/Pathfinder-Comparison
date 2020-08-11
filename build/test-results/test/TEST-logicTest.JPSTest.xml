@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="logicTest.JPSTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-08-11T09:57:55" hostname="Kaius-MBP" time="0.135">
+<testsuite name="logicTest.JPSTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-08-11T10:36:16" hostname="Kaius-MBP" time="0.141">
   <properties/>
-  <testcase name="findsPathTreeline" classname="logicTest.JPSTest" time="0.072"/>
-  <testcase name="findsPathThreeTreelines" classname="logicTest.JPSTest" time="0.027"/>
-  <testcase name="findsPathNoObstacles" classname="logicTest.JPSTest" time="0.016"/>
+  <testcase name="findsPathTreeline" classname="logicTest.JPSTest" time="0.075"/>
+  <testcase name="findsPathThreeTreelines" classname="logicTest.JPSTest" time="0.026"/>
+  <testcase name="findsPathNoObstacles" classname="logicTest.JPSTest" time="0.018"/>
   <testcase name="findsPathNoObstaclesReverse" classname="logicTest.JPSTest" time="0.008"/>
   <testcase name="noPathExits" classname="logicTest.JPSTest" time="0.004"/>
   <testcase name="findsPathThreeTreelinesReverse" classname="logicTest.JPSTest" time="0.007"/>

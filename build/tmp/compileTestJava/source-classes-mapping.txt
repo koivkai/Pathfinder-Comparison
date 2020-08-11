@@ -6,5 +6,7 @@ logicTest/BFSTest.java
  logicTest.BFSTest
 logicTest/DijkstraTest.java
  logicTest.DijkstraTest
+datastructuresTest/CordinateQueTest.java
+ datastructuresTest.CordinateQueTest
 datastructuresTest/MyDequeTest.java
  datastructuresTest.MyDequeTest

@@ -51,6 +51,36 @@ public class Cordinate implements Comparable<Cordinate>{
         return this.distanceEstimate - c.getDistanceEstimate();
     }
 
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + colum;
+        result = prime * result + distanceEstimate;
+        result = prime * result + lineNumber;
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Cordinate other = (Cordinate) obj;
+        if (colum != other.colum)
+            return false;
+        if (distanceEstimate != other.distanceEstimate)
+            return false;
+        if (lineNumber != other.lineNumber)
+            return false;
+        return true;
+    }
+
+    
+
    
 
 

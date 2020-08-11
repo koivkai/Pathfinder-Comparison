@@ -1,22 +1,24 @@
-logic/MapReader.java
- logic.MapReader
-Main.java
- Main
-datastructures/Cordinate.java
- datastructures.Cordinate
 textUI/PCTextUI.java
  textUI.PCTextUI
 datastructures/PathMap.java
  datastructures.PathMap
+logic/Astar.java
+ logic.Astar
+Main.java
+ Main
+logic/Helpers.java
+ logic.Helpers
+logic/MapReader.java
+ logic.MapReader
 logic/JPS.java
  logic.JPS
 logic/Dijkstra.java
  logic.Dijkstra
-logic/Helpers.java
- logic.Helpers
-logic/BFS.java
- logic.BFS
-logic/Astar.java
- logic.Astar
+datastructures/CordinateQue.java
+ datastructures.CordinateQue
+datastructures/Cordinate.java
+ datastructures.Cordinate
 datastructures/MyDeque.java
  datastructures.MyDeque
+logic/BFS.java
+ logic.BFS

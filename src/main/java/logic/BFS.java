@@ -4,6 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 import datastructures.Cordinate;
+import datastructures.CordinateQue;
 import datastructures.PathMap;
 
 public class BFS {
@@ -15,7 +16,7 @@ public class BFS {
         int[][]distance = new int[map.getHeight()][map.getWidth()];
         boolean[][]visited = new boolean[map.getHeight()][map.getWidth()];
         Cordinate[][]prev = new Cordinate[map.getHeight()][map.getWidth()];
-        Queue<Cordinate> que = new ArrayDeque<Cordinate>();
+        CordinateQue que = new CordinateQue();
         Cordinate start = new Cordinate(startLinenumber, startColum);
         que.add(start);
 

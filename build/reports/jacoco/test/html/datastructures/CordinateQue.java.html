@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fi"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CordinateQue.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pathfinder-Comparison</a> &gt; <a href="index.source.html" class="el_package">datastructures</a> &gt; <span class="el_source">CordinateQue.java</span></div><h1>CordinateQue.java</h1><pre class="source lang-java linenums">package datastructures;
+
+import java.util.Arrays;
+
+public class CordinateQue {
+    int size;
+    int used;
+    Cordinate[] array;
+    int head;
+    int tail;
+
+<span class="fc" id="L12">    public CordinateQue() {</span>
+<span class="fc" id="L13">        this.size = 50;</span>
+<span class="fc" id="L14">        this.array = new Cordinate[50];</span>
+<span class="fc" id="L15">        this.used = 0;</span>
+<span class="fc" id="L16">        this.head = 0;</span>
+<span class="fc" id="L17">        this.tail = 0;</span>
+<span class="fc" id="L18">    }</span>
+
+<span class="fc" id="L20">    public CordinateQue(int size) {</span>
+<span class="fc" id="L21">        this.size = size;</span>
+<span class="fc" id="L22">        this.array = new Cordinate[size];</span>
+<span class="fc" id="L23">        this.used = 0;</span>
+<span class="fc" id="L24">        this.head = 0;</span>
+<span class="fc" id="L25">        this.tail = 0;</span>
+<span class="fc" id="L26">    }</span>
+
+    public void add(Cordinate c) {
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        if (used &lt; size) {</span>
+<span class="fc" id="L30">            array[tail] = c;</span>
+<span class="fc" id="L31">            tail++;</span>
+<span class="fc" id="L32">            used++;</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">            if (tail == size) {</span>
+<span class="fc" id="L34">                tail = 0;</span>
+            }
+        } else {
+<span class="fc" id="L37">            grow();</span>
+<span class="fc" id="L38">            add(c);</span>
+        }
+<span class="fc" id="L40">    }</span>
+
+    public Cordinate poll() {
+<span class="fc" id="L43">        Cordinate c = array[head];</span>
+<span class="fc" id="L44">        head++;</span>
+<span class="fc" id="L45">        used--;</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">        if (head == size) {</span>
+<span class="fc" id="L47">            head = 0;</span>
+        }
+
+<span class="fc" id="L50">        return c;</span>
+    }
+
+    public boolean isEmpty() {
+<span class="fc bfc" id="L54" title="All 2 branches covered.">        return this.used == 0;</span>
+    }
+
+    private void grow() {
+<span class="fc" id="L58">        Cordinate[] newArray = new Cordinate[size * 2];</span>
+<span class="fc" id="L59">        int pos = 0;</span>
+<span class="fc" id="L60">        int i = head;</span>
+<span class="fc bfc" id="L61" title="All 2 branches covered.">        while (i &lt; size) {</span>
+<span class="fc" id="L62">            newArray[pos] = array[i];</span>
+<span class="fc" id="L63">            pos++;</span>
+<span class="fc" id="L64">            i++;</span>
+        }
+<span class="fc" id="L66">        int j = 0;</span>
+<span class="fc bfc" id="L67" title="All 2 branches covered.">        while (j &lt; tail) {</span>
+<span class="fc" id="L68">            newArray[pos] = array[j];</span>
+<span class="fc" id="L69">            j++;</span>
+<span class="fc" id="L70">            pos++;</span>
+        }
+
+<span class="fc" id="L73">        this.array = newArray;</span>
+<span class="fc" id="L74">        this.size = size * 2;</span>
+<span class="fc" id="L75">        this.head = 0;</span>
+<span class="fc" id="L76">        this.tail = pos;</span>
+<span class="fc" id="L77">    }</span>
+
+    @Override
+    public String toString() {
+<span class="fc" id="L81">        return &quot;MyDeque &quot; + Arrays.toString(this.array);</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
