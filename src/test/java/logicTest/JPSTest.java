@@ -2,7 +2,6 @@ package logicTest;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
-
 import datastructures.PathMap;
 import logic.JPS;
 

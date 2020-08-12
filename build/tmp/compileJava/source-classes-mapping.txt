@@ -22,3 +22,5 @@ logic/BFS.java
  logic.BFS
 logic/Astar.java
  logic.Astar
+datastructures/MinHeap.java
+ datastructures.MinHeap

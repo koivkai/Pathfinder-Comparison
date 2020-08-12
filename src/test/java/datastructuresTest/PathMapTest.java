@@ -1,10 +1,8 @@
 package datastructuresTest;
 
 import static org.junit.Assert.*;
-
 import org.junit.Before;
 import org.junit.Test;
-
 import datastructures.PathMap;
 
 public class PathMapTest {

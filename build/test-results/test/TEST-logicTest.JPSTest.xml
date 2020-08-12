@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="logicTest.JPSTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-08-11T10:58:16" hostname="Kaius-MBP" time="0.138">
+<testsuite name="logicTest.JPSTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-08-11T13:46:35" hostname="Kaius-MBP" time="0.158">
   <properties/>
-  <testcase name="findsPathTreeline" classname="logicTest.JPSTest" time="0.079"/>
-  <testcase name="findsPathThreeTreelines" classname="logicTest.JPSTest" time="0.024"/>
-  <testcase name="findsPathNoObstacles" classname="logicTest.JPSTest" time="0.016"/>
-  <testcase name="findsPathNoObstaclesReverse" classname="logicTest.JPSTest" time="0.007"/>
-  <testcase name="noPathExits" classname="logicTest.JPSTest" time="0.003"/>
-  <testcase name="findsPathThreeTreelinesReverse" classname="logicTest.JPSTest" time="0.007"/>
+  <testcase name="findsPathTreeline" classname="logicTest.JPSTest" time="0.076"/>
+  <testcase name="findsPathThreeTreelines" classname="logicTest.JPSTest" time="0.03"/>
+  <testcase name="findsPathNoObstacles" classname="logicTest.JPSTest" time="0.017"/>
+  <testcase name="findsPathNoObstaclesReverse" classname="logicTest.JPSTest" time="0.016"/>
+  <testcase name="noPathExits" classname="logicTest.JPSTest" time="0.007"/>
+  <testcase name="findsPathThreeTreelinesReverse" classname="logicTest.JPSTest" time="0.01"/>
   <system-out><![CDATA[findpath
 current Cordinate [colum=1, lineNumber=4]
 find Successors
