@@ -3,6 +3,8 @@ package datastructuresTest;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
+
+import datastructures.Cordinate;
 import datastructures.MinHeap;
 
 public class MinHeapTest {
@@ -15,28 +17,32 @@ public class MinHeapTest {
 
     @Test
     public void addAndPollWork() {
-        heap.add(1);
-        assertEquals(1, heap.poll());
+        Cordinate one = new Cordinate(1,1,1);
+        heap.add(one);
+        assertEquals(one, heap.poll());
     }
 
     @Test
     public void pollsHasCurrectOrder() {
-        heap.add(3);
-        heap.add(2);
-        heap.add(1);
-        assertEquals(1, heap.poll());
-        assertEquals(2, heap.poll());
-        assertEquals(3, heap.poll());
+        Cordinate thr = new Cordinate(3,3,3);
+        Cordinate two = new Cordinate(2,2,2);
+        Cordinate one = new Cordinate(1,1,1);
+        heap.add(thr);
+        heap.add(two);
+        heap.add(one);
+        assertEquals(one, heap.poll());
+        assertEquals(two, heap.poll());
+        assertEquals(thr, heap.poll());
     }
 
     @Test
     public void heapGrowingWorks() {
         for(int i = 70; i > 0; i--) {
-            heap.add(i);
+            heap.add(new Cordinate(i,i,i));
         }
 
         for(int j = 1; j <= 70; j++) {
-            assertEquals(j, heap.poll());
+            assertEquals(new Cordinate(j,j,j), heap.poll());
         }
     }
 }

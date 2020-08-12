@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fi"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MinHeap.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pathfinder-Comparison</a> &gt; <a href="index.source.html" class="el_package">datastructures</a> &gt; <span class="el_source">MinHeap.java</span></div><h1>MinHeap.java</h1><pre class="source lang-java linenums">package datastructures;
 
 public class MinHeap {
-    int[]heap;
+    Cordinate[]heap;
     int lastPos;
     int size;
 
 <span class="fc" id="L8">    public MinHeap() {</span>
-<span class="fc" id="L9">        heap = new int[51];</span>
+<span class="fc" id="L9">        heap = new Cordinate[51];</span>
 <span class="fc" id="L10">        size = 51;</span>
 <span class="fc" id="L11">        lastPos = 0;</span>
 
 <span class="fc" id="L13">    }</span>
 
-    public void add(int i) {
+    public void add(Cordinate i) {
 <span class="fc bfc" id="L16" title="All 2 branches covered.">        if(lastPos +1 == size) {</span>
 <span class="fc" id="L17">            grow();</span>
 <span class="fc" id="L18">            add(i);</span>
@@ -27,73 +27,75 @@ public class MinHeap {
     private void checkHeapRuleBottomUp(int pos) {
 <span class="fc bfc" id="L28" title="All 2 branches covered.">        if(pos == 1) {</span>
             //done
+        } else {
+<span class="fc" id="L31">            Cordinate child = heap[pos];</span>
+<span class="fc" id="L32">            int parentPos = pos/2;</span>
+<span class="fc" id="L33">            Cordinate parent = heap[parentPos];</span>
+<span class="pc bpc" id="L34" title="1 of 2 branches missed.">            if(parent.getDistanceEstimate() &gt; child.getDistanceEstimate()) {</span>
+<span class="fc" id="L35">                swap(pos,parentPos);</span>
+<span class="fc" id="L36">                checkHeapRuleBottomUp(parentPos);</span>
+            }  
         }
-<span class="fc" id="L31">        int chieldValue = heap[pos];</span>
-<span class="fc" id="L32">        int parentPos = pos/2;</span>
-<span class="fc" id="L33">        int parentValue = heap[parentPos];</span>
-<span class="fc bfc" id="L34" title="All 2 branches covered.">        if(parentValue &gt; chieldValue) {</span>
-<span class="fc" id="L35">            swap(pos,parentPos);</span>
-<span class="fc" id="L36">            checkHeapRuleBottomUp(parentPos);</span>
-        }
-<span class="fc" id="L38">    }</span>
+        
+<span class="fc" id="L40">    }</span>
 
     private void checkHeapRuleTopDown(int pos) {
-<span class="fc" id="L41">        int parentValue = heap[pos];</span>
-<span class="fc" id="L42">        int leftChildPos = pos*2;</span>
-<span class="fc" id="L43">        int rightChildPos = (pos*2)+1;</span>
-        int rightChildValue;
-        int leftChildValue;
+<span class="fc" id="L43">        Cordinate parent = heap[pos];</span>
+<span class="fc" id="L44">        int leftChildPos = pos*2;</span>
+<span class="fc" id="L45">        int rightChildPos = (pos*2)+1;</span>
+        Cordinate rightChild;
+        Cordinate leftChild;
 
-<span class="fc bfc" id="L47" title="All 2 branches covered.">        if(leftChildPos &gt; lastPos) {</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        if(leftChildPos &gt; lastPos) {</span>
             //done
-<span class="fc bfc" id="L49" title="All 2 branches covered.">        } else if(rightChildPos &gt; lastPos) {</span>
-<span class="fc" id="L50">            leftChildValue = heap[leftChildPos];</span>
-<span class="pc bpc" id="L51" title="1 of 2 branches missed.">            if(leftChildValue&lt;parentValue) {</span>
-<span class="nc" id="L52">                swap(leftChildPos,pos);</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">        } else if(rightChildPos &gt; lastPos) {</span>
+<span class="fc" id="L52">            leftChild = heap[leftChildPos];</span>
+<span class="pc bpc" id="L53" title="1 of 2 branches missed.">            if(leftChild.getDistanceEstimate()&lt;parent.getDistanceEstimate()) {</span>
+<span class="nc" id="L54">                swap(leftChildPos,pos);</span>
             }
         } else {
-<span class="fc" id="L55">            leftChildValue = heap[leftChildPos];</span>
-<span class="fc" id="L56">            rightChildValue = heap[rightChildPos];</span>
-<span class="fc bfc" id="L57" title="All 2 branches covered.">            if(leftChildValue &lt; rightChildValue) {</span>
-<span class="pc bpc" id="L58" title="1 of 2 branches missed.">                if(leftChildValue&lt;parentValue) {</span>
-<span class="fc" id="L59">                    swap(leftChildPos,pos);</span>
-<span class="fc" id="L60">                    checkHeapRuleTopDown(leftChildPos);</span>
+<span class="fc" id="L57">            leftChild = heap[leftChildPos];</span>
+<span class="fc" id="L58">            rightChild = heap[rightChildPos];</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">            if(leftChild.getDistanceEstimate() &lt; rightChild.getDistanceEstimate()) {</span>
+<span class="pc bpc" id="L60" title="1 of 2 branches missed.">                if(leftChild.getDistanceEstimate()&lt;parent.getDistanceEstimate()) {</span>
+<span class="fc" id="L61">                    swap(leftChildPos,pos);</span>
+<span class="fc" id="L62">                    checkHeapRuleTopDown(leftChildPos);</span>
                 }
             } else {
-<span class="pc bpc" id="L63" title="1 of 2 branches missed.">                if(rightChildValue &lt; parentValue) {</span>
-<span class="fc" id="L64">                    swap(rightChildPos, pos);</span>
-<span class="fc" id="L65">                    checkHeapRuleTopDown(rightChildPos);</span>
+<span class="pc bpc" id="L65" title="1 of 2 branches missed.">                if(rightChild.getDistanceEstimate() &lt; parent.getDistanceEstimate()) {</span>
+<span class="fc" id="L66">                    swap(rightChildPos, pos);</span>
+<span class="fc" id="L67">                    checkHeapRuleTopDown(rightChildPos);</span>
                 }
             }
         }
-<span class="fc" id="L69">    }</span>
+<span class="fc" id="L71">    }</span>
 
     private void swap(int a, int b) {
-<span class="fc" id="L72">        int temp = heap[a];</span>
-<span class="fc" id="L73">        heap[a] = heap[b];</span>
-<span class="fc" id="L74">        heap[b] = temp;</span>
-<span class="fc" id="L75">    }</span>
+<span class="fc" id="L74">        Cordinate temp = heap[a];</span>
+<span class="fc" id="L75">        heap[a] = heap[b];</span>
+<span class="fc" id="L76">        heap[b] = temp;</span>
+<span class="fc" id="L77">    }</span>
 
-    public int poll() {
-<span class="fc" id="L78">        int min = heap[1];</span>
-<span class="fc" id="L79">        swap(1, lastPos);</span>
-<span class="fc" id="L80">        lastPos--;</span>
-<span class="fc" id="L81">        checkHeapRuleTopDown(1);</span>
-<span class="fc" id="L82">        return min;</span>
+    public Cordinate poll() {
+<span class="fc" id="L80">        Cordinate min = heap[1];</span>
+<span class="fc" id="L81">        swap(1, lastPos);</span>
+<span class="fc" id="L82">        lastPos--;</span>
+<span class="fc" id="L83">        checkHeapRuleTopDown(1);</span>
+<span class="fc" id="L84">        return min;</span>
     }
 
     public boolean isEmpty() {
-<span class="nc bnc" id="L86" title="All 2 branches missed.">        return lastPos == 0;</span>
+<span class="nc bnc" id="L88" title="All 2 branches missed.">        return lastPos == 0;</span>
     }
 
     private void grow() {
-<span class="fc" id="L90">        int[] newHeap = new int[((size-1)*2)+1];</span>
-<span class="fc bfc" id="L91" title="All 2 branches covered.">        for(int i = 1; i&lt;=lastPos;i++) {</span>
-<span class="fc" id="L92">            newHeap[i] = heap[i];</span>
+<span class="fc" id="L92">        Cordinate[] newHeap = new Cordinate[((size-1)*2)+1];</span>
+<span class="fc bfc" id="L93" title="All 2 branches covered.">        for(int i = 1; i&lt;=lastPos;i++) {</span>
+<span class="fc" id="L94">            newHeap[i] = heap[i];</span>
         }
-<span class="fc" id="L94">        heap = newHeap;</span>
-<span class="fc" id="L95">        size = ((size-1)*2)+1;</span>
-<span class="fc" id="L96">    }</span>
+<span class="fc" id="L96">        heap = newHeap;</span>
+<span class="fc" id="L97">        size = ((size-1)*2)+1;</span>
+<span class="fc" id="L98">    }</span>
     
     
 }
