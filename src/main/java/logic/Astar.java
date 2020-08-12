@@ -3,6 +3,7 @@ package logic;
 import java.util.PriorityQueue;
 
 import datastructures.Cordinate;
+import datastructures.MinHeap;
 import datastructures.PathMap;
 
 /**
@@ -11,7 +12,7 @@ import datastructures.PathMap;
 public class Astar {
     int goalLine;
     int goalColum;
-    PriorityQueue<Cordinate> que;
+    MinHeap que;
 
     public Astar() {
         this.goalLine = 0;
@@ -19,7 +20,7 @@ public class Astar {
     }
 
     public int findPath(PathMap map, int startLineNumber, int startColum, int goalLineNumber, int goalColum) {
-        this.que = new PriorityQueue<Cordinate>();
+        this.que = new MinHeap();
         boolean[][] visited = new boolean[map.getHeight()][map.getWidth()];
         Cordinate[][] prev = new Cordinate[map.getHeight()][map.getWidth()];
         int[][]distance = new int[map.getHeight()][map.getWidth()];

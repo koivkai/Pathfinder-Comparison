@@ -3,117 +3,118 @@
 
 import java.util.PriorityQueue;
 import datastructures.Cordinate;
+import datastructures.MinHeap;
 import datastructures.PathMap;
 
 public class Dijkstra {
     int goalLine;
     int goalColum;
-    PriorityQueue&lt;Cordinate&gt; que;
+    MinHeap que;
     int[][] distance;
 
-<span class="fc" id="L14">    public Dijkstra() {</span>
+<span class="fc" id="L15">    public Dijkstra() {</span>
         
-<span class="fc" id="L16">    }</span>
+<span class="fc" id="L17">    }</span>
 
     public int findPath(PathMap map, int startLineNumber, int startColum, int goalLineNumber, int goalColum) {
-<span class="fc" id="L19">        this.que = new PriorityQueue&lt;Cordinate&gt;();</span>
-<span class="fc" id="L20">        boolean[][] visited = new boolean[map.getHeight()][map.getWidth()];</span>
-<span class="fc" id="L21">        Cordinate[][] prev = new Cordinate[map.getHeight()][map.getWidth()];</span>
-<span class="fc" id="L22">        prepDistance(map.getHeight(), map.getWidth());</span>
-<span class="fc" id="L23">        distance[startLineNumber][startColum] = 0;</span>
-<span class="fc" id="L24">        Cordinate start = new Cordinate(startLineNumber, startColum);</span>
-<span class="fc" id="L25">        que.add(start);</span>
-<span class="fc" id="L26">        this.goalLine = goalLineNumber;</span>
-<span class="fc" id="L27">        this.goalColum =goalColum;</span>
-<span class="fc" id="L28">        Cordinate current = new Cordinate (0,0);</span>
-<span class="fc" id="L29">        char terrain = 't';</span>
+<span class="fc" id="L20">        this.que = new MinHeap();</span>
+<span class="fc" id="L21">        boolean[][] visited = new boolean[map.getHeight()][map.getWidth()];</span>
+<span class="fc" id="L22">        Cordinate[][] prev = new Cordinate[map.getHeight()][map.getWidth()];</span>
+<span class="fc" id="L23">        prepDistance(map.getHeight(), map.getWidth());</span>
+<span class="fc" id="L24">        distance[startLineNumber][startColum] = 0;</span>
+<span class="fc" id="L25">        Cordinate start = new Cordinate(startLineNumber, startColum);</span>
+<span class="fc" id="L26">        que.add(start);</span>
+<span class="fc" id="L27">        this.goalLine = goalLineNumber;</span>
+<span class="fc" id="L28">        this.goalColum =goalColum;</span>
+<span class="fc" id="L29">        Cordinate current = new Cordinate (0,0);</span>
+<span class="fc" id="L30">        char terrain = 't';</span>
 
-<span class="fc bfc" id="L31" title="All 2 branches covered.">        while(!que.isEmpty()) {</span>
-<span class="fc" id="L32">            current = que.poll();</span>
-<span class="fc" id="L33">            int line = current.getLineNumber();</span>
-<span class="fc" id="L34">            int colum = current.getColum();</span>
-<span class="fc bfc" id="L35" title="All 2 branches covered.">            if(foundGoal(line, colum)) {</span>
-<span class="fc" id="L36">                return distance[line][colum];</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">        while(!que.isEmpty()) {</span>
+<span class="fc" id="L33">            current = que.poll();</span>
+<span class="fc" id="L34">            int line = current.getLineNumber();</span>
+<span class="fc" id="L35">            int colum = current.getColum();</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">            if(foundGoal(line, colum)) {</span>
+<span class="fc" id="L37">                return distance[line][colum];</span>
             }
-<span class="pc bpc" id="L38" title="1 of 2 branches missed.">            if(visited[line][colum]) {</span>
+<span class="pc bpc" id="L39" title="1 of 2 branches missed.">            if(visited[line][colum]) {</span>
                 //do nothing
             } else {
-<span class="fc" id="L41">                visited[line][colum] = true;</span>
+<span class="fc" id="L42">                visited[line][colum] = true;</span>
                 
                 // up
-<span class="fc" id="L44">                terrain = map.terrainAt(line-1, colum);</span>
-<span class="fc bfc" id="L45" title="All 2 branches covered.">                if (Helpers.passable(terrain)) {</span>
-<span class="fc" id="L46">                    int currentDistance = distance[line-1][colum];</span>
-<span class="fc" id="L47">                    int newDistance = distance[line][colum]+1;</span>
-<span class="fc bfc" id="L48" title="All 2 branches covered.">                    if(newDistance &lt; currentDistance) {</span>
-<span class="fc" id="L49">                        distance[line-1][colum]= newDistance;</span>
-<span class="fc" id="L50">                        Cordinate up = new Cordinate(line-1,colum,newDistance);</span>
-<span class="fc" id="L51">                        prev[line-1][colum] = up;</span>
-<span class="fc" id="L52">                        que.add(up);</span>
+<span class="fc" id="L45">                terrain = map.terrainAt(line-1, colum);</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">                if (Helpers.passable(terrain)) {</span>
+<span class="fc" id="L47">                    int currentDistance = distance[line-1][colum];</span>
+<span class="fc" id="L48">                    int newDistance = distance[line][colum]+1;</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">                    if(newDistance &lt; currentDistance) {</span>
+<span class="fc" id="L50">                        distance[line-1][colum]= newDistance;</span>
+<span class="fc" id="L51">                        Cordinate up = new Cordinate(line-1,colum,newDistance);</span>
+<span class="fc" id="L52">                        prev[line-1][colum] = up;</span>
+<span class="fc" id="L53">                        que.add(up);</span>
                     }
                     
                 }
                 // down
-<span class="fc" id="L57">                terrain = map.terrainAt(line+1, colum);</span>
-<span class="fc bfc" id="L58" title="All 2 branches covered.">                if (Helpers.passable(terrain)) {</span>
-<span class="fc" id="L59">                    int currentDistance = distance[line+1][colum];</span>
-<span class="fc" id="L60">                    int newDistance = distance[line][colum]+1;</span>
-<span class="fc bfc" id="L61" title="All 2 branches covered.">                    if(newDistance &lt; currentDistance) {</span>
-<span class="fc" id="L62">                        distance[line+1][colum]= newDistance;</span>
-<span class="fc" id="L63">                        Cordinate down = new Cordinate(line+1,colum,newDistance);</span>
-<span class="fc" id="L64">                        prev[line+1][colum] = down;</span>
-<span class="fc" id="L65">                        que.add(down);</span>
+<span class="fc" id="L58">                terrain = map.terrainAt(line+1, colum);</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">                if (Helpers.passable(terrain)) {</span>
+<span class="fc" id="L60">                    int currentDistance = distance[line+1][colum];</span>
+<span class="fc" id="L61">                    int newDistance = distance[line][colum]+1;</span>
+<span class="fc bfc" id="L62" title="All 2 branches covered.">                    if(newDistance &lt; currentDistance) {</span>
+<span class="fc" id="L63">                        distance[line+1][colum]= newDistance;</span>
+<span class="fc" id="L64">                        Cordinate down = new Cordinate(line+1,colum,newDistance);</span>
+<span class="fc" id="L65">                        prev[line+1][colum] = down;</span>
+<span class="fc" id="L66">                        que.add(down);</span>
                     }
                     
                 }
                 // right
-<span class="fc" id="L70">                terrain = map.terrainAt(line, colum+1);</span>
-<span class="fc bfc" id="L71" title="All 2 branches covered.">                if (Helpers.passable(terrain)) {</span>
-<span class="fc" id="L72">                    int currentDistance = distance[line][colum+1];</span>
-<span class="fc" id="L73">                    int newDistance = distance[line][colum]+1;</span>
-<span class="fc bfc" id="L74" title="All 2 branches covered.">                    if(newDistance &lt; currentDistance) {</span>
-<span class="fc" id="L75">                        distance[line][colum+1]= newDistance;</span>
-<span class="fc" id="L76">                        Cordinate right = new Cordinate(line,colum+1,newDistance);</span>
-<span class="fc" id="L77">                        prev[line][colum+1] = right;</span>
-<span class="fc" id="L78">                        que.add(right);</span>
+<span class="fc" id="L71">                terrain = map.terrainAt(line, colum+1);</span>
+<span class="fc bfc" id="L72" title="All 2 branches covered.">                if (Helpers.passable(terrain)) {</span>
+<span class="fc" id="L73">                    int currentDistance = distance[line][colum+1];</span>
+<span class="fc" id="L74">                    int newDistance = distance[line][colum]+1;</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">                    if(newDistance &lt; currentDistance) {</span>
+<span class="fc" id="L76">                        distance[line][colum+1]= newDistance;</span>
+<span class="fc" id="L77">                        Cordinate right = new Cordinate(line,colum+1,newDistance);</span>
+<span class="fc" id="L78">                        prev[line][colum+1] = right;</span>
+<span class="fc" id="L79">                        que.add(right);</span>
                     }
                     
                 }
                 // left
-<span class="fc" id="L83">                terrain = map.terrainAt(line, colum-1);</span>
-<span class="fc bfc" id="L84" title="All 2 branches covered.">                if (Helpers.passable(terrain)) {</span>
-<span class="fc" id="L85">                    int currentDistance = distance[line][colum-1];</span>
-<span class="fc" id="L86">                    int newDistance = distance[line][colum]+1;</span>
-<span class="fc bfc" id="L87" title="All 2 branches covered.">                    if(newDistance &lt; currentDistance) {</span>
-<span class="fc" id="L88">                        distance[line][colum-1]= newDistance;</span>
-<span class="fc" id="L89">                        Cordinate right = new Cordinate(line,colum-1,newDistance);</span>
-<span class="fc" id="L90">                        prev[line][colum-1] = right;</span>
-<span class="fc" id="L91">                        que.add(right);</span>
+<span class="fc" id="L84">                terrain = map.terrainAt(line, colum-1);</span>
+<span class="fc bfc" id="L85" title="All 2 branches covered.">                if (Helpers.passable(terrain)) {</span>
+<span class="fc" id="L86">                    int currentDistance = distance[line][colum-1];</span>
+<span class="fc" id="L87">                    int newDistance = distance[line][colum]+1;</span>
+<span class="fc bfc" id="L88" title="All 2 branches covered.">                    if(newDistance &lt; currentDistance) {</span>
+<span class="fc" id="L89">                        distance[line][colum-1]= newDistance;</span>
+<span class="fc" id="L90">                        Cordinate right = new Cordinate(line,colum-1,newDistance);</span>
+<span class="fc" id="L91">                        prev[line][colum-1] = right;</span>
+<span class="fc" id="L92">                        que.add(right);</span>
                     }
                     
                 }
 
             }
-<span class="fc" id="L97">        }</span>
+<span class="fc" id="L98">        }</span>
 
 
-<span class="fc" id="L100">        return -1;</span>
+<span class="fc" id="L101">        return -1;</span>
     }
 
     private void prepDistance(int height, int width){
-<span class="fc" id="L104">        distance = new int[height][width];</span>
-<span class="fc bfc" id="L105" title="All 2 branches covered.">        for (int h = 0;h&lt;height;h++) {</span>
-<span class="fc bfc" id="L106" title="All 2 branches covered.">            for(int w = 0;w&lt;width;w++) {</span>
-<span class="fc" id="L107">                distance[h][w] = Integer.MAX_VALUE;</span>
+<span class="fc" id="L105">        distance = new int[height][width];</span>
+<span class="fc bfc" id="L106" title="All 2 branches covered.">        for (int h = 0;h&lt;height;h++) {</span>
+<span class="fc bfc" id="L107" title="All 2 branches covered.">            for(int w = 0;w&lt;width;w++) {</span>
+<span class="fc" id="L108">                distance[h][w] = Integer.MAX_VALUE;</span>
             }
         }
-<span class="fc" id="L110">    }</span>
+<span class="fc" id="L111">    }</span>
 
     private boolean foundGoal(int line, int colum) {
-<span class="fc bfc" id="L113" title="All 4 branches covered.">        if (line == this.goalLine &amp;&amp; colum == this.goalColum) {</span>
-<span class="fc" id="L114">            return true;</span>
+<span class="fc bfc" id="L114" title="All 4 branches covered.">        if (line == this.goalLine &amp;&amp; colum == this.goalColum) {</span>
+<span class="fc" id="L115">            return true;</span>
         }
-<span class="fc" id="L116">        return false;</span>
+<span class="fc" id="L117">        return false;</span>
     }
     
 }

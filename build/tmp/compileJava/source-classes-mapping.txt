@@ -10,17 +10,17 @@ datastructures/Cordinate.java
  datastructures.Cordinate
 logic/BFS.java
  logic.BFS
-logic/Astar.java
- logic.Astar
-logic/JPS.java
- logic.JPS
-Main.java
- Main
+logic/MapReader.java
+ logic.MapReader
 logic/Dijkstra.java
  logic.Dijkstra
+Main.java
+ Main
+logic/Astar.java
+ logic.Astar
 datastructures/CordinateQue.java
  datastructures.CordinateQue
 logic/Helpers.java
  logic.Helpers
-logic/MapReader.java
- logic.MapReader
+logic/JPS.java
+ logic.JPS

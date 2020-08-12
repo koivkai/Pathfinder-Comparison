@@ -31,7 +31,7 @@ public class MinHeap {
 <span class="fc" id="L31">            Cordinate child = heap[pos];</span>
 <span class="fc" id="L32">            int parentPos = pos/2;</span>
 <span class="fc" id="L33">            Cordinate parent = heap[parentPos];</span>
-<span class="pc bpc" id="L34" title="1 of 2 branches missed.">            if(parent.getDistanceEstimate() &gt; child.getDistanceEstimate()) {</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">            if(parent.getDistanceEstimate() &gt; child.getDistanceEstimate()) {</span>
 <span class="fc" id="L35">                swap(pos,parentPos);</span>
 <span class="fc" id="L36">                checkHeapRuleBottomUp(parentPos);</span>
             }  
@@ -50,19 +50,19 @@ public class MinHeap {
             //done
 <span class="fc bfc" id="L51" title="All 2 branches covered.">        } else if(rightChildPos &gt; lastPos) {</span>
 <span class="fc" id="L52">            leftChild = heap[leftChildPos];</span>
-<span class="pc bpc" id="L53" title="1 of 2 branches missed.">            if(leftChild.getDistanceEstimate()&lt;parent.getDistanceEstimate()) {</span>
-<span class="nc" id="L54">                swap(leftChildPos,pos);</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">            if(leftChild.getDistanceEstimate()&lt;parent.getDistanceEstimate()) {</span>
+<span class="fc" id="L54">                swap(leftChildPos,pos);</span>
             }
         } else {
 <span class="fc" id="L57">            leftChild = heap[leftChildPos];</span>
 <span class="fc" id="L58">            rightChild = heap[rightChildPos];</span>
 <span class="fc bfc" id="L59" title="All 2 branches covered.">            if(leftChild.getDistanceEstimate() &lt; rightChild.getDistanceEstimate()) {</span>
-<span class="pc bpc" id="L60" title="1 of 2 branches missed.">                if(leftChild.getDistanceEstimate()&lt;parent.getDistanceEstimate()) {</span>
+<span class="fc bfc" id="L60" title="All 2 branches covered.">                if(leftChild.getDistanceEstimate()&lt;parent.getDistanceEstimate()) {</span>
 <span class="fc" id="L61">                    swap(leftChildPos,pos);</span>
 <span class="fc" id="L62">                    checkHeapRuleTopDown(leftChildPos);</span>
                 }
             } else {
-<span class="pc bpc" id="L65" title="1 of 2 branches missed.">                if(rightChild.getDistanceEstimate() &lt; parent.getDistanceEstimate()) {</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">                if(rightChild.getDistanceEstimate() &lt; parent.getDistanceEstimate()) {</span>
 <span class="fc" id="L66">                    swap(rightChildPos, pos);</span>
 <span class="fc" id="L67">                    checkHeapRuleTopDown(rightChildPos);</span>
                 }
@@ -85,7 +85,7 @@ public class MinHeap {
     }
 
     public boolean isEmpty() {
-<span class="nc bnc" id="L88" title="All 2 branches missed.">        return lastPos == 0;</span>
+<span class="fc bfc" id="L88" title="All 2 branches covered.">        return lastPos == 0;</span>
     }
 
     private void grow() {

@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.PriorityQueue;
 
 import datastructures.Cordinate;
+import datastructures.MinHeap;
 import datastructures.PathMap;
 
 public class JPS {
     int goalLine;
     int goalColum;
-    PriorityQueue<Cordinate> que;
+    MinHeap que;
     boolean[][] visited;
     Cordinate[][] prev;
     int[][]distance;
@@ -19,7 +20,7 @@ public class JPS {
     }
 
     public int findPath(PathMap map, int startLineNumber, int startColum, int goalLineNumber, int goalColum) {
-        this.que = new PriorityQueue<Cordinate>();
+        this.que = new MinHeap();
         visited = new boolean[map.getHeight()][map.getWidth()];
         prev = new Cordinate[map.getHeight()][map.getWidth()];
         distance = new int[map.getHeight()][map.getWidth()];

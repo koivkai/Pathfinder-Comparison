@@ -3,12 +3,13 @@ package logic;
 
 import java.util.PriorityQueue;
 import datastructures.Cordinate;
+import datastructures.MinHeap;
 import datastructures.PathMap;
 
 public class Dijkstra {
     int goalLine;
     int goalColum;
-    PriorityQueue<Cordinate> que;
+    MinHeap que;
     int[][] distance;
 
     public Dijkstra() {
@@ -16,7 +17,7 @@ public class Dijkstra {
     }
 
     public int findPath(PathMap map, int startLineNumber, int startColum, int goalLineNumber, int goalColum) {
-        this.que = new PriorityQueue<Cordinate>();
+        this.que = new MinHeap();
         boolean[][] visited = new boolean[map.getHeight()][map.getWidth()];
         Cordinate[][] prev = new Cordinate[map.getHeight()][map.getWidth()];
         prepDistance(map.getHeight(), map.getWidth());
