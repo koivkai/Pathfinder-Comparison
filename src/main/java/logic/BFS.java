@@ -1,8 +1,5 @@
 package logic;
 
-import java.util.ArrayDeque;
-import java.util.Queue;
-
 import datastructures.Cordinate;
 import datastructures.CordinateQue;
 import datastructures.PathMap;
