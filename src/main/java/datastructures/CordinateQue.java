@@ -76,6 +76,11 @@ public class CordinateQue {
         this.tail = pos;
     }
 
+    // returns number of cordinates remaining in que
+    public int size() {
+        return used;
+    }
+
     @Override
     public String toString() {
         return "MyDeque " + Arrays.toString(this.array);

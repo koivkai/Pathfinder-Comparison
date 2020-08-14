@@ -1,12 +1,13 @@
 package datastructures;
 
-import java.util.Arrays;
-
 public class PathMap {
 
     char[][] map;
     int height;
     int width;
+    String name;
+    CordinateQue startPosQue;
+    CordinateQue goalPosQue;
 
     public PathMap() {
     }
@@ -15,6 +16,13 @@ public class PathMap {
         this.map = map;
         this.height = height;
         this.width = width;
+    } 
+
+    public PathMap(char[][] map, int height, int width, String name) {
+        this.map = map;
+        this.height = height;
+        this.width = width;
+        this.name = name;
     } 
 
     public char[][] getMap() {
@@ -73,5 +81,45 @@ public class PathMap {
             }
         }
     }
+
+    public CordinateQue getStartPosQue() {
+        return startPosQue;
+    }
+
+    public void setStartPosQue(CordinateQue startPosQue) {
+        this.startPosQue = startPosQue;
+    }
+
+    public CordinateQue getGoalPosQue() {
+        return goalPosQue;
+    }
+
+    public void setGoalPosQue(CordinateQue goalPosQue) {
+        this.goalPosQue = goalPosQue;
+    }
+
+    
+
+    public void addPath(Cordinate start, Cordinate goal) {
+        if(this.goalPosQue == null || this.startPosQue == null) { // in only one exits they wont work anyway so reset both
+            this.goalPosQue = new CordinateQue(5);
+            this.startPosQue = new CordinateQue(5);
+        }
+        this.startPosQue.add(start);
+        this.getGoalPosQue().add(goal);
+    }
+
+    public String getName() {
+        if(name == null) {
+            return "unnamed map";
+        }
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    
 
 }

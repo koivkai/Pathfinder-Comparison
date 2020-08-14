@@ -31,8 +31,6 @@ public class JPS {
 
         while(!que.isEmpty()) {
             current = que.poll();
-            System.out.println("findpath");
-            System.out.println("current "+current);
             int line = current.getLineNumber();
             int colum = current.getColum();
 
@@ -52,13 +50,10 @@ public class JPS {
         return -1;
     }
     private void findSuccessors(Cordinate current) {
-        System.out.println("find Successors");
         ArrayList<Cordinate> neigbours = getNeightbours(current);
-        System.out.println("neighbours "+ neigbours);
         for(Cordinate c:neigbours) {
 
             Cordinate next = jump(c, prev[c.getLineNumber()][c.getColum()]);
-            System.out.println("next "+next);
             if(next != null) {
                 
                 if(visited[next.getLineNumber()][next.getColum()]) {
@@ -75,7 +70,6 @@ public class JPS {
     }
 
     private void updateDistance(Cordinate fromCordinate, Cordinate targetCordinate) {
-        System.out.println("updating distance from "+fromCordinate+" to "+targetCordinate);
         int old = distance[targetCordinate.getLineNumber()][targetCordinate.getColum()];
         int difference = Helpers.abs(fromCordinate.getLineNumber()-targetCordinate.getLineNumber())+Helpers.abs(fromCordinate.getColum()-targetCordinate.getColum());
         int prevDistance = distance[fromCordinate.getLineNumber()][fromCordinate.getColum()];
@@ -83,12 +77,7 @@ public class JPS {
         if(old == 0 || (prevDistance + difference)<old) {
             distance[targetCordinate.getLineNumber()][targetCordinate.getColum()] = prevDistance + difference;
             prev[targetCordinate.getLineNumber()][targetCordinate.getColum()] = fromCordinate;
-            System.out.println("distance updated");
-            System.out.println("prev["+targetCordinate.getLineNumber()+"]["+targetCordinate.getColum()+"] is now "+ prev[targetCordinate.getLineNumber()][targetCordinate.getColum()]);
-        } else {
-            System.out.println("distance unchanged");
         }
-
     }
 
     private void updateDistance(int targetLine, int targetColum, int prevLine, int prevColum) {
@@ -115,13 +104,10 @@ public class JPS {
     }
 
     private ArrayList<Cordinate> getNeightbours(Cordinate current) {
-        System.out.println("getNeighbours");
         ArrayList<Cordinate> neighbours = new ArrayList<Cordinate>();
         int cLine = current.getLineNumber();
         int cColum = current.getColum();
         Cordinate parent = prev[cLine][cColum];
-        System.out.println("current "+ current);
-        System.out.println("parent "+parent);
         Cordinate neighbour;
         if(parent == null) { // this is the starting square
             if(map.terrainPassableAt(cLine+1 , cColum)) {
@@ -210,13 +196,11 @@ public class JPS {
     private Cordinate jump(Cordinate target, Cordinate prevCordinate) {
         int tLine = target.getLineNumber();
         int tColum = target.getColum();
-        System.out.println("jumping, target:" +target+" prevCordinate "+prevCordinate);
         if(foundGoal(target)) {
             return target;
         }
 
         if (!map.terrainPassableAt(tLine,tColum)) {
-            System.out.println("terrain not passable at "+tLine+" "+tColum);
             return null;
         }
 
@@ -224,7 +208,6 @@ public class JPS {
         int pColum = prevCordinate.getColum();
         int verticalDistance = tLine - pLine;
         int horizontalDistance = tColum - pColum;
-        System.out.println("vertical distance "+verticalDistance+" horizontalDistance "+horizontalDistance);
         if(horizontalDistance != 0) {
             if(horizontalDistance > 0) { // came from left
                 if(map.terrainPassableAt(tLine+1, tColum) && !map.terrainPassableAt(tLine+1, tColum-1)) {

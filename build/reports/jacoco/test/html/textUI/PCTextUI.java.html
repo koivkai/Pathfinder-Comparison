@@ -2,7 +2,10 @@
 
 import java.util.Scanner;
 
+import datastructures.Cordinate;
+import datastructures.MapList;
 import datastructures.PathMap;
+import logic.ComparisonEngine;
 import logic.MapReader;
 
 
@@ -10,22 +13,93 @@ public class PCTextUI {
     Scanner scanner;
     MapReader reader;
 
-<span class="nc" id="L13">    public PCTextUI() {</span>
-<span class="nc" id="L14">        this.scanner = new Scanner(System.in);</span>
-<span class="nc" id="L15">        this.reader = new MapReader();</span>
-<span class="nc" id="L16">    }</span>
+<span class="nc" id="L16">    public PCTextUI() {</span>
+<span class="nc" id="L17">        this.scanner = new Scanner(System.in);</span>
+<span class="nc" id="L18">        this.reader = new MapReader();</span>
+<span class="nc" id="L19">    }</span>
 
     public void start() {
-<span class="nc" id="L19">        System.out.println(&quot;Pathfinder Comparison&quot;);</span>
-<span class="nc" id="L20">        System.out.println(&quot;Please give absolute filepath&quot;);</span>
+<span class="nc" id="L22">        MapList maps = new MapList();</span>
+<span class="nc" id="L23">        ComparisonEngine c = new ComparisonEngine();</span>
+<span class="nc" id="L24">        System.out.println(&quot;Pathfinder Comparison&quot;);</span>
+<span class="nc" id="L25">        System.out.println(&quot;First select maps&quot;);</span>
 
-       // String path = scanner.nextLine();
-<span class="nc" id="L23">        String path= &quot;/Users/Kaius/TiraKartat/da2-map/ca_cave.map&quot;;</span>
+        while(true) {
+<span class="nc" id="L28">            String anwser = getUserInputString(&quot;Add a map y/n?&quot;);</span>
+<span class="nc bnc" id="L29" title="All 2 branches missed.">            if(anwser.equals(&quot;n&quot;)) {</span>
+<span class="nc" id="L30">                break;</span>
+            }
+<span class="nc" id="L32">            getMapFromUser(maps);</span>
 
-<span class="nc" id="L25">        System.out.println(&quot;reading &quot;+path);</span>
-<span class="nc" id="L26">        PathMap map = reader.Read(path);</span>
+<span class="nc" id="L34">        }</span>
+
+        
+<span class="nc" id="L37">        c.compare(maps);</span>
+        
+        
+<span class="nc" id="L40">    }</span>
+
+    private int getUserInputInt(String prompt) {
+<span class="nc" id="L43">        System.out.println(prompt);</span>
+<span class="nc" id="L44">        int input = 0;</span>
+<span class="nc" id="L45">            String line = scanner.nextLine();</span>
+            try{
+<span class="nc" id="L47">                input = Integer.parseInt(line);</span>
+<span class="nc" id="L48">            } catch (Exception e){</span>
+<span class="nc" id="L49">                System.out.println(e);</span>
+<span class="nc" id="L50">            }</span>
+<span class="nc" id="L51">        return input;</span>
+    }
+
+    private String getUserInputString(String prompt) {
+<span class="nc" id="L55">        System.out.println(prompt);</span>
+<span class="nc" id="L56">        String line = scanner.nextLine();</span>
+<span class="nc" id="L57">        return line;</span>
+    }
+
+    private void getMapFromUser(MapList maps) {
+<span class="nc" id="L61">        System.out.println(&quot;Please give absolute filepath&quot;);</span>
+
+<span class="nc" id="L63">        String path = scanner.nextLine();</span>
+        //String path= &quot;/Users/Kaius/TiraKartat/da2-map/ca_cave.map&quot;;
+
+<span class="nc" id="L66">        System.out.println(&quot;reading &quot;+path);</span>
+<span class="nc" id="L67">        PathMap map = reader.Read(path);</span>
         //map.print();
-<span class="nc" id="L28">    }</span>
+<span class="nc" id="L69">        map.setName(path);</span>
+<span class="nc" id="L70">        getPathsForMap(map);</span>
+
+        
+<span class="nc" id="L73">        maps.add(map);</span>
+<span class="nc" id="L74">    }</span>
+
+    private void getPathsForMap(PathMap map) {
+<span class="nc" id="L77">        System.out.println(&quot;Give cordinates for paths on this map, input emtpy line as start line number to finish inputing lines&quot;);</span>
+        while(true) {
+            int startLineNumber;
+            int startColum;
+            int goalLineNumber;
+            int goalColum;
+
+<span class="nc" id="L84">            System.out.println(&quot;Give start line number&quot;);</span>
+<span class="nc" id="L85">            String startLine = scanner.nextLine();</span>
+<span class="nc bnc" id="L86" title="All 2 branches missed.">            if(startLine.isEmpty()) {</span>
+<span class="nc" id="L87">                break;</span>
+            }
+            try{
+<span class="nc" id="L90">                startLineNumber = Integer.parseInt(startLine);</span>
+<span class="nc" id="L91">            } catch (Exception e){</span>
+<span class="nc" id="L92">                System.out.println(e);</span>
+<span class="nc" id="L93">                continue;</span>
+<span class="nc" id="L94">            }</span>
+
+<span class="nc" id="L96">            startColum = getUserInputInt(&quot;Give start colum number&quot;);</span>
+<span class="nc" id="L97">            goalLineNumber = getUserInputInt(&quot;Give goal line number&quot;);</span>
+<span class="nc" id="L98">            goalColum = getUserInputInt(&quot;Give goal colum number&quot;);</span>
+
+<span class="nc" id="L100">            map.addPath(new Cordinate(startLineNumber, startColum), new Cordinate(goalLineNumber, goalColum));</span>
+<span class="nc" id="L101">        }</span>
+<span class="nc" id="L102">    }</span>
     
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

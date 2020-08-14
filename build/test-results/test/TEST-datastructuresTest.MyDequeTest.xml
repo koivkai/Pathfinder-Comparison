@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="datastructuresTest.MyDequeTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2020-08-12T10:28:47" hostname="Kaius-MBP" time="0.002">
+<testsuite name="datastructuresTest.MyDequeTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2020-08-14T16:16:25" hostname="Kaius-MBP" time="0.002">
   <properties/>
   <testcase name="addAndPollWork" classname="datastructuresTest.MyDequeTest" time="0.0"/>
   <testcase name="queGrows" classname="datastructuresTest.MyDequeTest" time="0.0"/>
-  <testcase name="queGrowsWhenTailIsBeforeHead" classname="datastructuresTest.MyDequeTest" time="0.0"/>
-  <testcase name="isEmptyWhenCreated" classname="datastructuresTest.MyDequeTest" time="0.001"/>
+  <testcase name="queGrowsWhenTailIsBeforeHead" classname="datastructuresTest.MyDequeTest" time="0.001"/>
+  <testcase name="isEmptyWhenCreated" classname="datastructuresTest.MyDequeTest" time="0.0"/>
   <testcase name="isEmptyAfterContentsArePolled" classname="datastructuresTest.MyDequeTest" time="0.0"/>
   <testcase name="isNotEmptyAfterStuffAdded" classname="datastructuresTest.MyDequeTest" time="0.0"/>
   <testcase name="standartConstructorExists" classname="datastructuresTest.MyDequeTest" time="0.0"/>
   <testcase name="worksWhenTailIsBeforeHead" classname="datastructuresTest.MyDequeTest" time="0.0"/>
-  <testcase name="toStringWorks" classname="datastructuresTest.MyDequeTest" time="0.001"/>
+  <testcase name="toStringWorks" classname="datastructuresTest.MyDequeTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

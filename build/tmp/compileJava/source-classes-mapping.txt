@@ -1,26 +1,30 @@
-textUI/PCTextUI.java
- textUI.PCTextUI
+datastructures/MapList.java
+ datastructures.MapList
 datastructures/MyDeque.java
  datastructures.MyDeque
 datastructures/PathMap.java
  datastructures.PathMap
+Main.java
+ Main
 datastructures/MinHeap.java
  datastructures.MinHeap
 datastructures/Cordinate.java
  datastructures.Cordinate
+logic/Helpers.java
+ logic.Helpers
+logic/Astar.java
+ logic.Astar
 logic/BFS.java
  logic.BFS
 logic/MapReader.java
  logic.MapReader
 logic/Dijkstra.java
  logic.Dijkstra
-Main.java
- Main
-logic/Astar.java
- logic.Astar
 datastructures/CordinateQue.java
  datastructures.CordinateQue
-logic/Helpers.java
- logic.Helpers
+textUI/PCTextUI.java
+ textUI.PCTextUI
 logic/JPS.java
  logic.JPS
+logic/ComparisonEngine.java
+ logic.ComparisonEngine

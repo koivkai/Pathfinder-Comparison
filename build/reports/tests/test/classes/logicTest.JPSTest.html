@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.162s</div>
+<div class="counter">0.135s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,17 +79,17 @@
 </thead>
 <tr>
 <td class="success">findsPathNoObstacles</td>
-<td class="success">0.027s</td>
+<td class="success">0.021s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">findsPathNoObstaclesReverse</td>
-<td class="success">0.012s</td>
+<td class="success">0.018s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">findsPathThreeTreelines</td>
-<td class="success">0.027s</td>
+<td class="success">0.018s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -99,12 +99,12 @@
 </tr>
 <tr>
 <td class="success">findsPathTreeline</td>
-<td class="success">0.081s</td>
+<td class="success">0.060s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">noPathExits</td>
-<td class="success">0.006s</td>
+<td class="success">0.009s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -112,13 +112,7 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>findpath
-current Cordinate [colum=1, lineNumber=4]
-find Successors
-getNeighbours
-current Cordinate [colum=1, lineNumber=4]
-parent null
-checking terrain at 5 1
+<pre>checking terrain at 5 1
 t .
 checking terrain at 3 1
 t .
@@ -126,21 +120,16 @@ checking terrain at 4 2
 t .
 checking terrain at 4 0
 t @
-neighbours [Cordinate [colum=1, lineNumber=5], Cordinate [colum=1, lineNumber=3], Cordinate [colum=2, lineNumber=4]]
-jumping, target:Cordinate [colum=1, lineNumber=5] prevCordinate Cordinate [colum=1, lineNumber=4]
 checking terrain at 5 1
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 5 0
 t @
 checking terrain at 5 2
 t .
 checking terrain at 4 2
 t .
-jumping, target:Cordinate [colum=2, lineNumber=5] prevCordinate Cordinate [colum=1, lineNumber=5]
 checking terrain at 5 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 6 2
 t .
 checking terrain at 6 1
@@ -149,10 +138,8 @@ checking terrain at 4 2
 t .
 checking terrain at 4 1
 t .
-jumping, target:Cordinate [colum=3, lineNumber=5] prevCordinate Cordinate [colum=2, lineNumber=5]
 checking terrain at 5 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 6 3
 t .
 checking terrain at 6 2
@@ -161,10 +148,8 @@ checking terrain at 4 3
 t .
 checking terrain at 4 2
 t .
-jumping, target:Cordinate [colum=4, lineNumber=5] prevCordinate Cordinate [colum=3, lineNumber=5]
 checking terrain at 5 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 6 4
 t .
 checking terrain at 6 3
@@ -173,28 +158,20 @@ checking terrain at 4 4
 t .
 checking terrain at 4 3
 t .
-jumping, target:Cordinate [colum=5, lineNumber=5] prevCordinate Cordinate [colum=4, lineNumber=5]
 checking terrain at 5 5
 t T
-terrain not passable at 5 5
-jumping, target:Cordinate [colum=0, lineNumber=5] prevCordinate Cordinate [colum=1, lineNumber=5]
 checking terrain at 5 0
 t @
-terrain not passable at 5 0
-jumping, target:Cordinate [colum=1, lineNumber=6] prevCordinate Cordinate [colum=1, lineNumber=5]
 checking terrain at 6 1
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 6 0
 t @
 checking terrain at 6 2
 t .
 checking terrain at 5 2
 t .
-jumping, target:Cordinate [colum=2, lineNumber=6] prevCordinate Cordinate [colum=1, lineNumber=6]
 checking terrain at 6 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 7 2
 t .
 checking terrain at 7 1
@@ -203,10 +180,8 @@ checking terrain at 5 2
 t .
 checking terrain at 5 1
 t .
-jumping, target:Cordinate [colum=3, lineNumber=6] prevCordinate Cordinate [colum=2, lineNumber=6]
 checking terrain at 6 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 7 3
 t .
 checking terrain at 7 2
@@ -215,10 +190,8 @@ checking terrain at 5 3
 t .
 checking terrain at 5 2
 t .
-jumping, target:Cordinate [colum=4, lineNumber=6] prevCordinate Cordinate [colum=3, lineNumber=6]
 checking terrain at 6 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 7 4
 t .
 checking terrain at 7 3
@@ -227,28 +200,20 @@ checking terrain at 5 4
 t .
 checking terrain at 5 3
 t .
-jumping, target:Cordinate [colum=5, lineNumber=6] prevCordinate Cordinate [colum=4, lineNumber=6]
 checking terrain at 6 5
 t T
-terrain not passable at 6 5
-jumping, target:Cordinate [colum=0, lineNumber=6] prevCordinate Cordinate [colum=1, lineNumber=6]
 checking terrain at 6 0
 t @
-terrain not passable at 6 0
-jumping, target:Cordinate [colum=1, lineNumber=7] prevCordinate Cordinate [colum=1, lineNumber=6]
 checking terrain at 7 1
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 7 0
 t @
 checking terrain at 7 2
 t .
 checking terrain at 6 2
 t .
-jumping, target:Cordinate [colum=2, lineNumber=7] prevCordinate Cordinate [colum=1, lineNumber=7]
 checking terrain at 7 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 8 2
 t .
 checking terrain at 8 1
@@ -257,10 +222,8 @@ checking terrain at 6 2
 t .
 checking terrain at 6 1
 t .
-jumping, target:Cordinate [colum=3, lineNumber=7] prevCordinate Cordinate [colum=2, lineNumber=7]
 checking terrain at 7 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 8 3
 t .
 checking terrain at 8 2
@@ -269,10 +232,8 @@ checking terrain at 6 3
 t .
 checking terrain at 6 2
 t .
-jumping, target:Cordinate [colum=4, lineNumber=7] prevCordinate Cordinate [colum=3, lineNumber=7]
 checking terrain at 7 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 8 4
 t .
 checking terrain at 8 3
@@ -281,81 +242,58 @@ checking terrain at 6 4
 t .
 checking terrain at 6 3
 t .
-jumping, target:Cordinate [colum=5, lineNumber=7] prevCordinate Cordinate [colum=4, lineNumber=7]
 checking terrain at 7 5
 t T
-terrain not passable at 7 5
-jumping, target:Cordinate [colum=0, lineNumber=7] prevCordinate Cordinate [colum=1, lineNumber=7]
 checking terrain at 7 0
 t @
-terrain not passable at 7 0
-jumping, target:Cordinate [colum=1, lineNumber=8] prevCordinate Cordinate [colum=1, lineNumber=7]
 checking terrain at 8 1
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 8 0
 t @
 checking terrain at 8 2
 t .
 checking terrain at 7 2
 t .
-jumping, target:Cordinate [colum=2, lineNumber=8] prevCordinate Cordinate [colum=1, lineNumber=8]
 checking terrain at 8 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 9 2
 t @
 checking terrain at 7 2
 t .
 checking terrain at 7 1
 t .
-jumping, target:Cordinate [colum=3, lineNumber=8] prevCordinate Cordinate [colum=2, lineNumber=8]
 checking terrain at 8 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 9 3
 t @
 checking terrain at 7 3
 t .
 checking terrain at 7 2
 t .
-jumping, target:Cordinate [colum=4, lineNumber=8] prevCordinate Cordinate [colum=3, lineNumber=8]
 checking terrain at 8 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 9 4
 t @
 checking terrain at 7 4
 t .
 checking terrain at 7 3
 t .
-jumping, target:Cordinate [colum=5, lineNumber=8] prevCordinate Cordinate [colum=4, lineNumber=8]
 checking terrain at 8 5
 t T
-terrain not passable at 8 5
-jumping, target:Cordinate [colum=0, lineNumber=8] prevCordinate Cordinate [colum=1, lineNumber=8]
 checking terrain at 8 0
 t @
-terrain not passable at 8 0
-jumping, target:Cordinate [colum=1, lineNumber=9] prevCordinate Cordinate [colum=1, lineNumber=8]
 checking terrain at 9 1
 t @
-terrain not passable at 9 1
-next null
-jumping, target:Cordinate [colum=1, lineNumber=3] prevCordinate Cordinate [colum=1, lineNumber=4]
 checking terrain at 3 1
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 3 0
 t @
 checking terrain at 3 2
 t .
 checking terrain at 4 2
 t .
-jumping, target:Cordinate [colum=2, lineNumber=3] prevCordinate Cordinate [colum=1, lineNumber=3]
 checking terrain at 3 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 4 2
 t .
 checking terrain at 4 1
@@ -364,10 +302,8 @@ checking terrain at 2 2
 t .
 checking terrain at 2 1
 t .
-jumping, target:Cordinate [colum=3, lineNumber=3] prevCordinate Cordinate [colum=2, lineNumber=3]
 checking terrain at 3 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 4 3
 t .
 checking terrain at 4 2
@@ -376,10 +312,8 @@ checking terrain at 2 3
 t .
 checking terrain at 2 2
 t .
-jumping, target:Cordinate [colum=4, lineNumber=3] prevCordinate Cordinate [colum=3, lineNumber=3]
 checking terrain at 3 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 4 4
 t .
 checking terrain at 4 3
@@ -388,28 +322,20 @@ checking terrain at 2 4
 t .
 checking terrain at 2 3
 t .
-jumping, target:Cordinate [colum=5, lineNumber=3] prevCordinate Cordinate [colum=4, lineNumber=3]
 checking terrain at 3 5
 t T
-terrain not passable at 3 5
-jumping, target:Cordinate [colum=0, lineNumber=3] prevCordinate Cordinate [colum=1, lineNumber=3]
 checking terrain at 3 0
 t @
-terrain not passable at 3 0
-jumping, target:Cordinate [colum=1, lineNumber=2] prevCordinate Cordinate [colum=1, lineNumber=3]
 checking terrain at 2 1
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 2 0
 t @
 checking terrain at 2 2
 t .
 checking terrain at 3 2
 t .
-jumping, target:Cordinate [colum=2, lineNumber=2] prevCordinate Cordinate [colum=1, lineNumber=2]
 checking terrain at 2 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 3 2
 t .
 checking terrain at 3 1
@@ -418,10 +344,8 @@ checking terrain at 1 2
 t .
 checking terrain at 1 1
 t .
-jumping, target:Cordinate [colum=3, lineNumber=2] prevCordinate Cordinate [colum=2, lineNumber=2]
 checking terrain at 2 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 3 3
 t .
 checking terrain at 3 2
@@ -430,10 +354,8 @@ checking terrain at 1 3
 t .
 checking terrain at 1 2
 t .
-jumping, target:Cordinate [colum=4, lineNumber=2] prevCordinate Cordinate [colum=3, lineNumber=2]
 checking terrain at 2 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 3 4
 t .
 checking terrain at 3 3
@@ -442,78 +364,56 @@ checking terrain at 1 4
 t .
 checking terrain at 1 3
 t .
-jumping, target:Cordinate [colum=5, lineNumber=2] prevCordinate Cordinate [colum=4, lineNumber=2]
 checking terrain at 2 5
 t T
-terrain not passable at 2 5
-jumping, target:Cordinate [colum=0, lineNumber=2] prevCordinate Cordinate [colum=1, lineNumber=2]
 checking terrain at 2 0
 t @
-terrain not passable at 2 0
-jumping, target:Cordinate [colum=1, lineNumber=1] prevCordinate Cordinate [colum=1, lineNumber=2]
 checking terrain at 1 1
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 1 0
 t @
 checking terrain at 1 2
 t .
 checking terrain at 2 2
 t .
-jumping, target:Cordinate [colum=2, lineNumber=1] prevCordinate Cordinate [colum=1, lineNumber=1]
 checking terrain at 1 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 2
 t .
 checking terrain at 2 1
 t .
 checking terrain at 0 2
 t @
-jumping, target:Cordinate [colum=3, lineNumber=1] prevCordinate Cordinate [colum=2, lineNumber=1]
 checking terrain at 1 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 3
 t .
 checking terrain at 2 2
 t .
 checking terrain at 0 3
 t @
-jumping, target:Cordinate [colum=4, lineNumber=1] prevCordinate Cordinate [colum=3, lineNumber=1]
 checking terrain at 1 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 4
 t .
 checking terrain at 2 3
 t .
 checking terrain at 0 4
 t @
-jumping, target:Cordinate [colum=5, lineNumber=1] prevCordinate Cordinate [colum=4, lineNumber=1]
 checking terrain at 1 5
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 5
 t T
 checking terrain at 0 5
 t @
-jumping, target:Cordinate [colum=6, lineNumber=1] prevCordinate Cordinate [colum=5, lineNumber=1]
 checking terrain at 1 6
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 6
 t .
 checking terrain at 2 5
 t T
-next Cordinate [colum=1, lineNumber=1]
-updating distance from Cordinate [colum=1, lineNumber=4] to Cordinate [colum=1, lineNumber=1]
-distance updated
-prev[1][1] is now Cordinate [colum=1, lineNumber=4]
-jumping, target:Cordinate [colum=2, lineNumber=4] prevCordinate Cordinate [colum=1, lineNumber=4]
 checking terrain at 4 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 5 2
 t .
 checking terrain at 5 1
@@ -522,10 +422,8 @@ checking terrain at 3 2
 t .
 checking terrain at 3 1
 t .
-jumping, target:Cordinate [colum=3, lineNumber=4] prevCordinate Cordinate [colum=2, lineNumber=4]
 checking terrain at 4 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 5 3
 t .
 checking terrain at 5 2
@@ -534,10 +432,8 @@ checking terrain at 3 3
 t .
 checking terrain at 3 2
 t .
-jumping, target:Cordinate [colum=4, lineNumber=4] prevCordinate Cordinate [colum=3, lineNumber=4]
 checking terrain at 4 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 5 4
 t .
 checking terrain at 5 3
@@ -546,110 +442,66 @@ checking terrain at 3 4
 t .
 checking terrain at 3 3
 t .
-jumping, target:Cordinate [colum=5, lineNumber=4] prevCordinate Cordinate [colum=4, lineNumber=4]
 checking terrain at 4 5
 t T
-terrain not passable at 4 5
-next null
-findpath
-current Cordinate [colum=1, lineNumber=1]
-find Successors
-getNeighbours
-current Cordinate [colum=1, lineNumber=1]
-parent Cordinate [colum=1, lineNumber=4]
 checking terrain at 1 2
 t .
-updating distance from Cordinate [colum=1, lineNumber=1] to Cordinate [colum=2, lineNumber=1]
-distance updated
-prev[1][2] is now Cordinate [colum=1, lineNumber=1]
 checking terrain at 1 0
 t @
 checking terrain at 0 1
 t @
-neighbours [Cordinate [colum=2, lineNumber=1]]
-jumping, target:Cordinate [colum=2, lineNumber=1] prevCordinate Cordinate [colum=1, lineNumber=1]
 checking terrain at 1 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 2
 t .
 checking terrain at 2 1
 t .
 checking terrain at 0 2
 t @
-jumping, target:Cordinate [colum=3, lineNumber=1] prevCordinate Cordinate [colum=2, lineNumber=1]
 checking terrain at 1 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 3
 t .
 checking terrain at 2 2
 t .
 checking terrain at 0 3
 t @
-jumping, target:Cordinate [colum=4, lineNumber=1] prevCordinate Cordinate [colum=3, lineNumber=1]
 checking terrain at 1 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 4
 t .
 checking terrain at 2 3
 t .
 checking terrain at 0 4
 t @
-jumping, target:Cordinate [colum=5, lineNumber=1] prevCordinate Cordinate [colum=4, lineNumber=1]
 checking terrain at 1 5
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 5
 t T
 checking terrain at 0 5
 t @
-jumping, target:Cordinate [colum=6, lineNumber=1] prevCordinate Cordinate [colum=5, lineNumber=1]
 checking terrain at 1 6
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 6
 t .
 checking terrain at 2 5
 t T
-next Cordinate [colum=6, lineNumber=1]
-updating distance from Cordinate [colum=1, lineNumber=1] to Cordinate [colum=6, lineNumber=1]
-distance updated
-prev[1][6] is now Cordinate [colum=1, lineNumber=1]
-findpath
-current Cordinate [colum=6, lineNumber=1]
-find Successors
-getNeighbours
-current Cordinate [colum=6, lineNumber=1]
-parent Cordinate [colum=1, lineNumber=1]
 checking terrain at 2 6
 t .
-updating distance from Cordinate [colum=6, lineNumber=1] to Cordinate [colum=6, lineNumber=2]
-distance updated
-prev[2][6] is now Cordinate [colum=6, lineNumber=1]
 checking terrain at 0 6
 t @
 checking terrain at 1 7
 t .
-updating distance from Cordinate [colum=6, lineNumber=1] to Cordinate [colum=7, lineNumber=1]
-distance updated
-prev[1][7] is now Cordinate [colum=6, lineNumber=1]
-neighbours [Cordinate [colum=6, lineNumber=2], Cordinate [colum=7, lineNumber=1]]
-jumping, target:Cordinate [colum=6, lineNumber=2] prevCordinate Cordinate [colum=6, lineNumber=1]
 checking terrain at 2 6
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 2 5
 t T
 checking terrain at 2 7
 t .
 checking terrain at 1 7
 t .
-jumping, target:Cordinate [colum=7, lineNumber=2] prevCordinate Cordinate [colum=6, lineNumber=2]
 checking terrain at 2 7
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 3 7
 t .
 checking terrain at 3 6
@@ -658,10 +510,8 @@ checking terrain at 1 7
 t .
 checking terrain at 1 6
 t .
-jumping, target:Cordinate [colum=8, lineNumber=2] prevCordinate Cordinate [colum=7, lineNumber=2]
 checking terrain at 2 8
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 3 8
 t .
 checking terrain at 3 7
@@ -670,28 +520,20 @@ checking terrain at 1 8
 t .
 checking terrain at 1 7
 t .
-jumping, target:Cordinate [colum=9, lineNumber=2] prevCordinate Cordinate [colum=8, lineNumber=2]
 checking terrain at 2 9
 t @
-terrain not passable at 2 9
-jumping, target:Cordinate [colum=5, lineNumber=2] prevCordinate Cordinate [colum=6, lineNumber=2]
 checking terrain at 2 5
 t T
-terrain not passable at 2 5
-jumping, target:Cordinate [colum=6, lineNumber=3] prevCordinate Cordinate [colum=6, lineNumber=2]
 checking terrain at 3 6
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 3 5
 t T
 checking terrain at 3 7
 t .
 checking terrain at 2 7
 t .
-jumping, target:Cordinate [colum=7, lineNumber=3] prevCordinate Cordinate [colum=6, lineNumber=3]
 checking terrain at 3 7
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 4 7
 t .
 checking terrain at 4 6
@@ -700,10 +542,8 @@ checking terrain at 2 7
 t .
 checking terrain at 2 6
 t .
-jumping, target:Cordinate [colum=8, lineNumber=3] prevCordinate Cordinate [colum=7, lineNumber=3]
 checking terrain at 3 8
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 4 8
 t .
 checking terrain at 4 7
@@ -712,28 +552,20 @@ checking terrain at 2 8
 t .
 checking terrain at 2 7
 t .
-jumping, target:Cordinate [colum=9, lineNumber=3] prevCordinate Cordinate [colum=8, lineNumber=3]
 checking terrain at 3 9
 t @
-terrain not passable at 3 9
-jumping, target:Cordinate [colum=5, lineNumber=3] prevCordinate Cordinate [colum=6, lineNumber=3]
 checking terrain at 3 5
 t T
-terrain not passable at 3 5
-jumping, target:Cordinate [colum=6, lineNumber=4] prevCordinate Cordinate [colum=6, lineNumber=3]
 checking terrain at 4 6
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 4 5
 t T
 checking terrain at 4 7
 t .
 checking terrain at 3 7
 t .
-jumping, target:Cordinate [colum=7, lineNumber=4] prevCordinate Cordinate [colum=6, lineNumber=4]
 checking terrain at 4 7
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 5 7
 t .
 checking terrain at 5 6
@@ -742,59 +574,32 @@ checking terrain at 3 7
 t .
 checking terrain at 3 6
 t .
-jumping, target:Cordinate [colum=8, lineNumber=4] prevCordinate Cordinate [colum=7, lineNumber=4]
-next Cordinate [colum=6, lineNumber=4]
-updating distance from Cordinate [colum=6, lineNumber=1] to Cordinate [colum=6, lineNumber=4]
-distance updated
-prev[4][6] is now Cordinate [colum=6, lineNumber=1]
-jumping, target:Cordinate [colum=7, lineNumber=1] prevCordinate Cordinate [colum=6, lineNumber=1]
 checking terrain at 1 7
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 7
 t .
 checking terrain at 2 6
 t .
 checking terrain at 0 7
 t @
-jumping, target:Cordinate [colum=8, lineNumber=1] prevCordinate Cordinate [colum=7, lineNumber=1]
 checking terrain at 1 8
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 8
 t .
 checking terrain at 2 7
 t .
 checking terrain at 0 8
 t @
-jumping, target:Cordinate [colum=9, lineNumber=1] prevCordinate Cordinate [colum=8, lineNumber=1]
 checking terrain at 1 9
 t @
-terrain not passable at 1 9
-next null
-findpath
-current Cordinate [colum=6, lineNumber=4]
-find Successors
-getNeighbours
-current Cordinate [colum=6, lineNumber=4]
-parent Cordinate [colum=6, lineNumber=1]
 checking terrain at 4 7
 t .
-updating distance from Cordinate [colum=6, lineNumber=4] to Cordinate [colum=7, lineNumber=4]
-distance updated
-prev[4][7] is now Cordinate [colum=6, lineNumber=4]
 checking terrain at 4 5
 t T
 checking terrain at 5 6
 t .
-updating distance from Cordinate [colum=6, lineNumber=4] to Cordinate [colum=6, lineNumber=5]
-distance updated
-prev[5][6] is now Cordinate [colum=6, lineNumber=4]
-neighbours [Cordinate [colum=7, lineNumber=4], Cordinate [colum=6, lineNumber=5]]
-jumping, target:Cordinate [colum=7, lineNumber=4] prevCordinate Cordinate [colum=6, lineNumber=4]
 checking terrain at 4 7
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 5 7
 t .
 checking terrain at 5 6
@@ -803,25 +608,16 @@ checking terrain at 3 7
 t .
 checking terrain at 3 6
 t .
-jumping, target:Cordinate [colum=8, lineNumber=4] prevCordinate Cordinate [colum=7, lineNumber=4]
-next Cordinate [colum=8, lineNumber=4]
-updating distance from Cordinate [colum=6, lineNumber=4] to Cordinate [colum=8, lineNumber=4]
-distance updated
-prev[4][8] is now Cordinate [colum=6, lineNumber=4]
-jumping, target:Cordinate [colum=6, lineNumber=5] prevCordinate Cordinate [colum=6, lineNumber=4]
 checking terrain at 5 6
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 5 5
 t T
 checking terrain at 5 7
 t .
 checking terrain at 4 7
 t .
-jumping, target:Cordinate [colum=7, lineNumber=5] prevCordinate Cordinate [colum=6, lineNumber=5]
 checking terrain at 5 7
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 6 7
 t .
 checking terrain at 6 6
@@ -830,10 +626,8 @@ checking terrain at 4 7
 t .
 checking terrain at 4 6
 t .
-jumping, target:Cordinate [colum=8, lineNumber=5] prevCordinate Cordinate [colum=7, lineNumber=5]
 checking terrain at 5 8
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 6 8
 t .
 checking terrain at 6 7
@@ -842,28 +636,20 @@ checking terrain at 4 8
 t .
 checking terrain at 4 7
 t .
-jumping, target:Cordinate [colum=9, lineNumber=5] prevCordinate Cordinate [colum=8, lineNumber=5]
 checking terrain at 5 9
 t @
-terrain not passable at 5 9
-jumping, target:Cordinate [colum=5, lineNumber=5] prevCordinate Cordinate [colum=6, lineNumber=5]
 checking terrain at 5 5
 t T
-terrain not passable at 5 5
-jumping, target:Cordinate [colum=6, lineNumber=6] prevCordinate Cordinate [colum=6, lineNumber=5]
 checking terrain at 6 6
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 6 5
 t T
 checking terrain at 6 7
 t .
 checking terrain at 5 7
 t .
-jumping, target:Cordinate [colum=7, lineNumber=6] prevCordinate Cordinate [colum=6, lineNumber=6]
 checking terrain at 6 7
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 7 7
 t .
 checking terrain at 7 6
@@ -872,10 +658,8 @@ checking terrain at 5 7
 t .
 checking terrain at 5 6
 t .
-jumping, target:Cordinate [colum=8, lineNumber=6] prevCordinate Cordinate [colum=7, lineNumber=6]
 checking terrain at 6 8
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 7 8
 t .
 checking terrain at 7 7
@@ -884,28 +668,20 @@ checking terrain at 5 8
 t .
 checking terrain at 5 7
 t .
-jumping, target:Cordinate [colum=9, lineNumber=6] prevCordinate Cordinate [colum=8, lineNumber=6]
 checking terrain at 6 9
 t @
-terrain not passable at 6 9
-jumping, target:Cordinate [colum=5, lineNumber=6] prevCordinate Cordinate [colum=6, lineNumber=6]
 checking terrain at 6 5
 t T
-terrain not passable at 6 5
-jumping, target:Cordinate [colum=6, lineNumber=7] prevCordinate Cordinate [colum=6, lineNumber=6]
 checking terrain at 7 6
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 7 5
 t T
 checking terrain at 7 7
 t .
 checking terrain at 6 7
 t .
-jumping, target:Cordinate [colum=7, lineNumber=7] prevCordinate Cordinate [colum=6, lineNumber=7]
 checking terrain at 7 7
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 8 7
 t .
 checking terrain at 8 6
@@ -914,10 +690,8 @@ checking terrain at 6 7
 t .
 checking terrain at 6 6
 t .
-jumping, target:Cordinate [colum=8, lineNumber=7] prevCordinate Cordinate [colum=7, lineNumber=7]
 checking terrain at 7 8
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 8 8
 t .
 checking terrain at 8 7
@@ -926,65 +700,40 @@ checking terrain at 6 8
 t .
 checking terrain at 6 7
 t .
-jumping, target:Cordinate [colum=9, lineNumber=7] prevCordinate Cordinate [colum=8, lineNumber=7]
 checking terrain at 7 9
 t @
-terrain not passable at 7 9
-jumping, target:Cordinate [colum=5, lineNumber=7] prevCordinate Cordinate [colum=6, lineNumber=7]
 checking terrain at 7 5
 t T
-terrain not passable at 7 5
-jumping, target:Cordinate [colum=6, lineNumber=8] prevCordinate Cordinate [colum=6, lineNumber=7]
 checking terrain at 8 6
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 8 5
 t T
 checking terrain at 8 7
 t .
 checking terrain at 7 7
 t .
-jumping, target:Cordinate [colum=7, lineNumber=8] prevCordinate Cordinate [colum=6, lineNumber=8]
 checking terrain at 8 7
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 9 7
 t @
 checking terrain at 7 7
 t .
 checking terrain at 7 6
 t .
-jumping, target:Cordinate [colum=8, lineNumber=8] prevCordinate Cordinate [colum=7, lineNumber=8]
 checking terrain at 8 8
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 9 8
 t @
 checking terrain at 7 8
 t .
 checking terrain at 7 7
 t .
-jumping, target:Cordinate [colum=9, lineNumber=8] prevCordinate Cordinate [colum=8, lineNumber=8]
 checking terrain at 8 9
 t @
-terrain not passable at 8 9
-jumping, target:Cordinate [colum=5, lineNumber=8] prevCordinate Cordinate [colum=6, lineNumber=8]
 checking terrain at 8 5
 t T
-terrain not passable at 8 5
-jumping, target:Cordinate [colum=6, lineNumber=9] prevCordinate Cordinate [colum=6, lineNumber=8]
 checking terrain at 9 6
 t @
-terrain not passable at 9 6
-next null
-findpath
-current Cordinate [colum=8, lineNumber=4]
-findpath
-current Cordinate [colum=2, lineNumber=1]
-find Successors
-getNeighbours
-current Cordinate [colum=2, lineNumber=1]
-parent null
 checking terrain at 2 2
 t .
 checking terrain at 0 2
@@ -993,25 +742,18 @@ checking terrain at 1 3
 t T
 checking terrain at 1 1
 t .
-neighbours [Cordinate [colum=2, lineNumber=2], Cordinate [colum=1, lineNumber=1]]
-jumping, target:Cordinate [colum=2, lineNumber=2] prevCordinate Cordinate [colum=2, lineNumber=1]
 checking terrain at 2 2
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 2 1
 t .
 checking terrain at 1 1
 t .
 checking terrain at 2 3
 t T
-jumping, target:Cordinate [colum=3, lineNumber=2] prevCordinate Cordinate [colum=2, lineNumber=2]
 checking terrain at 2 3
 t T
-terrain not passable at 2 3
-jumping, target:Cordinate [colum=1, lineNumber=2] prevCordinate Cordinate [colum=2, lineNumber=2]
 checking terrain at 2 1
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 3 1
 t .
 checking terrain at 3 2
@@ -1020,28 +762,20 @@ checking terrain at 1 1
 t .
 checking terrain at 1 2
 t .
-jumping, target:Cordinate [colum=0, lineNumber=2] prevCordinate Cordinate [colum=1, lineNumber=2]
 checking terrain at 2 0
 t @
-terrain not passable at 2 0
-jumping, target:Cordinate [colum=2, lineNumber=3] prevCordinate Cordinate [colum=2, lineNumber=2]
 checking terrain at 3 2
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 3 1
 t .
 checking terrain at 2 1
 t .
 checking terrain at 3 3
 t T
-jumping, target:Cordinate [colum=3, lineNumber=3] prevCordinate Cordinate [colum=2, lineNumber=3]
 checking terrain at 3 3
 t T
-terrain not passable at 3 3
-jumping, target:Cordinate [colum=1, lineNumber=3] prevCordinate Cordinate [colum=2, lineNumber=3]
 checking terrain at 3 1
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 4 1
 t .
 checking terrain at 4 2
@@ -1050,28 +784,20 @@ checking terrain at 2 1
 t .
 checking terrain at 2 2
 t .
-jumping, target:Cordinate [colum=0, lineNumber=3] prevCordinate Cordinate [colum=1, lineNumber=3]
 checking terrain at 3 0
 t @
-terrain not passable at 3 0
-jumping, target:Cordinate [colum=2, lineNumber=4] prevCordinate Cordinate [colum=2, lineNumber=3]
 checking terrain at 4 2
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 4 1
 t .
 checking terrain at 3 1
 t .
 checking terrain at 4 3
 t T
-jumping, target:Cordinate [colum=3, lineNumber=4] prevCordinate Cordinate [colum=2, lineNumber=4]
 checking terrain at 4 3
 t T
-terrain not passable at 4 3
-jumping, target:Cordinate [colum=1, lineNumber=4] prevCordinate Cordinate [colum=2, lineNumber=4]
 checking terrain at 4 1
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 5 1
 t .
 checking terrain at 5 2
@@ -1080,28 +806,20 @@ checking terrain at 3 1
 t .
 checking terrain at 3 2
 t .
-jumping, target:Cordinate [colum=0, lineNumber=4] prevCordinate Cordinate [colum=1, lineNumber=4]
 checking terrain at 4 0
 t @
-terrain not passable at 4 0
-jumping, target:Cordinate [colum=2, lineNumber=5] prevCordinate Cordinate [colum=2, lineNumber=4]
 checking terrain at 5 2
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 5 1
 t .
 checking terrain at 4 1
 t .
 checking terrain at 5 3
 t T
-jumping, target:Cordinate [colum=3, lineNumber=5] prevCordinate Cordinate [colum=2, lineNumber=5]
 checking terrain at 5 3
 t T
-terrain not passable at 5 3
-jumping, target:Cordinate [colum=1, lineNumber=5] prevCordinate Cordinate [colum=2, lineNumber=5]
 checking terrain at 5 1
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 6 1
 t .
 checking terrain at 6 2
@@ -1110,28 +828,20 @@ checking terrain at 4 1
 t .
 checking terrain at 4 2
 t .
-jumping, target:Cordinate [colum=0, lineNumber=5] prevCordinate Cordinate [colum=1, lineNumber=5]
 checking terrain at 5 0
 t @
-terrain not passable at 5 0
-jumping, target:Cordinate [colum=2, lineNumber=6] prevCordinate Cordinate [colum=2, lineNumber=5]
 checking terrain at 6 2
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 6 1
 t .
 checking terrain at 5 1
 t .
 checking terrain at 6 3
 t T
-jumping, target:Cordinate [colum=3, lineNumber=6] prevCordinate Cordinate [colum=2, lineNumber=6]
 checking terrain at 6 3
 t T
-terrain not passable at 6 3
-jumping, target:Cordinate [colum=1, lineNumber=6] prevCordinate Cordinate [colum=2, lineNumber=6]
 checking terrain at 6 1
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 7 1
 t .
 checking terrain at 7 2
@@ -1140,28 +850,20 @@ checking terrain at 5 1
 t .
 checking terrain at 5 2
 t .
-jumping, target:Cordinate [colum=0, lineNumber=6] prevCordinate Cordinate [colum=1, lineNumber=6]
 checking terrain at 6 0
 t @
-terrain not passable at 6 0
-jumping, target:Cordinate [colum=2, lineNumber=7] prevCordinate Cordinate [colum=2, lineNumber=6]
 checking terrain at 7 2
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 7 1
 t .
 checking terrain at 6 1
 t .
 checking terrain at 7 3
 t T
-jumping, target:Cordinate [colum=3, lineNumber=7] prevCordinate Cordinate [colum=2, lineNumber=7]
 checking terrain at 7 3
 t T
-terrain not passable at 7 3
-jumping, target:Cordinate [colum=1, lineNumber=7] prevCordinate Cordinate [colum=2, lineNumber=7]
 checking terrain at 7 1
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 8 1
 t .
 checking terrain at 8 2
@@ -1170,14 +872,10 @@ checking terrain at 6 1
 t .
 checking terrain at 6 2
 t .
-jumping, target:Cordinate [colum=0, lineNumber=7] prevCordinate Cordinate [colum=1, lineNumber=7]
 checking terrain at 7 0
 t @
-terrain not passable at 7 0
-jumping, target:Cordinate [colum=2, lineNumber=8] prevCordinate Cordinate [colum=2, lineNumber=7]
 checking terrain at 8 2
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 8 1
 t .
 checking terrain at 7 1
@@ -1186,532 +884,298 @@ checking terrain at 8 3
 t .
 checking terrain at 7 3
 t T
-next Cordinate [colum=2, lineNumber=8]
-updating distance from Cordinate [colum=2, lineNumber=1] to Cordinate [colum=2, lineNumber=8]
-distance updated
-prev[8][2] is now Cordinate [colum=2, lineNumber=1]
-jumping, target:Cordinate [colum=1, lineNumber=1] prevCordinate Cordinate [colum=2, lineNumber=1]
 checking terrain at 1 1
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 2 1
 t .
 checking terrain at 2 2
 t .
 checking terrain at 0 1
 t @
-jumping, target:Cordinate [colum=0, lineNumber=1] prevCordinate Cordinate [colum=1, lineNumber=1]
 checking terrain at 1 0
 t @
-terrain not passable at 1 0
-next null
-findpath
-current Cordinate [colum=2, lineNumber=8]
-find Successors
-getNeighbours
-current Cordinate [colum=2, lineNumber=8]
-parent Cordinate [colum=2, lineNumber=1]
 checking terrain at 8 3
 t .
-updating distance from Cordinate [colum=2, lineNumber=8] to Cordinate [colum=3, lineNumber=8]
-distance updated
-prev[8][3] is now Cordinate [colum=2, lineNumber=8]
 checking terrain at 8 1
 t .
-updating distance from Cordinate [colum=2, lineNumber=8] to Cordinate [colum=1, lineNumber=8]
-distance updated
-prev[8][1] is now Cordinate [colum=2, lineNumber=8]
 checking terrain at 9 2
 t @
-neighbours [Cordinate [colum=3, lineNumber=8], Cordinate [colum=1, lineNumber=8]]
-jumping, target:Cordinate [colum=3, lineNumber=8] prevCordinate Cordinate [colum=2, lineNumber=8]
 checking terrain at 8 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 9 3
 t @
 checking terrain at 7 3
 t T
-jumping, target:Cordinate [colum=4, lineNumber=8] prevCordinate Cordinate [colum=3, lineNumber=8]
 checking terrain at 8 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 9 4
 t @
 checking terrain at 7 4
 t .
 checking terrain at 7 3
 t T
-next Cordinate [colum=4, lineNumber=8]
-updating distance from Cordinate [colum=2, lineNumber=8] to Cordinate [colum=4, lineNumber=8]
-distance updated
-prev[8][4] is now Cordinate [colum=2, lineNumber=8]
-jumping, target:Cordinate [colum=1, lineNumber=8] prevCordinate Cordinate [colum=2, lineNumber=8]
 checking terrain at 8 1
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 9 1
 t @
 checking terrain at 7 1
 t .
 checking terrain at 7 2
 t .
-jumping, target:Cordinate [colum=0, lineNumber=8] prevCordinate Cordinate [colum=1, lineNumber=8]
 checking terrain at 8 0
 t @
-terrain not passable at 8 0
-next null
-findpath
-current Cordinate [colum=4, lineNumber=8]
-find Successors
-getNeighbours
-current Cordinate [colum=4, lineNumber=8]
-parent Cordinate [colum=2, lineNumber=8]
 checking terrain at 9 4
 t @
 checking terrain at 7 4
 t .
-updating distance from Cordinate [colum=4, lineNumber=8] to Cordinate [colum=4, lineNumber=7]
-distance updated
-prev[7][4] is now Cordinate [colum=4, lineNumber=8]
 checking terrain at 8 5
 t T
-neighbours [Cordinate [colum=4, lineNumber=7]]
-jumping, target:Cordinate [colum=4, lineNumber=7] prevCordinate Cordinate [colum=4, lineNumber=8]
 checking terrain at 7 4
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 7 3
 t T
 checking terrain at 7 5
 t T
-jumping, target:Cordinate [colum=5, lineNumber=7] prevCordinate Cordinate [colum=4, lineNumber=7]
 checking terrain at 7 5
 t T
-terrain not passable at 7 5
-jumping, target:Cordinate [colum=3, lineNumber=7] prevCordinate Cordinate [colum=4, lineNumber=7]
 checking terrain at 7 3
 t T
-terrain not passable at 7 3
-jumping, target:Cordinate [colum=4, lineNumber=6] prevCordinate Cordinate [colum=4, lineNumber=7]
 checking terrain at 6 4
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 6 3
 t T
 checking terrain at 6 5
 t T
-jumping, target:Cordinate [colum=5, lineNumber=6] prevCordinate Cordinate [colum=4, lineNumber=6]
 checking terrain at 6 5
 t T
-terrain not passable at 6 5
-jumping, target:Cordinate [colum=3, lineNumber=6] prevCordinate Cordinate [colum=4, lineNumber=6]
 checking terrain at 6 3
 t T
-terrain not passable at 6 3
-jumping, target:Cordinate [colum=4, lineNumber=5] prevCordinate Cordinate [colum=4, lineNumber=6]
 checking terrain at 5 4
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 5 3
 t T
 checking terrain at 5 5
 t T
-jumping, target:Cordinate [colum=5, lineNumber=5] prevCordinate Cordinate [colum=4, lineNumber=5]
 checking terrain at 5 5
 t T
-terrain not passable at 5 5
-jumping, target:Cordinate [colum=3, lineNumber=5] prevCordinate Cordinate [colum=4, lineNumber=5]
 checking terrain at 5 3
 t T
-terrain not passable at 5 3
-jumping, target:Cordinate [colum=4, lineNumber=4] prevCordinate Cordinate [colum=4, lineNumber=5]
 checking terrain at 4 4
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 4 3
 t T
 checking terrain at 4 5
 t T
-jumping, target:Cordinate [colum=5, lineNumber=4] prevCordinate Cordinate [colum=4, lineNumber=4]
 checking terrain at 4 5
 t T
-terrain not passable at 4 5
-jumping, target:Cordinate [colum=3, lineNumber=4] prevCordinate Cordinate [colum=4, lineNumber=4]
 checking terrain at 4 3
 t T
-terrain not passable at 4 3
-jumping, target:Cordinate [colum=4, lineNumber=3] prevCordinate Cordinate [colum=4, lineNumber=4]
 checking terrain at 3 4
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 3 3
 t T
 checking terrain at 3 5
 t T
-jumping, target:Cordinate [colum=5, lineNumber=3] prevCordinate Cordinate [colum=4, lineNumber=3]
 checking terrain at 3 5
 t T
-terrain not passable at 3 5
-jumping, target:Cordinate [colum=3, lineNumber=3] prevCordinate Cordinate [colum=4, lineNumber=3]
 checking terrain at 3 3
 t T
-terrain not passable at 3 3
-jumping, target:Cordinate [colum=4, lineNumber=2] prevCordinate Cordinate [colum=4, lineNumber=3]
 checking terrain at 2 4
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 2 3
 t T
 checking terrain at 2 5
 t T
-jumping, target:Cordinate [colum=5, lineNumber=2] prevCordinate Cordinate [colum=4, lineNumber=2]
 checking terrain at 2 5
 t T
-terrain not passable at 2 5
-jumping, target:Cordinate [colum=3, lineNumber=2] prevCordinate Cordinate [colum=4, lineNumber=2]
 checking terrain at 2 3
 t T
-terrain not passable at 2 3
-jumping, target:Cordinate [colum=4, lineNumber=1] prevCordinate Cordinate [colum=4, lineNumber=2]
 checking terrain at 1 4
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 1 3
 t T
 checking terrain at 1 5
 t .
 checking terrain at 2 5
 t T
-next Cordinate [colum=4, lineNumber=1]
-updating distance from Cordinate [colum=4, lineNumber=8] to Cordinate [colum=4, lineNumber=1]
-distance updated
-prev[1][4] is now Cordinate [colum=4, lineNumber=8]
-findpath
-current Cordinate [colum=4, lineNumber=1]
-find Successors
-getNeighbours
-current Cordinate [colum=4, lineNumber=1]
-parent Cordinate [colum=4, lineNumber=8]
 checking terrain at 1 5
 t .
-updating distance from Cordinate [colum=4, lineNumber=1] to Cordinate [colum=5, lineNumber=1]
-distance updated
-prev[1][5] is now Cordinate [colum=4, lineNumber=1]
 checking terrain at 1 3
 t T
 checking terrain at 0 4
 t @
-neighbours [Cordinate [colum=5, lineNumber=1]]
-jumping, target:Cordinate [colum=5, lineNumber=1] prevCordinate Cordinate [colum=4, lineNumber=1]
 checking terrain at 1 5
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 5
 t T
 checking terrain at 0 5
 t @
-jumping, target:Cordinate [colum=6, lineNumber=1] prevCordinate Cordinate [colum=5, lineNumber=1]
 checking terrain at 1 6
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 6
 t .
 checking terrain at 2 5
 t T
-next Cordinate [colum=6, lineNumber=1]
-updating distance from Cordinate [colum=4, lineNumber=1] to Cordinate [colum=6, lineNumber=1]
-distance updated
-prev[1][6] is now Cordinate [colum=4, lineNumber=1]
-findpath
-current Cordinate [colum=6, lineNumber=1]
-find Successors
-getNeighbours
-current Cordinate [colum=6, lineNumber=1]
-parent Cordinate [colum=4, lineNumber=1]
 checking terrain at 2 6
 t .
-updating distance from Cordinate [colum=6, lineNumber=1] to Cordinate [colum=6, lineNumber=2]
-distance updated
-prev[2][6] is now Cordinate [colum=6, lineNumber=1]
 checking terrain at 0 6
 t @
 checking terrain at 1 7
 t T
-neighbours [Cordinate [colum=6, lineNumber=2]]
-jumping, target:Cordinate [colum=6, lineNumber=2] prevCordinate Cordinate [colum=6, lineNumber=1]
 checking terrain at 2 6
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 2 5
 t T
 checking terrain at 2 7
 t T
-jumping, target:Cordinate [colum=7, lineNumber=2] prevCordinate Cordinate [colum=6, lineNumber=2]
 checking terrain at 2 7
 t T
-terrain not passable at 2 7
-jumping, target:Cordinate [colum=5, lineNumber=2] prevCordinate Cordinate [colum=6, lineNumber=2]
 checking terrain at 2 5
 t T
-terrain not passable at 2 5
-jumping, target:Cordinate [colum=6, lineNumber=3] prevCordinate Cordinate [colum=6, lineNumber=2]
 checking terrain at 3 6
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 3 5
 t T
 checking terrain at 3 7
 t T
-jumping, target:Cordinate [colum=7, lineNumber=3] prevCordinate Cordinate [colum=6, lineNumber=3]
 checking terrain at 3 7
 t T
-terrain not passable at 3 7
-jumping, target:Cordinate [colum=5, lineNumber=3] prevCordinate Cordinate [colum=6, lineNumber=3]
 checking terrain at 3 5
 t T
-terrain not passable at 3 5
-jumping, target:Cordinate [colum=6, lineNumber=4] prevCordinate Cordinate [colum=6, lineNumber=3]
 checking terrain at 4 6
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 4 5
 t T
 checking terrain at 4 7
 t T
-jumping, target:Cordinate [colum=7, lineNumber=4] prevCordinate Cordinate [colum=6, lineNumber=4]
 checking terrain at 4 7
 t T
-terrain not passable at 4 7
-jumping, target:Cordinate [colum=5, lineNumber=4] prevCordinate Cordinate [colum=6, lineNumber=4]
 checking terrain at 4 5
 t T
-terrain not passable at 4 5
-jumping, target:Cordinate [colum=6, lineNumber=5] prevCordinate Cordinate [colum=6, lineNumber=4]
 checking terrain at 5 6
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 5 5
 t T
 checking terrain at 5 7
 t T
-jumping, target:Cordinate [colum=7, lineNumber=5] prevCordinate Cordinate [colum=6, lineNumber=5]
 checking terrain at 5 7
 t T
-terrain not passable at 5 7
-jumping, target:Cordinate [colum=5, lineNumber=5] prevCordinate Cordinate [colum=6, lineNumber=5]
 checking terrain at 5 5
 t T
-terrain not passable at 5 5
-jumping, target:Cordinate [colum=6, lineNumber=6] prevCordinate Cordinate [colum=6, lineNumber=5]
 checking terrain at 6 6
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 6 5
 t T
 checking terrain at 6 7
 t T
-jumping, target:Cordinate [colum=7, lineNumber=6] prevCordinate Cordinate [colum=6, lineNumber=6]
 checking terrain at 6 7
 t T
-terrain not passable at 6 7
-jumping, target:Cordinate [colum=5, lineNumber=6] prevCordinate Cordinate [colum=6, lineNumber=6]
 checking terrain at 6 5
 t T
-terrain not passable at 6 5
-jumping, target:Cordinate [colum=6, lineNumber=7] prevCordinate Cordinate [colum=6, lineNumber=6]
 checking terrain at 7 6
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 7 5
 t T
 checking terrain at 7 7
 t T
-jumping, target:Cordinate [colum=7, lineNumber=7] prevCordinate Cordinate [colum=6, lineNumber=7]
 checking terrain at 7 7
 t T
-terrain not passable at 7 7
-jumping, target:Cordinate [colum=5, lineNumber=7] prevCordinate Cordinate [colum=6, lineNumber=7]
 checking terrain at 7 5
 t T
-terrain not passable at 7 5
-jumping, target:Cordinate [colum=6, lineNumber=8] prevCordinate Cordinate [colum=6, lineNumber=7]
 checking terrain at 8 6
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 8 5
 t T
 checking terrain at 8 7
 t .
 checking terrain at 7 7
 t T
-next Cordinate [colum=6, lineNumber=8]
-updating distance from Cordinate [colum=6, lineNumber=1] to Cordinate [colum=6, lineNumber=8]
-distance updated
-prev[8][6] is now Cordinate [colum=6, lineNumber=1]
-findpath
-current Cordinate [colum=6, lineNumber=8]
-find Successors
-getNeighbours
-current Cordinate [colum=6, lineNumber=8]
-parent Cordinate [colum=6, lineNumber=1]
 checking terrain at 8 7
 t .
-updating distance from Cordinate [colum=6, lineNumber=8] to Cordinate [colum=7, lineNumber=8]
-distance updated
-prev[8][7] is now Cordinate [colum=6, lineNumber=8]
 checking terrain at 8 5
 t T
 checking terrain at 9 6
 t @
-neighbours [Cordinate [colum=7, lineNumber=8]]
-jumping, target:Cordinate [colum=7, lineNumber=8] prevCordinate Cordinate [colum=6, lineNumber=8]
 checking terrain at 8 7
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 9 7
 t @
 checking terrain at 7 7
 t T
-jumping, target:Cordinate [colum=8, lineNumber=8] prevCordinate Cordinate [colum=7, lineNumber=8]
 checking terrain at 8 8
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 9 8
 t @
 checking terrain at 7 8
 t .
 checking terrain at 7 7
 t T
-next Cordinate [colum=8, lineNumber=8]
-updating distance from Cordinate [colum=6, lineNumber=8] to Cordinate [colum=8, lineNumber=8]
-distance updated
-prev[8][8] is now Cordinate [colum=6, lineNumber=8]
-findpath
-current Cordinate [colum=8, lineNumber=8]
-find Successors
-getNeighbours
-current Cordinate [colum=8, lineNumber=8]
-parent Cordinate [colum=6, lineNumber=8]
 checking terrain at 9 8
 t @
 checking terrain at 7 8
 t .
-updating distance from Cordinate [colum=8, lineNumber=8] to Cordinate [colum=8, lineNumber=7]
-distance updated
-prev[7][8] is now Cordinate [colum=8, lineNumber=8]
 checking terrain at 8 9
 t @
-neighbours [Cordinate [colum=8, lineNumber=7]]
-jumping, target:Cordinate [colum=8, lineNumber=7] prevCordinate Cordinate [colum=8, lineNumber=8]
 checking terrain at 7 8
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 7 7
 t T
 checking terrain at 7 9
 t @
-jumping, target:Cordinate [colum=9, lineNumber=7] prevCordinate Cordinate [colum=8, lineNumber=7]
 checking terrain at 7 9
 t @
-terrain not passable at 7 9
-jumping, target:Cordinate [colum=7, lineNumber=7] prevCordinate Cordinate [colum=8, lineNumber=7]
 checking terrain at 7 7
 t T
-terrain not passable at 7 7
-jumping, target:Cordinate [colum=8, lineNumber=6] prevCordinate Cordinate [colum=8, lineNumber=7]
 checking terrain at 6 8
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 6 7
 t T
 checking terrain at 6 9
 t @
-jumping, target:Cordinate [colum=9, lineNumber=6] prevCordinate Cordinate [colum=8, lineNumber=6]
 checking terrain at 6 9
 t @
-terrain not passable at 6 9
-jumping, target:Cordinate [colum=7, lineNumber=6] prevCordinate Cordinate [colum=8, lineNumber=6]
 checking terrain at 6 7
 t T
-terrain not passable at 6 7
-jumping, target:Cordinate [colum=8, lineNumber=5] prevCordinate Cordinate [colum=8, lineNumber=6]
 checking terrain at 5 8
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 5 7
 t T
 checking terrain at 5 9
 t @
-jumping, target:Cordinate [colum=9, lineNumber=5] prevCordinate Cordinate [colum=8, lineNumber=5]
 checking terrain at 5 9
 t @
-terrain not passable at 5 9
-jumping, target:Cordinate [colum=7, lineNumber=5] prevCordinate Cordinate [colum=8, lineNumber=5]
 checking terrain at 5 7
 t T
-terrain not passable at 5 7
-jumping, target:Cordinate [colum=8, lineNumber=4] prevCordinate Cordinate [colum=8, lineNumber=5]
 checking terrain at 4 8
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 4 7
 t T
 checking terrain at 4 9
 t @
-jumping, target:Cordinate [colum=9, lineNumber=4] prevCordinate Cordinate [colum=8, lineNumber=4]
 checking terrain at 4 9
 t @
-terrain not passable at 4 9
-jumping, target:Cordinate [colum=7, lineNumber=4] prevCordinate Cordinate [colum=8, lineNumber=4]
 checking terrain at 4 7
 t T
-terrain not passable at 4 7
-jumping, target:Cordinate [colum=8, lineNumber=3] prevCordinate Cordinate [colum=8, lineNumber=4]
 checking terrain at 3 8
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 3 7
 t T
 checking terrain at 3 9
 t @
-jumping, target:Cordinate [colum=9, lineNumber=3] prevCordinate Cordinate [colum=8, lineNumber=3]
 checking terrain at 3 9
 t @
-terrain not passable at 3 9
-jumping, target:Cordinate [colum=7, lineNumber=3] prevCordinate Cordinate [colum=8, lineNumber=3]
 checking terrain at 3 7
 t T
-terrain not passable at 3 7
-jumping, target:Cordinate [colum=8, lineNumber=2] prevCordinate Cordinate [colum=8, lineNumber=3]
 checking terrain at 2 8
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 2 7
 t T
 checking terrain at 2 9
 t @
-jumping, target:Cordinate [colum=9, lineNumber=2] prevCordinate Cordinate [colum=8, lineNumber=2]
 checking terrain at 2 9
 t @
-terrain not passable at 2 9
-jumping, target:Cordinate [colum=7, lineNumber=2] prevCordinate Cordinate [colum=8, lineNumber=2]
 checking terrain at 2 7
 t T
-terrain not passable at 2 7
-jumping, target:Cordinate [colum=8, lineNumber=1] prevCordinate Cordinate [colum=8, lineNumber=2]
-next Cordinate [colum=8, lineNumber=1]
-updating distance from Cordinate [colum=8, lineNumber=8] to Cordinate [colum=8, lineNumber=1]
-distance updated
-prev[1][8] is now Cordinate [colum=8, lineNumber=8]
-findpath
-current Cordinate [colum=8, lineNumber=1]
-findpath
-current Cordinate [colum=1, lineNumber=4]
-find Successors
-getNeighbours
-current Cordinate [colum=1, lineNumber=4]
-parent null
 checking terrain at 5 1
 t .
 checking terrain at 3 1
@@ -1720,21 +1184,16 @@ checking terrain at 4 2
 t .
 checking terrain at 4 0
 t @
-neighbours [Cordinate [colum=1, lineNumber=5], Cordinate [colum=1, lineNumber=3], Cordinate [colum=2, lineNumber=4]]
-jumping, target:Cordinate [colum=1, lineNumber=5] prevCordinate Cordinate [colum=1, lineNumber=4]
 checking terrain at 5 1
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 5 0
 t @
 checking terrain at 5 2
 t .
 checking terrain at 4 2
 t .
-jumping, target:Cordinate [colum=2, lineNumber=5] prevCordinate Cordinate [colum=1, lineNumber=5]
 checking terrain at 5 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 6 2
 t .
 checking terrain at 6 1
@@ -1743,10 +1202,8 @@ checking terrain at 4 2
 t .
 checking terrain at 4 1
 t .
-jumping, target:Cordinate [colum=3, lineNumber=5] prevCordinate Cordinate [colum=2, lineNumber=5]
 checking terrain at 5 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 6 3
 t .
 checking terrain at 6 2
@@ -1755,10 +1212,8 @@ checking terrain at 4 3
 t .
 checking terrain at 4 2
 t .
-jumping, target:Cordinate [colum=4, lineNumber=5] prevCordinate Cordinate [colum=3, lineNumber=5]
 checking terrain at 5 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 6 4
 t .
 checking terrain at 6 3
@@ -1767,10 +1222,8 @@ checking terrain at 4 4
 t .
 checking terrain at 4 3
 t .
-jumping, target:Cordinate [colum=5, lineNumber=5] prevCordinate Cordinate [colum=4, lineNumber=5]
 checking terrain at 5 5
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 6 5
 t .
 checking terrain at 6 4
@@ -1779,10 +1232,8 @@ checking terrain at 4 5
 t .
 checking terrain at 4 4
 t .
-jumping, target:Cordinate [colum=6, lineNumber=5] prevCordinate Cordinate [colum=5, lineNumber=5]
 checking terrain at 5 6
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 6 6
 t .
 checking terrain at 6 5
@@ -1791,10 +1242,8 @@ checking terrain at 4 6
 t .
 checking terrain at 4 5
 t .
-jumping, target:Cordinate [colum=7, lineNumber=5] prevCordinate Cordinate [colum=6, lineNumber=5]
 checking terrain at 5 7
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 6 7
 t .
 checking terrain at 6 6
@@ -1803,10 +1252,8 @@ checking terrain at 4 7
 t .
 checking terrain at 4 6
 t .
-jumping, target:Cordinate [colum=8, lineNumber=5] prevCordinate Cordinate [colum=7, lineNumber=5]
 checking terrain at 5 8
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 6 8
 t .
 checking terrain at 6 7
@@ -1815,28 +1262,20 @@ checking terrain at 4 8
 t .
 checking terrain at 4 7
 t .
-jumping, target:Cordinate [colum=9, lineNumber=5] prevCordinate Cordinate [colum=8, lineNumber=5]
 checking terrain at 5 9
 t @
-terrain not passable at 5 9
-jumping, target:Cordinate [colum=0, lineNumber=5] prevCordinate Cordinate [colum=1, lineNumber=5]
 checking terrain at 5 0
 t @
-terrain not passable at 5 0
-jumping, target:Cordinate [colum=1, lineNumber=6] prevCordinate Cordinate [colum=1, lineNumber=5]
 checking terrain at 6 1
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 6 0
 t @
 checking terrain at 6 2
 t .
 checking terrain at 5 2
 t .
-jumping, target:Cordinate [colum=2, lineNumber=6] prevCordinate Cordinate [colum=1, lineNumber=6]
 checking terrain at 6 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 7 2
 t .
 checking terrain at 7 1
@@ -1845,10 +1284,8 @@ checking terrain at 5 2
 t .
 checking terrain at 5 1
 t .
-jumping, target:Cordinate [colum=3, lineNumber=6] prevCordinate Cordinate [colum=2, lineNumber=6]
 checking terrain at 6 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 7 3
 t .
 checking terrain at 7 2
@@ -1857,10 +1294,8 @@ checking terrain at 5 3
 t .
 checking terrain at 5 2
 t .
-jumping, target:Cordinate [colum=4, lineNumber=6] prevCordinate Cordinate [colum=3, lineNumber=6]
 checking terrain at 6 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 7 4
 t .
 checking terrain at 7 3
@@ -1869,10 +1304,8 @@ checking terrain at 5 4
 t .
 checking terrain at 5 3
 t .
-jumping, target:Cordinate [colum=5, lineNumber=6] prevCordinate Cordinate [colum=4, lineNumber=6]
 checking terrain at 6 5
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 7 5
 t .
 checking terrain at 7 4
@@ -1881,10 +1314,8 @@ checking terrain at 5 5
 t .
 checking terrain at 5 4
 t .
-jumping, target:Cordinate [colum=6, lineNumber=6] prevCordinate Cordinate [colum=5, lineNumber=6]
 checking terrain at 6 6
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 7 6
 t .
 checking terrain at 7 5
@@ -1893,10 +1324,8 @@ checking terrain at 5 6
 t .
 checking terrain at 5 5
 t .
-jumping, target:Cordinate [colum=7, lineNumber=6] prevCordinate Cordinate [colum=6, lineNumber=6]
 checking terrain at 6 7
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 7 7
 t .
 checking terrain at 7 6
@@ -1905,10 +1334,8 @@ checking terrain at 5 7
 t .
 checking terrain at 5 6
 t .
-jumping, target:Cordinate [colum=8, lineNumber=6] prevCordinate Cordinate [colum=7, lineNumber=6]
 checking terrain at 6 8
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 7 8
 t .
 checking terrain at 7 7
@@ -1917,28 +1344,20 @@ checking terrain at 5 8
 t .
 checking terrain at 5 7
 t .
-jumping, target:Cordinate [colum=9, lineNumber=6] prevCordinate Cordinate [colum=8, lineNumber=6]
 checking terrain at 6 9
 t @
-terrain not passable at 6 9
-jumping, target:Cordinate [colum=0, lineNumber=6] prevCordinate Cordinate [colum=1, lineNumber=6]
 checking terrain at 6 0
 t @
-terrain not passable at 6 0
-jumping, target:Cordinate [colum=1, lineNumber=7] prevCordinate Cordinate [colum=1, lineNumber=6]
 checking terrain at 7 1
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 7 0
 t @
 checking terrain at 7 2
 t .
 checking terrain at 6 2
 t .
-jumping, target:Cordinate [colum=2, lineNumber=7] prevCordinate Cordinate [colum=1, lineNumber=7]
 checking terrain at 7 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 8 2
 t .
 checking terrain at 8 1
@@ -1947,10 +1366,8 @@ checking terrain at 6 2
 t .
 checking terrain at 6 1
 t .
-jumping, target:Cordinate [colum=3, lineNumber=7] prevCordinate Cordinate [colum=2, lineNumber=7]
 checking terrain at 7 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 8 3
 t .
 checking terrain at 8 2
@@ -1959,10 +1376,8 @@ checking terrain at 6 3
 t .
 checking terrain at 6 2
 t .
-jumping, target:Cordinate [colum=4, lineNumber=7] prevCordinate Cordinate [colum=3, lineNumber=7]
 checking terrain at 7 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 8 4
 t .
 checking terrain at 8 3
@@ -1971,10 +1386,8 @@ checking terrain at 6 4
 t .
 checking terrain at 6 3
 t .
-jumping, target:Cordinate [colum=5, lineNumber=7] prevCordinate Cordinate [colum=4, lineNumber=7]
 checking terrain at 7 5
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 8 5
 t .
 checking terrain at 8 4
@@ -1983,10 +1396,8 @@ checking terrain at 6 5
 t .
 checking terrain at 6 4
 t .
-jumping, target:Cordinate [colum=6, lineNumber=7] prevCordinate Cordinate [colum=5, lineNumber=7]
 checking terrain at 7 6
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 8 6
 t .
 checking terrain at 8 5
@@ -1995,10 +1406,8 @@ checking terrain at 6 6
 t .
 checking terrain at 6 5
 t .
-jumping, target:Cordinate [colum=7, lineNumber=7] prevCordinate Cordinate [colum=6, lineNumber=7]
 checking terrain at 7 7
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 8 7
 t .
 checking terrain at 8 6
@@ -2007,10 +1416,8 @@ checking terrain at 6 7
 t .
 checking terrain at 6 6
 t .
-jumping, target:Cordinate [colum=8, lineNumber=7] prevCordinate Cordinate [colum=7, lineNumber=7]
 checking terrain at 7 8
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 8 8
 t .
 checking terrain at 8 7
@@ -2019,121 +1426,90 @@ checking terrain at 6 8
 t .
 checking terrain at 6 7
 t .
-jumping, target:Cordinate [colum=9, lineNumber=7] prevCordinate Cordinate [colum=8, lineNumber=7]
 checking terrain at 7 9
 t @
-terrain not passable at 7 9
-jumping, target:Cordinate [colum=0, lineNumber=7] prevCordinate Cordinate [colum=1, lineNumber=7]
 checking terrain at 7 0
 t @
-terrain not passable at 7 0
-jumping, target:Cordinate [colum=1, lineNumber=8] prevCordinate Cordinate [colum=1, lineNumber=7]
 checking terrain at 8 1
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 8 0
 t @
 checking terrain at 8 2
 t .
 checking terrain at 7 2
 t .
-jumping, target:Cordinate [colum=2, lineNumber=8] prevCordinate Cordinate [colum=1, lineNumber=8]
 checking terrain at 8 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 9 2
 t @
 checking terrain at 7 2
 t .
 checking terrain at 7 1
 t .
-jumping, target:Cordinate [colum=3, lineNumber=8] prevCordinate Cordinate [colum=2, lineNumber=8]
 checking terrain at 8 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 9 3
 t @
 checking terrain at 7 3
 t .
 checking terrain at 7 2
 t .
-jumping, target:Cordinate [colum=4, lineNumber=8] prevCordinate Cordinate [colum=3, lineNumber=8]
 checking terrain at 8 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 9 4
 t @
 checking terrain at 7 4
 t .
 checking terrain at 7 3
 t .
-jumping, target:Cordinate [colum=5, lineNumber=8] prevCordinate Cordinate [colum=4, lineNumber=8]
 checking terrain at 8 5
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 9 5
 t @
 checking terrain at 7 5
 t .
 checking terrain at 7 4
 t .
-jumping, target:Cordinate [colum=6, lineNumber=8] prevCordinate Cordinate [colum=5, lineNumber=8]
 checking terrain at 8 6
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 9 6
 t @
 checking terrain at 7 6
 t .
 checking terrain at 7 5
 t .
-jumping, target:Cordinate [colum=7, lineNumber=8] prevCordinate Cordinate [colum=6, lineNumber=8]
 checking terrain at 8 7
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 9 7
 t @
 checking terrain at 7 7
 t .
 checking terrain at 7 6
 t .
-jumping, target:Cordinate [colum=8, lineNumber=8] prevCordinate Cordinate [colum=7, lineNumber=8]
 checking terrain at 8 8
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 9 8
 t @
 checking terrain at 7 8
 t .
 checking terrain at 7 7
 t .
-jumping, target:Cordinate [colum=9, lineNumber=8] prevCordinate Cordinate [colum=8, lineNumber=8]
 checking terrain at 8 9
 t @
-terrain not passable at 8 9
-jumping, target:Cordinate [colum=0, lineNumber=8] prevCordinate Cordinate [colum=1, lineNumber=8]
 checking terrain at 8 0
 t @
-terrain not passable at 8 0
-jumping, target:Cordinate [colum=1, lineNumber=9] prevCordinate Cordinate [colum=1, lineNumber=8]
 checking terrain at 9 1
 t @
-terrain not passable at 9 1
-next null
-jumping, target:Cordinate [colum=1, lineNumber=3] prevCordinate Cordinate [colum=1, lineNumber=4]
 checking terrain at 3 1
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 3 0
 t @
 checking terrain at 3 2
 t .
 checking terrain at 4 2
 t .
-jumping, target:Cordinate [colum=2, lineNumber=3] prevCordinate Cordinate [colum=1, lineNumber=3]
 checking terrain at 3 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 4 2
 t .
 checking terrain at 4 1
@@ -2142,10 +1518,8 @@ checking terrain at 2 2
 t .
 checking terrain at 2 1
 t .
-jumping, target:Cordinate [colum=3, lineNumber=3] prevCordinate Cordinate [colum=2, lineNumber=3]
 checking terrain at 3 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 4 3
 t .
 checking terrain at 4 2
@@ -2154,10 +1528,8 @@ checking terrain at 2 3
 t .
 checking terrain at 2 2
 t .
-jumping, target:Cordinate [colum=4, lineNumber=3] prevCordinate Cordinate [colum=3, lineNumber=3]
 checking terrain at 3 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 4 4
 t .
 checking terrain at 4 3
@@ -2166,10 +1538,8 @@ checking terrain at 2 4
 t .
 checking terrain at 2 3
 t .
-jumping, target:Cordinate [colum=5, lineNumber=3] prevCordinate Cordinate [colum=4, lineNumber=3]
 checking terrain at 3 5
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 4 5
 t .
 checking terrain at 4 4
@@ -2178,10 +1548,8 @@ checking terrain at 2 5
 t .
 checking terrain at 2 4
 t .
-jumping, target:Cordinate [colum=6, lineNumber=3] prevCordinate Cordinate [colum=5, lineNumber=3]
 checking terrain at 3 6
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 4 6
 t .
 checking terrain at 4 5
@@ -2190,10 +1558,8 @@ checking terrain at 2 6
 t .
 checking terrain at 2 5
 t .
-jumping, target:Cordinate [colum=7, lineNumber=3] prevCordinate Cordinate [colum=6, lineNumber=3]
 checking terrain at 3 7
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 4 7
 t .
 checking terrain at 4 6
@@ -2202,10 +1568,8 @@ checking terrain at 2 7
 t .
 checking terrain at 2 6
 t .
-jumping, target:Cordinate [colum=8, lineNumber=3] prevCordinate Cordinate [colum=7, lineNumber=3]
 checking terrain at 3 8
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 4 8
 t .
 checking terrain at 4 7
@@ -2214,28 +1578,20 @@ checking terrain at 2 8
 t .
 checking terrain at 2 7
 t .
-jumping, target:Cordinate [colum=9, lineNumber=3] prevCordinate Cordinate [colum=8, lineNumber=3]
 checking terrain at 3 9
 t @
-terrain not passable at 3 9
-jumping, target:Cordinate [colum=0, lineNumber=3] prevCordinate Cordinate [colum=1, lineNumber=3]
 checking terrain at 3 0
 t @
-terrain not passable at 3 0
-jumping, target:Cordinate [colum=1, lineNumber=2] prevCordinate Cordinate [colum=1, lineNumber=3]
 checking terrain at 2 1
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 2 0
 t @
 checking terrain at 2 2
 t .
 checking terrain at 3 2
 t .
-jumping, target:Cordinate [colum=2, lineNumber=2] prevCordinate Cordinate [colum=1, lineNumber=2]
 checking terrain at 2 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 3 2
 t .
 checking terrain at 3 1
@@ -2244,10 +1600,8 @@ checking terrain at 1 2
 t .
 checking terrain at 1 1
 t .
-jumping, target:Cordinate [colum=3, lineNumber=2] prevCordinate Cordinate [colum=2, lineNumber=2]
 checking terrain at 2 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 3 3
 t .
 checking terrain at 3 2
@@ -2256,10 +1610,8 @@ checking terrain at 1 3
 t .
 checking terrain at 1 2
 t .
-jumping, target:Cordinate [colum=4, lineNumber=2] prevCordinate Cordinate [colum=3, lineNumber=2]
 checking terrain at 2 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 3 4
 t .
 checking terrain at 3 3
@@ -2268,10 +1620,8 @@ checking terrain at 1 4
 t .
 checking terrain at 1 3
 t .
-jumping, target:Cordinate [colum=5, lineNumber=2] prevCordinate Cordinate [colum=4, lineNumber=2]
 checking terrain at 2 5
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 3 5
 t .
 checking terrain at 3 4
@@ -2280,10 +1630,8 @@ checking terrain at 1 5
 t .
 checking terrain at 1 4
 t .
-jumping, target:Cordinate [colum=6, lineNumber=2] prevCordinate Cordinate [colum=5, lineNumber=2]
 checking terrain at 2 6
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 3 6
 t .
 checking terrain at 3 5
@@ -2292,10 +1640,8 @@ checking terrain at 1 6
 t .
 checking terrain at 1 5
 t .
-jumping, target:Cordinate [colum=7, lineNumber=2] prevCordinate Cordinate [colum=6, lineNumber=2]
 checking terrain at 2 7
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 3 7
 t .
 checking terrain at 3 6
@@ -2304,10 +1650,8 @@ checking terrain at 1 7
 t .
 checking terrain at 1 6
 t .
-jumping, target:Cordinate [colum=8, lineNumber=2] prevCordinate Cordinate [colum=7, lineNumber=2]
 checking terrain at 2 8
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 3 8
 t .
 checking terrain at 3 7
@@ -2316,111 +1660,82 @@ checking terrain at 1 8
 t .
 checking terrain at 1 7
 t .
-jumping, target:Cordinate [colum=9, lineNumber=2] prevCordinate Cordinate [colum=8, lineNumber=2]
 checking terrain at 2 9
 t @
-terrain not passable at 2 9
-jumping, target:Cordinate [colum=0, lineNumber=2] prevCordinate Cordinate [colum=1, lineNumber=2]
 checking terrain at 2 0
 t @
-terrain not passable at 2 0
-jumping, target:Cordinate [colum=1, lineNumber=1] prevCordinate Cordinate [colum=1, lineNumber=2]
 checking terrain at 1 1
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 1 0
 t @
 checking terrain at 1 2
 t .
 checking terrain at 2 2
 t .
-jumping, target:Cordinate [colum=2, lineNumber=1] prevCordinate Cordinate [colum=1, lineNumber=1]
 checking terrain at 1 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 2
 t .
 checking terrain at 2 1
 t .
 checking terrain at 0 2
 t @
-jumping, target:Cordinate [colum=3, lineNumber=1] prevCordinate Cordinate [colum=2, lineNumber=1]
 checking terrain at 1 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 3
 t .
 checking terrain at 2 2
 t .
 checking terrain at 0 3
 t @
-jumping, target:Cordinate [colum=4, lineNumber=1] prevCordinate Cordinate [colum=3, lineNumber=1]
 checking terrain at 1 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 4
 t .
 checking terrain at 2 3
 t .
 checking terrain at 0 4
 t @
-jumping, target:Cordinate [colum=5, lineNumber=1] prevCordinate Cordinate [colum=4, lineNumber=1]
 checking terrain at 1 5
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 5
 t .
 checking terrain at 2 4
 t .
 checking terrain at 0 5
 t @
-jumping, target:Cordinate [colum=6, lineNumber=1] prevCordinate Cordinate [colum=5, lineNumber=1]
 checking terrain at 1 6
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 6
 t .
 checking terrain at 2 5
 t .
 checking terrain at 0 6
 t @
-jumping, target:Cordinate [colum=7, lineNumber=1] prevCordinate Cordinate [colum=6, lineNumber=1]
 checking terrain at 1 7
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 7
 t .
 checking terrain at 2 6
 t .
 checking terrain at 0 7
 t @
-jumping, target:Cordinate [colum=8, lineNumber=1] prevCordinate Cordinate [colum=7, lineNumber=1]
 checking terrain at 1 8
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 8
 t .
 checking terrain at 2 7
 t .
 checking terrain at 0 8
 t @
-jumping, target:Cordinate [colum=9, lineNumber=1] prevCordinate Cordinate [colum=8, lineNumber=1]
 checking terrain at 1 9
 t @
-terrain not passable at 1 9
-jumping, target:Cordinate [colum=0, lineNumber=1] prevCordinate Cordinate [colum=1, lineNumber=1]
 checking terrain at 1 0
 t @
-terrain not passable at 1 0
-jumping, target:Cordinate [colum=1, lineNumber=0] prevCordinate Cordinate [colum=1, lineNumber=1]
 checking terrain at 0 1
 t @
-terrain not passable at 0 1
-next null
-jumping, target:Cordinate [colum=2, lineNumber=4] prevCordinate Cordinate [colum=1, lineNumber=4]
 checking terrain at 4 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 5 2
 t .
 checking terrain at 5 1
@@ -2429,10 +1744,8 @@ checking terrain at 3 2
 t .
 checking terrain at 3 1
 t .
-jumping, target:Cordinate [colum=3, lineNumber=4] prevCordinate Cordinate [colum=2, lineNumber=4]
 checking terrain at 4 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 5 3
 t .
 checking terrain at 5 2
@@ -2441,10 +1754,8 @@ checking terrain at 3 3
 t .
 checking terrain at 3 2
 t .
-jumping, target:Cordinate [colum=4, lineNumber=4] prevCordinate Cordinate [colum=3, lineNumber=4]
 checking terrain at 4 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 5 4
 t .
 checking terrain at 5 3
@@ -2453,10 +1764,8 @@ checking terrain at 3 4
 t .
 checking terrain at 3 3
 t .
-jumping, target:Cordinate [colum=5, lineNumber=4] prevCordinate Cordinate [colum=4, lineNumber=4]
 checking terrain at 4 5
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 5 5
 t .
 checking terrain at 5 4
@@ -2465,10 +1774,8 @@ checking terrain at 3 5
 t .
 checking terrain at 3 4
 t .
-jumping, target:Cordinate [colum=6, lineNumber=4] prevCordinate Cordinate [colum=5, lineNumber=4]
 checking terrain at 4 6
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 5 6
 t .
 checking terrain at 5 5
@@ -2477,10 +1784,8 @@ checking terrain at 3 6
 t .
 checking terrain at 3 5
 t .
-jumping, target:Cordinate [colum=7, lineNumber=4] prevCordinate Cordinate [colum=6, lineNumber=4]
 checking terrain at 4 7
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 5 7
 t .
 checking terrain at 5 6
@@ -2489,19 +1794,6 @@ checking terrain at 3 7
 t .
 checking terrain at 3 6
 t .
-jumping, target:Cordinate [colum=8, lineNumber=4] prevCordinate Cordinate [colum=7, lineNumber=4]
-next Cordinate [colum=8, lineNumber=4]
-updating distance from Cordinate [colum=1, lineNumber=4] to Cordinate [colum=8, lineNumber=4]
-distance updated
-prev[4][8] is now Cordinate [colum=1, lineNumber=4]
-findpath
-current Cordinate [colum=8, lineNumber=4]
-findpath
-current Cordinate [colum=8, lineNumber=4]
-find Successors
-getNeighbours
-current Cordinate [colum=8, lineNumber=4]
-parent null
 checking terrain at 5 8
 t .
 checking terrain at 3 8
@@ -2510,25 +1802,18 @@ checking terrain at 4 9
 t @
 checking terrain at 4 7
 t .
-neighbours [Cordinate [colum=8, lineNumber=5], Cordinate [colum=8, lineNumber=3], Cordinate [colum=7, lineNumber=4]]
-jumping, target:Cordinate [colum=8, lineNumber=5] prevCordinate Cordinate [colum=8, lineNumber=4]
 checking terrain at 5 8
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 5 7
 t .
 checking terrain at 4 7
 t .
 checking terrain at 5 9
 t @
-jumping, target:Cordinate [colum=9, lineNumber=5] prevCordinate Cordinate [colum=8, lineNumber=5]
 checking terrain at 5 9
 t @
-terrain not passable at 5 9
-jumping, target:Cordinate [colum=7, lineNumber=5] prevCordinate Cordinate [colum=8, lineNumber=5]
 checking terrain at 5 7
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 6 7
 t .
 checking terrain at 6 8
@@ -2537,10 +1822,8 @@ checking terrain at 4 7
 t .
 checking terrain at 4 8
 t .
-jumping, target:Cordinate [colum=6, lineNumber=5] prevCordinate Cordinate [colum=7, lineNumber=5]
 checking terrain at 5 6
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 6 6
 t .
 checking terrain at 6 7
@@ -2549,10 +1832,8 @@ checking terrain at 4 6
 t .
 checking terrain at 4 7
 t .
-jumping, target:Cordinate [colum=5, lineNumber=5] prevCordinate Cordinate [colum=6, lineNumber=5]
 checking terrain at 5 5
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 6 5
 t .
 checking terrain at 6 6
@@ -2561,10 +1842,8 @@ checking terrain at 4 5
 t .
 checking terrain at 4 6
 t .
-jumping, target:Cordinate [colum=4, lineNumber=5] prevCordinate Cordinate [colum=5, lineNumber=5]
 checking terrain at 5 4
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 6 4
 t .
 checking terrain at 6 5
@@ -2573,10 +1852,8 @@ checking terrain at 4 4
 t .
 checking terrain at 4 5
 t .
-jumping, target:Cordinate [colum=3, lineNumber=5] prevCordinate Cordinate [colum=4, lineNumber=5]
 checking terrain at 5 3
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 6 3
 t .
 checking terrain at 6 4
@@ -2585,10 +1862,8 @@ checking terrain at 4 3
 t .
 checking terrain at 4 4
 t .
-jumping, target:Cordinate [colum=2, lineNumber=5] prevCordinate Cordinate [colum=3, lineNumber=5]
 checking terrain at 5 2
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 6 2
 t .
 checking terrain at 6 3
@@ -2597,10 +1872,8 @@ checking terrain at 4 2
 t .
 checking terrain at 4 3
 t .
-jumping, target:Cordinate [colum=1, lineNumber=5] prevCordinate Cordinate [colum=2, lineNumber=5]
 checking terrain at 5 1
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 6 1
 t .
 checking terrain at 6 2
@@ -2609,28 +1882,20 @@ checking terrain at 4 1
 t .
 checking terrain at 4 2
 t .
-jumping, target:Cordinate [colum=0, lineNumber=5] prevCordinate Cordinate [colum=1, lineNumber=5]
 checking terrain at 5 0
 t @
-terrain not passable at 5 0
-jumping, target:Cordinate [colum=8, lineNumber=6] prevCordinate Cordinate [colum=8, lineNumber=5]
 checking terrain at 6 8
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 6 7
 t .
 checking terrain at 5 7
 t .
 checking terrain at 6 9
 t @
-jumping, target:Cordinate [colum=9, lineNumber=6] prevCordinate Cordinate [colum=8, lineNumber=6]
 checking terrain at 6 9
 t @
-terrain not passable at 6 9
-jumping, target:Cordinate [colum=7, lineNumber=6] prevCordinate Cordinate [colum=8, lineNumber=6]
 checking terrain at 6 7
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 7 7
 t .
 checking terrain at 7 8
@@ -2639,10 +1904,8 @@ checking terrain at 5 7
 t .
 checking terrain at 5 8
 t .
-jumping, target:Cordinate [colum=6, lineNumber=6] prevCordinate Cordinate [colum=7, lineNumber=6]
 checking terrain at 6 6
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 7 6
 t .
 checking terrain at 7 7
@@ -2651,10 +1914,8 @@ checking terrain at 5 6
 t .
 checking terrain at 5 7
 t .
-jumping, target:Cordinate [colum=5, lineNumber=6] prevCordinate Cordinate [colum=6, lineNumber=6]
 checking terrain at 6 5
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 7 5
 t .
 checking terrain at 7 6
@@ -2663,10 +1924,8 @@ checking terrain at 5 5
 t .
 checking terrain at 5 6
 t .
-jumping, target:Cordinate [colum=4, lineNumber=6] prevCordinate Cordinate [colum=5, lineNumber=6]
 checking terrain at 6 4
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 7 4
 t .
 checking terrain at 7 5
@@ -2675,10 +1934,8 @@ checking terrain at 5 4
 t .
 checking terrain at 5 5
 t .
-jumping, target:Cordinate [colum=3, lineNumber=6] prevCordinate Cordinate [colum=4, lineNumber=6]
 checking terrain at 6 3
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 7 3
 t .
 checking terrain at 7 4
@@ -2687,10 +1944,8 @@ checking terrain at 5 3
 t .
 checking terrain at 5 4
 t .
-jumping, target:Cordinate [colum=2, lineNumber=6] prevCordinate Cordinate [colum=3, lineNumber=6]
 checking terrain at 6 2
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 7 2
 t .
 checking terrain at 7 3
@@ -2699,10 +1954,8 @@ checking terrain at 5 2
 t .
 checking terrain at 5 3
 t .
-jumping, target:Cordinate [colum=1, lineNumber=6] prevCordinate Cordinate [colum=2, lineNumber=6]
 checking terrain at 6 1
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 7 1
 t .
 checking terrain at 7 2
@@ -2711,28 +1964,20 @@ checking terrain at 5 1
 t .
 checking terrain at 5 2
 t .
-jumping, target:Cordinate [colum=0, lineNumber=6] prevCordinate Cordinate [colum=1, lineNumber=6]
 checking terrain at 6 0
 t @
-terrain not passable at 6 0
-jumping, target:Cordinate [colum=8, lineNumber=7] prevCordinate Cordinate [colum=8, lineNumber=6]
 checking terrain at 7 8
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 7 7
 t .
 checking terrain at 6 7
 t .
 checking terrain at 7 9
 t @
-jumping, target:Cordinate [colum=9, lineNumber=7] prevCordinate Cordinate [colum=8, lineNumber=7]
 checking terrain at 7 9
 t @
-terrain not passable at 7 9
-jumping, target:Cordinate [colum=7, lineNumber=7] prevCordinate Cordinate [colum=8, lineNumber=7]
 checking terrain at 7 7
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 8 7
 t .
 checking terrain at 8 8
@@ -2741,10 +1986,8 @@ checking terrain at 6 7
 t .
 checking terrain at 6 8
 t .
-jumping, target:Cordinate [colum=6, lineNumber=7] prevCordinate Cordinate [colum=7, lineNumber=7]
 checking terrain at 7 6
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 8 6
 t .
 checking terrain at 8 7
@@ -2753,10 +1996,8 @@ checking terrain at 6 6
 t .
 checking terrain at 6 7
 t .
-jumping, target:Cordinate [colum=5, lineNumber=7] prevCordinate Cordinate [colum=6, lineNumber=7]
 checking terrain at 7 5
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 8 5
 t .
 checking terrain at 8 6
@@ -2765,10 +2006,8 @@ checking terrain at 6 5
 t .
 checking terrain at 6 6
 t .
-jumping, target:Cordinate [colum=4, lineNumber=7] prevCordinate Cordinate [colum=5, lineNumber=7]
 checking terrain at 7 4
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 8 4
 t .
 checking terrain at 8 5
@@ -2777,10 +2016,8 @@ checking terrain at 6 4
 t .
 checking terrain at 6 5
 t .
-jumping, target:Cordinate [colum=3, lineNumber=7] prevCordinate Cordinate [colum=4, lineNumber=7]
 checking terrain at 7 3
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 8 3
 t .
 checking terrain at 8 4
@@ -2789,10 +2026,8 @@ checking terrain at 6 3
 t .
 checking terrain at 6 4
 t .
-jumping, target:Cordinate [colum=2, lineNumber=7] prevCordinate Cordinate [colum=3, lineNumber=7]
 checking terrain at 7 2
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 8 2
 t .
 checking terrain at 8 3
@@ -2801,10 +2036,8 @@ checking terrain at 6 2
 t .
 checking terrain at 6 3
 t .
-jumping, target:Cordinate [colum=1, lineNumber=7] prevCordinate Cordinate [colum=2, lineNumber=7]
 checking terrain at 7 1
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 8 1
 t .
 checking terrain at 8 2
@@ -2813,121 +2046,90 @@ checking terrain at 6 1
 t .
 checking terrain at 6 2
 t .
-jumping, target:Cordinate [colum=0, lineNumber=7] prevCordinate Cordinate [colum=1, lineNumber=7]
 checking terrain at 7 0
 t @
-terrain not passable at 7 0
-jumping, target:Cordinate [colum=8, lineNumber=8] prevCordinate Cordinate [colum=8, lineNumber=7]
 checking terrain at 8 8
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 8 7
 t .
 checking terrain at 7 7
 t .
 checking terrain at 8 9
 t @
-jumping, target:Cordinate [colum=9, lineNumber=8] prevCordinate Cordinate [colum=8, lineNumber=8]
 checking terrain at 8 9
 t @
-terrain not passable at 8 9
-jumping, target:Cordinate [colum=7, lineNumber=8] prevCordinate Cordinate [colum=8, lineNumber=8]
 checking terrain at 8 7
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 9 7
 t @
 checking terrain at 7 7
 t .
 checking terrain at 7 8
 t .
-jumping, target:Cordinate [colum=6, lineNumber=8] prevCordinate Cordinate [colum=7, lineNumber=8]
 checking terrain at 8 6
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 9 6
 t @
 checking terrain at 7 6
 t .
 checking terrain at 7 7
 t .
-jumping, target:Cordinate [colum=5, lineNumber=8] prevCordinate Cordinate [colum=6, lineNumber=8]
 checking terrain at 8 5
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 9 5
 t @
 checking terrain at 7 5
 t .
 checking terrain at 7 6
 t .
-jumping, target:Cordinate [colum=4, lineNumber=8] prevCordinate Cordinate [colum=5, lineNumber=8]
 checking terrain at 8 4
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 9 4
 t @
 checking terrain at 7 4
 t .
 checking terrain at 7 5
 t .
-jumping, target:Cordinate [colum=3, lineNumber=8] prevCordinate Cordinate [colum=4, lineNumber=8]
 checking terrain at 8 3
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 9 3
 t @
 checking terrain at 7 3
 t .
 checking terrain at 7 4
 t .
-jumping, target:Cordinate [colum=2, lineNumber=8] prevCordinate Cordinate [colum=3, lineNumber=8]
 checking terrain at 8 2
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 9 2
 t @
 checking terrain at 7 2
 t .
 checking terrain at 7 3
 t .
-jumping, target:Cordinate [colum=1, lineNumber=8] prevCordinate Cordinate [colum=2, lineNumber=8]
 checking terrain at 8 1
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 9 1
 t @
 checking terrain at 7 1
 t .
 checking terrain at 7 2
 t .
-jumping, target:Cordinate [colum=0, lineNumber=8] prevCordinate Cordinate [colum=1, lineNumber=8]
 checking terrain at 8 0
 t @
-terrain not passable at 8 0
-jumping, target:Cordinate [colum=8, lineNumber=9] prevCordinate Cordinate [colum=8, lineNumber=8]
 checking terrain at 9 8
 t @
-terrain not passable at 9 8
-next null
-jumping, target:Cordinate [colum=8, lineNumber=3] prevCordinate Cordinate [colum=8, lineNumber=4]
 checking terrain at 3 8
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 3 7
 t .
 checking terrain at 4 7
 t .
 checking terrain at 3 9
 t @
-jumping, target:Cordinate [colum=9, lineNumber=3] prevCordinate Cordinate [colum=8, lineNumber=3]
 checking terrain at 3 9
 t @
-terrain not passable at 3 9
-jumping, target:Cordinate [colum=7, lineNumber=3] prevCordinate Cordinate [colum=8, lineNumber=3]
 checking terrain at 3 7
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 4 7
 t .
 checking terrain at 4 8
@@ -2936,10 +2138,8 @@ checking terrain at 2 7
 t .
 checking terrain at 2 8
 t .
-jumping, target:Cordinate [colum=6, lineNumber=3] prevCordinate Cordinate [colum=7, lineNumber=3]
 checking terrain at 3 6
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 4 6
 t .
 checking terrain at 4 7
@@ -2948,10 +2148,8 @@ checking terrain at 2 6
 t .
 checking terrain at 2 7
 t .
-jumping, target:Cordinate [colum=5, lineNumber=3] prevCordinate Cordinate [colum=6, lineNumber=3]
 checking terrain at 3 5
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 4 5
 t .
 checking terrain at 4 6
@@ -2960,10 +2158,8 @@ checking terrain at 2 5
 t .
 checking terrain at 2 6
 t .
-jumping, target:Cordinate [colum=4, lineNumber=3] prevCordinate Cordinate [colum=5, lineNumber=3]
 checking terrain at 3 4
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 4 4
 t .
 checking terrain at 4 5
@@ -2972,10 +2168,8 @@ checking terrain at 2 4
 t .
 checking terrain at 2 5
 t .
-jumping, target:Cordinate [colum=3, lineNumber=3] prevCordinate Cordinate [colum=4, lineNumber=3]
 checking terrain at 3 3
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 4 3
 t .
 checking terrain at 4 4
@@ -2984,10 +2178,8 @@ checking terrain at 2 3
 t .
 checking terrain at 2 4
 t .
-jumping, target:Cordinate [colum=2, lineNumber=3] prevCordinate Cordinate [colum=3, lineNumber=3]
 checking terrain at 3 2
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 4 2
 t .
 checking terrain at 4 3
@@ -2996,10 +2188,8 @@ checking terrain at 2 2
 t .
 checking terrain at 2 3
 t .
-jumping, target:Cordinate [colum=1, lineNumber=3] prevCordinate Cordinate [colum=2, lineNumber=3]
 checking terrain at 3 1
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 4 1
 t .
 checking terrain at 4 2
@@ -3008,28 +2198,20 @@ checking terrain at 2 1
 t .
 checking terrain at 2 2
 t .
-jumping, target:Cordinate [colum=0, lineNumber=3] prevCordinate Cordinate [colum=1, lineNumber=3]
 checking terrain at 3 0
 t @
-terrain not passable at 3 0
-jumping, target:Cordinate [colum=8, lineNumber=2] prevCordinate Cordinate [colum=8, lineNumber=3]
 checking terrain at 2 8
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 2 7
 t .
 checking terrain at 3 7
 t .
 checking terrain at 2 9
 t @
-jumping, target:Cordinate [colum=9, lineNumber=2] prevCordinate Cordinate [colum=8, lineNumber=2]
 checking terrain at 2 9
 t @
-terrain not passable at 2 9
-jumping, target:Cordinate [colum=7, lineNumber=2] prevCordinate Cordinate [colum=8, lineNumber=2]
 checking terrain at 2 7
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 3 7
 t .
 checking terrain at 3 8
@@ -3038,10 +2220,8 @@ checking terrain at 1 7
 t .
 checking terrain at 1 8
 t .
-jumping, target:Cordinate [colum=6, lineNumber=2] prevCordinate Cordinate [colum=7, lineNumber=2]
 checking terrain at 2 6
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 3 6
 t .
 checking terrain at 3 7
@@ -3050,10 +2230,8 @@ checking terrain at 1 6
 t .
 checking terrain at 1 7
 t .
-jumping, target:Cordinate [colum=5, lineNumber=2] prevCordinate Cordinate [colum=6, lineNumber=2]
 checking terrain at 2 5
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 3 5
 t .
 checking terrain at 3 6
@@ -3062,10 +2240,8 @@ checking terrain at 1 5
 t .
 checking terrain at 1 6
 t .
-jumping, target:Cordinate [colum=4, lineNumber=2] prevCordinate Cordinate [colum=5, lineNumber=2]
 checking terrain at 2 4
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 3 4
 t .
 checking terrain at 3 5
@@ -3074,10 +2250,8 @@ checking terrain at 1 4
 t .
 checking terrain at 1 5
 t .
-jumping, target:Cordinate [colum=3, lineNumber=2] prevCordinate Cordinate [colum=4, lineNumber=2]
 checking terrain at 2 3
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 3 3
 t .
 checking terrain at 3 4
@@ -3086,10 +2260,8 @@ checking terrain at 1 3
 t .
 checking terrain at 1 4
 t .
-jumping, target:Cordinate [colum=2, lineNumber=2] prevCordinate Cordinate [colum=3, lineNumber=2]
 checking terrain at 2 2
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 3 2
 t .
 checking terrain at 3 3
@@ -3098,10 +2270,8 @@ checking terrain at 1 2
 t .
 checking terrain at 1 3
 t .
-jumping, target:Cordinate [colum=1, lineNumber=2] prevCordinate Cordinate [colum=2, lineNumber=2]
 checking terrain at 2 1
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 3 1
 t .
 checking terrain at 3 2
@@ -3110,107 +2280,80 @@ checking terrain at 1 1
 t .
 checking terrain at 1 2
 t .
-jumping, target:Cordinate [colum=0, lineNumber=2] prevCordinate Cordinate [colum=1, lineNumber=2]
 checking terrain at 2 0
 t @
-terrain not passable at 2 0
-jumping, target:Cordinate [colum=8, lineNumber=1] prevCordinate Cordinate [colum=8, lineNumber=2]
 checking terrain at 1 8
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 1 7
 t .
 checking terrain at 2 7
 t .
 checking terrain at 1 9
 t @
-jumping, target:Cordinate [colum=9, lineNumber=1] prevCordinate Cordinate [colum=8, lineNumber=1]
 checking terrain at 1 9
 t @
-terrain not passable at 1 9
-jumping, target:Cordinate [colum=7, lineNumber=1] prevCordinate Cordinate [colum=8, lineNumber=1]
 checking terrain at 1 7
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 2 7
 t .
 checking terrain at 2 8
 t .
 checking terrain at 0 7
 t @
-jumping, target:Cordinate [colum=6, lineNumber=1] prevCordinate Cordinate [colum=7, lineNumber=1]
 checking terrain at 1 6
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 2 6
 t .
 checking terrain at 2 7
 t .
 checking terrain at 0 6
 t @
-jumping, target:Cordinate [colum=5, lineNumber=1] prevCordinate Cordinate [colum=6, lineNumber=1]
 checking terrain at 1 5
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 2 5
 t .
 checking terrain at 2 6
 t .
 checking terrain at 0 5
 t @
-jumping, target:Cordinate [colum=4, lineNumber=1] prevCordinate Cordinate [colum=5, lineNumber=1]
 checking terrain at 1 4
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 2 4
 t .
 checking terrain at 2 5
 t .
 checking terrain at 0 4
 t @
-jumping, target:Cordinate [colum=3, lineNumber=1] prevCordinate Cordinate [colum=4, lineNumber=1]
 checking terrain at 1 3
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 2 3
 t .
 checking terrain at 2 4
 t .
 checking terrain at 0 3
 t @
-jumping, target:Cordinate [colum=2, lineNumber=1] prevCordinate Cordinate [colum=3, lineNumber=1]
 checking terrain at 1 2
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 2 2
 t .
 checking terrain at 2 3
 t .
 checking terrain at 0 2
 t @
-jumping, target:Cordinate [colum=1, lineNumber=1] prevCordinate Cordinate [colum=2, lineNumber=1]
 checking terrain at 1 1
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 2 1
 t .
 checking terrain at 2 2
 t .
 checking terrain at 0 1
 t @
-jumping, target:Cordinate [colum=0, lineNumber=1] prevCordinate Cordinate [colum=1, lineNumber=1]
 checking terrain at 1 0
 t @
-terrain not passable at 1 0
-jumping, target:Cordinate [colum=8, lineNumber=0] prevCordinate Cordinate [colum=8, lineNumber=1]
 checking terrain at 0 8
 t @
-terrain not passable at 0 8
-next null
-jumping, target:Cordinate [colum=7, lineNumber=4] prevCordinate Cordinate [colum=8, lineNumber=4]
 checking terrain at 4 7
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 5 7
 t .
 checking terrain at 5 8
@@ -3219,10 +2362,8 @@ checking terrain at 3 7
 t .
 checking terrain at 3 8
 t .
-jumping, target:Cordinate [colum=6, lineNumber=4] prevCordinate Cordinate [colum=7, lineNumber=4]
 checking terrain at 4 6
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 5 6
 t .
 checking terrain at 5 7
@@ -3231,10 +2372,8 @@ checking terrain at 3 6
 t .
 checking terrain at 3 7
 t .
-jumping, target:Cordinate [colum=5, lineNumber=4] prevCordinate Cordinate [colum=6, lineNumber=4]
 checking terrain at 4 5
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 5 5
 t .
 checking terrain at 5 6
@@ -3243,10 +2382,8 @@ checking terrain at 3 5
 t .
 checking terrain at 3 6
 t .
-jumping, target:Cordinate [colum=4, lineNumber=4] prevCordinate Cordinate [colum=5, lineNumber=4]
 checking terrain at 4 4
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 5 4
 t .
 checking terrain at 5 5
@@ -3255,10 +2392,8 @@ checking terrain at 3 4
 t .
 checking terrain at 3 5
 t .
-jumping, target:Cordinate [colum=3, lineNumber=4] prevCordinate Cordinate [colum=4, lineNumber=4]
 checking terrain at 4 3
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 5 3
 t .
 checking terrain at 5 4
@@ -3267,10 +2402,8 @@ checking terrain at 3 3
 t .
 checking terrain at 3 4
 t .
-jumping, target:Cordinate [colum=2, lineNumber=4] prevCordinate Cordinate [colum=3, lineNumber=4]
 checking terrain at 4 2
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 5 2
 t .
 checking terrain at 5 3
@@ -3279,19 +2412,6 @@ checking terrain at 3 2
 t .
 checking terrain at 3 3
 t .
-jumping, target:Cordinate [colum=1, lineNumber=4] prevCordinate Cordinate [colum=2, lineNumber=4]
-next Cordinate [colum=1, lineNumber=4]
-updating distance from Cordinate [colum=8, lineNumber=4] to Cordinate [colum=1, lineNumber=4]
-distance updated
-prev[4][1] is now Cordinate [colum=8, lineNumber=4]
-findpath
-current Cordinate [colum=1, lineNumber=4]
-findpath
-current Cordinate [colum=1, lineNumber=4]
-find Successors
-getNeighbours
-current Cordinate [colum=1, lineNumber=4]
-parent null
 checking terrain at 5 1
 t .
 checking terrain at 3 1
@@ -3300,21 +2420,16 @@ checking terrain at 4 2
 t .
 checking terrain at 4 0
 t @
-neighbours [Cordinate [colum=1, lineNumber=5], Cordinate [colum=1, lineNumber=3], Cordinate [colum=2, lineNumber=4]]
-jumping, target:Cordinate [colum=1, lineNumber=5] prevCordinate Cordinate [colum=1, lineNumber=4]
 checking terrain at 5 1
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 5 0
 t @
 checking terrain at 5 2
 t .
 checking terrain at 4 2
 t .
-jumping, target:Cordinate [colum=2, lineNumber=5] prevCordinate Cordinate [colum=1, lineNumber=5]
 checking terrain at 5 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 6 2
 t .
 checking terrain at 6 1
@@ -3323,10 +2438,8 @@ checking terrain at 4 2
 t .
 checking terrain at 4 1
 t .
-jumping, target:Cordinate [colum=3, lineNumber=5] prevCordinate Cordinate [colum=2, lineNumber=5]
 checking terrain at 5 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 6 3
 t .
 checking terrain at 6 2
@@ -3335,10 +2448,8 @@ checking terrain at 4 3
 t .
 checking terrain at 4 2
 t .
-jumping, target:Cordinate [colum=4, lineNumber=5] prevCordinate Cordinate [colum=3, lineNumber=5]
 checking terrain at 5 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 6 4
 t .
 checking terrain at 6 3
@@ -3347,28 +2458,20 @@ checking terrain at 4 4
 t .
 checking terrain at 4 3
 t .
-jumping, target:Cordinate [colum=5, lineNumber=5] prevCordinate Cordinate [colum=4, lineNumber=5]
 checking terrain at 5 5
 t T
-terrain not passable at 5 5
-jumping, target:Cordinate [colum=0, lineNumber=5] prevCordinate Cordinate [colum=1, lineNumber=5]
 checking terrain at 5 0
 t @
-terrain not passable at 5 0
-jumping, target:Cordinate [colum=1, lineNumber=6] prevCordinate Cordinate [colum=1, lineNumber=5]
 checking terrain at 6 1
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 6 0
 t @
 checking terrain at 6 2
 t .
 checking terrain at 5 2
 t .
-jumping, target:Cordinate [colum=2, lineNumber=6] prevCordinate Cordinate [colum=1, lineNumber=6]
 checking terrain at 6 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 7 2
 t .
 checking terrain at 7 1
@@ -3377,10 +2480,8 @@ checking terrain at 5 2
 t .
 checking terrain at 5 1
 t .
-jumping, target:Cordinate [colum=3, lineNumber=6] prevCordinate Cordinate [colum=2, lineNumber=6]
 checking terrain at 6 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 7 3
 t .
 checking terrain at 7 2
@@ -3389,10 +2490,8 @@ checking terrain at 5 3
 t .
 checking terrain at 5 2
 t .
-jumping, target:Cordinate [colum=4, lineNumber=6] prevCordinate Cordinate [colum=3, lineNumber=6]
 checking terrain at 6 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 7 4
 t .
 checking terrain at 7 3
@@ -3401,28 +2500,20 @@ checking terrain at 5 4
 t .
 checking terrain at 5 3
 t .
-jumping, target:Cordinate [colum=5, lineNumber=6] prevCordinate Cordinate [colum=4, lineNumber=6]
 checking terrain at 6 5
 t T
-terrain not passable at 6 5
-jumping, target:Cordinate [colum=0, lineNumber=6] prevCordinate Cordinate [colum=1, lineNumber=6]
 checking terrain at 6 0
 t @
-terrain not passable at 6 0
-jumping, target:Cordinate [colum=1, lineNumber=7] prevCordinate Cordinate [colum=1, lineNumber=6]
 checking terrain at 7 1
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 7 0
 t @
 checking terrain at 7 2
 t .
 checking terrain at 6 2
 t .
-jumping, target:Cordinate [colum=2, lineNumber=7] prevCordinate Cordinate [colum=1, lineNumber=7]
 checking terrain at 7 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 8 2
 t .
 checking terrain at 8 1
@@ -3431,10 +2522,8 @@ checking terrain at 6 2
 t .
 checking terrain at 6 1
 t .
-jumping, target:Cordinate [colum=3, lineNumber=7] prevCordinate Cordinate [colum=2, lineNumber=7]
 checking terrain at 7 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 8 3
 t .
 checking terrain at 8 2
@@ -3443,10 +2532,8 @@ checking terrain at 6 3
 t .
 checking terrain at 6 2
 t .
-jumping, target:Cordinate [colum=4, lineNumber=7] prevCordinate Cordinate [colum=3, lineNumber=7]
 checking terrain at 7 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 8 4
 t .
 checking terrain at 8 3
@@ -3455,81 +2542,58 @@ checking terrain at 6 4
 t .
 checking terrain at 6 3
 t .
-jumping, target:Cordinate [colum=5, lineNumber=7] prevCordinate Cordinate [colum=4, lineNumber=7]
 checking terrain at 7 5
 t T
-terrain not passable at 7 5
-jumping, target:Cordinate [colum=0, lineNumber=7] prevCordinate Cordinate [colum=1, lineNumber=7]
 checking terrain at 7 0
 t @
-terrain not passable at 7 0
-jumping, target:Cordinate [colum=1, lineNumber=8] prevCordinate Cordinate [colum=1, lineNumber=7]
 checking terrain at 8 1
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 8 0
 t @
 checking terrain at 8 2
 t .
 checking terrain at 7 2
 t .
-jumping, target:Cordinate [colum=2, lineNumber=8] prevCordinate Cordinate [colum=1, lineNumber=8]
 checking terrain at 8 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 9 2
 t @
 checking terrain at 7 2
 t .
 checking terrain at 7 1
 t .
-jumping, target:Cordinate [colum=3, lineNumber=8] prevCordinate Cordinate [colum=2, lineNumber=8]
 checking terrain at 8 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 9 3
 t @
 checking terrain at 7 3
 t .
 checking terrain at 7 2
 t .
-jumping, target:Cordinate [colum=4, lineNumber=8] prevCordinate Cordinate [colum=3, lineNumber=8]
 checking terrain at 8 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 9 4
 t @
 checking terrain at 7 4
 t .
 checking terrain at 7 3
 t .
-jumping, target:Cordinate [colum=5, lineNumber=8] prevCordinate Cordinate [colum=4, lineNumber=8]
 checking terrain at 8 5
 t T
-terrain not passable at 8 5
-jumping, target:Cordinate [colum=0, lineNumber=8] prevCordinate Cordinate [colum=1, lineNumber=8]
 checking terrain at 8 0
 t @
-terrain not passable at 8 0
-jumping, target:Cordinate [colum=1, lineNumber=9] prevCordinate Cordinate [colum=1, lineNumber=8]
 checking terrain at 9 1
 t @
-terrain not passable at 9 1
-next null
-jumping, target:Cordinate [colum=1, lineNumber=3] prevCordinate Cordinate [colum=1, lineNumber=4]
 checking terrain at 3 1
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 3 0
 t @
 checking terrain at 3 2
 t .
 checking terrain at 4 2
 t .
-jumping, target:Cordinate [colum=2, lineNumber=3] prevCordinate Cordinate [colum=1, lineNumber=3]
 checking terrain at 3 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 4 2
 t .
 checking terrain at 4 1
@@ -3538,10 +2602,8 @@ checking terrain at 2 2
 t .
 checking terrain at 2 1
 t .
-jumping, target:Cordinate [colum=3, lineNumber=3] prevCordinate Cordinate [colum=2, lineNumber=3]
 checking terrain at 3 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 4 3
 t .
 checking terrain at 4 2
@@ -3550,10 +2612,8 @@ checking terrain at 2 3
 t .
 checking terrain at 2 2
 t .
-jumping, target:Cordinate [colum=4, lineNumber=3] prevCordinate Cordinate [colum=3, lineNumber=3]
 checking terrain at 3 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 4 4
 t .
 checking terrain at 4 3
@@ -3562,28 +2622,20 @@ checking terrain at 2 4
 t .
 checking terrain at 2 3
 t .
-jumping, target:Cordinate [colum=5, lineNumber=3] prevCordinate Cordinate [colum=4, lineNumber=3]
 checking terrain at 3 5
 t T
-terrain not passable at 3 5
-jumping, target:Cordinate [colum=0, lineNumber=3] prevCordinate Cordinate [colum=1, lineNumber=3]
 checking terrain at 3 0
 t @
-terrain not passable at 3 0
-jumping, target:Cordinate [colum=1, lineNumber=2] prevCordinate Cordinate [colum=1, lineNumber=3]
 checking terrain at 2 1
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 2 0
 t @
 checking terrain at 2 2
 t .
 checking terrain at 3 2
 t .
-jumping, target:Cordinate [colum=2, lineNumber=2] prevCordinate Cordinate [colum=1, lineNumber=2]
 checking terrain at 2 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 3 2
 t .
 checking terrain at 3 1
@@ -3592,10 +2644,8 @@ checking terrain at 1 2
 t .
 checking terrain at 1 1
 t .
-jumping, target:Cordinate [colum=3, lineNumber=2] prevCordinate Cordinate [colum=2, lineNumber=2]
 checking terrain at 2 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 3 3
 t .
 checking terrain at 3 2
@@ -3604,10 +2654,8 @@ checking terrain at 1 3
 t .
 checking terrain at 1 2
 t .
-jumping, target:Cordinate [colum=4, lineNumber=2] prevCordinate Cordinate [colum=3, lineNumber=2]
 checking terrain at 2 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 3 4
 t .
 checking terrain at 3 3
@@ -3616,71 +2664,50 @@ checking terrain at 1 4
 t .
 checking terrain at 1 3
 t .
-jumping, target:Cordinate [colum=5, lineNumber=2] prevCordinate Cordinate [colum=4, lineNumber=2]
 checking terrain at 2 5
 t T
-terrain not passable at 2 5
-jumping, target:Cordinate [colum=0, lineNumber=2] prevCordinate Cordinate [colum=1, lineNumber=2]
 checking terrain at 2 0
 t @
-terrain not passable at 2 0
-jumping, target:Cordinate [colum=1, lineNumber=1] prevCordinate Cordinate [colum=1, lineNumber=2]
 checking terrain at 1 1
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 1 0
 t @
 checking terrain at 1 2
 t .
 checking terrain at 2 2
 t .
-jumping, target:Cordinate [colum=2, lineNumber=1] prevCordinate Cordinate [colum=1, lineNumber=1]
 checking terrain at 1 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 2
 t .
 checking terrain at 2 1
 t .
 checking terrain at 0 2
 t @
-jumping, target:Cordinate [colum=3, lineNumber=1] prevCordinate Cordinate [colum=2, lineNumber=1]
 checking terrain at 1 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 3
 t .
 checking terrain at 2 2
 t .
 checking terrain at 0 3
 t @
-jumping, target:Cordinate [colum=4, lineNumber=1] prevCordinate Cordinate [colum=3, lineNumber=1]
 checking terrain at 1 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 2 4
 t .
 checking terrain at 2 3
 t .
 checking terrain at 0 4
 t @
-jumping, target:Cordinate [colum=5, lineNumber=1] prevCordinate Cordinate [colum=4, lineNumber=1]
 checking terrain at 1 5
 t T
-terrain not passable at 1 5
-jumping, target:Cordinate [colum=0, lineNumber=1] prevCordinate Cordinate [colum=1, lineNumber=1]
 checking terrain at 1 0
 t @
-terrain not passable at 1 0
-jumping, target:Cordinate [colum=1, lineNumber=0] prevCordinate Cordinate [colum=1, lineNumber=1]
 checking terrain at 0 1
 t @
-terrain not passable at 0 1
-next null
-jumping, target:Cordinate [colum=2, lineNumber=4] prevCordinate Cordinate [colum=1, lineNumber=4]
 checking terrain at 4 2
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 5 2
 t .
 checking terrain at 5 1
@@ -3689,10 +2716,8 @@ checking terrain at 3 2
 t .
 checking terrain at 3 1
 t .
-jumping, target:Cordinate [colum=3, lineNumber=4] prevCordinate Cordinate [colum=2, lineNumber=4]
 checking terrain at 4 3
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 5 3
 t .
 checking terrain at 5 2
@@ -3701,10 +2726,8 @@ checking terrain at 3 3
 t .
 checking terrain at 3 2
 t .
-jumping, target:Cordinate [colum=4, lineNumber=4] prevCordinate Cordinate [colum=3, lineNumber=4]
 checking terrain at 4 4
 t .
-vertical distance 0 horizontalDistance 1
 checking terrain at 5 4
 t .
 checking terrain at 5 3
@@ -3713,17 +2736,8 @@ checking terrain at 3 4
 t .
 checking terrain at 3 3
 t .
-jumping, target:Cordinate [colum=5, lineNumber=4] prevCordinate Cordinate [colum=4, lineNumber=4]
 checking terrain at 4 5
 t T
-terrain not passable at 4 5
-next null
-findpath
-current Cordinate [colum=8, lineNumber=1]
-find Successors
-getNeighbours
-current Cordinate [colum=8, lineNumber=1]
-parent null
 checking terrain at 2 8
 t .
 checking terrain at 0 8
@@ -3732,512 +2746,292 @@ checking terrain at 1 9
 t @
 checking terrain at 1 7
 t T
-neighbours [Cordinate [colum=8, lineNumber=2]]
-jumping, target:Cordinate [colum=8, lineNumber=2] prevCordinate Cordinate [colum=8, lineNumber=1]
 checking terrain at 2 8
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 2 7
 t T
 checking terrain at 2 9
 t @
-jumping, target:Cordinate [colum=9, lineNumber=2] prevCordinate Cordinate [colum=8, lineNumber=2]
 checking terrain at 2 9
 t @
-terrain not passable at 2 9
-jumping, target:Cordinate [colum=7, lineNumber=2] prevCordinate Cordinate [colum=8, lineNumber=2]
 checking terrain at 2 7
 t T
-terrain not passable at 2 7
-jumping, target:Cordinate [colum=8, lineNumber=3] prevCordinate Cordinate [colum=8, lineNumber=2]
 checking terrain at 3 8
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 3 7
 t T
 checking terrain at 3 9
 t @
-jumping, target:Cordinate [colum=9, lineNumber=3] prevCordinate Cordinate [colum=8, lineNumber=3]
 checking terrain at 3 9
 t @
-terrain not passable at 3 9
-jumping, target:Cordinate [colum=7, lineNumber=3] prevCordinate Cordinate [colum=8, lineNumber=3]
 checking terrain at 3 7
 t T
-terrain not passable at 3 7
-jumping, target:Cordinate [colum=8, lineNumber=4] prevCordinate Cordinate [colum=8, lineNumber=3]
 checking terrain at 4 8
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 4 7
 t T
 checking terrain at 4 9
 t @
-jumping, target:Cordinate [colum=9, lineNumber=4] prevCordinate Cordinate [colum=8, lineNumber=4]
 checking terrain at 4 9
 t @
-terrain not passable at 4 9
-jumping, target:Cordinate [colum=7, lineNumber=4] prevCordinate Cordinate [colum=8, lineNumber=4]
 checking terrain at 4 7
 t T
-terrain not passable at 4 7
-jumping, target:Cordinate [colum=8, lineNumber=5] prevCordinate Cordinate [colum=8, lineNumber=4]
 checking terrain at 5 8
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 5 7
 t T
 checking terrain at 5 9
 t @
-jumping, target:Cordinate [colum=9, lineNumber=5] prevCordinate Cordinate [colum=8, lineNumber=5]
 checking terrain at 5 9
 t @
-terrain not passable at 5 9
-jumping, target:Cordinate [colum=7, lineNumber=5] prevCordinate Cordinate [colum=8, lineNumber=5]
 checking terrain at 5 7
 t T
-terrain not passable at 5 7
-jumping, target:Cordinate [colum=8, lineNumber=6] prevCordinate Cordinate [colum=8, lineNumber=5]
 checking terrain at 6 8
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 6 7
 t T
 checking terrain at 6 9
 t @
-jumping, target:Cordinate [colum=9, lineNumber=6] prevCordinate Cordinate [colum=8, lineNumber=6]
 checking terrain at 6 9
 t @
-terrain not passable at 6 9
-jumping, target:Cordinate [colum=7, lineNumber=6] prevCordinate Cordinate [colum=8, lineNumber=6]
 checking terrain at 6 7
 t T
-terrain not passable at 6 7
-jumping, target:Cordinate [colum=8, lineNumber=7] prevCordinate Cordinate [colum=8, lineNumber=6]
 checking terrain at 7 8
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 7 7
 t T
 checking terrain at 7 9
 t @
-jumping, target:Cordinate [colum=9, lineNumber=7] prevCordinate Cordinate [colum=8, lineNumber=7]
 checking terrain at 7 9
 t @
-terrain not passable at 7 9
-jumping, target:Cordinate [colum=7, lineNumber=7] prevCordinate Cordinate [colum=8, lineNumber=7]
 checking terrain at 7 7
 t T
-terrain not passable at 7 7
-jumping, target:Cordinate [colum=8, lineNumber=8] prevCordinate Cordinate [colum=8, lineNumber=7]
 checking terrain at 8 8
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 8 7
 t .
 checking terrain at 7 7
 t T
-next Cordinate [colum=8, lineNumber=8]
-updating distance from Cordinate [colum=8, lineNumber=1] to Cordinate [colum=8, lineNumber=8]
-distance updated
-prev[8][8] is now Cordinate [colum=8, lineNumber=1]
-findpath
-current Cordinate [colum=8, lineNumber=8]
-find Successors
-getNeighbours
-current Cordinate [colum=8, lineNumber=8]
-parent Cordinate [colum=8, lineNumber=1]
 checking terrain at 8 9
 t @
 checking terrain at 8 7
 t .
-updating distance from Cordinate [colum=8, lineNumber=8] to Cordinate [colum=7, lineNumber=8]
-distance updated
-prev[8][7] is now Cordinate [colum=8, lineNumber=8]
 checking terrain at 9 8
 t @
-neighbours [Cordinate [colum=7, lineNumber=8]]
-jumping, target:Cordinate [colum=7, lineNumber=8] prevCordinate Cordinate [colum=8, lineNumber=8]
 checking terrain at 8 7
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 9 7
 t @
 checking terrain at 7 7
 t T
-jumping, target:Cordinate [colum=6, lineNumber=8] prevCordinate Cordinate [colum=7, lineNumber=8]
 checking terrain at 8 6
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 9 6
 t @
 checking terrain at 7 6
 t .
 checking terrain at 7 7
 t T
-next Cordinate [colum=6, lineNumber=8]
-updating distance from Cordinate [colum=8, lineNumber=8] to Cordinate [colum=6, lineNumber=8]
-distance updated
-prev[8][6] is now Cordinate [colum=8, lineNumber=8]
-findpath
-current Cordinate [colum=6, lineNumber=8]
-find Successors
-getNeighbours
-current Cordinate [colum=6, lineNumber=8]
-parent Cordinate [colum=8, lineNumber=8]
 checking terrain at 9 6
 t @
 checking terrain at 7 6
 t .
-updating distance from Cordinate [colum=6, lineNumber=8] to Cordinate [colum=6, lineNumber=7]
-distance updated
-prev[7][6] is now Cordinate [colum=6, lineNumber=8]
 checking terrain at 8 5
 t T
-neighbours [Cordinate [colum=6, lineNumber=7]]
-jumping, target:Cordinate [colum=6, lineNumber=7] prevCordinate Cordinate [colum=6, lineNumber=8]
 checking terrain at 7 6
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 7 5
 t T
 checking terrain at 7 7
 t T
-jumping, target:Cordinate [colum=7, lineNumber=7] prevCordinate Cordinate [colum=6, lineNumber=7]
 checking terrain at 7 7
 t T
-terrain not passable at 7 7
-jumping, target:Cordinate [colum=5, lineNumber=7] prevCordinate Cordinate [colum=6, lineNumber=7]
 checking terrain at 7 5
 t T
-terrain not passable at 7 5
-jumping, target:Cordinate [colum=6, lineNumber=6] prevCordinate Cordinate [colum=6, lineNumber=7]
 checking terrain at 6 6
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 6 5
 t T
 checking terrain at 6 7
 t T
-jumping, target:Cordinate [colum=7, lineNumber=6] prevCordinate Cordinate [colum=6, lineNumber=6]
 checking terrain at 6 7
 t T
-terrain not passable at 6 7
-jumping, target:Cordinate [colum=5, lineNumber=6] prevCordinate Cordinate [colum=6, lineNumber=6]
 checking terrain at 6 5
 t T
-terrain not passable at 6 5
-jumping, target:Cordinate [colum=6, lineNumber=5] prevCordinate Cordinate [colum=6, lineNumber=6]
 checking terrain at 5 6
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 5 5
 t T
 checking terrain at 5 7
 t T
-jumping, target:Cordinate [colum=7, lineNumber=5] prevCordinate Cordinate [colum=6, lineNumber=5]
 checking terrain at 5 7
 t T
-terrain not passable at 5 7
-jumping, target:Cordinate [colum=5, lineNumber=5] prevCordinate Cordinate [colum=6, lineNumber=5]
 checking terrain at 5 5
 t T
-terrain not passable at 5 5
-jumping, target:Cordinate [colum=6, lineNumber=4] prevCordinate Cordinate [colum=6, lineNumber=5]
 checking terrain at 4 6
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 4 5
 t T
 checking terrain at 4 7
 t T
-jumping, target:Cordinate [colum=7, lineNumber=4] prevCordinate Cordinate [colum=6, lineNumber=4]
 checking terrain at 4 7
 t T
-terrain not passable at 4 7
-jumping, target:Cordinate [colum=5, lineNumber=4] prevCordinate Cordinate [colum=6, lineNumber=4]
 checking terrain at 4 5
 t T
-terrain not passable at 4 5
-jumping, target:Cordinate [colum=6, lineNumber=3] prevCordinate Cordinate [colum=6, lineNumber=4]
 checking terrain at 3 6
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 3 5
 t T
 checking terrain at 3 7
 t T
-jumping, target:Cordinate [colum=7, lineNumber=3] prevCordinate Cordinate [colum=6, lineNumber=3]
 checking terrain at 3 7
 t T
-terrain not passable at 3 7
-jumping, target:Cordinate [colum=5, lineNumber=3] prevCordinate Cordinate [colum=6, lineNumber=3]
 checking terrain at 3 5
 t T
-terrain not passable at 3 5
-jumping, target:Cordinate [colum=6, lineNumber=2] prevCordinate Cordinate [colum=6, lineNumber=3]
 checking terrain at 2 6
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 2 5
 t T
 checking terrain at 2 7
 t T
-jumping, target:Cordinate [colum=7, lineNumber=2] prevCordinate Cordinate [colum=6, lineNumber=2]
 checking terrain at 2 7
 t T
-terrain not passable at 2 7
-jumping, target:Cordinate [colum=5, lineNumber=2] prevCordinate Cordinate [colum=6, lineNumber=2]
 checking terrain at 2 5
 t T
-terrain not passable at 2 5
-jumping, target:Cordinate [colum=6, lineNumber=1] prevCordinate Cordinate [colum=6, lineNumber=2]
 checking terrain at 1 6
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 1 5
 t .
 checking terrain at 2 5
 t T
-next Cordinate [colum=6, lineNumber=1]
-updating distance from Cordinate [colum=6, lineNumber=8] to Cordinate [colum=6, lineNumber=1]
-distance updated
-prev[1][6] is now Cordinate [colum=6, lineNumber=8]
-findpath
-current Cordinate [colum=6, lineNumber=1]
-find Successors
-getNeighbours
-current Cordinate [colum=6, lineNumber=1]
-parent Cordinate [colum=6, lineNumber=8]
 checking terrain at 1 7
 t T
 checking terrain at 1 5
 t .
-updating distance from Cordinate [colum=6, lineNumber=1] to Cordinate [colum=5, lineNumber=1]
-distance updated
-prev[1][5] is now Cordinate [colum=6, lineNumber=1]
 checking terrain at 0 6
 t @
-neighbours [Cordinate [colum=5, lineNumber=1]]
-jumping, target:Cordinate [colum=5, lineNumber=1] prevCordinate Cordinate [colum=6, lineNumber=1]
 checking terrain at 1 5
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 2 5
 t T
 checking terrain at 0 5
 t @
-jumping, target:Cordinate [colum=4, lineNumber=1] prevCordinate Cordinate [colum=5, lineNumber=1]
 checking terrain at 1 4
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 2 4
 t .
 checking terrain at 2 5
 t T
-next Cordinate [colum=4, lineNumber=1]
-updating distance from Cordinate [colum=6, lineNumber=1] to Cordinate [colum=4, lineNumber=1]
-distance updated
-prev[1][4] is now Cordinate [colum=6, lineNumber=1]
-findpath
-current Cordinate [colum=4, lineNumber=1]
-find Successors
-getNeighbours
-current Cordinate [colum=4, lineNumber=1]
-parent Cordinate [colum=6, lineNumber=1]
 checking terrain at 2 4
 t .
-updating distance from Cordinate [colum=4, lineNumber=1] to Cordinate [colum=4, lineNumber=2]
-distance updated
-prev[2][4] is now Cordinate [colum=4, lineNumber=1]
 checking terrain at 0 4
 t @
 checking terrain at 1 3
 t T
-neighbours [Cordinate [colum=4, lineNumber=2]]
-jumping, target:Cordinate [colum=4, lineNumber=2] prevCordinate Cordinate [colum=4, lineNumber=1]
 checking terrain at 2 4
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 2 3
 t T
 checking terrain at 2 5
 t T
-jumping, target:Cordinate [colum=5, lineNumber=2] prevCordinate Cordinate [colum=4, lineNumber=2]
 checking terrain at 2 5
 t T
-terrain not passable at 2 5
-jumping, target:Cordinate [colum=3, lineNumber=2] prevCordinate Cordinate [colum=4, lineNumber=2]
 checking terrain at 2 3
 t T
-terrain not passable at 2 3
-jumping, target:Cordinate [colum=4, lineNumber=3] prevCordinate Cordinate [colum=4, lineNumber=2]
 checking terrain at 3 4
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 3 3
 t T
 checking terrain at 3 5
 t T
-jumping, target:Cordinate [colum=5, lineNumber=3] prevCordinate Cordinate [colum=4, lineNumber=3]
 checking terrain at 3 5
 t T
-terrain not passable at 3 5
-jumping, target:Cordinate [colum=3, lineNumber=3] prevCordinate Cordinate [colum=4, lineNumber=3]
 checking terrain at 3 3
 t T
-terrain not passable at 3 3
-jumping, target:Cordinate [colum=4, lineNumber=4] prevCordinate Cordinate [colum=4, lineNumber=3]
 checking terrain at 4 4
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 4 3
 t T
 checking terrain at 4 5
 t T
-jumping, target:Cordinate [colum=5, lineNumber=4] prevCordinate Cordinate [colum=4, lineNumber=4]
 checking terrain at 4 5
 t T
-terrain not passable at 4 5
-jumping, target:Cordinate [colum=3, lineNumber=4] prevCordinate Cordinate [colum=4, lineNumber=4]
 checking terrain at 4 3
 t T
-terrain not passable at 4 3
-jumping, target:Cordinate [colum=4, lineNumber=5] prevCordinate Cordinate [colum=4, lineNumber=4]
 checking terrain at 5 4
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 5 3
 t T
 checking terrain at 5 5
 t T
-jumping, target:Cordinate [colum=5, lineNumber=5] prevCordinate Cordinate [colum=4, lineNumber=5]
 checking terrain at 5 5
 t T
-terrain not passable at 5 5
-jumping, target:Cordinate [colum=3, lineNumber=5] prevCordinate Cordinate [colum=4, lineNumber=5]
 checking terrain at 5 3
 t T
-terrain not passable at 5 3
-jumping, target:Cordinate [colum=4, lineNumber=6] prevCordinate Cordinate [colum=4, lineNumber=5]
 checking terrain at 6 4
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 6 3
 t T
 checking terrain at 6 5
 t T
-jumping, target:Cordinate [colum=5, lineNumber=6] prevCordinate Cordinate [colum=4, lineNumber=6]
 checking terrain at 6 5
 t T
-terrain not passable at 6 5
-jumping, target:Cordinate [colum=3, lineNumber=6] prevCordinate Cordinate [colum=4, lineNumber=6]
 checking terrain at 6 3
 t T
-terrain not passable at 6 3
-jumping, target:Cordinate [colum=4, lineNumber=7] prevCordinate Cordinate [colum=4, lineNumber=6]
 checking terrain at 7 4
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 7 3
 t T
 checking terrain at 7 5
 t T
-jumping, target:Cordinate [colum=5, lineNumber=7] prevCordinate Cordinate [colum=4, lineNumber=7]
 checking terrain at 7 5
 t T
-terrain not passable at 7 5
-jumping, target:Cordinate [colum=3, lineNumber=7] prevCordinate Cordinate [colum=4, lineNumber=7]
 checking terrain at 7 3
 t T
-terrain not passable at 7 3
-jumping, target:Cordinate [colum=4, lineNumber=8] prevCordinate Cordinate [colum=4, lineNumber=7]
 checking terrain at 8 4
 t .
-vertical distance 1 horizontalDistance 0
 checking terrain at 8 3
 t .
 checking terrain at 7 3
 t T
-next Cordinate [colum=4, lineNumber=8]
-updating distance from Cordinate [colum=4, lineNumber=1] to Cordinate [colum=4, lineNumber=8]
-distance updated
-prev[8][4] is now Cordinate [colum=4, lineNumber=1]
-findpath
-current Cordinate [colum=4, lineNumber=8]
-find Successors
-getNeighbours
-current Cordinate [colum=4, lineNumber=8]
-parent Cordinate [colum=4, lineNumber=1]
 checking terrain at 8 5
 t T
 checking terrain at 8 3
 t .
-updating distance from Cordinate [colum=4, lineNumber=8] to Cordinate [colum=3, lineNumber=8]
-distance updated
-prev[8][3] is now Cordinate [colum=4, lineNumber=8]
 checking terrain at 9 4
 t @
-neighbours [Cordinate [colum=3, lineNumber=8]]
-jumping, target:Cordinate [colum=3, lineNumber=8] prevCordinate Cordinate [colum=4, lineNumber=8]
 checking terrain at 8 3
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 9 3
 t @
 checking terrain at 7 3
 t T
-jumping, target:Cordinate [colum=2, lineNumber=8] prevCordinate Cordinate [colum=3, lineNumber=8]
 checking terrain at 8 2
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 9 2
 t @
 checking terrain at 7 2
 t .
 checking terrain at 7 3
 t T
-next Cordinate [colum=2, lineNumber=8]
-updating distance from Cordinate [colum=4, lineNumber=8] to Cordinate [colum=2, lineNumber=8]
-distance updated
-prev[8][2] is now Cordinate [colum=4, lineNumber=8]
-findpath
-current Cordinate [colum=2, lineNumber=8]
-find Successors
-getNeighbours
-current Cordinate [colum=2, lineNumber=8]
-parent Cordinate [colum=4, lineNumber=8]
 checking terrain at 9 2
 t @
 checking terrain at 7 2
 t .
-updating distance from Cordinate [colum=2, lineNumber=8] to Cordinate [colum=2, lineNumber=7]
-distance updated
-prev[7][2] is now Cordinate [colum=2, lineNumber=8]
 checking terrain at 8 1
 t .
-updating distance from Cordinate [colum=2, lineNumber=8] to Cordinate [colum=1, lineNumber=8]
-distance updated
-prev[8][1] is now Cordinate [colum=2, lineNumber=8]
-neighbours [Cordinate [colum=2, lineNumber=7], Cordinate [colum=1, lineNumber=8]]
-jumping, target:Cordinate [colum=2, lineNumber=7] prevCordinate Cordinate [colum=2, lineNumber=8]
 checking terrain at 7 2
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 7 1
 t .
 checking terrain at 8 1
 t .
 checking terrain at 7 3
 t T
-jumping, target:Cordinate [colum=3, lineNumber=7] prevCordinate Cordinate [colum=2, lineNumber=7]
 checking terrain at 7 3
 t T
-terrain not passable at 7 3
-jumping, target:Cordinate [colum=1, lineNumber=7] prevCordinate Cordinate [colum=2, lineNumber=7]
 checking terrain at 7 1
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 8 1
 t .
 checking terrain at 8 2
@@ -4246,28 +3040,20 @@ checking terrain at 6 1
 t .
 checking terrain at 6 2
 t .
-jumping, target:Cordinate [colum=0, lineNumber=7] prevCordinate Cordinate [colum=1, lineNumber=7]
 checking terrain at 7 0
 t @
-terrain not passable at 7 0
-jumping, target:Cordinate [colum=2, lineNumber=6] prevCordinate Cordinate [colum=2, lineNumber=7]
 checking terrain at 6 2
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 6 1
 t .
 checking terrain at 7 1
 t .
 checking terrain at 6 3
 t T
-jumping, target:Cordinate [colum=3, lineNumber=6] prevCordinate Cordinate [colum=2, lineNumber=6]
 checking terrain at 6 3
 t T
-terrain not passable at 6 3
-jumping, target:Cordinate [colum=1, lineNumber=6] prevCordinate Cordinate [colum=2, lineNumber=6]
 checking terrain at 6 1
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 7 1
 t .
 checking terrain at 7 2
@@ -4276,28 +3062,20 @@ checking terrain at 5 1
 t .
 checking terrain at 5 2
 t .
-jumping, target:Cordinate [colum=0, lineNumber=6] prevCordinate Cordinate [colum=1, lineNumber=6]
 checking terrain at 6 0
 t @
-terrain not passable at 6 0
-jumping, target:Cordinate [colum=2, lineNumber=5] prevCordinate Cordinate [colum=2, lineNumber=6]
 checking terrain at 5 2
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 5 1
 t .
 checking terrain at 6 1
 t .
 checking terrain at 5 3
 t T
-jumping, target:Cordinate [colum=3, lineNumber=5] prevCordinate Cordinate [colum=2, lineNumber=5]
 checking terrain at 5 3
 t T
-terrain not passable at 5 3
-jumping, target:Cordinate [colum=1, lineNumber=5] prevCordinate Cordinate [colum=2, lineNumber=5]
 checking terrain at 5 1
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 6 1
 t .
 checking terrain at 6 2
@@ -4306,28 +3084,20 @@ checking terrain at 4 1
 t .
 checking terrain at 4 2
 t .
-jumping, target:Cordinate [colum=0, lineNumber=5] prevCordinate Cordinate [colum=1, lineNumber=5]
 checking terrain at 5 0
 t @
-terrain not passable at 5 0
-jumping, target:Cordinate [colum=2, lineNumber=4] prevCordinate Cordinate [colum=2, lineNumber=5]
 checking terrain at 4 2
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 4 1
 t .
 checking terrain at 5 1
 t .
 checking terrain at 4 3
 t T
-jumping, target:Cordinate [colum=3, lineNumber=4] prevCordinate Cordinate [colum=2, lineNumber=4]
 checking terrain at 4 3
 t T
-terrain not passable at 4 3
-jumping, target:Cordinate [colum=1, lineNumber=4] prevCordinate Cordinate [colum=2, lineNumber=4]
 checking terrain at 4 1
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 5 1
 t .
 checking terrain at 5 2
@@ -4336,28 +3106,20 @@ checking terrain at 3 1
 t .
 checking terrain at 3 2
 t .
-jumping, target:Cordinate [colum=0, lineNumber=4] prevCordinate Cordinate [colum=1, lineNumber=4]
 checking terrain at 4 0
 t @
-terrain not passable at 4 0
-jumping, target:Cordinate [colum=2, lineNumber=3] prevCordinate Cordinate [colum=2, lineNumber=4]
 checking terrain at 3 2
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 3 1
 t .
 checking terrain at 4 1
 t .
 checking terrain at 3 3
 t T
-jumping, target:Cordinate [colum=3, lineNumber=3] prevCordinate Cordinate [colum=2, lineNumber=3]
 checking terrain at 3 3
 t T
-terrain not passable at 3 3
-jumping, target:Cordinate [colum=1, lineNumber=3] prevCordinate Cordinate [colum=2, lineNumber=3]
 checking terrain at 3 1
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 4 1
 t .
 checking terrain at 4 2
@@ -4366,28 +3128,20 @@ checking terrain at 2 1
 t .
 checking terrain at 2 2
 t .
-jumping, target:Cordinate [colum=0, lineNumber=3] prevCordinate Cordinate [colum=1, lineNumber=3]
 checking terrain at 3 0
 t @
-terrain not passable at 3 0
-jumping, target:Cordinate [colum=2, lineNumber=2] prevCordinate Cordinate [colum=2, lineNumber=3]
 checking terrain at 2 2
 t .
-vertical distance -1 horizontalDistance 0
 checking terrain at 2 1
 t .
 checking terrain at 3 1
 t .
 checking terrain at 2 3
 t T
-jumping, target:Cordinate [colum=3, lineNumber=2] prevCordinate Cordinate [colum=2, lineNumber=2]
 checking terrain at 2 3
 t T
-terrain not passable at 2 3
-jumping, target:Cordinate [colum=1, lineNumber=2] prevCordinate Cordinate [colum=2, lineNumber=2]
 checking terrain at 2 1
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 3 1
 t .
 checking terrain at 3 2
@@ -4396,32 +3150,18 @@ checking terrain at 1 1
 t .
 checking terrain at 1 2
 t .
-jumping, target:Cordinate [colum=0, lineNumber=2] prevCordinate Cordinate [colum=1, lineNumber=2]
 checking terrain at 2 0
 t @
-terrain not passable at 2 0
-jumping, target:Cordinate [colum=2, lineNumber=1] prevCordinate Cordinate [colum=2, lineNumber=2]
-next Cordinate [colum=2, lineNumber=1]
-updating distance from Cordinate [colum=2, lineNumber=8] to Cordinate [colum=2, lineNumber=1]
-distance updated
-prev[1][2] is now Cordinate [colum=2, lineNumber=8]
-jumping, target:Cordinate [colum=1, lineNumber=8] prevCordinate Cordinate [colum=2, lineNumber=8]
 checking terrain at 8 1
 t .
-vertical distance 0 horizontalDistance -1
 checking terrain at 9 1
 t @
 checking terrain at 7 1
 t .
 checking terrain at 7 2
 t .
-jumping, target:Cordinate [colum=0, lineNumber=8] prevCordinate Cordinate [colum=1, lineNumber=8]
 checking terrain at 8 0
 t @
-terrain not passable at 8 0
-next null
-findpath
-current Cordinate [colum=2, lineNumber=1]
 </pre>
 </span>
 </div>
@@ -4433,7 +3173,7 @@ current Cordinate [colum=2, lineNumber=1]
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.5.1</a> at 12.8.2020 klo 13.28.47</p>
+<a href="http://www.gradle.org">Gradle 6.5.1</a> at 14.8.2020 klo 19.16.25</p>
 </div>
 </div>
 </body>

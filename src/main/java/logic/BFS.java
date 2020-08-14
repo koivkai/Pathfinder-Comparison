@@ -23,7 +23,6 @@ public class BFS {
             int line = current.getLineNumber();
             int colum = current.getColum();
             
-            System.out.println(current);
             if(line == goalLineNumber && colum == goalColum) {
                 //path found
                 return distance[line][colum];

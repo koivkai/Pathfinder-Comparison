@@ -1,78 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fi"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PathMap.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pathfinder-Comparison</a> &gt; <a href="index.source.html" class="el_package">datastructures</a> &gt; <span class="el_source">PathMap.java</span></div><h1>PathMap.java</h1><pre class="source lang-java linenums">package datastructures;
 
-import java.util.Arrays;
-
 public class PathMap {
 
     char[][] map;
     int height;
     int width;
+    String name;
+    CordinateQue startPosQue;
+    CordinateQue goalPosQue;
 
-<span class="nc" id="L11">    public PathMap() {</span>
-<span class="nc" id="L12">    }</span>
+<span class="nc" id="L12">    public PathMap() {</span>
+<span class="nc" id="L13">    }</span>
 
-<span class="fc" id="L14">    public PathMap(char[][] map, int height, int width) {</span>
-<span class="fc" id="L15">        this.map = map;</span>
-<span class="fc" id="L16">        this.height = height;</span>
-<span class="fc" id="L17">        this.width = width;</span>
-<span class="fc" id="L18">    } </span>
+<span class="fc" id="L15">    public PathMap(char[][] map, int height, int width) {</span>
+<span class="fc" id="L16">        this.map = map;</span>
+<span class="fc" id="L17">        this.height = height;</span>
+<span class="fc" id="L18">        this.width = width;</span>
+<span class="fc" id="L19">    } </span>
+
+<span class="nc" id="L21">    public PathMap(char[][] map, int height, int width, String name) {</span>
+<span class="nc" id="L22">        this.map = map;</span>
+<span class="nc" id="L23">        this.height = height;</span>
+<span class="nc" id="L24">        this.width = width;</span>
+<span class="nc" id="L25">        this.name = name;</span>
+<span class="nc" id="L26">    } </span>
 
     public char[][] getMap() {
-<span class="fc" id="L21">        return map;</span>
+<span class="fc" id="L29">        return map;</span>
     }
 
     public void setMap(char[][] map) {
-<span class="fc" id="L25">        this.map = map;</span>
-<span class="fc" id="L26">    }</span>
+<span class="fc" id="L33">        this.map = map;</span>
+<span class="fc" id="L34">    }</span>
 
     public int getHeight() {
-<span class="fc" id="L29">        return height;</span>
+<span class="fc" id="L37">        return height;</span>
     }
 
     public void setHeight(int height) {
-<span class="fc" id="L33">        this.height = height;</span>
-<span class="fc" id="L34">    }</span>
+<span class="fc" id="L41">        this.height = height;</span>
+<span class="fc" id="L42">    }</span>
 
     public int getWidth() {
-<span class="fc" id="L37">        return width;</span>
+<span class="fc" id="L45">        return width;</span>
     }
 
     public void setWidth(int width) {
-<span class="fc" id="L41">        this.width = width;</span>
-<span class="fc" id="L42">    }</span>
+<span class="fc" id="L49">        this.width = width;</span>
+<span class="fc" id="L50">    }</span>
 
     public char terrainAt(int lineNumber, int colum) {
-<span class="fc bfc" id="L45" title="All 8 branches covered.">        if(lineNumber &gt;= this.width || colum &gt;= this.height || lineNumber &lt; 0 || colum &lt; 0) {</span>
-<span class="fc" id="L46">            return '@';</span>
+<span class="fc bfc" id="L53" title="All 8 branches covered.">        if(lineNumber &gt;= this.width || colum &gt;= this.height || lineNumber &lt; 0 || colum &lt; 0) {</span>
+<span class="fc" id="L54">            return '@';</span>
         } 
-<span class="fc" id="L48">        return (this.map[lineNumber][colum]);</span>
+<span class="fc" id="L56">        return (this.map[lineNumber][colum]);</span>
     }
     
     public boolean terrainPassableAt(int lineNumber, int colum) {
-<span class="pc bpc" id="L52" title="4 of 8 branches missed.">        if(lineNumber &gt;= this.width || colum &gt;= this.height || lineNumber &lt; 0 || colum &lt; 0) {</span>
-<span class="nc" id="L53">            return false;</span>
+<span class="pc bpc" id="L60" title="4 of 8 branches missed.">        if(lineNumber &gt;= this.width || colum &gt;= this.height || lineNumber &lt; 0 || colum &lt; 0) {</span>
+<span class="nc" id="L61">            return false;</span>
         } 
 
-<span class="fc" id="L56">        char terrain = this.map[lineNumber][colum];</span>
-<span class="fc" id="L57">        System.out.println(&quot;checking terrain at &quot; +lineNumber+&quot; &quot;+colum);</span>
-<span class="fc" id="L58">        System.out.println(&quot;t &quot;+terrain);</span>
-<span class="pc bpc" id="L59" title="1 of 4 branches missed.">        if(terrain == '.' || terrain == 'G') {</span>
-<span class="fc" id="L60">            return true;</span>
+<span class="fc" id="L64">        char terrain = this.map[lineNumber][colum];</span>
+<span class="fc" id="L65">        System.out.println(&quot;checking terrain at &quot; +lineNumber+&quot; &quot;+colum);</span>
+<span class="fc" id="L66">        System.out.println(&quot;t &quot;+terrain);</span>
+<span class="pc bpc" id="L67" title="1 of 4 branches missed.">        if(terrain == '.' || terrain == 'G') {</span>
+<span class="fc" id="L68">            return true;</span>
         }
-<span class="fc" id="L62">        return false;</span>
+<span class="fc" id="L70">        return false;</span>
     }
 
     public void print() {
-<span class="nc" id="L66">        System.out.println(&quot;Printing map&quot;);</span>
-<span class="nc bnc" id="L67" title="All 2 branches missed.">        for(int lineNumber=0; lineNumber&lt;this.height;lineNumber++){</span>
-<span class="nc bnc" id="L68" title="All 2 branches missed.">            for(int colum = 0; colum &lt;this.width;colum++) {</span>
-<span class="nc" id="L69">                System.out.print(this.map[lineNumber][colum]);</span>
+<span class="nc" id="L74">        System.out.println(&quot;Printing map&quot;);</span>
+<span class="nc bnc" id="L75" title="All 2 branches missed.">        for(int lineNumber=0; lineNumber&lt;this.height;lineNumber++){</span>
+<span class="nc bnc" id="L76" title="All 2 branches missed.">            for(int colum = 0; colum &lt;this.width;colum++) {</span>
+<span class="nc" id="L77">                System.out.print(this.map[lineNumber][colum]);</span>
             }
-<span class="nc bnc" id="L71" title="All 2 branches missed.">            if(lineNumber != this.height -1){</span>
-<span class="nc" id="L72">                System.out.println(&quot;&quot;);</span>
+<span class="nc bnc" id="L79" title="All 2 branches missed.">            if(lineNumber != this.height -1){</span>
+<span class="nc" id="L80">                System.out.println(&quot;&quot;);</span>
             }
         }
-<span class="nc" id="L75">    }</span>
+<span class="nc" id="L83">    }</span>
+
+    public CordinateQue getStartPosQue() {
+<span class="nc" id="L86">        return startPosQue;</span>
+    }
+
+    public void setStartPosQue(CordinateQue startPosQue) {
+<span class="nc" id="L90">        this.startPosQue = startPosQue;</span>
+<span class="nc" id="L91">    }</span>
+
+    public CordinateQue getGoalPosQue() {
+<span class="nc" id="L94">        return goalPosQue;</span>
+    }
+
+    public void setGoalPosQue(CordinateQue goalPosQue) {
+<span class="nc" id="L98">        this.goalPosQue = goalPosQue;</span>
+<span class="nc" id="L99">    }</span>
+
+    
+
+    public void addPath(Cordinate start, Cordinate goal) {
+<span class="nc bnc" id="L104" title="All 4 branches missed.">        if(this.goalPosQue == null || this.startPosQue == null) { // in only one exits they wont work anyway so reset both</span>
+<span class="nc" id="L105">            this.goalPosQue = new CordinateQue(5);</span>
+<span class="nc" id="L106">            this.startPosQue = new CordinateQue(5);</span>
+        }
+<span class="nc" id="L108">        this.startPosQue.add(start);</span>
+<span class="nc" id="L109">        this.getGoalPosQue().add(goal);</span>
+<span class="nc" id="L110">    }</span>
+
+    public String getName() {
+<span class="nc bnc" id="L113" title="All 2 branches missed.">        if(name == null) {</span>
+<span class="nc" id="L114">            return &quot;unnamed map&quot;;</span>
+        }
+<span class="nc" id="L116">        return name;</span>
+    }
+
+    public void setName(String name) {
+<span class="nc" id="L120">        this.name = name;</span>
+<span class="nc" id="L121">    }</span>
+
+    
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

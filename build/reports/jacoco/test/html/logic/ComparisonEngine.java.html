@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fi"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ComparisonEngine.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pathfinder-Comparison</a> &gt; <a href="index.source.html" class="el_package">logic</a> &gt; <span class="el_source">ComparisonEngine.java</span></div><h1>ComparisonEngine.java</h1><pre class="source lang-java linenums">package logic;
+
+import datastructures.Cordinate;
+import datastructures.CordinateQue;
+import datastructures.MapList;
+import datastructures.PathMap;
+
+// todo: rename me
+public class ComparisonEngine {
+    BFS bfs;
+    Dijkstra dijkstra;
+    Astar astar;
+    JPS jps;
+    long numberOfPathsInComparison;
+    long bfsTotalTime;
+    long dijkstraTotalTime;
+    long astartTotalTime;
+    long jpsTotalTime;
+
+<span class="nc" id="L20">    public ComparisonEngine() {</span>
+<span class="nc" id="L21">        this.bfs = new BFS();</span>
+<span class="nc" id="L22">        this.dijkstra = new Dijkstra();</span>
+<span class="nc" id="L23">        this.astar = new Astar();</span>
+<span class="nc" id="L24">        this.jps = new JPS();</span>
+<span class="nc" id="L25">    }</span>
+
+    public void compare(MapList list) {
+        PathMap map;
+<span class="nc" id="L29">        bfsTotalTime = 0;</span>
+<span class="nc" id="L30">        dijkstraTotalTime = 0;</span>
+<span class="nc" id="L31">        astartTotalTime = 0;</span>
+<span class="nc" id="L32">        jpsTotalTime = 0;</span>
+<span class="nc" id="L33">        numberOfPathsInComparison = 0;</span>
+<span class="nc" id="L34">        System.out.println(&quot;list size &quot;+list.size());</span>
+<span class="nc bnc" id="L35" title="All 2 branches missed.">        for(int i = 0; i&lt;list.size();i++) {</span>
+<span class="nc" id="L36">            map = list.get(i);</span>
+<span class="nc" id="L37">            mapComparisons(map);</span>
+        }
+
+
+<span class="nc" id="L41">        System.out.println(&quot;Totals: &quot;);</span>
+<span class="nc" id="L42">        System.out.println(&quot;bfs total time used &quot;+ toMS(bfsTotalTime)+ &quot; ms, avg &quot; + toMS((bfsTotalTime / numberOfPathsInComparison)) + &quot; ms per path&quot;);</span>
+<span class="nc" id="L43">        System.out.println(&quot;djilstra total time used &quot;+ toMS(dijkstraTotalTime)+ &quot; ms, avg &quot; + toMS((dijkstraTotalTime / numberOfPathsInComparison)) + &quot; ms per path&quot;);</span>
+<span class="nc" id="L44">        System.out.println(&quot;astar total time used &quot;+ toMS(astartTotalTime)+ &quot; ms, avg &quot; + toMS((astartTotalTime / numberOfPathsInComparison)) + &quot; ms per path&quot;);</span>
+<span class="nc" id="L45">        System.out.println(&quot;jps total time used &quot;+ toMS(jpsTotalTime)+ &quot; ms, avg &quot; + toMS((jpsTotalTime / numberOfPathsInComparison)) + &quot; ms per path&quot;);</span>
+
+<span class="nc" id="L47">    }</span>
+
+    private void mapComparisons(PathMap map) {
+<span class="nc" id="L50">        CordinateQue goalQue = map.getGoalPosQue();</span>
+<span class="nc" id="L51">        CordinateQue startQue = map.getStartPosQue();</span>
+        Cordinate start;
+        Cordinate goal;
+<span class="nc" id="L54">        int numberOfPathsForThisMap = goalQue.size();</span>
+<span class="nc" id="L55">        numberOfPathsInComparison += numberOfPathsForThisMap;</span>
+        int bfsDistance;
+        int dijkstraDistance;
+        int astartDistance;
+        int jpsDistance;
+<span class="nc" id="L60">        long bfsMapTotal = 0;</span>
+<span class="nc" id="L61">        long dijktraMapTotal = 0;</span>
+<span class="nc" id="L62">        long astarMapTotal = 0;</span>
+<span class="nc" id="L63">        long jpsMapTotal = 0;</span>
+
+<span class="nc" id="L65">        System.out.println(&quot;Stats for &quot;+map.getName());</span>
+
+<span class="nc bnc" id="L67" title="All 2 branches missed.">            while(!goalQue.isEmpty()) {</span>
+<span class="nc" id="L68">                start = startQue.poll();</span>
+<span class="nc" id="L69">                goal = goalQue.poll();</span>
+<span class="nc" id="L70">                int startLineNumber = start.getLineNumber();</span>
+<span class="nc" id="L71">                int startColum = start.getColum();</span>
+<span class="nc" id="L72">                int goalLineNumber = goal.getLineNumber();</span>
+<span class="nc" id="L73">                int goalColum = goal.getColum();</span>
+<span class="nc" id="L74">                System.out.println(&quot;Path from&quot; + start + &quot; to &quot; + goal);</span>
+
+
+                // BFS
+<span class="nc" id="L78">                long bfsStartTime = System.nanoTime();</span>
+<span class="nc" id="L79">                bfsDistance = bfs.findPath(map, startLineNumber, startColum, goalLineNumber, goalColum);</span>
+<span class="nc" id="L80">                long bfsEndTime = System.nanoTime();</span>
+<span class="nc" id="L81">                long bfsPathTime = bfsEndTime - bfsStartTime;</span>
+<span class="nc" id="L82">                bfsMapTotal += bfsPathTime;</span>
+<span class="nc" id="L83">                System.out.println(&quot;BFS &quot; +toMS(bfsPathTime) + &quot; ms&quot;);</span>
+
+                // Dijkstra
+<span class="nc" id="L86">                long dijkstraStartTime = System.nanoTime();</span>
+<span class="nc" id="L87">                dijkstraDistance = dijkstra.findPath(map, startLineNumber, startColum, goalLineNumber, goalColum);</span>
+<span class="nc" id="L88">                long djikstraEndTime = System.nanoTime();</span>
+<span class="nc" id="L89">                long djikstraPathTime = djikstraEndTime - dijkstraStartTime;</span>
+<span class="nc" id="L90">                dijktraMapTotal += djikstraPathTime;</span>
+<span class="nc" id="L91">                System.out.println(&quot;Dijsktra &quot; +toMS(djikstraPathTime) + &quot; ms&quot;);</span>
+
+                // A*
+<span class="nc" id="L94">                long astarStartTime = System.nanoTime();</span>
+<span class="nc" id="L95">                astartDistance = astar.findPath(map, startLineNumber, startColum, goalLineNumber, goalColum);</span>
+<span class="nc" id="L96">                long astartEndTime = System.nanoTime();</span>
+<span class="nc" id="L97">                long astartPathTime = astartEndTime - astarStartTime;</span>
+<span class="nc" id="L98">                astarMapTotal += astartPathTime;</span>
+<span class="nc" id="L99">                System.out.println(&quot;A* &quot; +toMS(astartPathTime) + &quot; ms&quot;);</span>
+
+                // JPS
+<span class="nc" id="L102">                long jpsStartTime = System.nanoTime();</span>
+<span class="nc" id="L103">                jpsDistance = jps.findPath(map, startLineNumber, startColum, goalLineNumber, goalColum);</span>
+<span class="nc" id="L104">                long jpsEndTime = System.nanoTime();</span>
+<span class="nc" id="L105">                long jpsPathTime = jpsEndTime - jpsStartTime;</span>
+<span class="nc" id="L106">                jpsMapTotal += jpsPathTime;</span>
+<span class="nc" id="L107">                System.out.println(&quot;JPS &quot; +toMS(jpsPathTime) + &quot; ms&quot;);</span>
+
+<span class="nc bnc" id="L109" title="All 2 branches missed.">                if(allAreSame(bfsDistance, dijkstraDistance, astartDistance, jpsDistance)) {</span>
+<span class="nc" id="L110">                    System.out.println(&quot;Distance was &quot;+bfsDistance);</span>
+                } else {
+<span class="nc" id="L112">                    System.out.println(&quot;WARNING diverge in path lenght between algorithms&quot;);</span>
+<span class="nc" id="L113">                    System.out.println(&quot;bfs &quot;+bfsDistance+&quot; dijkstra &quot; +dijkstraDistance+ &quot; astar &quot; + astartDistance + &quot; jps &quot; + jpsDistance);</span>
+                }
+
+
+<span class="nc" id="L117">            }</span>
+
+<span class="nc bnc" id="L119" title="All 2 branches missed.">        if(numberOfPathsForThisMap &gt; 1) {</span>
+<span class="nc" id="L120">            System.out.println(&quot;Total time spend on this map by BFS was &quot;+ toMS(bfsMapTotal) + &quot;ms, avg &quot; + toMS((bfsMapTotal / numberOfPathsForThisMap)) + &quot; ms&quot;);</span>
+<span class="nc" id="L121">            System.out.println(&quot;Total time spend on this map by Djikstra was &quot;+ toMS(dijktraMapTotal) + &quot;ms, avg &quot; + toMS((dijktraMapTotal / numberOfPathsForThisMap)) + &quot; ms&quot;);</span>
+<span class="nc" id="L122">            System.out.println(&quot;Total time spend on this map by A* was &quot;+ toMS(astarMapTotal) + &quot;ms, avg &quot; + toMS((astarMapTotal / numberOfPathsForThisMap)) + &quot; ms&quot;);</span>
+<span class="nc" id="L123">            System.out.println(&quot;Total time spend on this map by JPS was &quot;+ toMS(jpsMapTotal) + &quot;ms, avg &quot; + toMS((jpsMapTotal / numberOfPathsForThisMap)) + &quot; ms&quot;);</span>
+        }
+        
+<span class="nc" id="L126">        bfsTotalTime += bfsMapTotal;</span>
+<span class="nc" id="L127">        dijkstraTotalTime += dijktraMapTotal;</span>
+
+<span class="nc" id="L129">    }</span>
+
+    private long toMS(long nameTime) {
+<span class="nc" id="L132">        return nameTime / 1000000;</span>
+    }
+
+    private boolean allAreSame(int a, int b, int c, int d) {
+<span class="nc bnc" id="L136" title="All 2 branches missed.">        if(a != b) {</span>
+<span class="nc" id="L137">            return false;</span>
+        }
+<span class="nc bnc" id="L139" title="All 2 branches missed.">        if(b != c) {</span>
+<span class="nc" id="L140">            return false;</span>
+        }
+<span class="nc bnc" id="L142" title="All 2 branches missed.">        if(c != d) {</span>
+<span class="nc" id="L143">            return false;</span>
+        }
+<span class="nc" id="L145">        return true;</span>
+    }
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
