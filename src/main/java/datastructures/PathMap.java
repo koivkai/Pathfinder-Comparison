@@ -70,7 +70,7 @@ public class PathMap {
         return false;
     }
 
-    public boolean canGoNorthWest(int currentLine, int currentColum) {
+    public boolean canGoNorthEast(int currentLine, int currentColum) {
         int nwLine = currentLine -1;
         int nwColum = currentColum +1;
         if(nwLine >= this.width || nwColum >= this.height || nwLine < 0 || nwColum < 0) {
@@ -93,7 +93,7 @@ public class PathMap {
         return true;
     }
 
-    public boolean canGoNorthEast(int currentLine, int currentColum) {
+    public boolean canGoNorthWest(int currentLine, int currentColum) {
         int neLine = currentLine -1;
         int neColum = currentColum -1;
         if(neLine >= this.width || neColum >= this.height || neLine < 0 || neColum < 0) {
@@ -116,7 +116,7 @@ public class PathMap {
         return true;
     }
 
-    public boolean canGoSouthhWest(int currentLine, int currentColum) {
+    public boolean canGoSouthEast(int currentLine, int currentColum) {
         int swLine = currentLine +1;
         int swColum = currentColum +1;
         if(swLine >= this.width || swColum >= this.height || swLine < 0 || swColum < 0) {
@@ -139,7 +139,7 @@ public class PathMap {
         return true;
     }
 
-    public boolean canGoSouthEast(int currentLine, int currentColum) {
+    public boolean canGoSouthWest(int currentLine, int currentColum) {
         int seLine = currentLine +1;
         int seColum = currentColum -1;
         if(seLine >= this.width || seColum >= this.height || seLine < 0 || seColum < 0) {

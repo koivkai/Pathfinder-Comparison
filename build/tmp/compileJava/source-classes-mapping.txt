@@ -8,6 +8,8 @@ Main.java
  Main
 datastructures/MinHeap.java
  datastructures.MinHeap
+logic/Helpers.java
+ logic.Helpers
 textUI/PCTextUI.java
  textUI.PCTextUI
 logic/JPS.java
@@ -18,8 +20,6 @@ datastructures/PathMap.java
  datastructures.PathMap
 logic/ComparisonEngine.java
  logic.ComparisonEngine
-logic/Helpers.java
- logic.Helpers
 logic/MapReader.java
  logic.MapReader
 logic/BFS.java

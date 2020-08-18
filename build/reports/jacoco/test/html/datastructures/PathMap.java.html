@@ -70,7 +70,7 @@ public class PathMap {
 <span class="fc" id="L70">        return false;</span>
     }
 
-    public boolean canGoNorthWest(int currentLine, int currentColum) {
+    public boolean canGoNorthEast(int currentLine, int currentColum) {
 <span class="nc" id="L74">        int nwLine = currentLine -1;</span>
 <span class="nc" id="L75">        int nwColum = currentColum +1;</span>
 <span class="nc bnc" id="L76" title="All 8 branches missed.">        if(nwLine &gt;= this.width || nwColum &gt;= this.height || nwLine &lt; 0 || nwColum &lt; 0) {</span>
@@ -93,7 +93,7 @@ public class PathMap {
 <span class="nc" id="L93">        return true;</span>
     }
 
-    public boolean canGoNorthEast(int currentLine, int currentColum) {
+    public boolean canGoNorthWest(int currentLine, int currentColum) {
 <span class="nc" id="L97">        int neLine = currentLine -1;</span>
 <span class="nc" id="L98">        int neColum = currentColum -1;</span>
 <span class="nc bnc" id="L99" title="All 8 branches missed.">        if(neLine &gt;= this.width || neColum &gt;= this.height || neLine &lt; 0 || neColum &lt; 0) {</span>
@@ -116,7 +116,7 @@ public class PathMap {
 <span class="nc" id="L116">        return true;</span>
     }
 
-    public boolean canGoSouthhWest(int currentLine, int currentColum) {
+    public boolean canGoSouthEast(int currentLine, int currentColum) {
 <span class="nc" id="L120">        int swLine = currentLine +1;</span>
 <span class="nc" id="L121">        int swColum = currentColum +1;</span>
 <span class="nc bnc" id="L122" title="All 8 branches missed.">        if(swLine &gt;= this.width || swColum &gt;= this.height || swLine &lt; 0 || swColum &lt; 0) {</span>
@@ -139,7 +139,7 @@ public class PathMap {
 <span class="nc" id="L139">        return true;</span>
     }
 
-    public boolean canGoSouthEast(int currentLine, int currentColum) {
+    public boolean canGoSouthWest(int currentLine, int currentColum) {
 <span class="nc" id="L143">        int seLine = currentLine +1;</span>
 <span class="nc" id="L144">        int seColum = currentColum -1;</span>
 <span class="nc bnc" id="L145" title="All 8 branches missed.">        if(seLine &gt;= this.width || seColum &gt;= this.height || seLine &lt; 0 || seColum &lt; 0) {</span>

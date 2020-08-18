@@ -37,16 +37,16 @@ public class BFS {
                 // do nothing
             } else  {
                 visited[line][colum] = true;
-                checkUp(current);
-                checkDown(current);
-                checkRight(current);
-                checkLeft(current);
+                checkNorth(current);
+                checkSouth(current);
+                checkEast(current);
+                checkWest(current);
             }
         }
         return -1; // no path found
     }
 
-    private void checkUp(Cordinate current) {
+    private void checkNorth(Cordinate current) {
         int line = current.getLineNumber();
         int colum = current.getColum();
         if(map.terrainPassableAt(line-1, colum)) {
@@ -56,7 +56,7 @@ public class BFS {
         }
     }
 
-    private void checkDown(Cordinate current) {
+    private void checkSouth(Cordinate current) {
         int line = current.getLineNumber();
         int colum = current.getColum();
         if(map.terrainPassableAt(line+1, colum)) {
@@ -66,7 +66,7 @@ public class BFS {
         }
     }
 
-    private void checkRight(Cordinate current) {
+    private void checkEast(Cordinate current) {
         int line = current.getLineNumber();
         int colum = current.getColum();
         if(map.terrainPassableAt(line, colum+1)) {
@@ -76,7 +76,7 @@ public class BFS {
         }
     }
 
-    private void checkLeft(Cordinate current) {
+    private void checkWest(Cordinate current) {
         int line = current.getLineNumber();
         int colum = current.getColum();
         if(map.terrainPassableAt(line, colum-1)) {
