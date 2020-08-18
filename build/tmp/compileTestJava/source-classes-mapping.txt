@@ -10,7 +10,7 @@ logicTest/JPSTest.java
  logicTest.JPSTest
 datastructuresTest/PathMapTest.java
  datastructuresTest.PathMapTest
-logicTest/DijkstraTest.java
- logicTest.DijkstraTest
 logicTest/BFSTest.java
  logicTest.BFSTest
+logicTest/DijkstraTest.java
+ logicTest.DijkstraTest

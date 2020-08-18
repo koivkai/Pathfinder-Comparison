@@ -70,55 +70,148 @@ public class PathMap {
 <span class="fc" id="L70">        return false;</span>
     }
 
+    public boolean canGoNorthWest(int currentLine, int currentColum) {
+<span class="nc" id="L74">        int nwLine = currentLine -1;</span>
+<span class="nc" id="L75">        int nwColum = currentColum +1;</span>
+<span class="nc bnc" id="L76" title="All 8 branches missed.">        if(nwLine &gt;= this.width || nwColum &gt;= this.height || nwLine &lt; 0 || nwColum &lt; 0) {</span>
+<span class="nc" id="L77">            return false;</span>
+        }
+<span class="nc" id="L79">        char terrain = this.map[nwLine][nwColum]; </span>
+<span class="nc bnc" id="L80" title="All 4 branches missed.">        if(terrain != '.' &amp;&amp; terrain != 'G') {</span>
+<span class="nc" id="L81">            return false;</span>
+        }
+
+        //check for diagonal wall
+<span class="nc" id="L85">        int upLine = currentLine -1;</span>
+<span class="nc" id="L86">        int upColum = currentColum;</span>
+<span class="nc" id="L87">        int rightLine = currentLine;</span>
+<span class="nc" id="L88">        int rightColum = currentColum+1;</span>
+<span class="nc bnc" id="L89" title="All 4 branches missed.">        if(!terrainPassableAt(upLine, upColum) &amp;&amp; !terrainPassableAt(rightLine, rightColum)) {</span>
+<span class="nc" id="L90">            return false;</span>
+        }
+
+<span class="nc" id="L93">        return true;</span>
+    }
+
+    public boolean canGoNorthEast(int currentLine, int currentColum) {
+<span class="nc" id="L97">        int neLine = currentLine -1;</span>
+<span class="nc" id="L98">        int neColum = currentColum -1;</span>
+<span class="nc bnc" id="L99" title="All 8 branches missed.">        if(neLine &gt;= this.width || neColum &gt;= this.height || neLine &lt; 0 || neColum &lt; 0) {</span>
+<span class="nc" id="L100">            return false;</span>
+        }
+<span class="nc" id="L102">        char terrain = this.map[neLine][neColum]; </span>
+<span class="nc bnc" id="L103" title="All 4 branches missed.">        if(terrain != '.' &amp;&amp; terrain != 'G') {</span>
+<span class="nc" id="L104">            return false;</span>
+        }
+
+        //check for diagonal wall
+<span class="nc" id="L108">        int upLine = currentLine -1;</span>
+<span class="nc" id="L109">        int upColum = currentColum;</span>
+<span class="nc" id="L110">        int leftLine = currentLine;</span>
+<span class="nc" id="L111">        int leftColum = currentColum-1;</span>
+<span class="nc bnc" id="L112" title="All 4 branches missed.">        if(!terrainPassableAt(upLine, upColum) &amp;&amp; !terrainPassableAt(leftLine, leftColum)) {</span>
+<span class="nc" id="L113">            return false;</span>
+        }
+
+<span class="nc" id="L116">        return true;</span>
+    }
+
+    public boolean canGoSouthhWest(int currentLine, int currentColum) {
+<span class="nc" id="L120">        int swLine = currentLine +1;</span>
+<span class="nc" id="L121">        int swColum = currentColum +1;</span>
+<span class="nc bnc" id="L122" title="All 8 branches missed.">        if(swLine &gt;= this.width || swColum &gt;= this.height || swLine &lt; 0 || swColum &lt; 0) {</span>
+<span class="nc" id="L123">            return false;</span>
+        }
+<span class="nc" id="L125">        char terrain = this.map[swLine][swColum]; </span>
+<span class="nc bnc" id="L126" title="All 4 branches missed.">        if(terrain != '.' &amp;&amp; terrain != 'G') {</span>
+<span class="nc" id="L127">            return false;</span>
+        }
+
+        //check for diagonal wall
+<span class="nc" id="L131">        int downLine = currentLine +1;</span>
+<span class="nc" id="L132">        int downColum = currentColum;</span>
+<span class="nc" id="L133">        int rightLine = currentLine;</span>
+<span class="nc" id="L134">        int rightColum = currentColum+1;</span>
+<span class="nc bnc" id="L135" title="All 4 branches missed.">        if(!terrainPassableAt(downLine, downColum) &amp;&amp; !terrainPassableAt(rightLine, rightColum)) {</span>
+<span class="nc" id="L136">            return false;</span>
+        }
+
+<span class="nc" id="L139">        return true;</span>
+    }
+
+    public boolean canGoSouthEast(int currentLine, int currentColum) {
+<span class="nc" id="L143">        int seLine = currentLine +1;</span>
+<span class="nc" id="L144">        int seColum = currentColum -1;</span>
+<span class="nc bnc" id="L145" title="All 8 branches missed.">        if(seLine &gt;= this.width || seColum &gt;= this.height || seLine &lt; 0 || seColum &lt; 0) {</span>
+<span class="nc" id="L146">            return false;</span>
+        }
+<span class="nc" id="L148">        char terrain = this.map[seLine][seColum]; </span>
+<span class="nc bnc" id="L149" title="All 4 branches missed.">        if(terrain != '.' &amp;&amp; terrain != 'G') {</span>
+<span class="nc" id="L150">            return false;</span>
+        }
+
+        //check for diagonal wall
+<span class="nc" id="L154">        int downLine = currentLine +1;</span>
+<span class="nc" id="L155">        int downColum = currentColum;</span>
+<span class="nc" id="L156">        int leftLine = currentLine;</span>
+<span class="nc" id="L157">        int leftColum = currentColum-1;</span>
+<span class="nc bnc" id="L158" title="All 4 branches missed.">        if(!terrainPassableAt(downLine, downColum) &amp;&amp; !terrainPassableAt(leftLine, leftColum)) {</span>
+<span class="nc" id="L159">            return false;</span>
+        }
+
+<span class="nc" id="L162">        return true;</span>
+    }
+    
+
     public void print() {
-<span class="nc" id="L74">        System.out.println(&quot;Printing map&quot;);</span>
-<span class="nc bnc" id="L75" title="All 2 branches missed.">        for(int lineNumber=0; lineNumber&lt;this.height;lineNumber++){</span>
-<span class="nc bnc" id="L76" title="All 2 branches missed.">            for(int colum = 0; colum &lt;this.width;colum++) {</span>
-<span class="nc" id="L77">                System.out.print(this.map[lineNumber][colum]);</span>
+<span class="nc" id="L167">        System.out.println(&quot;Printing map&quot;);</span>
+<span class="nc bnc" id="L168" title="All 2 branches missed.">        for(int lineNumber=0; lineNumber&lt;this.height;lineNumber++){</span>
+<span class="nc bnc" id="L169" title="All 2 branches missed.">            for(int colum = 0; colum &lt;this.width;colum++) {</span>
+<span class="nc" id="L170">                System.out.print(this.map[lineNumber][colum]);</span>
             }
-<span class="nc bnc" id="L79" title="All 2 branches missed.">            if(lineNumber != this.height -1){</span>
-<span class="nc" id="L80">                System.out.println(&quot;&quot;);</span>
+<span class="nc bnc" id="L172" title="All 2 branches missed.">            if(lineNumber != this.height -1){</span>
+<span class="nc" id="L173">                System.out.println(&quot;&quot;);</span>
             }
         }
-<span class="nc" id="L83">    }</span>
+<span class="nc" id="L176">    }</span>
 
     public CordinateQue getStartPosQue() {
-<span class="nc" id="L86">        return startPosQue;</span>
+<span class="nc" id="L179">        return startPosQue;</span>
     }
 
     public void setStartPosQue(CordinateQue startPosQue) {
-<span class="nc" id="L90">        this.startPosQue = startPosQue;</span>
-<span class="nc" id="L91">    }</span>
+<span class="nc" id="L183">        this.startPosQue = startPosQue;</span>
+<span class="nc" id="L184">    }</span>
 
     public CordinateQue getGoalPosQue() {
-<span class="nc" id="L94">        return goalPosQue;</span>
+<span class="nc" id="L187">        return goalPosQue;</span>
     }
 
     public void setGoalPosQue(CordinateQue goalPosQue) {
-<span class="nc" id="L98">        this.goalPosQue = goalPosQue;</span>
-<span class="nc" id="L99">    }</span>
+<span class="nc" id="L191">        this.goalPosQue = goalPosQue;</span>
+<span class="nc" id="L192">    }</span>
 
     
 
     public void addPath(Cordinate start, Cordinate goal) {
-<span class="nc bnc" id="L104" title="All 4 branches missed.">        if(this.goalPosQue == null || this.startPosQue == null) { // in only one exits they wont work anyway so reset both</span>
-<span class="nc" id="L105">            this.goalPosQue = new CordinateQue(5);</span>
-<span class="nc" id="L106">            this.startPosQue = new CordinateQue(5);</span>
+<span class="nc bnc" id="L197" title="All 4 branches missed.">        if(this.goalPosQue == null || this.startPosQue == null) { // in only one exits they wont work anyway so reset both</span>
+<span class="nc" id="L198">            this.goalPosQue = new CordinateQue(5);</span>
+<span class="nc" id="L199">            this.startPosQue = new CordinateQue(5);</span>
         }
-<span class="nc" id="L108">        this.startPosQue.add(start);</span>
-<span class="nc" id="L109">        this.getGoalPosQue().add(goal);</span>
-<span class="nc" id="L110">    }</span>
+<span class="nc" id="L201">        this.startPosQue.add(start);</span>
+<span class="nc" id="L202">        this.getGoalPosQue().add(goal);</span>
+<span class="nc" id="L203">    }</span>
 
     public String getName() {
-<span class="nc bnc" id="L113" title="All 2 branches missed.">        if(name == null) {</span>
-<span class="nc" id="L114">            return &quot;unnamed map&quot;;</span>
+<span class="nc bnc" id="L206" title="All 2 branches missed.">        if(name == null) {</span>
+<span class="nc" id="L207">            return &quot;unnamed map&quot;;</span>
         }
-<span class="nc" id="L116">        return name;</span>
+<span class="nc" id="L209">        return name;</span>
     }
 
     public void setName(String name) {
-<span class="nc" id="L120">        this.name = name;</span>
-<span class="nc" id="L121">    }</span>
+<span class="nc" id="L213">        this.name = name;</span>
+<span class="nc" id="L214">    }</span>
 
     
 

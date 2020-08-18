@@ -70,6 +70,99 @@ public class PathMap {
         return false;
     }
 
+    public boolean canGoNorthWest(int currentLine, int currentColum) {
+        int nwLine = currentLine -1;
+        int nwColum = currentColum +1;
+        if(nwLine >= this.width || nwColum >= this.height || nwLine < 0 || nwColum < 0) {
+            return false;
+        }
+        char terrain = this.map[nwLine][nwColum]; 
+        if(terrain != '.' && terrain != 'G') {
+            return false;
+        }
+
+        //check for diagonal wall
+        int upLine = currentLine -1;
+        int upColum = currentColum;
+        int rightLine = currentLine;
+        int rightColum = currentColum+1;
+        if(!terrainPassableAt(upLine, upColum) && !terrainPassableAt(rightLine, rightColum)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public boolean canGoNorthEast(int currentLine, int currentColum) {
+        int neLine = currentLine -1;
+        int neColum = currentColum -1;
+        if(neLine >= this.width || neColum >= this.height || neLine < 0 || neColum < 0) {
+            return false;
+        }
+        char terrain = this.map[neLine][neColum]; 
+        if(terrain != '.' && terrain != 'G') {
+            return false;
+        }
+
+        //check for diagonal wall
+        int upLine = currentLine -1;
+        int upColum = currentColum;
+        int leftLine = currentLine;
+        int leftColum = currentColum-1;
+        if(!terrainPassableAt(upLine, upColum) && !terrainPassableAt(leftLine, leftColum)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public boolean canGoSouthhWest(int currentLine, int currentColum) {
+        int swLine = currentLine +1;
+        int swColum = currentColum +1;
+        if(swLine >= this.width || swColum >= this.height || swLine < 0 || swColum < 0) {
+            return false;
+        }
+        char terrain = this.map[swLine][swColum]; 
+        if(terrain != '.' && terrain != 'G') {
+            return false;
+        }
+
+        //check for diagonal wall
+        int downLine = currentLine +1;
+        int downColum = currentColum;
+        int rightLine = currentLine;
+        int rightColum = currentColum+1;
+        if(!terrainPassableAt(downLine, downColum) && !terrainPassableAt(rightLine, rightColum)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public boolean canGoSouthEast(int currentLine, int currentColum) {
+        int seLine = currentLine +1;
+        int seColum = currentColum -1;
+        if(seLine >= this.width || seColum >= this.height || seLine < 0 || seColum < 0) {
+            return false;
+        }
+        char terrain = this.map[seLine][seColum]; 
+        if(terrain != '.' && terrain != 'G') {
+            return false;
+        }
+
+        //check for diagonal wall
+        int downLine = currentLine +1;
+        int downColum = currentColum;
+        int leftLine = currentLine;
+        int leftColum = currentColum-1;
+        if(!terrainPassableAt(downLine, downColum) && !terrainPassableAt(leftLine, leftColum)) {
+            return false;
+        }
+
+        return true;
+    }
+    
+
     public void print() {
         System.out.println("Printing map");
         for(int lineNumber=0; lineNumber<this.height;lineNumber++){

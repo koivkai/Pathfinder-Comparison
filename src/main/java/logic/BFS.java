@@ -22,7 +22,6 @@ public class BFS {
         que = new CordinateQue();
         Cordinate start = new Cordinate(startLinenumber, startColum);
         que.add(start);
-
         Cordinate current = new Cordinate(0, 0);
         while(!que.isEmpty()) {
             current = que.poll();
