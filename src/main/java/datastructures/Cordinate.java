@@ -3,7 +3,7 @@ package datastructures;
 public class Cordinate implements Comparable<Cordinate>{
     int lineNumber;
     int colum;
-    int distanceEstimate;
+    double distanceEstimate;
 
     public Cordinate(int lineNumber, int colum) {
         this.lineNumber = lineNumber;
@@ -11,7 +11,7 @@ public class Cordinate implements Comparable<Cordinate>{
         this.distanceEstimate = 0;
     }
 
-    public Cordinate(int lineNumber, int colum, int distanceEstimate) {
+    public Cordinate(int lineNumber, int colum, double distanceEstimate) {
         this.lineNumber = lineNumber;
         this.colum = colum;
         this.distanceEstimate = distanceEstimate;
@@ -33,11 +33,11 @@ public class Cordinate implements Comparable<Cordinate>{
         this.colum = colum;
     }
 
-    public int getDistanceEstimate() {
+    public double getDistanceEstimate() {
         return distanceEstimate;
     }
 
-    public void setDistanceEstimate(int distanceEstimate) {
+    public void setDistanceEstimate(double distanceEstimate) {
         this.distanceEstimate = distanceEstimate;
     }
 
@@ -48,18 +48,10 @@ public class Cordinate implements Comparable<Cordinate>{
 
     @Override
     public int compareTo(Cordinate c) {
-        return this.distanceEstimate - c.getDistanceEstimate();
+        return (int)(this.distanceEstimate - c.getDistanceEstimate());
     }
 
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + colum;
-        result = prime * result + distanceEstimate;
-        result = prime * result + lineNumber;
-        return result;
-    }
+
 
     @Override
     public boolean equals(Object obj) {

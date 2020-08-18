@@ -6,7 +6,7 @@ import datastructures.PathMap;
 
 public class BFS {
     CordinateQue que;
-    int[][]distance;
+    double[][]distance;
     boolean[][]visited;
     Cordinate[][]prev;
     PathMap map;
@@ -14,9 +14,9 @@ public class BFS {
     public BFS() {
     }
 
-    public int findPath(PathMap map, int startLinenumber, int startColum, int goalLineNumber, int goalColum) {
+    public double findPath(PathMap map, int startLinenumber, int startColum, int goalLineNumber, int goalColum) {
         this.map = map;
-        distance = new int[map.getHeight()][map.getWidth()];
+        distance = new double[map.getHeight()][map.getWidth()];
         visited = new boolean[map.getHeight()][map.getWidth()];
         prev = new Cordinate[map.getHeight()][map.getWidth()];
         que = new CordinateQue();

@@ -3,7 +3,7 @@
 public class Cordinate implements Comparable&lt;Cordinate&gt;{
     int lineNumber;
     int colum;
-    int distanceEstimate;
+    double distanceEstimate;
 
 <span class="fc" id="L8">    public Cordinate(int lineNumber, int colum) {</span>
 <span class="fc" id="L9">        this.lineNumber = lineNumber;</span>
@@ -11,7 +11,7 @@ public class Cordinate implements Comparable&lt;Cordinate&gt;{
 <span class="fc" id="L11">        this.distanceEstimate = 0;</span>
 <span class="fc" id="L12">    }</span>
 
-<span class="fc" id="L14">    public Cordinate(int lineNumber, int colum, int distanceEstimate) {</span>
+<span class="fc" id="L14">    public Cordinate(int lineNumber, int colum, double distanceEstimate) {</span>
 <span class="fc" id="L15">        this.lineNumber = lineNumber;</span>
 <span class="fc" id="L16">        this.colum = colum;</span>
 <span class="fc" id="L17">        this.distanceEstimate = distanceEstimate;</span>
@@ -33,11 +33,11 @@ public class Cordinate implements Comparable&lt;Cordinate&gt;{
 <span class="nc" id="L33">        this.colum = colum;</span>
 <span class="nc" id="L34">    }</span>
 
-    public int getDistanceEstimate() {
+    public double getDistanceEstimate() {
 <span class="fc" id="L37">        return distanceEstimate;</span>
     }
 
-    public void setDistanceEstimate(int distanceEstimate) {
+    public void setDistanceEstimate(double distanceEstimate) {
 <span class="fc" id="L41">        this.distanceEstimate = distanceEstimate;</span>
 <span class="fc" id="L42">    }</span>
 
@@ -48,35 +48,27 @@ public class Cordinate implements Comparable&lt;Cordinate&gt;{
 
     @Override
     public int compareTo(Cordinate c) {
-<span class="nc" id="L51">        return this.distanceEstimate - c.getDistanceEstimate();</span>
+<span class="nc" id="L51">        return (int)(this.distanceEstimate - c.getDistanceEstimate());</span>
     }
 
-    @Override
-    public int hashCode() {
-<span class="nc" id="L56">        final int prime = 31;</span>
-<span class="nc" id="L57">        int result = 1;</span>
-<span class="nc" id="L58">        result = prime * result + colum;</span>
-<span class="nc" id="L59">        result = prime * result + distanceEstimate;</span>
-<span class="nc" id="L60">        result = prime * result + lineNumber;</span>
-<span class="nc" id="L61">        return result;</span>
-    }
+
 
     @Override
     public boolean equals(Object obj) {
-<span class="fc bfc" id="L66" title="All 2 branches covered.">        if (this == obj)</span>
-<span class="fc" id="L67">            return true;</span>
-<span class="pc bpc" id="L68" title="1 of 2 branches missed.">        if (obj == null)</span>
-<span class="nc" id="L69">            return false;</span>
-<span class="pc bpc" id="L70" title="1 of 2 branches missed.">        if (getClass() != obj.getClass())</span>
-<span class="nc" id="L71">            return false;</span>
-<span class="fc" id="L72">        Cordinate other = (Cordinate) obj;</span>
-<span class="pc bpc" id="L73" title="1 of 2 branches missed.">        if (colum != other.colum)</span>
-<span class="nc" id="L74">            return false;</span>
-<span class="pc bpc" id="L75" title="1 of 2 branches missed.">        if (distanceEstimate != other.distanceEstimate)</span>
-<span class="nc" id="L76">            return false;</span>
-<span class="pc bpc" id="L77" title="1 of 2 branches missed.">        if (lineNumber != other.lineNumber)</span>
-<span class="nc" id="L78">            return false;</span>
-<span class="fc" id="L79">        return true;</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        if (this == obj)</span>
+<span class="fc" id="L59">            return true;</span>
+<span class="pc bpc" id="L60" title="1 of 2 branches missed.">        if (obj == null)</span>
+<span class="nc" id="L61">            return false;</span>
+<span class="pc bpc" id="L62" title="1 of 2 branches missed.">        if (getClass() != obj.getClass())</span>
+<span class="nc" id="L63">            return false;</span>
+<span class="fc" id="L64">        Cordinate other = (Cordinate) obj;</span>
+<span class="pc bpc" id="L65" title="1 of 2 branches missed.">        if (colum != other.colum)</span>
+<span class="nc" id="L66">            return false;</span>
+<span class="pc bpc" id="L67" title="1 of 2 branches missed.">        if (distanceEstimate != other.distanceEstimate)</span>
+<span class="nc" id="L68">            return false;</span>
+<span class="pc bpc" id="L69" title="1 of 2 branches missed.">        if (lineNumber != other.lineNumber)</span>
+<span class="nc" id="L70">            return false;</span>
+<span class="fc" id="L71">        return true;</span>
     }
 
     

@@ -33,8 +33,8 @@ public class BFSTest {
 
         PathMap testMap = new PathMap(arrayMap, 10, 10);
 
-        int result = bfs.findPath(testMap, 4, 1, 4, 8);
-        assertEquals(7, result);
+        double result = bfs.findPath(testMap, 4, 1, 4, 8);
+        assertEquals(7, result, 0.1);
     }
     @Test
     public void findsPathTreeline() {
@@ -63,8 +63,8 @@ public class BFSTest {
 
         PathMap testMap = new PathMap(arrayMap, 10, 10);
 
-        int result = bfs.findPath(testMap, 4, 1, 4, 8);
-        assertEquals(13, result);
+        double result = bfs.findPath(testMap, 4, 1, 4, 8);
+        assertEquals(13, result, 0.1);
     }
 
     public void findsPathTwoTreelines() {
@@ -93,8 +93,8 @@ public class BFSTest {
 
         PathMap testMap = new PathMap(arrayMap, 10, 10);
 
-        int result = bfs.findPath(testMap, 4, 1, 4, 8);
-        assertEquals(21, result);
+        double result = bfs.findPath(testMap, 4, 1, 4, 8);
+        assertEquals(21, result, 0.1);
     }
 
     @Test
@@ -124,7 +124,7 @@ public class BFSTest {
 
         PathMap testMap = new PathMap(arrayMap, 10, 10);
 
-        int result = bfs.findPath(testMap, 4, 1, 4, 8);
-        assertEquals(-1, result);
+        double result = bfs.findPath(testMap, 4, 1, 4, 8);
+        assertEquals(-1, result, 0.1);
     }
 }

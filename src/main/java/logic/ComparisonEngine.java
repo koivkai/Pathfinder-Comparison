@@ -53,8 +53,8 @@ public class ComparisonEngine {
         Cordinate goal;
         int numberOfPathsForThisMap = goalQue.size();
         numberOfPathsInComparison += numberOfPathsForThisMap;
-        int bfsDistance;
-        int dijkstraDistance;
+        double bfsDistance;
+        double dijkstraDistance;
         int astartDistance;
         int jpsDistance;
         long bfsMapTotal = 0;
@@ -132,7 +132,7 @@ public class ComparisonEngine {
         return nameTime / 1000000;
     }
 
-    private boolean allAreSame(int a, int b, int c, int d) {
+    private boolean allAreSame(double a, double b, int c, int d) {
         if(a != b) {
             return false;
         }

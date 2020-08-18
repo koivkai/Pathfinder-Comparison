@@ -35,8 +35,8 @@ public class DijkstraTest {
         arrayMap[9] = lineTen;
 
         testMap = new PathMap(arrayMap, 10, 10);
-        int result = dijkstra.findPath(testMap, 4, 1, 4, 8);
-        assertEquals(7, result);
+        double result = dijkstra.findPath(testMap, 4, 1, 4, 8);
+        assertEquals(7, result, 0.1);
     }
 
     @Test
@@ -66,8 +66,8 @@ public class DijkstraTest {
 
         PathMap testMap = new PathMap(arrayMap, 10, 10);
 
-        int result = dijkstra.findPath(testMap, 4, 1, 4, 8);
-        assertEquals(13, result);
+        double result = dijkstra.findPath(testMap, 4, 1, 4, 8);
+        assertEquals(9.4852, result, 0.01);
     }
 
 
@@ -98,8 +98,8 @@ public class DijkstraTest {
 
         PathMap testMap = new PathMap(arrayMap, 10, 10);
 
-        int result = dijkstra.findPath(testMap, 1, 2, 1, 8);
-        assertEquals(34, result);
+        double result = dijkstra.findPath(testMap, 1, 2, 1, 8);
+        assertEquals(30.4852, result, 0.1);
     }
 
     @Test
@@ -129,7 +129,7 @@ public class DijkstraTest {
 
         PathMap testMap = new PathMap(arrayMap, 10, 10);
 
-        int result = dijkstra.findPath(testMap, 4, 1, 4, 8);
-        assertEquals(-1, result);
+        double result = dijkstra.findPath(testMap, 4, 1, 4, 8);
+        assertEquals(-1, result, 0.1);
     }
 }
