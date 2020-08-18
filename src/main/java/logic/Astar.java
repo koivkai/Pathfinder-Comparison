@@ -33,7 +33,7 @@ public class Astar {
 
         while(!que.isEmpty()) {
             current = que.poll();
-            System.out.println(current);
+            //System.out.println(current);
             int line = current.getLineNumber();
             int colum = current.getColum();
             if(visited[line][colum]) {

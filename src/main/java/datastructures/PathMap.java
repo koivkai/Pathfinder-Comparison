@@ -62,8 +62,8 @@ public class PathMap {
         } 
 
         char terrain = this.map[lineNumber][colum];
-        System.out.println("checking terrain at " +lineNumber+" "+colum);
-        System.out.println("t "+terrain);
+        //System.out.println("checking terrain at " +lineNumber+" "+colum);
+        //System.out.println("t "+terrain);
         if(terrain == '.' || terrain == 'G') {
             return true;
         }

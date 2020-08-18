@@ -37,29 +37,29 @@ public class BFS {
                 terrain = map.terrainAt(line-1, colum);
                 if (Helpers.passable(terrain)) {
                     que.add(new Cordinate(line-1,colum));
-                   prev[line-1][colum] = current;
+                    prev[line-1][colum] = current;
                     distance[line-1][colum] = distance[line][colum] +1;
                 }
                 // down
                 terrain = map.terrainAt(line+1, colum);
                 if (Helpers.passable(terrain)) {
                     que.add(new Cordinate(line+1,colum));
-                   prev[line+1][colum] = current;
+                    prev[line+1][colum] = current;
                     distance[line+1][colum] = distance[line][colum] +1;
                 }
                 // right
                 terrain = map.terrainAt(line, colum+1);
                 if (Helpers.passable(terrain)) {
                     que.add(new Cordinate(line,colum+1));
-                   prev[line][colum+1] = current;
+                    prev[line][colum+1] = current;
                     distance[line][colum+1] = distance[line][colum] +1;
                 }
                 // left
                 terrain = map.terrainAt(line, colum-1);
                 if (Helpers.passable(terrain)) {
                     que.add(new Cordinate(line,colum-1));
-                   prev[line][colum-1] = current;
-                    distance[line][colum+1] = distance[line][colum] +1;
+                    prev[line][colum-1] = current;
+                    distance[line][colum-1] = distance[line][colum] +1;
                 }
             }
         }

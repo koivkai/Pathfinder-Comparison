@@ -35,7 +35,7 @@ public class JPS {
             int colum = current.getColum();
 
             if(visited[line][colum]) {
-                System.out.println("already visited");
+                //System.out.println("already visited");
                 // do nothing
             } else { 
                 visited[line][colum] = true;
