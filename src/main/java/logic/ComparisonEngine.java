@@ -55,7 +55,7 @@ public class ComparisonEngine {
         numberOfPathsInComparison += numberOfPathsForThisMap;
         double bfsDistance;
         double dijkstraDistance;
-        int astartDistance;
+        double astartDistance;
         int jpsDistance;
         long bfsMapTotal = 0;
         long dijktraMapTotal = 0;
@@ -132,7 +132,7 @@ public class ComparisonEngine {
         return nameTime / 1000000;
     }
 
-    private boolean allAreSame(double a, double b, int c, int d) {
+    private boolean allAreSame(double a, double b, double c, int d) {
         if(a != b) {
             return false;
         }

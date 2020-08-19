@@ -1,5 +1,5 @@
-textUI/PCTextUI.java
- textUI.PCTextUI
+logic/Helpers.java
+ logic.Helpers
 datastructures/MyDeque.java
  datastructures.MyDeque
 datastructures/PathMap.java
@@ -12,8 +12,8 @@ datastructures/Cordinate.java
  datastructures.Cordinate
 logic/BFS.java
  logic.BFS
-logic/Astar.java
- logic.Astar
+logic/Dijkstra.java
+ logic.Dijkstra
 logic/JPS.java
  logic.JPS
 Main.java
@@ -22,9 +22,9 @@ datastructures/MapList.java
  datastructures.MapList
 datastructures/CordinateQue.java
  datastructures.CordinateQue
-logic/Helpers.java
- logic.Helpers
-logic/Dijkstra.java
- logic.Dijkstra
+textUI/PCTextUI.java
+ textUI.PCTextUI
 logic/ComparisonEngine.java
  logic.ComparisonEngine
+logic/Astar.java
+ logic.Astar

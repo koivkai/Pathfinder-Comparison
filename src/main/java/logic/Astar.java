@@ -1,7 +1,5 @@
 package logic;
 
-import java.util.PriorityQueue;
-
 import datastructures.Cordinate;
 import datastructures.MinHeap;
 import datastructures.PathMap;
@@ -13,23 +11,30 @@ public class Astar {
     int goalLine;
     int goalColum;
     MinHeap que;
-
+    boolean[][] visited;
+    Cordinate[][] prev;
+    double[][]distance;
+    PathMap map;
+    boolean goalFound;
+    final double twosqrt = Math.sqrt(2);
     public Astar() {
         this.goalLine = 0;
         this.goalColum = 0;
     }
 
-    public int findPath(PathMap map, int startLineNumber, int startColum, int goalLineNumber, int goalColum) {
+    public double findPath(PathMap map, int startLineNumber, int startColum, int goalLineNumber, int goalColum) {
         this.que = new MinHeap();
-        boolean[][] visited = new boolean[map.getHeight()][map.getWidth()];
-        Cordinate[][] prev = new Cordinate[map.getHeight()][map.getWidth()];
-        int[][]distance = new int[map.getHeight()][map.getWidth()];
+        this.map = map;
+        this.goalFound = false;
+        visited = new boolean[map.getHeight()][map.getWidth()];
+        prev = new Cordinate[map.getHeight()][map.getWidth()];
+        prepDistance(map.getHeight(), map.getWidth());
         que.add(new Cordinate(startLineNumber, startColum));
         this.goalLine = goalLineNumber;
         this.goalColum =goalColum;
         Cordinate current = new Cordinate (0,0);
-        char terrain = 't';
-        int fscore = 0;
+        double fscore = 0;
+        distance[startLineNumber][startColum] = 0;
 
         while(!que.isEmpty()) {
             current = que.poll();
@@ -40,89 +45,146 @@ public class Astar {
                 // do nothing
             } else {
                 visited[line][colum] = true;
-                // up
-                terrain = map.terrainAt(line-1, colum);
-                if (Helpers.passable(terrain)) {
-                    if(visited[line-1][colum]) {
-                        if (distance[line][colum]+1 < distance[line-1][colum]) { //path from here is shorter than old path
-                            prev[line-1][colum] = current;
-                            distance[line-1][colum] = distance[line][colum] +1;
-                        }
-   
-                        } else {
-                        prev[line-1][colum] = current;
+
+                // north
+                if (map.terrainPassableAt(line-1, colum)) {
+                    double currentDistance = distance[line-1][colum];
+                    double newDistance = distance[line][colum]+1;
+
+                    if(newDistance < currentDistance) {
                         distance[line-1][colum] = distance[line][colum] +1;
-                            if(foundGoal(line-1, colum)) {
-                                return distance[line-1][colum];
-                            }
+                        prev[line-1][colum] = current;
+                        if(foundGoal(line-1, colum)) {
+                            return distance[line-1][colum];
+                        }
                         fscore = distance[line-1][colum] + estimate(line-1, colum);
                         que.add(new Cordinate(line-1,colum, fscore));
-                        }
-                    
+                        
+                    }            
                 } 
-                // down 
-                terrain = map.terrainAt(line+1, colum);
-                if (Helpers.passable(terrain)) {
-                    if(visited[line+1][colum]) {
-                        if (distance[line][colum]+1 < distance[line+1][colum]) { //path from here is shorter than old path
-                            prev[line+1][colum] = current;
-                            distance[line+1][colum] = distance[line][colum] +1;
-                        }
-                    } else {
-                        prev[line+1][colum] = current;
+                // south 
+                if (map.terrainPassableAt(line+1, colum)) {
+                    double currentDistance = distance[line+1][colum];
+                    double newDistance = distance[line][colum]+1;
+
+                    if(newDistance < currentDistance) {
                         distance[line+1][colum] = distance[line][colum] +1;
+                        prev[line+1][colum] = current;
                         if(foundGoal(line+1, colum)) {
                             return distance[line+1][colum];
                         }
                         fscore = distance[line+1][colum] + estimate(line+1, colum);
                         que.add(new Cordinate(line+1,colum, fscore));
+                        
                     }
                     
                 }
-                // right 
-                terrain = map.terrainAt(line, colum+1);
-                if(Helpers.passable(terrain)) {
-                    if(visited[line][colum+1]) {
-                        if (distance[line][colum]+1 < distance[line][colum+1]) { //path from here is shorter than old path
-                            prev[line][colum+1] = current;
-                            distance[line][colum+1] = distance[line][colum] +1;
-                        }
-   
-                    } else {
+                // east 
+                if(map.terrainPassableAt(line, colum+1)) {
+                    double currentDistance = distance[line][colum+1];
+                    double newDistance = distance[line][colum]+1;
+
+                    if(newDistance < currentDistance) {
+                        distance[line][colum+1] = distance[line][colum] +1;
                         prev[line][colum+1] = current;
-                        distance[line][colum+1] = distance[line][colum]+1;
                         if(foundGoal(line, colum+1)) {
                             return distance[line][colum+1];
                         }
-                        fscore = distance[line][colum+1] +estimate(line, colum+1);
-                        que.add(new Cordinate(line, colum+1,fscore));
+                        fscore = distance[line][colum+1] + estimate(line, colum+1);
+                        que.add(new Cordinate(line,colum+1, fscore));
+                        
                     }
                     
                 }
-                // left 
-                terrain = map.terrainAt(line, colum-1);
-                if(Helpers.passable(terrain)) {
-                    if(visited[line][colum-1]) {
-                        if (distance[line][colum]+1 < distance[line][colum-1]) { //path from here is shorter than old path
-                            prev[line][colum-1] = current;
-                            distance[line][colum-1] = distance[line][colum] +1;
-                        }
-   
-                    } else {
+                // west 
+                if(map.terrainPassableAt(line, colum-1)) {
+                    double currentDistance = distance[line][colum-1];
+                    double newDistance = distance[line][colum]+1;
+
+                    if(newDistance < currentDistance) {
+                        distance[line][colum-1] = distance[line][colum] +1;
                         prev[line][colum-1] = current;
-                        distance[line][colum-1] = distance[line][colum]+1;
                         if(foundGoal(line, colum-1)) {
                             return distance[line][colum-1];
                         }
-                        fscore = distance[line][colum-1] +estimate(line, colum-1);
-                        que.add(new Cordinate(line, colum-1,fscore));
+                        fscore = distance[line][colum-1] + estimate(line, colum-1);
+                        que.add(new Cordinate(line,colum-1, fscore));
+                        
                     }
                     
                 }
+
+                //north east
+                if(map.canGoNorthEast(line, colum)) {
+                    double currentDistance = distance[line-1][colum+1];
+                    double newDistance = distance[line][colum]+twosqrt;
+
+                    if(newDistance < currentDistance) {
+                        distance[line-1][colum+1] = distance[line][colum] +twosqrt;
+                        prev[line-1][colum+1] = current;
+                        if(foundGoal(line-1, colum+1)) {
+                            return distance[line-1][colum+1];
+                        }
+                        fscore = distance[line-1][colum+1] + estimate(line-1, colum+1);
+                        que.add(new Cordinate(line-1,colum+1, fscore));
+                        
+                    }
+                }
+
+                //north west
+                if(map.canGoNorthWest(line, colum)) {
+                    double currentDistance = distance[line-1][colum-1];
+                    double newDistance = distance[line][colum]+twosqrt;
+
+                    if(newDistance < currentDistance) {
+                        distance[line-1][colum-1] = distance[line][colum] +twosqrt;
+                        prev[line-1][colum-1] = current;
+                        if(foundGoal(line-1, colum-1)) {
+                            return distance[line-1][colum-1];
+                        }
+                        fscore = distance[line-1][colum-1] + estimate(line-1, colum-1);
+                        que.add(new Cordinate(line-1,colum-1, fscore));
+                        
+                    }
+                }
+
+                //south east
+                if(map.canGoSouthEast(line, colum)) {
+                    double currentDistance = distance[line+1][colum+1];
+                    double newDistance = distance[line][colum]+twosqrt;
+
+                    if(newDistance < currentDistance) {
+                        distance[line+1][colum+1] = distance[line][colum] +twosqrt;
+                        prev[line+1][colum+1] = current;
+                        if(foundGoal(line+1, colum+1)) {
+                            return distance[line+1][colum+1];
+                        }
+                        fscore = distance[line+1][colum+1] + estimate(line+1, colum+1);
+                        que.add(new Cordinate(line+1,colum+1, fscore));
+                        
+                    }
+                }
+
+                //south west
+                if(map.canGoSouthWest(line, colum)) {
+                    double currentDistance = distance[line+1][colum-1];
+                    double newDistance = distance[line][colum]+twosqrt;
+
+                    if(newDistance < currentDistance) {
+                        distance[line+1][colum-1] = distance[line][colum] +twosqrt;
+                        prev[line+1][colum-1] = current;
+                        if(foundGoal(line+1, colum-1)) {
+                            return distance[line+1][colum-1];
+                        }
+                        fscore = distance[line+1][colum-1] + estimate(line+1, colum-1);
+                        que.add(new Cordinate(line+1,colum-1, fscore));
+                        
+                    }
+                }
             }
-    }
+        }
         
-        return -1;
+    return -1;
     }
 
     private boolean foundGoal(int line, int colum) {
@@ -132,7 +194,23 @@ public class Astar {
         return false;
     }
 
-    private int estimate(int line, int colum) {
+    /*
+    private double estimate(int line, int colum) {
         return Helpers.abs((line -this.goalLine)) + Helpers.abs((colum - goalColum));
     }
+    */
+
+    private double estimate(int line, int colum) {
+        return Math.max(Helpers.abs((line -this.goalLine)), Helpers.abs((colum - goalColum)));
+    }
+
+    private void prepDistance(int height, int width){
+        distance = new double[height][width];
+        for (int h = 0;h<height;h++) {
+            for(int w = 0;w<width;w++) {
+                distance[h][w] = Double.MAX_VALUE;
+            }
+        }
+    }
+
 }

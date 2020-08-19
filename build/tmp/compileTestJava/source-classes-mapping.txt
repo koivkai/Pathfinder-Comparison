@@ -1,7 +1,7 @@
 datastructuresTest/MyDequeTest.java
  datastructuresTest.MyDequeTest
-logicTest/AstarTest.java
- logicTest.AstarTest
+logicTest/DijkstraTest.java
+ logicTest.DijkstraTest
 logicTest/JPSTest.java
  logicTest.JPSTest
 datastructuresTest/PathMapTest.java
@@ -12,5 +12,5 @@ datastructuresTest/MinHeapTest.java
  datastructuresTest.MinHeapTest
 datastructuresTest/CordinateQueTest.java
  datastructuresTest.CordinateQueTest
-logicTest/DijkstraTest.java
- logicTest.DijkstraTest
+logicTest/AstarTest.java
+ logicTest.AstarTest
