@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="datastructuresTest.CordinateQueTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2020-08-19T12:36:52" hostname="Kaius-MBP" time="0.009">
+<testsuite name="datastructuresTest.CordinateQueTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2020-08-20T11:38:38" hostname="Kaius-MBP" time="0.009">
   <properties/>
   <testcase name="emptyConstructorWorks" classname="datastructuresTest.CordinateQueTest" time="0.0"/>
   <testcase name="addAndPollWork" classname="datastructuresTest.CordinateQueTest" time="0.0"/>
   <testcase name="queGrows" classname="datastructuresTest.CordinateQueTest" time="0.0"/>
   <testcase name="isNotEmptyAfterOneAdded" classname="datastructuresTest.CordinateQueTest" time="0.0"/>
-  <testcase name="queGrowsWhenTailIsBeforeHead" classname="datastructuresTest.CordinateQueTest" time="0.001"/>
+  <testcase name="queGrowsWhenTailIsBeforeHead" classname="datastructuresTest.CordinateQueTest" time="0.0"/>
   <testcase name="isEmptyWhenCreated" classname="datastructuresTest.CordinateQueTest" time="0.0"/>
   <testcase name="isEmptyAfterContentsArePolled" classname="datastructuresTest.CordinateQueTest" time="0.0"/>
   <testcase name="worksWhenTailIsBeforeHead" classname="datastructuresTest.CordinateQueTest" time="0.0"/>

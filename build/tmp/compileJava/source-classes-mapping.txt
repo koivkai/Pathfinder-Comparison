@@ -28,3 +28,5 @@ logic/ComparisonEngine.java
  logic.ComparisonEngine
 logic/Astar.java
  logic.Astar
+logic/JPSdiagonal.java
+ logic.JPSdiagonal

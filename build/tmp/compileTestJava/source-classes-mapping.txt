@@ -14,3 +14,5 @@ datastructuresTest/CordinateQueTest.java
  datastructuresTest.CordinateQueTest
 logicTest/AstarTest.java
  logicTest.AstarTest
+logicTest/JPSdiagonalTest.java
+ logicTest.JPSdiagonalTest
