@@ -24,6 +24,11 @@ public class Dijkstra {
         this.goalColum =goalColum;
         boolean[][] visited = new boolean[map.getHeight()][map.getWidth()];
         prev = new Cordinate[map.getHeight()][map.getWidth()];
+        //System.out.println("Djikstra");
+        //System.out.println("map height " + map.getHeight());
+        //System.out.println("map width " + map.getWidth());
+        //System.out.println("startLine " + startLineNumber+ " startColum " + startColum);
+        //System.out.println("goalLine "+goalLineNumber+" goalColum "+goalColum);
         prepDistance(map.getHeight(), map.getWidth());
         distance[startLineNumber][startColum] = 0;
         Cordinate start = new Cordinate(startLineNumber, startColum);
@@ -35,6 +40,7 @@ public class Dijkstra {
             int line = current.getLineNumber();
             int colum = current.getColum();
             if(foundGoal(line, colum)) {
+                // Helpers.printPath(prev, goalLine, goalColum,startLineNumber,startColum);
                 return distance[line][colum];
             }
             if(visited[line][colum]) {
@@ -79,7 +85,7 @@ public class Dijkstra {
             if(newDistance < currentDistance) {
                 distance[line-1][colum]= newDistance;
                 Cordinate up = new Cordinate(line-1,colum,newDistance);
-                prev[line-1][colum] = up;
+                prev[line-1][colum] = current;
                 que.add(up);
             }
         }
@@ -94,7 +100,7 @@ public class Dijkstra {
             if(newDistance < currentDistance) {
                 distance[line+1][colum]= newDistance;
                 Cordinate down = new Cordinate(line+1,colum,newDistance);
-                prev[line+1][colum] = down;
+                prev[line+1][colum] = current;
                 que.add(down);
             }
         }
@@ -109,7 +115,7 @@ public class Dijkstra {
             if(newDistance < currentDistance) {
                 distance[line][colum+1]= newDistance;
                 Cordinate right = new Cordinate(line,colum+1,newDistance);
-                prev[line][colum+1] = right;
+                prev[line][colum+1] = current;
                 que.add(right);
             }
         }
@@ -124,7 +130,7 @@ public class Dijkstra {
             if(newDistance < currentDistance) {
                 distance[line][colum-1]= newDistance;
                 Cordinate left = new Cordinate(line,colum-1,newDistance);
-                prev[line][colum-1] = left;
+                prev[line][colum-1] = current;
                 que.add(left);
             }
         }
@@ -139,7 +145,7 @@ public class Dijkstra {
             if(newDistance < currentDistance) {
                 distance[line-1][colum+1] = newDistance;
                 Cordinate northEast = new Cordinate(line-1, colum+1, newDistance);
-                prev[line-1][colum+1] = northEast;
+                prev[line-1][colum+1] = current;
                 que.add(northEast);
             }
         }
@@ -154,7 +160,7 @@ public class Dijkstra {
             if(newDistance < currentDistance) {
                 distance[line-1][colum-1] = newDistance;
                 Cordinate northWest = new Cordinate(line-1, colum-1, newDistance);
-                prev[line-1][colum-1] = northWest;
+                prev[line-1][colum-1] = current;
                 que.add(northWest);
             }
         }
@@ -169,7 +175,7 @@ public class Dijkstra {
             if(newDistance < currentDistance) {
                 distance[line+1][colum+1] = newDistance;
                 Cordinate southEast = new Cordinate(line+1, colum+1, newDistance);
-                prev[line+1][colum+1] = southEast;
+                prev[line+1][colum+1] = current;
                 que.add(southEast);
             }
         }
@@ -184,7 +190,7 @@ public class Dijkstra {
             if(newDistance < currentDistance) {
                 distance[line+1][colum-1] = newDistance;
                 Cordinate southWest = new Cordinate(line+1, colum-1, newDistance);
-                prev[line+1][colum-1] = southWest;
+                prev[line+1][colum-1] = current;
                 que.add(southWest);
             }
         }

@@ -8,6 +8,7 @@ public class PathMap {
     String name;
     CordinateQue startPosQue;
     CordinateQue goalPosQue;
+    DoublesQue optimalPathLenghtQue;
 
     public PathMap() {
     }
@@ -81,12 +82,12 @@ public class PathMap {
             return false;
         }
 
-        //check for diagonal wall
+        //cant cut corners
         int upLine = currentLine -1;
         int upColum = currentColum;
         int rightLine = currentLine;
         int rightColum = currentColum+1;
-        if(!terrainPassableAt(upLine, upColum) && !terrainPassableAt(rightLine, rightColum)) {
+        if(!terrainPassableAt(upLine, upColum) || !terrainPassableAt(rightLine, rightColum)) {
             return false;
         }
 
@@ -104,12 +105,12 @@ public class PathMap {
             return false;
         }
 
-        //check for diagonal wall
+        //cant cut corners
         int upLine = currentLine -1;
         int upColum = currentColum;
         int leftLine = currentLine;
         int leftColum = currentColum-1;
-        if(!terrainPassableAt(upLine, upColum) && !terrainPassableAt(leftLine, leftColum)) {
+        if(!terrainPassableAt(upLine, upColum) || !terrainPassableAt(leftLine, leftColum)) {
             return false;
         }
 
@@ -127,12 +128,12 @@ public class PathMap {
             return false;
         }
 
-        //check for diagonal wall
+        //cant cut corners
         int downLine = currentLine +1;
         int downColum = currentColum;
         int rightLine = currentLine;
         int rightColum = currentColum+1;
-        if(!terrainPassableAt(downLine, downColum) && !terrainPassableAt(rightLine, rightColum)) {
+        if(!terrainPassableAt(downLine, downColum) || !terrainPassableAt(rightLine, rightColum)) {
             return false;
         }
 
@@ -150,12 +151,12 @@ public class PathMap {
             return false;
         }
 
-        //check for diagonal wall
+        //cant cut corners
         int downLine = currentLine +1;
         int downColum = currentColum;
         int leftLine = currentLine;
         int leftColum = currentColum-1;
-        if(!terrainPassableAt(downLine, downColum) && !terrainPassableAt(leftLine, leftColum)) {
+        if(!terrainPassableAt(downLine, downColum) || !terrainPassableAt(leftLine, leftColum)) {
             return false;
         }
 
@@ -193,13 +194,15 @@ public class PathMap {
 
     
 
-    public void addPath(Cordinate start, Cordinate goal) {
-        if(this.goalPosQue == null || this.startPosQue == null) { // in only one exits they wont work anyway so reset both
+    public void addPath(Cordinate start, Cordinate goal, double optimalLenght) {
+        if(this.goalPosQue == null || this.startPosQue == null || this.optimalPathLenghtQue == null) { // in only one exits they wont work anyway so reset both
             this.goalPosQue = new CordinateQue(5);
             this.startPosQue = new CordinateQue(5);
+            this.optimalPathLenghtQue = new DoublesQue(5);
         }
         this.startPosQue.add(start);
-        this.getGoalPosQue().add(goal);
+        this.goalPosQue.add(goal);
+        this.optimalPathLenghtQue.add(optimalLenght);
     }
 
     public String getName() {
@@ -211,6 +214,14 @@ public class PathMap {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public DoublesQue getOptimalPathLenghtQue() {
+        return optimalPathLenghtQue;
+    }
+
+    public void setOptimalPathLenghtQue(DoublesQue optimalPathLenghtQue) {
+        this.optimalPathLenghtQue = optimalPathLenghtQue;
     }
 
     

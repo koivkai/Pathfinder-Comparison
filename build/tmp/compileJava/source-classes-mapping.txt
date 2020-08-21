@@ -1,32 +1,36 @@
-logic/Helpers.java
- logic.Helpers
+logic/ScenFileReader.java
+ logic.ScenFileReader
 datastructures/MyDeque.java
  datastructures.MyDeque
-datastructures/PathMap.java
- datastructures.PathMap
-logic/MapReader.java
- logic.MapReader
+datastructures/CordinateQue.java
+ datastructures.CordinateQue
+Main.java
+ Main
 datastructures/MinHeap.java
  datastructures.MinHeap
 datastructures/Cordinate.java
  datastructures.Cordinate
+datastructures/DoublesQue.java
+ datastructures.DoublesQue
+datastructures/MapList.java
+ datastructures.MapList
+logic/JPSdiagonal.java
+ logic.JPSdiagonal
+logic/MapReader.java
+ logic.MapReader
 logic/BFS.java
  logic.BFS
+datastructures/PathMap.java
+ datastructures.PathMap
+logic/Helpers.java
+ logic.Helpers
+logic/Astar.java
+ logic.Astar
 logic/Dijkstra.java
  logic.Dijkstra
 logic/JPS.java
  logic.JPS
-Main.java
- Main
-datastructures/MapList.java
- datastructures.MapList
-datastructures/CordinateQue.java
- datastructures.CordinateQue
 textUI/PCTextUI.java
  textUI.PCTextUI
 logic/ComparisonEngine.java
  logic.ComparisonEngine
-logic/Astar.java
- logic.Astar
-logic/JPSdiagonal.java
- logic.JPSdiagonal

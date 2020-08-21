@@ -1,23 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fi"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Helpers.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pathfinder-Comparison</a> &gt; <a href="index.source.html" class="el_package">logic</a> &gt; <span class="el_source">Helpers.java</span></div><h1>Helpers.java</h1><pre class="source lang-java linenums">package logic;
 
-public class Helpers {
-<span class="nc" id="L4">    public final double twoSqrt = Math.sqrt(2);</span>
+import java.util.Arrays;
 
-<span class="nc" id="L6">    public Helpers() {</span>
-<span class="nc" id="L7">    }</span>
+import datastructures.Cordinate;
+
+public class Helpers {
+<span class="nc" id="L8">    public final double twoSqrt = Math.sqrt(2);</span>
+
+<span class="nc" id="L10">    public Helpers() {</span>
+<span class="nc" id="L11">    }</span>
 
     public static boolean passable(char terrain) {
-<span class="nc bnc" id="L10" title="All 4 branches missed.">        if(terrain == '.' || terrain == 'G') {</span>
-<span class="nc" id="L11">            return true;</span>
+<span class="nc bnc" id="L14" title="All 4 branches missed.">        if(terrain == '.' || terrain == 'G') {</span>
+<span class="nc" id="L15">            return true;</span>
         }
-<span class="nc" id="L13">        return false;</span>
+<span class="nc" id="L17">        return false;</span>
     }
 
     public static int abs(int i) {
-<span class="fc bfc" id="L17" title="All 2 branches covered.">        if(i &gt;= 0) {</span>
-<span class="fc" id="L18">            return i;</span>
+<span class="fc bfc" id="L21" title="All 2 branches covered.">        if(i &gt;= 0) {</span>
+<span class="fc" id="L22">            return i;</span>
         } 
-<span class="fc" id="L20">        return -i;</span>
+<span class="fc" id="L24">        return -i;</span>
+
+    }
+
+    public static void printPath(Cordinate[][] prevArray, int goalLine, int goalColum, int startLineNumber, int startColum) {
+<span class="nc" id="L29">        Cordinate prev = prevArray[goalLine][goalColum];</span>
+<span class="nc" id="L30">        System.out.println(&quot;Printing path&quot;);</span>
+<span class="nc" id="L31">        System.out.println(&quot;goal &quot; + new Cordinate(goalLine, goalColum));</span>
+<span class="nc bnc" id="L32" title="All 4 branches missed.">        while(!(prev.getLineNumber() == startLineNumber &amp;&amp; prev.getColum() == startColum)) {</span>
+<span class="nc" id="L33">            System.out.println(prev);</span>
+<span class="nc" id="L34">            prev = prevArray[prev.getLineNumber()][prev.getColum()];</span>
+        }
+<span class="nc" id="L36">        System.out.println(&quot;start &quot;+prev);</span>
+<span class="nc" id="L37">    }</span>
+
+    public static double abs(double i) {
+<span class="nc bnc" id="L40" title="All 2 branches missed.">        if(i &gt;= 0) {</span>
+<span class="nc" id="L41">            return i;</span>
+        } 
+<span class="nc" id="L43">        return -i;</span>
 
     }
     

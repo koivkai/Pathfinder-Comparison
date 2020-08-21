@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">6</div>
+<div class="counter">2</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.003s</div>
+<div class="counter">0.049s</div>
 <p>duration</p>
 </div>
 </td>
@@ -63,6 +63,9 @@
 <li>
 <a href="#tab0">Tests</a>
 </li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
 </ul>
 <div id="tab0" class="tab">
 <h2>Tests</h2>
@@ -75,36 +78,314 @@
 </tr>
 </thead>
 <tr>
-<td class="success">findsPathNoObstacles</td>
-<td class="success">0s</td>
+<td class="success">diagonalLines</td>
+<td class="success">0.012s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">findsPathNoObstaclesReverse</td>
-<td class="success">0s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">findsPathThreeTreelines</td>
-<td class="success">0s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">findsPathThreeTreelinesReverse</td>
-<td class="success">0.001s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">findsPathTreeline</td>
-<td class="success">0.001s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">noPathExits</td>
-<td class="success">0.001s</td>
+<td class="success">diagonalLinesReverse</td>
+<td class="success">0.037s</td>
 <td class="success">passed</td>
 </tr>
 </table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>current Cordinate [colum=8, lineNumber=2]
+neighbours [Cordinate [colum=8, lineNumber=3], Cordinate [colum=8, lineNumber=1], Cordinate [colum=7, lineNumber=2], Cordinate [colum=7, lineNumber=1]]
+jumping to Cordinate [colum=8, lineNumber=3] from Cordinate [colum=8, lineNumber=2]
+jumping to Cordinate [colum=8, lineNumber=4] from Cordinate [colum=8, lineNumber=3]
+next null
+jumping to Cordinate [colum=8, lineNumber=1] from Cordinate [colum=8, lineNumber=2]
+jumping to Cordinate [colum=8, lineNumber=0] from Cordinate [colum=8, lineNumber=1]
+next null
+jumping to Cordinate [colum=7, lineNumber=2] from Cordinate [colum=8, lineNumber=2]
+jumping to Cordinate [colum=6, lineNumber=2] from Cordinate [colum=7, lineNumber=2]
+next null
+jumping to Cordinate [colum=7, lineNumber=1] from Cordinate [colum=8, lineNumber=2]
+jumping to Cordinate [colum=6, lineNumber=1] from Cordinate [colum=7, lineNumber=1]
+jumping to Cordinate [colum=5, lineNumber=1] from Cordinate [colum=6, lineNumber=1]
+next Cordinate [colum=7, lineNumber=1]
+current Cordinate [colum=7, lineNumber=1]
+neighbours [Cordinate [colum=6, lineNumber=1]]
+jumping to Cordinate [colum=6, lineNumber=1] from Cordinate [colum=7, lineNumber=1]
+jumping to Cordinate [colum=5, lineNumber=1] from Cordinate [colum=6, lineNumber=1]
+next Cordinate [colum=5, lineNumber=1]
+current Cordinate [colum=5, lineNumber=1]
+neighbours [Cordinate [colum=4, lineNumber=1], Cordinate [colum=4, lineNumber=2], Cordinate [colum=5, lineNumber=2]]
+jumping to Cordinate [colum=4, lineNumber=1] from Cordinate [colum=5, lineNumber=1]
+jumping to Cordinate [colum=3, lineNumber=1] from Cordinate [colum=4, lineNumber=1]
+jumping to Cordinate [colum=2, lineNumber=1] from Cordinate [colum=3, lineNumber=1]
+next null
+jumping to Cordinate [colum=4, lineNumber=2] from Cordinate [colum=5, lineNumber=1]
+jumping to Cordinate [colum=3, lineNumber=2] from Cordinate [colum=4, lineNumber=2]
+jumping to Cordinate [colum=4, lineNumber=3] from Cordinate [colum=4, lineNumber=2]
+next null
+jumping to Cordinate [colum=5, lineNumber=2] from Cordinate [colum=5, lineNumber=1]
+jumping to Cordinate [colum=5, lineNumber=3] from Cordinate [colum=5, lineNumber=2]
+next Cordinate [colum=5, lineNumber=3]
+current Cordinate [colum=5, lineNumber=3]
+neighbours [Cordinate [colum=6, lineNumber=3]]
+jumping to Cordinate [colum=6, lineNumber=3] from Cordinate [colum=5, lineNumber=3]
+next Cordinate [colum=6, lineNumber=3]
+current Cordinate [colum=6, lineNumber=3]
+neighbours [Cordinate [colum=6, lineNumber=4]]
+jumping to Cordinate [colum=6, lineNumber=4] from Cordinate [colum=6, lineNumber=3]
+next Cordinate [colum=6, lineNumber=4]
+current Cordinate [colum=6, lineNumber=4]
+neighbours [Cordinate [colum=6, lineNumber=5], Cordinate [colum=7, lineNumber=5], Cordinate [colum=7, lineNumber=4]]
+jumping to Cordinate [colum=6, lineNumber=5] from Cordinate [colum=6, lineNumber=4]
+next Cordinate [colum=6, lineNumber=5]
+jumping to Cordinate [colum=7, lineNumber=5] from Cordinate [colum=6, lineNumber=4]
+jumping to Cordinate [colum=8, lineNumber=5] from Cordinate [colum=7, lineNumber=5]
+jumping to Cordinate [colum=9, lineNumber=5] from Cordinate [colum=8, lineNumber=5]
+jumping to Cordinate [colum=7, lineNumber=6] from Cordinate [colum=7, lineNumber=5]
+jumping to Cordinate [colum=7, lineNumber=7] from Cordinate [colum=7, lineNumber=6]
+jumping to Cordinate [colum=7, lineNumber=8] from Cordinate [colum=7, lineNumber=7]
+jumping to Cordinate [colum=7, lineNumber=9] from Cordinate [colum=7, lineNumber=8]
+jumping to Cordinate [colum=8, lineNumber=6] from Cordinate [colum=7, lineNumber=5]
+jumping to Cordinate [colum=9, lineNumber=6] from Cordinate [colum=8, lineNumber=6]
+jumping to Cordinate [colum=8, lineNumber=7] from Cordinate [colum=8, lineNumber=6]
+jumping to Cordinate [colum=8, lineNumber=8] from Cordinate [colum=8, lineNumber=7]
+jumping to Cordinate [colum=8, lineNumber=9] from Cordinate [colum=8, lineNumber=8]
+next null
+jumping to Cordinate [colum=7, lineNumber=4] from Cordinate [colum=6, lineNumber=4]
+jumping to Cordinate [colum=8, lineNumber=4] from Cordinate [colum=7, lineNumber=4]
+next null
+current Cordinate [colum=6, lineNumber=5]
+neighbours [Cordinate [colum=6, lineNumber=6], Cordinate [colum=7, lineNumber=6], Cordinate [colum=5, lineNumber=6], Cordinate [colum=5, lineNumber=5]]
+jumping to Cordinate [colum=6, lineNumber=6] from Cordinate [colum=6, lineNumber=5]
+jumping to Cordinate [colum=6, lineNumber=7] from Cordinate [colum=6, lineNumber=6]
+jumping to Cordinate [colum=6, lineNumber=8] from Cordinate [colum=6, lineNumber=7]
+jumping to Cordinate [colum=6, lineNumber=9] from Cordinate [colum=6, lineNumber=8]
+next null
+jumping to Cordinate [colum=7, lineNumber=6] from Cordinate [colum=6, lineNumber=5]
+jumping to Cordinate [colum=8, lineNumber=6] from Cordinate [colum=7, lineNumber=6]
+jumping to Cordinate [colum=9, lineNumber=6] from Cordinate [colum=8, lineNumber=6]
+jumping to Cordinate [colum=7, lineNumber=7] from Cordinate [colum=7, lineNumber=6]
+jumping to Cordinate [colum=7, lineNumber=8] from Cordinate [colum=7, lineNumber=7]
+jumping to Cordinate [colum=7, lineNumber=9] from Cordinate [colum=7, lineNumber=8]
+jumping to Cordinate [colum=8, lineNumber=7] from Cordinate [colum=7, lineNumber=6]
+jumping to Cordinate [colum=9, lineNumber=7] from Cordinate [colum=8, lineNumber=7]
+jumping to Cordinate [colum=8, lineNumber=8] from Cordinate [colum=8, lineNumber=7]
+jumping to Cordinate [colum=8, lineNumber=9] from Cordinate [colum=8, lineNumber=8]
+next null
+jumping to Cordinate [colum=5, lineNumber=6] from Cordinate [colum=6, lineNumber=5]
+jumping to Cordinate [colum=4, lineNumber=6] from Cordinate [colum=5, lineNumber=6]
+jumping to Cordinate [colum=3, lineNumber=6] from Cordinate [colum=4, lineNumber=6]
+jumping to Cordinate [colum=5, lineNumber=7] from Cordinate [colum=5, lineNumber=6]
+jumping to Cordinate [colum=5, lineNumber=8] from Cordinate [colum=5, lineNumber=7]
+next null
+jumping to Cordinate [colum=5, lineNumber=5] from Cordinate [colum=6, lineNumber=5]
+jumping to Cordinate [colum=4, lineNumber=5] from Cordinate [colum=5, lineNumber=5]
+next Cordinate [colum=4, lineNumber=5]
+current Cordinate [colum=4, lineNumber=5]
+neighbours [Cordinate [colum=3, lineNumber=5], Cordinate [colum=3, lineNumber=4], Cordinate [colum=4, lineNumber=4]]
+jumping to Cordinate [colum=3, lineNumber=5] from Cordinate [colum=4, lineNumber=5]
+jumping to Cordinate [colum=2, lineNumber=5] from Cordinate [colum=3, lineNumber=5]
+next Cordinate [colum=2, lineNumber=5]
+jumping to Cordinate [colum=3, lineNumber=4] from Cordinate [colum=4, lineNumber=5]
+jumping to Cordinate [colum=2, lineNumber=4] from Cordinate [colum=3, lineNumber=4]
+jumping to Cordinate [colum=1, lineNumber=4] from Cordinate [colum=2, lineNumber=4]
+jumping to Cordinate [colum=0, lineNumber=4] from Cordinate [colum=1, lineNumber=4]
+jumping to Cordinate [colum=3, lineNumber=3] from Cordinate [colum=3, lineNumber=4]
+jumping to Cordinate [colum=3, lineNumber=2] from Cordinate [colum=3, lineNumber=3]
+jumping to Cordinate [colum=2, lineNumber=3] from Cordinate [colum=3, lineNumber=4]
+jumping to Cordinate [colum=1, lineNumber=3] from Cordinate [colum=2, lineNumber=3]
+jumping to Cordinate [colum=0, lineNumber=3] from Cordinate [colum=1, lineNumber=3]
+jumping to Cordinate [colum=2, lineNumber=2] from Cordinate [colum=2, lineNumber=3]
+jumping to Cordinate [colum=2, lineNumber=1] from Cordinate [colum=2, lineNumber=2]
+jumping to Cordinate [colum=1, lineNumber=2] from Cordinate [colum=2, lineNumber=3]
+jumping to Cordinate [colum=0, lineNumber=2] from Cordinate [colum=1, lineNumber=2]
+jumping to Cordinate [colum=1, lineNumber=1] from Cordinate [colum=1, lineNumber=2]
+jumping to Cordinate [colum=1, lineNumber=0] from Cordinate [colum=1, lineNumber=1]
+next null
+jumping to Cordinate [colum=4, lineNumber=4] from Cordinate [colum=4, lineNumber=5]
+jumping to Cordinate [colum=4, lineNumber=3] from Cordinate [colum=4, lineNumber=4]
+next null
+current Cordinate [colum=2, lineNumber=5]
+neighbours [Cordinate [colum=1, lineNumber=5], Cordinate [colum=1, lineNumber=6], Cordinate [colum=1, lineNumber=4], Cordinate [colum=2, lineNumber=6]]
+jumping to Cordinate [colum=1, lineNumber=5] from Cordinate [colum=2, lineNumber=5]
+jumping to Cordinate [colum=0, lineNumber=5] from Cordinate [colum=1, lineNumber=5]
+next null
+jumping to Cordinate [colum=1, lineNumber=6] from Cordinate [colum=2, lineNumber=5]
+jumping to Cordinate [colum=0, lineNumber=6] from Cordinate [colum=1, lineNumber=6]
+jumping to Cordinate [colum=1, lineNumber=7] from Cordinate [colum=1, lineNumber=6]
+jumping to Cordinate [colum=1, lineNumber=8] from Cordinate [colum=1, lineNumber=7]
+jumping to Cordinate [colum=1, lineNumber=9] from Cordinate [colum=1, lineNumber=8]
+next null
+jumping to Cordinate [colum=1, lineNumber=4] from Cordinate [colum=2, lineNumber=5]
+jumping to Cordinate [colum=0, lineNumber=4] from Cordinate [colum=1, lineNumber=4]
+jumping to Cordinate [colum=1, lineNumber=3] from Cordinate [colum=1, lineNumber=4]
+jumping to Cordinate [colum=1, lineNumber=2] from Cordinate [colum=1, lineNumber=3]
+jumping to Cordinate [colum=1, lineNumber=1] from Cordinate [colum=1, lineNumber=2]
+jumping to Cordinate [colum=1, lineNumber=0] from Cordinate [colum=1, lineNumber=1]
+next null
+jumping to Cordinate [colum=2, lineNumber=6] from Cordinate [colum=2, lineNumber=5]
+jumping to Cordinate [colum=2, lineNumber=7] from Cordinate [colum=2, lineNumber=6]
+next Cordinate [colum=2, lineNumber=7]
+current Cordinate [colum=2, lineNumber=7]
+neighbours [Cordinate [colum=2, lineNumber=8], Cordinate [colum=3, lineNumber=8], Cordinate [colum=1, lineNumber=8], Cordinate [colum=3, lineNumber=7]]
+jumping to Cordinate [colum=2, lineNumber=8] from Cordinate [colum=2, lineNumber=7]
+jumping to Cordinate [colum=2, lineNumber=9] from Cordinate [colum=2, lineNumber=8]
+next null
+jumping to Cordinate [colum=3, lineNumber=8] from Cordinate [colum=2, lineNumber=7]
+next Cordinate [colum=3, lineNumber=8]
+jumping to Cordinate [colum=1, lineNumber=8] from Cordinate [colum=2, lineNumber=7]
+jumping to Cordinate [colum=0, lineNumber=8] from Cordinate [colum=1, lineNumber=8]
+jumping to Cordinate [colum=1, lineNumber=9] from Cordinate [colum=1, lineNumber=8]
+next null
+jumping to Cordinate [colum=3, lineNumber=7] from Cordinate [colum=2, lineNumber=7]
+jumping to Cordinate [colum=4, lineNumber=7] from Cordinate [colum=3, lineNumber=7]
+next null
+current Cordinate [colum=3, lineNumber=8]
+current Cordinate [colum=3, lineNumber=8]
+neighbours [Cordinate [colum=3, lineNumber=7], Cordinate [colum=4, lineNumber=8], Cordinate [colum=2, lineNumber=8], Cordinate [colum=2, lineNumber=7]]
+jumping to Cordinate [colum=3, lineNumber=7] from Cordinate [colum=3, lineNumber=8]
+jumping to Cordinate [colum=3, lineNumber=6] from Cordinate [colum=3, lineNumber=7]
+next null
+jumping to Cordinate [colum=4, lineNumber=8] from Cordinate [colum=3, lineNumber=8]
+jumping to Cordinate [colum=5, lineNumber=8] from Cordinate [colum=4, lineNumber=8]
+next null
+jumping to Cordinate [colum=2, lineNumber=8] from Cordinate [colum=3, lineNumber=8]
+jumping to Cordinate [colum=1, lineNumber=8] from Cordinate [colum=2, lineNumber=8]
+jumping to Cordinate [colum=0, lineNumber=8] from Cordinate [colum=1, lineNumber=8]
+next null
+jumping to Cordinate [colum=2, lineNumber=7] from Cordinate [colum=3, lineNumber=8]
+jumping to Cordinate [colum=1, lineNumber=7] from Cordinate [colum=2, lineNumber=7]
+jumping to Cordinate [colum=0, lineNumber=7] from Cordinate [colum=1, lineNumber=7]
+jumping to Cordinate [colum=2, lineNumber=6] from Cordinate [colum=2, lineNumber=7]
+jumping to Cordinate [colum=2, lineNumber=5] from Cordinate [colum=2, lineNumber=6]
+next Cordinate [colum=2, lineNumber=7]
+current Cordinate [colum=2, lineNumber=7]
+neighbours [Cordinate [colum=1, lineNumber=7], Cordinate [colum=1, lineNumber=6], Cordinate [colum=2, lineNumber=6]]
+jumping to Cordinate [colum=1, lineNumber=7] from Cordinate [colum=2, lineNumber=7]
+jumping to Cordinate [colum=0, lineNumber=7] from Cordinate [colum=1, lineNumber=7]
+next null
+jumping to Cordinate [colum=1, lineNumber=6] from Cordinate [colum=2, lineNumber=7]
+jumping to Cordinate [colum=0, lineNumber=6] from Cordinate [colum=1, lineNumber=6]
+jumping to Cordinate [colum=1, lineNumber=5] from Cordinate [colum=1, lineNumber=6]
+jumping to Cordinate [colum=1, lineNumber=4] from Cordinate [colum=1, lineNumber=5]
+jumping to Cordinate [colum=1, lineNumber=3] from Cordinate [colum=1, lineNumber=4]
+jumping to Cordinate [colum=1, lineNumber=2] from Cordinate [colum=1, lineNumber=3]
+jumping to Cordinate [colum=1, lineNumber=1] from Cordinate [colum=1, lineNumber=2]
+jumping to Cordinate [colum=1, lineNumber=0] from Cordinate [colum=1, lineNumber=1]
+next null
+jumping to Cordinate [colum=2, lineNumber=6] from Cordinate [colum=2, lineNumber=7]
+jumping to Cordinate [colum=2, lineNumber=5] from Cordinate [colum=2, lineNumber=6]
+next Cordinate [colum=2, lineNumber=5]
+current Cordinate [colum=2, lineNumber=5]
+neighbours [Cordinate [colum=2, lineNumber=4], Cordinate [colum=1, lineNumber=4], Cordinate [colum=3, lineNumber=4], Cordinate [colum=3, lineNumber=5]]
+jumping to Cordinate [colum=2, lineNumber=4] from Cordinate [colum=2, lineNumber=5]
+jumping to Cordinate [colum=2, lineNumber=3] from Cordinate [colum=2, lineNumber=4]
+jumping to Cordinate [colum=2, lineNumber=2] from Cordinate [colum=2, lineNumber=3]
+jumping to Cordinate [colum=2, lineNumber=1] from Cordinate [colum=2, lineNumber=2]
+next null
+jumping to Cordinate [colum=1, lineNumber=4] from Cordinate [colum=2, lineNumber=5]
+jumping to Cordinate [colum=0, lineNumber=4] from Cordinate [colum=1, lineNumber=4]
+jumping to Cordinate [colum=1, lineNumber=3] from Cordinate [colum=1, lineNumber=4]
+jumping to Cordinate [colum=1, lineNumber=2] from Cordinate [colum=1, lineNumber=3]
+jumping to Cordinate [colum=1, lineNumber=1] from Cordinate [colum=1, lineNumber=2]
+jumping to Cordinate [colum=1, lineNumber=0] from Cordinate [colum=1, lineNumber=1]
+next null
+jumping to Cordinate [colum=3, lineNumber=4] from Cordinate [colum=2, lineNumber=5]
+jumping to Cordinate [colum=3, lineNumber=3] from Cordinate [colum=3, lineNumber=4]
+jumping to Cordinate [colum=3, lineNumber=2] from Cordinate [colum=3, lineNumber=3]
+jumping to Cordinate [colum=4, lineNumber=4] from Cordinate [colum=3, lineNumber=4]
+jumping to Cordinate [colum=5, lineNumber=4] from Cordinate [colum=4, lineNumber=4]
+next null
+jumping to Cordinate [colum=3, lineNumber=5] from Cordinate [colum=2, lineNumber=5]
+jumping to Cordinate [colum=4, lineNumber=5] from Cordinate [colum=3, lineNumber=5]
+next Cordinate [colum=4, lineNumber=5]
+current Cordinate [colum=4, lineNumber=5]
+neighbours [Cordinate [colum=5, lineNumber=5], Cordinate [colum=5, lineNumber=6], Cordinate [colum=4, lineNumber=6]]
+jumping to Cordinate [colum=5, lineNumber=5] from Cordinate [colum=4, lineNumber=5]
+jumping to Cordinate [colum=6, lineNumber=5] from Cordinate [colum=5, lineNumber=5]
+next Cordinate [colum=6, lineNumber=5]
+jumping to Cordinate [colum=5, lineNumber=6] from Cordinate [colum=4, lineNumber=5]
+jumping to Cordinate [colum=6, lineNumber=6] from Cordinate [colum=5, lineNumber=6]
+jumping to Cordinate [colum=7, lineNumber=6] from Cordinate [colum=6, lineNumber=6]
+jumping to Cordinate [colum=8, lineNumber=6] from Cordinate [colum=7, lineNumber=6]
+jumping to Cordinate [colum=9, lineNumber=6] from Cordinate [colum=8, lineNumber=6]
+jumping to Cordinate [colum=5, lineNumber=7] from Cordinate [colum=5, lineNumber=6]
+jumping to Cordinate [colum=5, lineNumber=8] from Cordinate [colum=5, lineNumber=7]
+jumping to Cordinate [colum=6, lineNumber=7] from Cordinate [colum=5, lineNumber=6]
+jumping to Cordinate [colum=7, lineNumber=7] from Cordinate [colum=6, lineNumber=7]
+jumping to Cordinate [colum=8, lineNumber=7] from Cordinate [colum=7, lineNumber=7]
+jumping to Cordinate [colum=9, lineNumber=7] from Cordinate [colum=8, lineNumber=7]
+jumping to Cordinate [colum=6, lineNumber=8] from Cordinate [colum=6, lineNumber=7]
+jumping to Cordinate [colum=6, lineNumber=9] from Cordinate [colum=6, lineNumber=8]
+jumping to Cordinate [colum=7, lineNumber=8] from Cordinate [colum=6, lineNumber=7]
+jumping to Cordinate [colum=8, lineNumber=8] from Cordinate [colum=7, lineNumber=8]
+jumping to Cordinate [colum=9, lineNumber=8] from Cordinate [colum=8, lineNumber=8]
+jumping to Cordinate [colum=7, lineNumber=9] from Cordinate [colum=7, lineNumber=8]
+next null
+jumping to Cordinate [colum=4, lineNumber=6] from Cordinate [colum=4, lineNumber=5]
+jumping to Cordinate [colum=4, lineNumber=7] from Cordinate [colum=4, lineNumber=6]
+next null
+current Cordinate [colum=6, lineNumber=5]
+neighbours [Cordinate [colum=7, lineNumber=5], Cordinate [colum=7, lineNumber=4], Cordinate [colum=7, lineNumber=6], Cordinate [colum=6, lineNumber=4]]
+jumping to Cordinate [colum=7, lineNumber=5] from Cordinate [colum=6, lineNumber=5]
+jumping to Cordinate [colum=8, lineNumber=5] from Cordinate [colum=7, lineNumber=5]
+jumping to Cordinate [colum=9, lineNumber=5] from Cordinate [colum=8, lineNumber=5]
+next null
+jumping to Cordinate [colum=7, lineNumber=4] from Cordinate [colum=6, lineNumber=5]
+jumping to Cordinate [colum=7, lineNumber=3] from Cordinate [colum=7, lineNumber=4]
+jumping to Cordinate [colum=8, lineNumber=4] from Cordinate [colum=7, lineNumber=4]
+next null
+jumping to Cordinate [colum=7, lineNumber=6] from Cordinate [colum=6, lineNumber=5]
+jumping to Cordinate [colum=8, lineNumber=6] from Cordinate [colum=7, lineNumber=6]
+jumping to Cordinate [colum=9, lineNumber=6] from Cordinate [colum=8, lineNumber=6]
+jumping to Cordinate [colum=7, lineNumber=7] from Cordinate [colum=7, lineNumber=6]
+jumping to Cordinate [colum=7, lineNumber=8] from Cordinate [colum=7, lineNumber=7]
+jumping to Cordinate [colum=7, lineNumber=9] from Cordinate [colum=7, lineNumber=8]
+jumping to Cordinate [colum=8, lineNumber=7] from Cordinate [colum=7, lineNumber=6]
+jumping to Cordinate [colum=9, lineNumber=7] from Cordinate [colum=8, lineNumber=7]
+jumping to Cordinate [colum=8, lineNumber=8] from Cordinate [colum=8, lineNumber=7]
+jumping to Cordinate [colum=8, lineNumber=9] from Cordinate [colum=8, lineNumber=8]
+next null
+jumping to Cordinate [colum=6, lineNumber=4] from Cordinate [colum=6, lineNumber=5]
+jumping to Cordinate [colum=6, lineNumber=3] from Cordinate [colum=6, lineNumber=4]
+next Cordinate [colum=6, lineNumber=3]
+current Cordinate [colum=6, lineNumber=3]
+neighbours [Cordinate [colum=5, lineNumber=3]]
+jumping to Cordinate [colum=5, lineNumber=3] from Cordinate [colum=6, lineNumber=3]
+next Cordinate [colum=5, lineNumber=3]
+current Cordinate [colum=5, lineNumber=3]
+neighbours [Cordinate [colum=5, lineNumber=2]]
+jumping to Cordinate [colum=5, lineNumber=2] from Cordinate [colum=5, lineNumber=3]
+next Cordinate [colum=5, lineNumber=2]
+current Cordinate [colum=5, lineNumber=2]
+neighbours [Cordinate [colum=5, lineNumber=1], Cordinate [colum=4, lineNumber=1], Cordinate [colum=4, lineNumber=2]]
+jumping to Cordinate [colum=5, lineNumber=1] from Cordinate [colum=5, lineNumber=2]
+next Cordinate [colum=5, lineNumber=1]
+jumping to Cordinate [colum=4, lineNumber=1] from Cordinate [colum=5, lineNumber=2]
+jumping to Cordinate [colum=3, lineNumber=1] from Cordinate [colum=4, lineNumber=1]
+jumping to Cordinate [colum=2, lineNumber=1] from Cordinate [colum=3, lineNumber=1]
+jumping to Cordinate [colum=4, lineNumber=0] from Cordinate [colum=4, lineNumber=1]
+next null
+jumping to Cordinate [colum=4, lineNumber=2] from Cordinate [colum=5, lineNumber=2]
+jumping to Cordinate [colum=3, lineNumber=2] from Cordinate [colum=4, lineNumber=2]
+next null
+current Cordinate [colum=5, lineNumber=1]
+neighbours [Cordinate [colum=6, lineNumber=1]]
+jumping to Cordinate [colum=6, lineNumber=1] from Cordinate [colum=5, lineNumber=1]
+jumping to Cordinate [colum=7, lineNumber=1] from Cordinate [colum=6, lineNumber=1]
+next Cordinate [colum=7, lineNumber=1]
+current Cordinate [colum=7, lineNumber=1]
+neighbours [Cordinate [colum=8, lineNumber=1], Cordinate [colum=8, lineNumber=2], Cordinate [colum=7, lineNumber=2]]
+jumping to Cordinate [colum=8, lineNumber=1] from Cordinate [colum=7, lineNumber=1]
+jumping to Cordinate [colum=9, lineNumber=1] from Cordinate [colum=8, lineNumber=1]
+next null
+jumping to Cordinate [colum=8, lineNumber=2] from Cordinate [colum=7, lineNumber=1]
+next Cordinate [colum=8, lineNumber=2]
+jumping to Cordinate [colum=7, lineNumber=2] from Cordinate [colum=7, lineNumber=1]
+jumping to Cordinate [colum=7, lineNumber=3] from Cordinate [colum=7, lineNumber=2]
+next null
+current Cordinate [colum=8, lineNumber=2]
+</pre>
+</span>
 </div>
 </div>
 <div id="footer">
@@ -114,7 +395,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.5.1</a> at 20.8.2020 klo 14.38.38</p>
+<a href="http://www.gradle.org">Gradle 6.5.1</a> at 21.8.2020 klo 16.10.29</p>
 </div>
 </div>
 </body>

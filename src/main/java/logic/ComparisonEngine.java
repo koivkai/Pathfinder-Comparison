@@ -2,31 +2,28 @@ package logic;
 
 import datastructures.Cordinate;
 import datastructures.CordinateQue;
+import datastructures.DoublesQue;
 import datastructures.MapList;
 import datastructures.PathMap;
 
 // todo: rename me
 public class ComparisonEngine {
-    BFS bfs;
     Dijkstra dijkstra;
     Astar astar;
-    JPS jps;
+    JPSdiagonal jps;
     long numberOfPathsInComparison;
-    long bfsTotalTime;
     long dijkstraTotalTime;
     long astartTotalTime;
     long jpsTotalTime;
 
     public ComparisonEngine() {
-        this.bfs = new BFS();
         this.dijkstra = new Dijkstra();
         this.astar = new Astar();
-        this.jps = new JPS();
+        this.jps = new JPSdiagonal();
     }
 
     public void compare(MapList list) {
         PathMap map;
-        bfsTotalTime = 0;
         dijkstraTotalTime = 0;
         astartTotalTime = 0;
         jpsTotalTime = 0;
@@ -39,7 +36,6 @@ public class ComparisonEngine {
 
 
         System.out.println("Totals: ");
-        System.out.println("bfs total time used "+ toMS(bfsTotalTime)+ " ms, avg " + toMS((bfsTotalTime / numberOfPathsInComparison)) + " ms per path");
         System.out.println("djilstra total time used "+ toMS(dijkstraTotalTime)+ " ms, avg " + toMS((dijkstraTotalTime / numberOfPathsInComparison)) + " ms per path");
         System.out.println("astar total time used "+ toMS(astartTotalTime)+ " ms, avg " + toMS((astartTotalTime / numberOfPathsInComparison)) + " ms per path");
         System.out.println("jps total time used "+ toMS(jpsTotalTime)+ " ms, avg " + toMS((jpsTotalTime / numberOfPathsInComparison)) + " ms per path");
@@ -49,19 +45,19 @@ public class ComparisonEngine {
     private void mapComparisons(PathMap map) {
         CordinateQue goalQue = map.getGoalPosQue();
         CordinateQue startQue = map.getStartPosQue();
+        DoublesQue optimalLenghtQue = map.getOptimalPathLenghtQue();
         Cordinate start;
         Cordinate goal;
         int numberOfPathsForThisMap = goalQue.size();
         numberOfPathsInComparison += numberOfPathsForThisMap;
-        double bfsDistance;
         double dijkstraDistance;
         double astartDistance;
-        int jpsDistance;
-        long bfsMapTotal = 0;
+        double jpsDistance;
         long dijktraMapTotal = 0;
         long astarMapTotal = 0;
         long jpsMapTotal = 0;
 
+        //map.print();
         System.out.println("Stats for "+map.getName());
 
             while(!goalQue.isEmpty()) {
@@ -71,16 +67,9 @@ public class ComparisonEngine {
                 int startColum = start.getColum();
                 int goalLineNumber = goal.getLineNumber();
                 int goalColum = goal.getColum();
+                double optimalLenght = optimalLenghtQue.poll();
                 System.out.println("Path from" + start + " to " + goal);
 
-
-                // BFS
-                long bfsStartTime = System.nanoTime();
-                bfsDistance = bfs.findPath(map, startLineNumber, startColum, goalLineNumber, goalColum);
-                long bfsEndTime = System.nanoTime();
-                long bfsPathTime = bfsEndTime - bfsStartTime;
-                bfsMapTotal += bfsPathTime;
-                System.out.println("BFS " +toMS(bfsPathTime) + " ms");
 
                 // Dijkstra
                 long dijkstraStartTime = System.nanoTime();
@@ -106,25 +95,26 @@ public class ComparisonEngine {
                 jpsMapTotal += jpsPathTime;
                 System.out.println("JPS " +toMS(jpsPathTime) + " ms");
 
-                if(allAreSame(bfsDistance, dijkstraDistance, astartDistance, jpsDistance)) {
-                    System.out.println("Distance was "+bfsDistance);
+                
+                if(allAreAboutTheSame(dijkstraDistance, astartDistance, jpsDistance, optimalLenght)) {
+                    System.out.println("Distance was "+dijkstraDistance);
                 } else {
                     System.out.println("WARNING diverge in path lenght between algorithms");
-                    System.out.println("bfs "+bfsDistance+" dijkstra " +dijkstraDistance+ " astar " + astartDistance + " jps " + jpsDistance);
+                    System.out.println("dijkstra " +dijkstraDistance+ " astar " + astartDistance + " jps " + jpsDistance + " scen optimal lenght " + optimalLenght);
                 }
-
+                
 
             }
 
         if(numberOfPathsForThisMap > 1) {
-            System.out.println("Total time spend on this map by BFS was "+ toMS(bfsMapTotal) + "ms, avg " + toMS((bfsMapTotal / numberOfPathsForThisMap)) + " ms");
             System.out.println("Total time spend on this map by Djikstra was "+ toMS(dijktraMapTotal) + "ms, avg " + toMS((dijktraMapTotal / numberOfPathsForThisMap)) + " ms");
             System.out.println("Total time spend on this map by A* was "+ toMS(astarMapTotal) + "ms, avg " + toMS((astarMapTotal / numberOfPathsForThisMap)) + " ms");
             System.out.println("Total time spend on this map by JPS was "+ toMS(jpsMapTotal) + "ms, avg " + toMS((jpsMapTotal / numberOfPathsForThisMap)) + " ms");
         }
         
-        bfsTotalTime += bfsMapTotal;
         dijkstraTotalTime += dijktraMapTotal;
+        astartTotalTime += astarMapTotal;
+        jpsTotalTime += jpsMapTotal;
 
     }
 
@@ -132,15 +122,15 @@ public class ComparisonEngine {
         return nameTime / 1000000;
     }
 
-    private boolean allAreSame(double a, double b, double c, int d) {
-        if(a != b) {
-            return false;
+    private boolean allAreAboutTheSame(double a, double b, double c, double d) {
+        if(Helpers.abs(a-b) > 0.01) {
+            return false; 
         }
-        if(b != c) {
-            return false;
+        if(Helpers.abs(b-c) > 0.01) {
+            return false; 
         }
-        if(c != d) {
-            return false;
+        if(Helpers.abs(c-d) > 0.01) {
+            return false; 
         }
         return true;
     }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="logicTest.AstarTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-08-20T11:38:38" hostname="Kaius-MBP" time="0.003">
+<testsuite name="logicTest.AstarTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-08-21T13:10:29" hostname="Kaius-MBP" time="0.002">
   <properties/>
   <testcase name="findsPathTreeline" classname="logicTest.AstarTest" time="0.001"/>
-  <testcase name="findsPathThreeTreelines" classname="logicTest.AstarTest" time="0.001"/>
+  <testcase name="findsPathThreeTreelines" classname="logicTest.AstarTest" time="0.0"/>
   <testcase name="findsPathNoObstacles" classname="logicTest.AstarTest" time="0.0"/>
   <testcase name="noPathExits" classname="logicTest.AstarTest" time="0.001"/>
   <testcase name="findsPathTwoTreelines" classname="logicTest.AstarTest" time="0.0"/>

@@ -98,7 +98,7 @@ public class AstarTest {
         PathMap testMap = new PathMap(arrayMap, 10, 10);
 
         double result = testStar.findPath(testMap, 4, 1, 4, 8);
-        assertEquals(9.4852, result, 0.01);
+        assertEquals(10.0710, result, 0.01);
     }
 
     @Test
@@ -129,7 +129,7 @@ public class AstarTest {
         PathMap testMap = new PathMap(arrayMap, 10, 10);
 
         double result = testStar.findPath(testMap, 4, 1, 4, 8);
-        assertEquals(16.8994, result, 0.01);
+        assertEquals(19.2426, result, 0.01);
     }
 
     @Test
@@ -160,7 +160,7 @@ public class AstarTest {
         PathMap testMap = new PathMap(arrayMap, 10, 10);
 
         double result = testStar.findPath(testMap, 1, 2, 1, 8);
-        assertEquals(30.4852, result, 0.01);
+        assertEquals(34, result, 0.01);
     }
 
     @Test

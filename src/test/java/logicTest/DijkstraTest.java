@@ -8,7 +8,7 @@ import logic.Dijkstra;
 public class DijkstraTest {
     PathMap testMap;
     Dijkstra dijkstra;
-
+    
     @Test
     public void findsPathNoObstacles() {
         dijkstra = new Dijkstra();
@@ -38,7 +38,7 @@ public class DijkstraTest {
         double result = dijkstra.findPath(testMap, 4, 1, 4, 8);
         assertEquals(7, result, 0.1);
     }
-
+        
     @Test
     public void findsPathTreeline() {
         dijkstra = new Dijkstra();
@@ -67,7 +67,7 @@ public class DijkstraTest {
         PathMap testMap = new PathMap(arrayMap, 10, 10);
 
         double result = dijkstra.findPath(testMap, 4, 1, 4, 8);
-        assertEquals(9.4852, result, 0.01);
+        assertEquals(10.0710, result, 0.01);
     }
 
 
@@ -99,7 +99,7 @@ public class DijkstraTest {
         PathMap testMap = new PathMap(arrayMap, 10, 10);
 
         double result = dijkstra.findPath(testMap, 1, 2, 1, 8);
-        assertEquals(30.4852, result, 0.1);
+        assertEquals(34, result, 0.1);
     }
 
     @Test
@@ -132,4 +132,79 @@ public class DijkstraTest {
         double result = dijkstra.findPath(testMap, 4, 1, 4, 8);
         assertEquals(-1, result, 0.1);
     }
+    
+    @Test
+    public void diagonalLines() {
+        dijkstra = new Dijkstra();
+        char[][] arrayMap = new char[10][10];
+        char[] lineOne = {'@','@','@','@','@','@','@','@','@','@'};
+        char[] lineTwo = {'@','.','T','.','.','.','.','.','.','@'};
+        char[] lineTre = {'@','.','.','T','.','.','T','.','.','@'};
+        char[] lineFou = {'@','.','.','.','T','.','.','T','.','@'};
+        char[] lineFiv = {'@','.','.','.','.','T','.','.','T','@'};
+        char[] lineSix = {'@','.','.','.','.','.','.','.','.','@'};
+        char[] lineSev = {'@','.','.','T','.','.','.','.','.','@'};
+        char[] lineEig = {'@','.','.','.','T','.','.','.','.','@'};
+        char[] lineNin = {'@','.','.','.','.','T','.','.','.','@'};
+        char[] lineTen = {'@','@','@','@','@','@','@','@','@','@'};
+        arrayMap[0] = lineOne;
+        arrayMap[1] = lineTwo;
+        arrayMap[2] = lineTre;
+        arrayMap[3] = lineFou;
+        arrayMap[4] = lineFiv;
+        arrayMap[5] = lineSix;
+        arrayMap[6] = lineSev;
+        arrayMap[7] = lineEig;
+        arrayMap[8] = lineNin;
+        arrayMap[9] = lineTen;
+
+        PathMap testMap = new PathMap(arrayMap, 10, 10);
+
+        double result = dijkstra.findPath(testMap, 8, 3, 2, 8);
+        assertEquals(15.8284, result, 0.1);
+    }
+    @Test
+    public void diagonalLinesReverse() {
+        dijkstra = new Dijkstra();
+        char[][] arrayMap = new char[10][10];
+        char[] lineOne = {'@','@','@','@','@','@','@','@','@','@'};
+        char[] lineTwo = {'@','.','T','.','.','.','.','.','.','@'};
+        char[] lineTre = {'@','.','.','T','.','.','T','.','.','@'};
+        char[] lineFou = {'@','.','.','.','T','.','.','T','.','@'};
+        char[] lineFiv = {'@','.','.','.','.','T','.','.','T','@'};
+        char[] lineSix = {'@','.','.','.','.','.','.','.','.','@'};
+        char[] lineSev = {'@','.','.','T','.','.','.','.','.','@'};
+        char[] lineEig = {'@','.','.','.','T','.','.','.','.','@'};
+        char[] lineNin = {'@','.','.','.','.','T','.','.','.','@'};
+        char[] lineTen = {'@','@','@','@','@','@','@','@','@','@'};
+        arrayMap[0] = lineOne;
+        arrayMap[1] = lineTwo;
+        arrayMap[2] = lineTre;
+        arrayMap[3] = lineFou;
+        arrayMap[4] = lineFiv;
+        arrayMap[5] = lineSix;
+        arrayMap[6] = lineSev;
+        arrayMap[7] = lineEig;
+        arrayMap[8] = lineNin;
+        arrayMap[9] = lineTen;
+
+        PathMap testMap = new PathMap(arrayMap, 10, 10);
+
+        double result = dijkstra.findPath(testMap, 2, 8, 8, 3);
+        assertEquals(15.8284, result, 0.1);
+    }
+    /*
+        char[] lineOne = {'@','@','@','@','@','@','@','@','@','@'};
+        char[] lineTwo = {'@','.','T','.','.','X','X','X','.','@'};
+        char[] lineTre = {'@','.','.','T','.','X','T','.','G','@'};
+        char[] lineFou = {'@','.','.','.','T','X','X','T','.','@'};
+        char[] lineFiv = {'@','.','.','.','.','T','X','.','T','@'};
+        char[] lineSix = {'@','.','X','X','X','X','X','.','.','@'};
+        char[] lineSev = {'@','.','X','T','.','.','.','.','.','@'};
+        char[] lineEig = {'@','.','X','.','T','.','.','.','.','@'};
+        char[] lineNin = {'@','.','.','S','.','T','.','.','.','@'};
+        char[] lineTen = {'@','@','@','@','@','@','@','@','@','@'};
+    */
+
+    
 }
