@@ -23,6 +23,9 @@ public class Astar {
     }
 
     public double findPath(PathMap map, int startLineNumber, int startColum, int goalLineNumber, int goalColum) {
+        if(startLineNumber == goalLineNumber && startColum == goalColum) {
+            return 0;
+        }
         this.que = new MinHeap();
         this.map = map;
         this.goalFound = false;
@@ -41,6 +44,9 @@ public class Astar {
             //System.out.println(current);
             int line = current.getLineNumber();
             int colum = current.getColum();
+            if(foundGoal(line, colum)) {
+                return distance[line][colum];
+            }
             if(visited[line][colum]) {
                 // do nothing
             } else {
@@ -54,9 +60,6 @@ public class Astar {
                     if(newDistance < currentDistance) {
                         distance[line-1][colum] = distance[line][colum] +1;
                         prev[line-1][colum] = current;
-                        if(foundGoal(line-1, colum)) {
-                            return distance[line-1][colum];
-                        }
                         fscore = distance[line-1][colum] + estimate(line-1, colum);
                         que.add(new Cordinate(line-1,colum, fscore));
                         
@@ -70,9 +73,6 @@ public class Astar {
                     if(newDistance < currentDistance) {
                         distance[line+1][colum] = distance[line][colum] +1;
                         prev[line+1][colum] = current;
-                        if(foundGoal(line+1, colum)) {
-                            return distance[line+1][colum];
-                        }
                         fscore = distance[line+1][colum] + estimate(line+1, colum);
                         que.add(new Cordinate(line+1,colum, fscore));
                         
@@ -87,9 +87,6 @@ public class Astar {
                     if(newDistance < currentDistance) {
                         distance[line][colum+1] = distance[line][colum] +1;
                         prev[line][colum+1] = current;
-                        if(foundGoal(line, colum+1)) {
-                            return distance[line][colum+1];
-                        }
                         fscore = distance[line][colum+1] + estimate(line, colum+1);
                         que.add(new Cordinate(line,colum+1, fscore));
                         
@@ -104,9 +101,6 @@ public class Astar {
                     if(newDistance < currentDistance) {
                         distance[line][colum-1] = distance[line][colum] +1;
                         prev[line][colum-1] = current;
-                        if(foundGoal(line, colum-1)) {
-                            return distance[line][colum-1];
-                        }
                         fscore = distance[line][colum-1] + estimate(line, colum-1);
                         que.add(new Cordinate(line,colum-1, fscore));
                         
@@ -120,11 +114,8 @@ public class Astar {
                     double newDistance = distance[line][colum]+twosqrt;
 
                     if(newDistance < currentDistance) {
-                        distance[line-1][colum+1] = distance[line][colum] +twosqrt;
+                        distance[line-1][colum+1] = newDistance;
                         prev[line-1][colum+1] = current;
-                        if(foundGoal(line-1, colum+1)) {
-                            return distance[line-1][colum+1];
-                        }
                         fscore = distance[line-1][colum+1] + estimate(line-1, colum+1);
                         que.add(new Cordinate(line-1,colum+1, fscore));
                         
@@ -137,11 +128,8 @@ public class Astar {
                     double newDistance = distance[line][colum]+twosqrt;
 
                     if(newDistance < currentDistance) {
-                        distance[line-1][colum-1] = distance[line][colum] +twosqrt;
+                        distance[line-1][colum-1] = newDistance;
                         prev[line-1][colum-1] = current;
-                        if(foundGoal(line-1, colum-1)) {
-                            return distance[line-1][colum-1];
-                        }
                         fscore = distance[line-1][colum-1] + estimate(line-1, colum-1);
                         que.add(new Cordinate(line-1,colum-1, fscore));
                         
@@ -156,9 +144,6 @@ public class Astar {
                     if(newDistance < currentDistance) {
                         distance[line+1][colum+1] = distance[line][colum] +twosqrt;
                         prev[line+1][colum+1] = current;
-                        if(foundGoal(line+1, colum+1)) {
-                            return distance[line+1][colum+1];
-                        }
                         fscore = distance[line+1][colum+1] + estimate(line+1, colum+1);
                         que.add(new Cordinate(line+1,colum+1, fscore));
                         
@@ -173,9 +158,6 @@ public class Astar {
                     if(newDistance < currentDistance) {
                         distance[line+1][colum-1] = distance[line][colum] +twosqrt;
                         prev[line+1][colum-1] = current;
-                        if(foundGoal(line+1, colum-1)) {
-                            return distance[line+1][colum-1];
-                        }
                         fscore = distance[line+1][colum-1] + estimate(line+1, colum-1);
                         que.add(new Cordinate(line+1,colum-1, fscore));
                         

@@ -206,5 +206,98 @@ public class DijkstraTest {
         char[] lineTen = {'@','@','@','@','@','@','@','@','@','@'};
     */
 
+    @Test
+    public void maze() {
+        dijkstra = new Dijkstra();
+        char[][] arrayMap = new char[10][10];
+        char[] lineOne = {'@','@','@','@','@','@','@','@','@','@'};
+        char[] lineTwo = {'@','T','.','.','.','T','.','.','.','@'};
+        char[] lineTre = {'@','.','.','T','.','T','.','.','.','@'};
+        char[] lineFou = {'@','.','T','.','.','T','.','.','.','@'};
+        char[] lineFiv = {'@','.','T','.','.','T','.','.','T','@'};
+        char[] lineSix = {'@','.','T','T','.','.','T','.','.','@'};
+        char[] lineSev = {'@','.','.','.','T','.','.','.','.','@'};
+        char[] lineEig = {'@','.','.','.','T','.','T','.','T','@'};
+        char[] lineNin = {'@','.','.','.','T','.','.','.','.','@'};
+        char[] lineTen = {'@','@','@','@','@','@','@','@','@','@'};
+        arrayMap[0] = lineOne;
+        arrayMap[1] = lineTwo;
+        arrayMap[2] = lineTre;
+        arrayMap[3] = lineFou;
+        arrayMap[4] = lineFiv;
+        arrayMap[5] = lineSix;
+        arrayMap[6] = lineSev;
+        arrayMap[7] = lineEig;
+        arrayMap[8] = lineNin;
+        arrayMap[9] = lineTen;
+
+        PathMap testMap = new PathMap(arrayMap, 10, 10);
+
+        double result = dijkstra.findPath(testMap, 7, 2, 2, 7);
+        assertEquals(21.4142, result, 0.1);
+    }
+
+    @Test
+    public void mazeReverse() {
+        dijkstra = new Dijkstra();
+        char[][] arrayMap = new char[10][10];
+        char[] lineOne = {'@','@','@','@','@','@','@','@','@','@'};
+        char[] lineTwo = {'@','T','.','.','.','T','.','.','.','@'};
+        char[] lineTre = {'@','.','.','T','.','T','.','.','.','@'};
+        char[] lineFou = {'@','.','T','.','.','T','.','.','.','@'};
+        char[] lineFiv = {'@','.','T','.','.','T','.','.','T','@'};
+        char[] lineSix = {'@','.','T','T','.','.','T','.','.','@'};
+        char[] lineSev = {'@','.','.','.','T','.','.','.','.','@'};
+        char[] lineEig = {'@','.','.','.','T','.','T','.','T','@'};
+        char[] lineNin = {'@','.','.','.','T','.','.','.','.','@'};
+        char[] lineTen = {'@','@','@','@','@','@','@','@','@','@'};
+        arrayMap[0] = lineOne;
+        arrayMap[1] = lineTwo;
+        arrayMap[2] = lineTre;
+        arrayMap[3] = lineFou;
+        arrayMap[4] = lineFiv;
+        arrayMap[5] = lineSix;
+        arrayMap[6] = lineSev;
+        arrayMap[7] = lineEig;
+        arrayMap[8] = lineNin;
+        arrayMap[9] = lineTen;
+
+        PathMap testMap = new PathMap(arrayMap, 10, 10);
+
+        double result = dijkstra.findPath(testMap, 2, 7, 7, 2);
+        assertEquals(21.4142, result, 0.1);
+    }
+
+    @Test
+    public void asd() {
+        dijkstra = new Dijkstra();
+        char[][] arrayMap = new char[10][14];
+        char[] lineOne = {'@','@','@','@','@','@','@','@','@','@','@','@','@','@'};
+        char[] lineTwo = {'@','.','.','.','.','.','.','.','.','.','.','.','.','@'};
+        char[] lineTre = {'@','.','.','.','.','.','.','.','.','.','.','.','.','@'};
+        char[] lineFou = {'@','.','.','.','.','.','.','.','.','.','.','.','.','@'};
+        char[] lineFiv = {'@','.','.','.','.','.','.','.','.','.','.','.','.','@'};
+        char[] lineSix = {'@','.','.','.','.','.','.','.','T','T','.','T','T','@'};
+        char[] lineSev = {'@','.','.','.','.','.','T','T','T','T','T','T','T','@'};
+        char[] lineEig = {'@','.','.','.','.','T','T','T','T','T','@','T','T','@'};
+        char[] lineNin = {'@','.','.','.','T','T','T','T','T','T','T','T','T','@'};
+        char[] lineTen = {'@','@','@','@','@','@','@','@','@','@','@','@','@','@'};
+        arrayMap[0] = lineOne;
+        arrayMap[1] = lineTwo;
+        arrayMap[2] = lineTre;
+        arrayMap[3] = lineFou;
+        arrayMap[4] = lineFiv;
+        arrayMap[5] = lineSix;
+        arrayMap[6] = lineSev;
+        arrayMap[7] = lineEig;
+        arrayMap[8] = lineNin;
+        arrayMap[9] = lineTen;
+
+        PathMap testMap = new PathMap(arrayMap, 10, 10);
+
+        double result = dijkstra.findPath(testMap, 4, 7, 7, 2);
+        assertEquals(6.2426, result, 0.1);
+    }
+
     
 }

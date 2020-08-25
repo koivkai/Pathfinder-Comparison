@@ -61,7 +61,7 @@ public class PCTextUI {
     private void getMapFromUser(MapList maps) {
 <span class="nc" id="L62">        String path = getUserInputString(&quot;Please give absolute filepath for .map file&quot;);</span>
         //path= &quot;/Users/Kaius/TiraKartat/da2-map/ca_cave.map&quot;;
-<span class="nc" id="L64">        path= &quot;/Users/Kaius/TiraKartat/da2-map/ht_store.map&quot;;</span>
+<span class="nc" id="L64">        path= &quot;/Users/Kaius/TiraKartat/dao-map/brc203d.map&quot;;</span>
 
 <span class="nc" id="L66">        System.out.println(&quot;reading &quot;+path);</span>
 <span class="nc" id="L67">        PathMap map = mapReader.Read(path);</span>
@@ -82,7 +82,7 @@ public class PCTextUI {
 
     private void getScenFileFromUser(PathMap map) {
 <span class="nc" id="L84">        String path = getUserInputString(&quot;Please give absolute filepath for .scen file&quot;);</span>
-<span class="nc" id="L85">        path= &quot;/Users/Kaius/TiraScenaariot/ht_store.map.scen&quot;;</span>
+<span class="nc" id="L85">        path= &quot;/Users/Kaius/TiraScenaariot/dao-scen/brc203d.map.scen&quot;;</span>
 <span class="nc" id="L86">        scenFileReader.read(path, map);</span>
 <span class="nc" id="L87">    }</span>
 

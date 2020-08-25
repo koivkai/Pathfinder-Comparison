@@ -15,6 +15,7 @@ public class ComparisonEngine {
     long dijkstraTotalTime;
     long astartTotalTime;
     long jpsTotalTime;
+    boolean pathLenghtMisMatch;
 
     public ComparisonEngine() {
         this.dijkstra = new Dijkstra();
@@ -23,6 +24,7 @@ public class ComparisonEngine {
     }
 
     public void compare(MapList list) {
+        pathLenghtMisMatch = false;
         PathMap map;
         dijkstraTotalTime = 0;
         astartTotalTime = 0;
@@ -39,7 +41,9 @@ public class ComparisonEngine {
         System.out.println("djilstra total time used "+ toMS(dijkstraTotalTime)+ " ms, avg " + toMS((dijkstraTotalTime / numberOfPathsInComparison)) + " ms per path");
         System.out.println("astar total time used "+ toMS(astartTotalTime)+ " ms, avg " + toMS((astartTotalTime / numberOfPathsInComparison)) + " ms per path");
         System.out.println("jps total time used "+ toMS(jpsTotalTime)+ " ms, avg " + toMS((jpsTotalTime / numberOfPathsInComparison)) + " ms per path");
-
+        if(pathLenghtMisMatch) {
+            System.out.println("There was atleast one instance where the algorithms got different results compared to each other or the scenarious expected lenght");
+        }
     }
 
     private void mapComparisons(PathMap map) {
@@ -77,7 +81,7 @@ public class ComparisonEngine {
                 long djikstraEndTime = System.nanoTime();
                 long djikstraPathTime = djikstraEndTime - dijkstraStartTime;
                 dijktraMapTotal += djikstraPathTime;
-                System.out.println("Dijsktra " +toMS(djikstraPathTime) + " ms");
+                //System.out.println("Dijsktra " +toMS(djikstraPathTime) + " ms");
 
                 // A*
                 long astarStartTime = System.nanoTime();
@@ -85,7 +89,7 @@ public class ComparisonEngine {
                 long astartEndTime = System.nanoTime();
                 long astartPathTime = astartEndTime - astarStartTime;
                 astarMapTotal += astartPathTime;
-                System.out.println("A* " +toMS(astartPathTime) + " ms");
+                //System.out.println("A* " +toMS(astartPathTime) + " ms");
 
                 // JPS
                 long jpsStartTime = System.nanoTime();
@@ -93,12 +97,13 @@ public class ComparisonEngine {
                 long jpsEndTime = System.nanoTime();
                 long jpsPathTime = jpsEndTime - jpsStartTime;
                 jpsMapTotal += jpsPathTime;
-                System.out.println("JPS " +toMS(jpsPathTime) + " ms");
+                //System.out.println("JPS " +toMS(jpsPathTime) + " ms");
 
                 
                 if(allAreAboutTheSame(dijkstraDistance, astartDistance, jpsDistance, optimalLenght)) {
-                    System.out.println("Distance was "+dijkstraDistance);
+                    //System.out.println("Distance was "+dijkstraDistance);
                 } else {
+                    pathLenghtMisMatch = true;
                     System.out.println("WARNING diverge in path lenght between algorithms");
                     System.out.println("dijkstra " +dijkstraDistance+ " astar " + astartDistance + " jps " + jpsDistance + " scen optimal lenght " + optimalLenght);
                 }
@@ -107,9 +112,9 @@ public class ComparisonEngine {
             }
 
         if(numberOfPathsForThisMap > 1) {
-            System.out.println("Total time spend on this map by Djikstra was "+ toMS(dijktraMapTotal) + "ms, avg " + toMS((dijktraMapTotal / numberOfPathsForThisMap)) + " ms");
-            System.out.println("Total time spend on this map by A* was "+ toMS(astarMapTotal) + "ms, avg " + toMS((astarMapTotal / numberOfPathsForThisMap)) + " ms");
-            System.out.println("Total time spend on this map by JPS was "+ toMS(jpsMapTotal) + "ms, avg " + toMS((jpsMapTotal / numberOfPathsForThisMap)) + " ms");
+            //System.out.println("Total time spend on this map by Djikstra was "+ toMS(dijktraMapTotal) + "ms, avg " + toMS((dijktraMapTotal / numberOfPathsForThisMap)) + " ms");
+            //System.out.println("Total time spend on this map by A* was "+ toMS(astarMapTotal) + "ms, avg " + toMS((astarMapTotal / numberOfPathsForThisMap)) + " ms");
+            //System.out.println("Total time spend on this map by JPS was "+ toMS(jpsMapTotal) + "ms, avg " + toMS((jpsMapTotal / numberOfPathsForThisMap)) + " ms");
         }
         
         dijkstraTotalTime += dijktraMapTotal;

@@ -41,6 +41,9 @@ public class JPSdiagonal {
             } else { 
                 visited[line][colum] = true;
                 if(foundGoal(current)) {
+                    // System.out.println("JPS");
+                    //Helpers.printPath(prev, goalLine, goalColum, startLineNumber, startColum);
+                    //Helpers.printMapWithPath(prev, goalLine, goalColum, startLineNumber, startColum, map);
                     return distance[line][colum];
                 }
                 findSuccessors(current);
@@ -55,7 +58,7 @@ public class JPSdiagonal {
         //System.out.println("neighbours " +neigbours);
         for(Cordinate c:neigbours) {
 
-            Cordinate next = jump(c, prev[c.getLineNumber()][c.getColum()]);
+            Cordinate next = jump(c, current);
             //System.out.println("next "+next);
             if(next != null) {
                 
@@ -79,7 +82,7 @@ public class JPSdiagonal {
         double prevDistance = distance[fromCordinate.getLineNumber()][fromCordinate.getColum()];
 
         if(verticalDistance != 0 && horizontalDistance != 0) { //moving diagonally
-            double distanceFromHereToTarget = prevDistance + (Helpers.abs(verticalDistance) * twosqrt);
+            double distanceFromHereToTarget = prevDistance + ((double)(Helpers.abs(verticalDistance)) * twosqrt);
             if(oldDistanceToTarget == 0 || distanceFromHereToTarget < oldDistanceToTarget) {
                 distance[targetCordinate.getLineNumber()][targetCordinate.getColum()] = distanceFromHereToTarget;
                 prev[targetCordinate.getLineNumber()][targetCordinate.getColum()] = fromCordinate;
@@ -354,7 +357,7 @@ public class JPSdiagonal {
         int verticalDistance = currentLine - pLine;
         int horizontalDistance = currentColum - pColum;
         
-        if(horizontalDistance != 0 && verticalDistance != 0) { // diogonal
+        if(horizontalDistance != 0 && verticalDistance != 0) { // diagonal
             if(verticalDistance > 0 && horizontalDistance > 0) { // going south east
                 // when moving diagonally must check for vertical and horizontal jumppoints
                 if(jump(new Cordinate(currentLine, currentColum+1), target) != null) { // check east

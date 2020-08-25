@@ -51,17 +51,18 @@ public class PathMap {
     }
 
     public char terrainAt(int lineNumber, int colum) {
-        if(lineNumber >= this.width || colum >= this.height || lineNumber < 0 || colum < 0) {
+        if(lineNumber >= this.height || colum >= this.width || lineNumber < 0 || colum < 0) {
             return '@';
         } 
         return (this.map[lineNumber][colum]);
     }
     
     public boolean terrainPassableAt(int lineNumber, int colum) {
-        if(lineNumber >= this.width || colum >= this.height || lineNumber < 0 || colum < 0) {
+        if(lineNumber >= this.height || colum >= this.width || lineNumber < 0 || colum < 0) {
             return false;
-        } 
-
+        }
+        //System.out.println("line "+lineNumber+" colum "+colum+" this.height "+this.height+" this.width "+this.width);
+        //System.out.println("colum >= t");
         char terrain = this.map[lineNumber][colum];
         //System.out.println("checking terrain at " +lineNumber+" "+colum);
         //System.out.println("t "+terrain);
@@ -74,7 +75,7 @@ public class PathMap {
     public boolean canGoNorthEast(int currentLine, int currentColum) {
         int nwLine = currentLine -1;
         int nwColum = currentColum +1;
-        if(nwLine >= this.width || nwColum >= this.height || nwLine < 0 || nwColum < 0) {
+        if(nwLine >= this.height || nwColum >= this.width || nwLine < 0 || nwColum < 0) {
             return false;
         }
         char terrain = this.map[nwLine][nwColum]; 
@@ -97,7 +98,7 @@ public class PathMap {
     public boolean canGoNorthWest(int currentLine, int currentColum) {
         int neLine = currentLine -1;
         int neColum = currentColum -1;
-        if(neLine >= this.width || neColum >= this.height || neLine < 0 || neColum < 0) {
+        if(neLine >= this.height || neColum >= this.width || neLine < 0 || neColum < 0) {
             return false;
         }
         char terrain = this.map[neLine][neColum]; 
@@ -118,12 +119,12 @@ public class PathMap {
     }
 
     public boolean canGoSouthEast(int currentLine, int currentColum) {
-        int swLine = currentLine +1;
-        int swColum = currentColum +1;
-        if(swLine >= this.width || swColum >= this.height || swLine < 0 || swColum < 0) {
+        int seLine = currentLine +1;
+        int seColum = currentColum +1;
+        if(seLine >= this.height || seColum >= this.width || seLine < 0 || seColum < 0) {
             return false;
         }
-        char terrain = this.map[swLine][swColum]; 
+        char terrain = this.map[seLine][seColum]; 
         if(terrain != '.' && terrain != 'G') {
             return false;
         }
@@ -141,12 +142,12 @@ public class PathMap {
     }
 
     public boolean canGoSouthWest(int currentLine, int currentColum) {
-        int seLine = currentLine +1;
-        int seColum = currentColum -1;
-        if(seLine >= this.width || seColum >= this.height || seLine < 0 || seColum < 0) {
+        int swLine = currentLine +1;
+        int swColum = currentColum -1;
+        if(swLine >= this.height || swColum >= this.width || swLine < 0 || swColum < 0) {
             return false;
         }
-        char terrain = this.map[seLine][seColum]; 
+        char terrain = this.map[swLine][swColum]; 
         if(terrain != '.' && terrain != 'G') {
             return false;
         }
@@ -174,6 +175,16 @@ public class PathMap {
                 System.out.println("");
             }
         }
+    }
+
+    public char[][] getCopyOfMap() {
+        char[][]copy = new char[this.height][this.width];
+        for(int line = 0;line<this.height;line++) {
+            for(int colum = 0;colum<this.width;colum++) {
+                copy[line][colum] = this.map[line][colum];
+            }
+        }
+        return copy;
     }
 
     public CordinateQue getStartPosQue() {
