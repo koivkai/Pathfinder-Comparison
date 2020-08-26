@@ -1,93 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fi"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PCTextUI.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pathfinder-Comparison</a> &gt; <a href="index.source.html" class="el_package">textUI</a> &gt; <span class="el_source">PCTextUI.java</span></div><h1>PCTextUI.java</h1><pre class="source lang-java linenums">package textUI;
 
 import java.util.Scanner;
-
 import datastructures.Cordinate;
 import datastructures.MapList;
 import datastructures.PathMap;
+import io.MapReader;
+import io.ScenFileReader;
 import logic.ComparisonEngine;
-import logic.MapReader;
-import logic.ScenFileReader;
-
 
 public class PCTextUI {
     Scanner scanner;
     MapReader mapReader;
     ScenFileReader scenFileReader;
+    MapList maps;
 
-<span class="nc" id="L18">    public PCTextUI() {</span>
-<span class="nc" id="L19">        this.scanner = new Scanner(System.in);</span>
-<span class="nc" id="L20">        this.mapReader = new MapReader();</span>
-<span class="nc" id="L21">        this.scenFileReader = new ScenFileReader();</span>
+<span class="nc" id="L17">    public PCTextUI() {</span>
+<span class="nc" id="L18">        this.scanner = new Scanner(System.in);</span>
+<span class="nc" id="L19">        this.mapReader = new MapReader();</span>
+<span class="nc" id="L20">        this.scenFileReader = new ScenFileReader();</span>
+<span class="nc" id="L21">        this.maps = new MapList();</span>
 <span class="nc" id="L22">    }</span>
 
-    public void start() {
-<span class="nc" id="L25">        MapList maps = new MapList();</span>
-<span class="nc" id="L26">        ComparisonEngine c = new ComparisonEngine();</span>
-<span class="nc" id="L27">        System.out.println(&quot;Pathfinder Comparison&quot;);</span>
-<span class="nc" id="L28">        System.out.println(&quot;First select maps&quot;);</span>
+    public void start() {  
+<span class="nc" id="L25">        ComparisonEngine c = new ComparisonEngine();</span>
+<span class="nc" id="L26">        System.out.println(&quot;Pathfinder Comparison&quot;);</span>
+<span class="nc" id="L27">        System.out.println(&quot;First select maps&quot;);</span>
 
         while(true) {
-<span class="nc" id="L31">            String anwser = getUserInputString(&quot;Add a map y/n?&quot;);</span>
-<span class="nc bnc" id="L32" title="All 2 branches missed.">            if(anwser.equals(&quot;n&quot;)) {</span>
-<span class="nc" id="L33">                break;</span>
+<span class="nc" id="L30">            String anwser = getUserInputString(&quot;Add a map y/n?&quot;);</span>
+<span class="nc bnc" id="L31" title="All 2 branches missed.">            if(anwser.equals(&quot;n&quot;)) {</span>
+<span class="nc" id="L32">                break;</span>
+<span class="nc bnc" id="L33" title="All 2 branches missed.">            } else if(anwser.equals(&quot;p&quot;)) {</span>
+<span class="nc" id="L34">                usePreset();</span>
+<span class="nc" id="L35">                break;</span>
             }
-<span class="nc" id="L35">            getMapFromUser(maps);</span>
-<span class="nc" id="L36">        }</span>
+<span class="nc" id="L37">            getMapFromUser();</span>
+<span class="nc" id="L38">        }</span>
         
-<span class="nc" id="L38">        c.compare(maps);</span>
+<span class="nc" id="L40">        c.compare(maps);</span>
         
         
-<span class="nc" id="L41">    }</span>
+<span class="nc" id="L43">    }</span>
+
+    private void usePreset() {
+<span class="nc" id="L46">        String mapPath1 = &quot;/Users/Kaius/TiraKartat/dao-map/brc203d.map&quot;;</span>
+<span class="nc" id="L47">        String scenPath1 = &quot;/Users/Kaius/TiraScenaariot/dao-scen/brc203d.map.scen&quot;;</span>
+<span class="nc" id="L48">        PathMap map1 = mapReader.Read(mapPath1);</span>
+<span class="nc" id="L49">        scenFileReader.read(scenPath1, map1);</span>
+<span class="nc" id="L50">        maps.add(map1);</span>
+<span class="nc" id="L51">    }</span>
 
     private int getUserInputInt(String prompt) {
-<span class="nc" id="L44">        System.out.println(prompt);</span>
-<span class="nc" id="L45">        int input = 0;</span>
-<span class="nc" id="L46">            String line = scanner.nextLine();</span>
+<span class="nc" id="L54">        System.out.println(prompt);</span>
+<span class="nc" id="L55">        int input = 0;</span>
+<span class="nc" id="L56">            String line = scanner.nextLine();</span>
             try{
-<span class="nc" id="L48">                input = Integer.parseInt(line);</span>
-<span class="nc" id="L49">            } catch (Exception e){</span>
-<span class="nc" id="L50">                System.out.println(e);</span>
-<span class="nc" id="L51">            }</span>
-<span class="nc" id="L52">        return input;</span>
+<span class="nc" id="L58">                input = Integer.parseInt(line);</span>
+<span class="nc" id="L59">            } catch (Exception e){</span>
+<span class="nc" id="L60">                System.out.println(e);</span>
+<span class="nc" id="L61">            }</span>
+<span class="nc" id="L62">        return input;</span>
     }
 
     private String getUserInputString(String prompt) {
-<span class="nc" id="L56">        System.out.println(prompt);</span>
-<span class="nc" id="L57">        String line = scanner.nextLine();</span>
-<span class="nc" id="L58">        return line;</span>
+<span class="nc" id="L66">        System.out.println(prompt);</span>
+<span class="nc" id="L67">        String line = scanner.nextLine();</span>
+<span class="nc" id="L68">        return line;</span>
     }
 
-    private void getMapFromUser(MapList maps) {
-<span class="nc" id="L62">        String path = getUserInputString(&quot;Please give absolute filepath for .map file&quot;);</span>
+    private void getMapFromUser() {
+<span class="nc" id="L72">        String path = getUserInputString(&quot;Please give absolute filepath for .map file&quot;);</span>
         //path= &quot;/Users/Kaius/TiraKartat/da2-map/ca_cave.map&quot;;
-<span class="nc" id="L64">        path= &quot;/Users/Kaius/TiraKartat/dao-map/brc203d.map&quot;;</span>
+<span class="nc" id="L74">        path= &quot;/Users/Kaius/TiraKartat/dao-map/brc203d.map&quot;;</span>
 
-<span class="nc" id="L66">        System.out.println(&quot;reading &quot;+path);</span>
-<span class="nc" id="L67">        PathMap map = mapReader.Read(path);</span>
+<span class="nc" id="L76">        System.out.println(&quot;reading &quot;+path);</span>
+<span class="nc" id="L77">        PathMap map = mapReader.Read(path);</span>
         //map.print();
-<span class="nc" id="L69">        map.setName(path);</span>
+<span class="nc" id="L79">        map.setName(path);</span>
 
-<span class="nc" id="L71">        String anwser = getUserInputString(&quot;Get paths from scen file? y/n&quot;);</span>
-<span class="nc bnc" id="L72" title="All 2 branches missed.">            if(anwser.equals(&quot;y&quot;)) {</span>
-<span class="nc" id="L73">                getScenFileFromUser(map);</span>
+<span class="nc" id="L81">        String anwser = getUserInputString(&quot;Get paths from scen file? y/n&quot;);</span>
+<span class="nc bnc" id="L82" title="All 2 branches missed.">            if(anwser.equals(&quot;y&quot;)) {</span>
+<span class="nc" id="L83">                getScenFileFromUser(map);</span>
             } else {
-<span class="nc" id="L75">                getPathsForMap(map);</span>
+<span class="nc" id="L85">                getPathsForMap(map);</span>
             }
         
 
         
-<span class="nc" id="L80">        maps.add(map);</span>
-<span class="nc" id="L81">    }</span>
+<span class="nc" id="L90">        maps.add(map);</span>
+<span class="nc" id="L91">    }</span>
 
     private void getScenFileFromUser(PathMap map) {
-<span class="nc" id="L84">        String path = getUserInputString(&quot;Please give absolute filepath for .scen file&quot;);</span>
-<span class="nc" id="L85">        path= &quot;/Users/Kaius/TiraScenaariot/dao-scen/brc203d.map.scen&quot;;</span>
-<span class="nc" id="L86">        scenFileReader.read(path, map);</span>
-<span class="nc" id="L87">    }</span>
+<span class="nc" id="L94">        String path = getUserInputString(&quot;Please give absolute filepath for .scen file&quot;);</span>
+<span class="nc" id="L95">        path= &quot;/Users/Kaius/TiraScenaariot/dao-scen/brc203d.map.scen&quot;;</span>
+<span class="nc" id="L96">        scenFileReader.read(path, map);</span>
+<span class="nc" id="L97">    }</span>
 
     private void getPathsForMap(PathMap map) {
-<span class="nc" id="L90">        System.out.println(&quot;Give cordinates for paths on this map, input emtpy line as start line number to finish inputing lines&quot;);</span>
+<span class="nc" id="L100">        System.out.println(&quot;Give cordinates for paths on this map, input emtpy line as start line number to finish inputing lines&quot;);</span>
         while(true) {
             int startLineNumber;
             int startColum;
@@ -95,25 +105,25 @@ public class PCTextUI {
             int goalColum;
             int optimalLenght;
 
-<span class="nc" id="L98">            System.out.println(&quot;Give start line number&quot;);</span>
-<span class="nc" id="L99">            String startLine = scanner.nextLine();</span>
-<span class="nc bnc" id="L100" title="All 2 branches missed.">            if(startLine.isEmpty()) {</span>
-<span class="nc" id="L101">                break;</span>
+<span class="nc" id="L108">            System.out.println(&quot;Give start line number&quot;);</span>
+<span class="nc" id="L109">            String startLine = scanner.nextLine();</span>
+<span class="nc bnc" id="L110" title="All 2 branches missed.">            if(startLine.isEmpty()) {</span>
+<span class="nc" id="L111">                break;</span>
             }
             try{
-<span class="nc" id="L104">                startLineNumber = Integer.parseInt(startLine);</span>
-<span class="nc" id="L105">            } catch (Exception e){</span>
-<span class="nc" id="L106">                System.out.println(e);</span>
-<span class="nc" id="L107">                continue;</span>
-<span class="nc" id="L108">            }</span>
+<span class="nc" id="L114">                startLineNumber = Integer.parseInt(startLine);</span>
+<span class="nc" id="L115">            } catch (Exception e){</span>
+<span class="nc" id="L116">                System.out.println(e);</span>
+<span class="nc" id="L117">                continue;</span>
+<span class="nc" id="L118">            }</span>
 
-<span class="nc" id="L110">            startColum = getUserInputInt(&quot;Give start colum number&quot;);</span>
-<span class="nc" id="L111">            goalLineNumber = getUserInputInt(&quot;Give goal line number&quot;);</span>
-<span class="nc" id="L112">            goalColum = getUserInputInt(&quot;Give goal colum number&quot;);</span>
-<span class="nc" id="L113">            optimalLenght = getUserInputInt(&quot;Optimal lenght for this path&quot;);</span>
-<span class="nc" id="L114">            map.addPath(new Cordinate(startLineNumber, startColum), new Cordinate(goalLineNumber, goalColum), optimalLenght);</span>
-<span class="nc" id="L115">        }</span>
-<span class="nc" id="L116">    }</span>
+<span class="nc" id="L120">            startColum = getUserInputInt(&quot;Give start colum number&quot;);</span>
+<span class="nc" id="L121">            goalLineNumber = getUserInputInt(&quot;Give goal line number&quot;);</span>
+<span class="nc" id="L122">            goalColum = getUserInputInt(&quot;Give goal colum number&quot;);</span>
+<span class="nc" id="L123">            optimalLenght = getUserInputInt(&quot;Optimal lenght for this path&quot;);</span>
+<span class="nc" id="L124">            map.addPath(new Cordinate(startLineNumber, startColum), new Cordinate(goalLineNumber, goalColum), optimalLenght);</span>
+<span class="nc" id="L125">        }</span>
+<span class="nc" id="L126">    }</span>
     
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

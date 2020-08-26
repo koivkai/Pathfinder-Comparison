@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fi"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MapReader.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pathfinder-Comparison</a> &gt; <a href="index.source.html" class="el_package">io</a> &gt; <span class="el_source">MapReader.java</span></div><h1>MapReader.java</h1><pre class="source lang-java linenums">package io;
+
+import java.io.File;
+import java.util.Scanner;
+import datastructures.PathMap;
+
+public class MapReader {
+
+<span class="nc" id="L9">    public MapReader() {</span>
+<span class="nc" id="L10">    }</span>
+    
+    public PathMap Read(String path) {
+<span class="nc" id="L13">        PathMap newMap = new PathMap();</span>
+        File file;
+        Scanner scanner;
+        try {
+<span class="nc" id="L17">            file = new File(path);</span>
+<span class="nc" id="L18">            scanner = new Scanner(file);</span>
+
+<span class="nc" id="L20">            String mapType = scanner.nextLine();</span>
+<span class="nc" id="L21">            String heigtLine = scanner.nextLine();</span>
+<span class="nc" id="L22">            String widthLine = scanner.nextLine();</span>
+<span class="nc" id="L23">            heigtLine = heigtLine.substring(7);</span>
+<span class="nc" id="L24">            widthLine = widthLine.substring(6);</span>
+
+<span class="nc" id="L26">            int height = Integer.parseInt(heigtLine);</span>
+<span class="nc" id="L27">            int width = Integer.parseInt(widthLine);</span>
+<span class="nc" id="L28">            char[][] lines = new char[height][width];</span>
+<span class="nc" id="L29">            scanner.nextLine();</span>
+<span class="nc bnc" id="L30" title="All 2 branches missed.">            for(int i = 0; i&lt;height;i++) {</span>
+<span class="nc bnc" id="L31" title="All 2 branches missed.">                if(scanner.hasNextLine()) {</span>
+<span class="nc" id="L32">                    String line = scanner.nextLine();</span>
+<span class="nc" id="L33">                    char[] lineContent = line.toCharArray();</span>
+<span class="nc" id="L34">                    lines[i] = lineContent;</span>
+                }
+                
+            }
+
+<span class="nc" id="L39">            newMap.setHeight(height);</span>
+<span class="nc" id="L40">            newMap.setWidth(width);</span>
+<span class="nc" id="L41">            newMap.setMap(lines);</span>
+<span class="nc" id="L42">            scanner.close();</span>
+            //System.out.println(&quot;In map reader map height &quot;+height+&quot; width &quot;+width);
+<span class="nc" id="L44">        } catch (Exception e) {</span>
+<span class="nc" id="L45">            System.out.println(&quot;failed to read file&quot;);</span>
+<span class="nc" id="L46">            System.out.println(e.toString());</span>
+<span class="nc" id="L47">            return null;</span>
+            //TODO: handle exception
+<span class="nc" id="L49">        }</span>
+        
+        
+
+    
+<span class="nc" id="L54">        return newMap;</span>
+    }
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

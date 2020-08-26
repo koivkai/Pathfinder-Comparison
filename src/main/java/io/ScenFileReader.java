@@ -1,8 +1,7 @@
-package logic;
+package io;
 
 import java.io.File;
 import java.util.Scanner;
-
 import datastructures.Cordinate;
 import datastructures.PathMap;
 

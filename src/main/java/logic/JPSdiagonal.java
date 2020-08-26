@@ -1,7 +1,7 @@
 package logic;
 
-import java.util.ArrayList;
 import datastructures.Cordinate;
+import datastructures.CordinateList;
 import datastructures.MinHeap;
 import datastructures.PathMap;
 
@@ -54,11 +54,12 @@ public class JPSdiagonal {
         return -1;
     }
     private void findSuccessors(Cordinate current) {
-        ArrayList<Cordinate> neigbours = getNeightbours(current);
+        CordinateList neighbours = getNeightbours(current);
+        //ArrayList<Cordinate> neigbours = getNeightbours(current);
         //System.out.println("neighbours " +neigbours);
-        for(Cordinate c:neigbours) {
-
-            Cordinate next = jump(c, current);
+        for(int i = 0; i < neighbours.size(); i++) {
+            Cordinate neighbour = neighbours.get(i);
+            Cordinate next = jump(neighbour, current);
             //System.out.println("next "+next);
             if(next != null) {
                 
@@ -97,8 +98,8 @@ public class JPSdiagonal {
         
     }
 
-    private ArrayList<Cordinate> getNeightbours(Cordinate current) {
-        ArrayList<Cordinate> neighbours = new ArrayList<Cordinate>();
+    private CordinateList getNeightbours(Cordinate current) {
+        CordinateList neighbours = new CordinateList();
         int currentLine = current.getLineNumber();
         int currentColum = current.getColum();
         Cordinate parent = prev[currentLine][currentColum];

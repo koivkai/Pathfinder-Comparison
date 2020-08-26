@@ -1,8 +1,7 @@
 package logic;
 
-import java.util.ArrayList;
-
 import datastructures.Cordinate;
+import datastructures.CordinateList;
 import datastructures.MinHeap;
 import datastructures.PathMap;
 
@@ -50,10 +49,10 @@ public class JPS {
         return -1;
     }
     private void findSuccessors(Cordinate current) {
-        ArrayList<Cordinate> neigbours = getNeightbours(current);
-        for(Cordinate c:neigbours) {
-
-            Cordinate next = jump(c, prev[c.getLineNumber()][c.getColum()]);
+        CordinateList neighbours = getNeightbours(current);
+        for(int i = 0; i < neighbours.size(); i++) {
+            Cordinate c = neighbours.get(i);
+            Cordinate next = jump(c, current);
             if(next != null) {
                 
                 if(visited[next.getLineNumber()][next.getColum()]) {
@@ -103,8 +102,8 @@ public class JPS {
         }
     }
 
-    private ArrayList<Cordinate> getNeightbours(Cordinate current) {
-        ArrayList<Cordinate> neighbours = new ArrayList<Cordinate>();
+    private CordinateList getNeightbours(Cordinate current) {
+        CordinateList neighbours = new CordinateList();
         int cLine = current.getLineNumber();
         int cColum = current.getColum();
         Cordinate parent = prev[cLine][cColum];

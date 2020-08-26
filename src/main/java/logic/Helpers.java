@@ -1,7 +1,5 @@
 package logic;
 
-import java.util.Arrays;
-
 import datastructures.Cordinate;
 import datastructures.PathMap;
 

@@ -1,28 +1,27 @@
 package textUI;
 
 import java.util.Scanner;
-
 import datastructures.Cordinate;
 import datastructures.MapList;
 import datastructures.PathMap;
+import io.MapReader;
+import io.ScenFileReader;
 import logic.ComparisonEngine;
-import logic.MapReader;
-import logic.ScenFileReader;
-
 
 public class PCTextUI {
     Scanner scanner;
     MapReader mapReader;
     ScenFileReader scenFileReader;
+    MapList maps;
 
     public PCTextUI() {
         this.scanner = new Scanner(System.in);
         this.mapReader = new MapReader();
         this.scenFileReader = new ScenFileReader();
+        this.maps = new MapList();
     }
 
-    public void start() {
-        MapList maps = new MapList();
+    public void start() {  
         ComparisonEngine c = new ComparisonEngine();
         System.out.println("Pathfinder Comparison");
         System.out.println("First select maps");
@@ -31,13 +30,24 @@ public class PCTextUI {
             String anwser = getUserInputString("Add a map y/n?");
             if(anwser.equals("n")) {
                 break;
+            } else if(anwser.equals("p")) {
+                usePreset();
+                break;
             }
-            getMapFromUser(maps);
+            getMapFromUser();
         }
         
         c.compare(maps);
         
         
+    }
+
+    private void usePreset() {
+        String mapPath1 = "/Users/Kaius/TiraKartat/dao-map/brc203d.map";
+        String scenPath1 = "/Users/Kaius/TiraScenaariot/dao-scen/brc203d.map.scen";
+        PathMap map1 = mapReader.Read(mapPath1);
+        scenFileReader.read(scenPath1, map1);
+        maps.add(map1);
     }
 
     private int getUserInputInt(String prompt) {
@@ -58,7 +68,7 @@ public class PCTextUI {
         return line;
     }
 
-    private void getMapFromUser(MapList maps) {
+    private void getMapFromUser() {
         String path = getUserInputString("Please give absolute filepath for .map file");
         //path= "/Users/Kaius/TiraKartat/da2-map/ca_cave.map";
         path= "/Users/Kaius/TiraKartat/dao-map/brc203d.map";
