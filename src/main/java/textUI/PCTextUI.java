@@ -48,6 +48,24 @@ public class PCTextUI {
         PathMap map1 = mapReader.Read(mapPath1);
         scenFileReader.read(scenPath1, map1);
         maps.add(map1);
+
+        //String mapPath2 = "/Users/Kaius/TiraKartat/maze512-1-0.map";
+        //String scenPath2 = "/Users/Kaius/TiraScenaariot/maze512-1-0.map.scen";
+        //PathMap map2 = mapReader.Read(mapPath2);
+        //scenFileReader.read(scenPath2, map2);
+        //maps.add(map2);
+
+        String mapPath3 = "/Users/Kaius/TiraKartat/Berlin_0_512.map";
+        String scenPath3 = "/Users/Kaius/TiraScenaariot/Berlin_0_512.map.scen";
+        PathMap map3 = mapReader.Read(mapPath3);
+        scenFileReader.read(scenPath3, map3);
+        maps.add(map3);
+
+        String mapPath4 = "/Users/Kaius/TiraKartat/dao-map/den005d.map";
+        String scenPath4 = "/Users/Kaius/TiraScenaariot/dao-scen/den005d.map.scen";
+        PathMap map4 = mapReader.Read(mapPath4);
+        scenFileReader.read(scenPath4, map4);
+        maps.add(map4);
     }
 
     private int getUserInputInt(String prompt) {

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="logicTest.AstarTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-08-26T13:15:16" hostname="Kaius-MBP" time="0.002">
+<testsuite name="logicTest.AstarTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-08-28T18:52:04" hostname="Kaius-MBP" time="0.003">
   <properties/>
   <testcase name="findsPathTreeline" classname="logicTest.AstarTest" time="0.001"/>
   <testcase name="findsPathThreeTreelines" classname="logicTest.AstarTest" time="0.0"/>
   <testcase name="findsPathNoObstacles" classname="logicTest.AstarTest" time="0.0"/>
   <testcase name="noPathExits" classname="logicTest.AstarTest" time="0.0"/>
-  <testcase name="findsPathTwoTreelines" classname="logicTest.AstarTest" time="0.0"/>
+  <testcase name="findsPathTwoTreelines" classname="logicTest.AstarTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

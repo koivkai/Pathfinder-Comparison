@@ -40,18 +40,17 @@ public class MapReader {
 <span class="nc" id="L40">            newMap.setWidth(width);</span>
 <span class="nc" id="L41">            newMap.setMap(lines);</span>
 <span class="nc" id="L42">            scanner.close();</span>
-            //System.out.println(&quot;In map reader map height &quot;+height+&quot; width &quot;+width);
-<span class="nc" id="L44">        } catch (Exception e) {</span>
-<span class="nc" id="L45">            System.out.println(&quot;failed to read file&quot;);</span>
-<span class="nc" id="L46">            System.out.println(e.toString());</span>
-<span class="nc" id="L47">            return null;</span>
+<span class="nc" id="L43">        } catch (Exception e) {</span>
+<span class="nc" id="L44">            System.out.println(&quot;failed to read file&quot;);</span>
+<span class="nc" id="L45">            System.out.println(e.toString());</span>
+<span class="nc" id="L46">            return null;</span>
             //TODO: handle exception
-<span class="nc" id="L49">        }</span>
+<span class="nc" id="L48">        }</span>
         
         
 
     
-<span class="nc" id="L54">        return newMap;</span>
+<span class="nc" id="L53">        return newMap;</span>
     }
     
 }

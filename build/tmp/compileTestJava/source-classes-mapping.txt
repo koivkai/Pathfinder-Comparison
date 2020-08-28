@@ -16,3 +16,5 @@ logicTest/JPSdiagonalTest.java
  logicTest.JPSdiagonalTest
 logicTest/JPSTest.java
  logicTest.JPSTest
+datastructuresTest/MapListTest.java
+ datastructuresTest.MapListTest

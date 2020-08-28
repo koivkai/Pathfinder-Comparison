@@ -31,7 +31,8 @@ public class Astar {
         this.goalFound = false;
         visited = new boolean[map.getHeight()][map.getWidth()];
         prev = new Cordinate[map.getHeight()][map.getWidth()];
-        prepDistance(map.getHeight(), map.getWidth());
+        //prepDistance(map.getHeight(), map.getWidth());
+        distance = new double[map.getHeight()][map.getWidth()];
         que.add(new Cordinate(startLineNumber, startColum));
         this.goalLine = goalLineNumber;
         this.goalColum =goalColum;
@@ -57,7 +58,7 @@ public class Astar {
                     double currentDistance = distance[line-1][colum];
                     double newDistance = distance[line][colum]+1;
 
-                    if(newDistance < currentDistance) {
+                    if(newDistance < currentDistance || currentDistance == 0) {
                         distance[line-1][colum] = distance[line][colum] +1;
                         prev[line-1][colum] = current;
                         fscore = distance[line-1][colum] + estimate(line-1, colum);
@@ -70,7 +71,7 @@ public class Astar {
                     double currentDistance = distance[line+1][colum];
                     double newDistance = distance[line][colum]+1;
 
-                    if(newDistance < currentDistance) {
+                    if(newDistance < currentDistance || currentDistance == 0) {
                         distance[line+1][colum] = distance[line][colum] +1;
                         prev[line+1][colum] = current;
                         fscore = distance[line+1][colum] + estimate(line+1, colum);
@@ -84,7 +85,7 @@ public class Astar {
                     double currentDistance = distance[line][colum+1];
                     double newDistance = distance[line][colum]+1;
 
-                    if(newDistance < currentDistance) {
+                    if(newDistance < currentDistance || currentDistance == 0) {
                         distance[line][colum+1] = distance[line][colum] +1;
                         prev[line][colum+1] = current;
                         fscore = distance[line][colum+1] + estimate(line, colum+1);
@@ -98,7 +99,7 @@ public class Astar {
                     double currentDistance = distance[line][colum-1];
                     double newDistance = distance[line][colum]+1;
 
-                    if(newDistance < currentDistance) {
+                    if(newDistance < currentDistance || currentDistance == 0) {
                         distance[line][colum-1] = distance[line][colum] +1;
                         prev[line][colum-1] = current;
                         fscore = distance[line][colum-1] + estimate(line, colum-1);
@@ -113,7 +114,7 @@ public class Astar {
                     double currentDistance = distance[line-1][colum+1];
                     double newDistance = distance[line][colum]+twosqrt;
 
-                    if(newDistance < currentDistance) {
+                    if(newDistance < currentDistance || currentDistance == 0) {
                         distance[line-1][colum+1] = newDistance;
                         prev[line-1][colum+1] = current;
                         fscore = distance[line-1][colum+1] + estimate(line-1, colum+1);
@@ -127,7 +128,7 @@ public class Astar {
                     double currentDistance = distance[line-1][colum-1];
                     double newDistance = distance[line][colum]+twosqrt;
 
-                    if(newDistance < currentDistance) {
+                    if(newDistance < currentDistance || currentDistance == 0) {
                         distance[line-1][colum-1] = newDistance;
                         prev[line-1][colum-1] = current;
                         fscore = distance[line-1][colum-1] + estimate(line-1, colum-1);
@@ -141,7 +142,7 @@ public class Astar {
                     double currentDistance = distance[line+1][colum+1];
                     double newDistance = distance[line][colum]+twosqrt;
 
-                    if(newDistance < currentDistance) {
+                    if(newDistance < currentDistance || currentDistance == 0) {
                         distance[line+1][colum+1] = distance[line][colum] +twosqrt;
                         prev[line+1][colum+1] = current;
                         fscore = distance[line+1][colum+1] + estimate(line+1, colum+1);
@@ -155,7 +156,7 @@ public class Astar {
                     double currentDistance = distance[line+1][colum-1];
                     double newDistance = distance[line][colum]+twosqrt;
 
-                    if(newDistance < currentDistance) {
+                    if(newDistance < currentDistance || currentDistance == 0) {
                         distance[line+1][colum-1] = distance[line][colum] +twosqrt;
                         prev[line+1][colum-1] = current;
                         fscore = distance[line+1][colum-1] + estimate(line+1, colum-1);

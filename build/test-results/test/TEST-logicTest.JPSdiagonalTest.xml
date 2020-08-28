@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="logicTest.JPSdiagonalTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2020-08-26T13:15:16" hostname="Kaius-MBP" time="0.005">
+<testsuite name="logicTest.JPSdiagonalTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2020-08-28T18:52:04" hostname="Kaius-MBP" time="0.005">
   <properties/>
   <testcase name="diagonalLinesReverse" classname="logicTest.JPSdiagonalTest" time="0.001"/>
   <testcase name="findsPathTreeline" classname="logicTest.JPSdiagonalTest" time="0.0"/>
-  <testcase name="diagonalLines" classname="logicTest.JPSdiagonalTest" time="0.0"/>
+  <testcase name="diagonalLines" classname="logicTest.JPSdiagonalTest" time="0.001"/>
   <testcase name="findsPathThreeTreelines" classname="logicTest.JPSdiagonalTest" time="0.0"/>
   <testcase name="asd" classname="logicTest.JPSdiagonalTest" time="0.001"/>
-  <testcase name="maze" classname="logicTest.JPSdiagonalTest" time="0.0"/>
+  <testcase name="maze" classname="logicTest.JPSdiagonalTest" time="0.001"/>
   <testcase name="findsPathNoObstacles" classname="logicTest.JPSdiagonalTest" time="0.0"/>
   <testcase name="mazeReverse" classname="logicTest.JPSdiagonalTest" time="0.0"/>
   <testcase name="findsPathNoObstaclesReverse" classname="logicTest.JPSdiagonalTest" time="0.0"/>

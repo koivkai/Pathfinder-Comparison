@@ -5,19 +5,19 @@ public class MapList {
     int nextPos;
     int size;
 
-<span class="nc" id="L8">    public MapList() {</span>
-<span class="nc" id="L9">        this.list = new PathMap[10];</span>
-<span class="nc" id="L10">        this.nextPos = 0;</span>
-<span class="nc" id="L11">        this.size = 10;</span>
-<span class="nc" id="L12">    }</span>
+<span class="fc" id="L8">    public MapList() {</span>
+<span class="fc" id="L9">        this.list = new PathMap[10];</span>
+<span class="fc" id="L10">        this.nextPos = 0;</span>
+<span class="fc" id="L11">        this.size = 10;</span>
+<span class="fc" id="L12">    }</span>
 
     public void add(PathMap map) {
-<span class="nc bnc" id="L15" title="All 2 branches missed.">        if(nextPos == size) {</span>
+<span class="pc bpc" id="L15" title="1 of 2 branches missed.">        if(nextPos == size) {</span>
 <span class="nc" id="L16">            grow();</span>
         }
-<span class="nc" id="L18">        list[nextPos] = map;</span>
-<span class="nc" id="L19">        nextPos++;</span>
-<span class="nc" id="L20">    }  </span>
+<span class="fc" id="L18">        list[nextPos] = map;</span>
+<span class="fc" id="L19">        nextPos++;</span>
+<span class="fc" id="L20">    }  </span>
 
     public PathMap get(int index) {
 <span class="nc bnc" id="L23" title="All 4 branches missed.">        if(index &lt; 0 || index &gt;=nextPos) {</span>

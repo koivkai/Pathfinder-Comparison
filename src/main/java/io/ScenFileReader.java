@@ -19,13 +19,29 @@ public class ScenFileReader {
             scanner = new Scanner(file);
 
             String versionLine = scanner.nextLine();
+            String firstNonversionLine = scanner.nextLine();
+            processScenFileLine(firstNonversionLine, map, true);
             while(scanner.hasNextLine()) {
                 String line = scanner.nextLine();
-                String[] values= line.split("\\s+");
-                String scenLinenumber = values[0];
+                processScenFileLine(line, map, false);
+            }
+
+        } catch (Exception e) {
+            System.out.println("failed to read scenarios");
+            System.out.println(e.toString());
+            //TODO: handle exception
+        }
+    }
+
+    private void processScenFileLine(String line, PathMap map, boolean isFirst) {
+        String[] values= line.split("\\s+");
+                //String scenLinenumber = values[0];
                 String mapName = values[1];
 
-                
+                if(isFirst) {
+                    map.setName(mapName);
+                }
+
                 String mapWitdhString = values[2];
                 String mapHeightString = values[3];
                 String startColumString = values[4];
@@ -33,16 +49,6 @@ public class ScenFileReader {
                 String goalColumString = values[6];
                 String goalLineString = values[7];
                 String optimalLenghtString = values[8];
-                
-                /*
-                String mapWitdhString = values[2];
-                String mapHeightString = values[3];
-                String startLineString = values[4];
-                String startColumString = values[5];
-                String goalLineString = values[6];
-                String goalColumString = values[7];
-                String optimalLenghtString = values[8];
-                */
                 
                 int mapWitdh = Integer.parseInt(mapWitdhString);
                 int mapHeight = Integer.parseInt(mapHeightString);
@@ -56,14 +62,6 @@ public class ScenFileReader {
 
                     map.addPath(new Cordinate(startLine, startColum), new Cordinate(goalLine, goalColum), optimalLenght);
                 }
-
-            }
-
-        } catch (Exception e) {
-            System.out.println("failed to read scenarios");
-            System.out.println(e.toString());
-            //TODO: handle exception
-        }
     }
     
 }

@@ -19,52 +19,50 @@ public class ScenFileReader {
 <span class="nc" id="L19">            scanner = new Scanner(file);</span>
 
 <span class="nc" id="L21">            String versionLine = scanner.nextLine();</span>
-<span class="nc bnc" id="L22" title="All 2 branches missed.">            while(scanner.hasNextLine()) {</span>
-<span class="nc" id="L23">                String line = scanner.nextLine();</span>
-<span class="nc" id="L24">                String[] values= line.split(&quot;\\s+&quot;);</span>
-<span class="nc" id="L25">                String scenLinenumber = values[0];</span>
-<span class="nc" id="L26">                String mapName = values[1];</span>
+<span class="nc" id="L22">            String firstNonversionLine = scanner.nextLine();</span>
+<span class="nc" id="L23">            processScenFileLine(firstNonversionLine, map, true);</span>
+<span class="nc bnc" id="L24" title="All 2 branches missed.">            while(scanner.hasNextLine()) {</span>
+<span class="nc" id="L25">                String line = scanner.nextLine();</span>
+<span class="nc" id="L26">                processScenFileLine(line, map, false);</span>
+<span class="nc" id="L27">            }</span>
 
-                
-<span class="nc" id="L29">                String mapWitdhString = values[2];</span>
-<span class="nc" id="L30">                String mapHeightString = values[3];</span>
-<span class="nc" id="L31">                String startColumString = values[4];</span>
-<span class="nc" id="L32">                String startLineString = values[5];</span>
-<span class="nc" id="L33">                String goalColumString = values[6];</span>
-<span class="nc" id="L34">                String goalLineString = values[7];</span>
-<span class="nc" id="L35">                String optimalLenghtString = values[8];</span>
-                
-                /*
-                String mapWitdhString = values[2];
-                String mapHeightString = values[3];
-                String startLineString = values[4];
-                String startColumString = values[5];
-                String goalLineString = values[6];
-                String goalColumString = values[7];
-                String optimalLenghtString = values[8];
-                */
-                
-<span class="nc" id="L47">                int mapWitdh = Integer.parseInt(mapWitdhString);</span>
-<span class="nc" id="L48">                int mapHeight = Integer.parseInt(mapHeightString);</span>
-<span class="nc" id="L49">                int startLine = Integer.parseInt(startLineString);</span>
-<span class="nc" id="L50">                int startColum = Integer.parseInt(startColumString);</span>
-<span class="nc" id="L51">                int goalLine = Integer.parseInt(goalLineString);</span>
-<span class="nc" id="L52">                int goalColum = Integer.parseInt(goalColumString);</span>
-<span class="nc" id="L53">                double optimalLenght = Double.parseDouble(optimalLenghtString);</span>
+<span class="nc" id="L29">        } catch (Exception e) {</span>
+<span class="nc" id="L30">            System.out.println(&quot;failed to read scenarios&quot;);</span>
+<span class="nc" id="L31">            System.out.println(e.toString());</span>
+            //TODO: handle exception
+<span class="nc" id="L33">        }</span>
+<span class="nc" id="L34">    }</span>
 
-<span class="nc bnc" id="L55" title="All 4 branches missed.">                if(mapWitdh == map.getWidth() &amp;&amp; mapHeight == map.getHeight()) {</span>
+    private void processScenFileLine(String line, PathMap map, boolean isFirst) {
+<span class="nc" id="L37">        String[] values= line.split(&quot;\\s+&quot;);</span>
+                //String scenLinenumber = values[0];
+<span class="nc" id="L39">                String mapName = values[1];</span>
 
-<span class="nc" id="L57">                    map.addPath(new Cordinate(startLine, startColum), new Cordinate(goalLine, goalColum), optimalLenght);</span>
+<span class="nc bnc" id="L41" title="All 2 branches missed.">                if(isFirst) {</span>
+<span class="nc" id="L42">                    map.setName(mapName);</span>
                 }
 
-<span class="nc" id="L60">            }</span>
+<span class="nc" id="L45">                String mapWitdhString = values[2];</span>
+<span class="nc" id="L46">                String mapHeightString = values[3];</span>
+<span class="nc" id="L47">                String startColumString = values[4];</span>
+<span class="nc" id="L48">                String startLineString = values[5];</span>
+<span class="nc" id="L49">                String goalColumString = values[6];</span>
+<span class="nc" id="L50">                String goalLineString = values[7];</span>
+<span class="nc" id="L51">                String optimalLenghtString = values[8];</span>
+                
+<span class="nc" id="L53">                int mapWitdh = Integer.parseInt(mapWitdhString);</span>
+<span class="nc" id="L54">                int mapHeight = Integer.parseInt(mapHeightString);</span>
+<span class="nc" id="L55">                int startLine = Integer.parseInt(startLineString);</span>
+<span class="nc" id="L56">                int startColum = Integer.parseInt(startColumString);</span>
+<span class="nc" id="L57">                int goalLine = Integer.parseInt(goalLineString);</span>
+<span class="nc" id="L58">                int goalColum = Integer.parseInt(goalColumString);</span>
+<span class="nc" id="L59">                double optimalLenght = Double.parseDouble(optimalLenghtString);</span>
 
-<span class="nc" id="L62">        } catch (Exception e) {</span>
-<span class="nc" id="L63">            System.out.println(&quot;failed to read scenarios&quot;);</span>
-<span class="nc" id="L64">            System.out.println(e.toString());</span>
-            //TODO: handle exception
-<span class="nc" id="L66">        }</span>
-<span class="nc" id="L67">    }</span>
+<span class="nc bnc" id="L61" title="All 4 branches missed.">                if(mapWitdh == map.getWidth() &amp;&amp; mapHeight == map.getHeight()) {</span>
+
+<span class="nc" id="L63">                    map.addPath(new Cordinate(startLine, startColum), new Cordinate(goalLine, goalColum), optimalLenght);</span>
+                }
+<span class="nc" id="L65">    }</span>
     
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

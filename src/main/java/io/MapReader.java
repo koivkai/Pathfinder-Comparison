@@ -40,7 +40,6 @@ public class MapReader {
             newMap.setWidth(width);
             newMap.setMap(lines);
             scanner.close();
-            //System.out.println("In map reader map height "+height+" width "+width);
         } catch (Exception e) {
             System.out.println("failed to read file");
             System.out.println(e.toString());

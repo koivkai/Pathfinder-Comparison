@@ -18,21 +18,21 @@ datastructures/MapList.java
  datastructures.MapList
 datastructures/DoublesQue.java
  datastructures.DoublesQue
-logic/Astar.java
- logic.Astar
+textUI/PCTextUI.java
+ textUI.PCTextUI
 logic/Dijkstra.java
  logic.Dijkstra
 logic/JPS.java
  logic.JPS
-textUI/PCTextUI.java
- textUI.PCTextUI
-Main.java
- Main
 logic/JPSdiagonal.java
  logic.JPSdiagonal
-io/MapReader.java
- io.MapReader
 io/ScenFileReader.java
  io.ScenFileReader
+Main.java
+ Main
+io/MapReader.java
+ io.MapReader
 logic/ComparisonEngine.java
  logic.ComparisonEngine
+logic/Astar.java
+ logic.Astar

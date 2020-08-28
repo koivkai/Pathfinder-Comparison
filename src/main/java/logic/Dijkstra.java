@@ -29,7 +29,8 @@ public class Dijkstra {
         //System.out.println("map width " + map.getWidth());
         //System.out.println("startLine " + startLineNumber+ " startColum " + startColum);
         //System.out.println("goalLine "+goalLineNumber+" goalColum "+goalColum);
-        prepDistance(map.getHeight(), map.getWidth());
+        //prepDistance(map.getHeight(), map.getWidth());
+        distance = new double[map.getHeight()][map.getWidth()];
         distance[startLineNumber][startColum] = 0;
         Cordinate start = new Cordinate(startLineNumber, startColum);
         que.add(start);
@@ -83,7 +84,7 @@ public class Dijkstra {
         if(map.terrainPassableAt(line-1, colum)) {
             double currentDistance = distance[line-1][colum];
             double newDistance = distance[line][colum]+1;
-            if(newDistance < currentDistance) {
+            if(newDistance < currentDistance || currentDistance == 0) {
                 distance[line-1][colum]= newDistance;
                 Cordinate up = new Cordinate(line-1,colum,newDistance);
                 prev[line-1][colum] = current;
@@ -98,7 +99,7 @@ public class Dijkstra {
         if(map.terrainPassableAt(line+1, colum)) {
             double currentDistance = distance[line+1][colum];
             double newDistance = distance[line][colum]+1;
-            if(newDistance < currentDistance) {
+            if(newDistance < currentDistance || currentDistance == 0) {
                 distance[line+1][colum]= newDistance;
                 Cordinate down = new Cordinate(line+1,colum,newDistance);
                 prev[line+1][colum] = current;
@@ -113,7 +114,7 @@ public class Dijkstra {
         if(map.terrainPassableAt(line, colum+1)) {
             double currentDistance = distance[line][colum+1];
             double newDistance = distance[line][colum]+1;
-            if(newDistance < currentDistance) {
+            if(newDistance < currentDistance || currentDistance == 0) {
                 distance[line][colum+1]= newDistance;
                 Cordinate right = new Cordinate(line,colum+1,newDistance);
                 prev[line][colum+1] = current;
@@ -128,7 +129,7 @@ public class Dijkstra {
         if(map.terrainPassableAt(line, colum-1)) {
             double currentDistance = distance[line][colum-1];
             double newDistance = distance[line][colum]+1;
-            if(newDistance < currentDistance) {
+            if(newDistance < currentDistance || currentDistance == 0) {
                 distance[line][colum-1]= newDistance;
                 Cordinate left = new Cordinate(line,colum-1,newDistance);
                 prev[line][colum-1] = current;
@@ -143,7 +144,7 @@ public class Dijkstra {
         if(map.canGoNorthEast(line, colum)) {
             double currentDistance = distance[line-1][colum+1];
             double newDistance = distance[line][colum] + twosqrt;
-            if(newDistance < currentDistance) {
+            if(newDistance < currentDistance || currentDistance == 0) {
                 distance[line-1][colum+1] = newDistance;
                 Cordinate northEast = new Cordinate(line-1, colum+1, newDistance);
                 prev[line-1][colum+1] = current;
@@ -158,7 +159,7 @@ public class Dijkstra {
         if(map.canGoNorthWest(line, colum)) {
             double currentDistance = distance[line-1][colum-1];
             double newDistance = distance[line][colum] + twosqrt;
-            if(newDistance < currentDistance) {
+            if(newDistance < currentDistance || currentDistance == 0) {
                 distance[line-1][colum-1] = newDistance;
                 Cordinate northWest = new Cordinate(line-1, colum-1, newDistance);
                 prev[line-1][colum-1] = current;
@@ -173,7 +174,7 @@ public class Dijkstra {
         if(map.canGoSouthEast(line, colum)) {
             double currentDistance = distance[line+1][colum+1];
             double newDistance = distance[line][colum] + twosqrt;
-            if(newDistance < currentDistance) {
+            if(newDistance < currentDistance || currentDistance == 0) {
                 distance[line+1][colum+1] = newDistance;
                 Cordinate southEast = new Cordinate(line+1, colum+1, newDistance);
                 prev[line+1][colum+1] = current;
@@ -188,7 +189,7 @@ public class Dijkstra {
         if(map.canGoSouthWest(line, colum)) {
             double currentDistance = distance[line+1][colum-1];
             double newDistance = distance[line][colum] + twosqrt;
-            if(newDistance < currentDistance) {
+            if(newDistance < currentDistance || currentDistance == 0) {
                 distance[line+1][colum-1] = newDistance;
                 Cordinate southWest = new Cordinate(line+1, colum-1, newDistance);
                 prev[line+1][colum-1] = current;
