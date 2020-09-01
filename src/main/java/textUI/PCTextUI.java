@@ -8,6 +8,9 @@ import io.MapReader;
 import io.ScenFileReader;
 import logic.ComparisonEngine;
 
+/**
+ * A very basic UI for using the program.
+ */
 public class PCTextUI {
     Scanner scanner;
     MapReader mapReader;

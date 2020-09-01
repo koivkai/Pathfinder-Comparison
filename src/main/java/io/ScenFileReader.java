@@ -6,7 +6,7 @@ import datastructures.Cordinate;
 import datastructures.PathMap;
 
 /**
- * Reads pathfinding scenarious from .scen files.
+ * Class for reading pathfinding scenarious from .scen files.
  */
 public class ScenFileReader {
 

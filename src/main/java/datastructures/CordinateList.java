@@ -14,6 +14,12 @@ public class CordinateList {
         this.size = 10;
     }
 
+    public CordinateList(int size) {
+        this.list = new Cordinate[size];
+        this.nextPos = 0;
+        this.size = size;
+    }
+
     public void add(Cordinate cordinate) {
         if(nextPos == size) {
             grow();

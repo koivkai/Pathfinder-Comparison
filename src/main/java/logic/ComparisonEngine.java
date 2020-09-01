@@ -6,7 +6,9 @@ import datastructures.DoublesQue;
 import datastructures.MapList;
 import datastructures.PathMap;
 
-// todo: rename me
+/**
+ * A class for comparing the speed at which Djikstra, A* and JPS find the sortest path.
+ */
 public class ComparisonEngine {
     Dijkstra dijkstra;
     Astar astar;

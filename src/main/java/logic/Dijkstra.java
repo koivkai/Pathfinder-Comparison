@@ -65,15 +65,6 @@ public class Dijkstra {
         return -1;
     }
 
-    private void prepDistance(int height, int width){
-        distance = new double[height][width];
-        for (int h = 0;h<height;h++) {
-            for(int w = 0;w<width;w++) {
-                distance[h][w] = Double.MAX_VALUE;
-            }
-        }
-    }
-
     private boolean foundGoal(int line, int colum) {
         if (line == this.goalLine && colum == this.goalColum) {
             return true;

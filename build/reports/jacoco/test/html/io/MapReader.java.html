@@ -4,53 +4,56 @@ import java.io.File;
 import java.util.Scanner;
 import datastructures.PathMap;
 
+/**
+ * Class for reading PathMaps from .map files.
+ */
 public class MapReader {
 
-<span class="nc" id="L9">    public MapReader() {</span>
-<span class="nc" id="L10">    }</span>
+<span class="nc" id="L12">    public MapReader() {</span>
+<span class="nc" id="L13">    }</span>
     
     public PathMap Read(String path) {
-<span class="nc" id="L13">        PathMap newMap = new PathMap();</span>
+<span class="nc" id="L16">        PathMap newMap = new PathMap();</span>
         File file;
         Scanner scanner;
         try {
-<span class="nc" id="L17">            file = new File(path);</span>
-<span class="nc" id="L18">            scanner = new Scanner(file);</span>
+<span class="nc" id="L20">            file = new File(path);</span>
+<span class="nc" id="L21">            scanner = new Scanner(file);</span>
 
-<span class="nc" id="L20">            String mapType = scanner.nextLine();</span>
-<span class="nc" id="L21">            String heigtLine = scanner.nextLine();</span>
-<span class="nc" id="L22">            String widthLine = scanner.nextLine();</span>
-<span class="nc" id="L23">            heigtLine = heigtLine.substring(7);</span>
-<span class="nc" id="L24">            widthLine = widthLine.substring(6);</span>
+<span class="nc" id="L23">            String mapType = scanner.nextLine();</span>
+<span class="nc" id="L24">            String heigtLine = scanner.nextLine();</span>
+<span class="nc" id="L25">            String widthLine = scanner.nextLine();</span>
+<span class="nc" id="L26">            heigtLine = heigtLine.substring(7);</span>
+<span class="nc" id="L27">            widthLine = widthLine.substring(6);</span>
 
-<span class="nc" id="L26">            int height = Integer.parseInt(heigtLine);</span>
-<span class="nc" id="L27">            int width = Integer.parseInt(widthLine);</span>
-<span class="nc" id="L28">            char[][] lines = new char[height][width];</span>
-<span class="nc" id="L29">            scanner.nextLine();</span>
-<span class="nc bnc" id="L30" title="All 2 branches missed.">            for(int i = 0; i&lt;height;i++) {</span>
-<span class="nc bnc" id="L31" title="All 2 branches missed.">                if(scanner.hasNextLine()) {</span>
-<span class="nc" id="L32">                    String line = scanner.nextLine();</span>
-<span class="nc" id="L33">                    char[] lineContent = line.toCharArray();</span>
-<span class="nc" id="L34">                    lines[i] = lineContent;</span>
+<span class="nc" id="L29">            int height = Integer.parseInt(heigtLine);</span>
+<span class="nc" id="L30">            int width = Integer.parseInt(widthLine);</span>
+<span class="nc" id="L31">            char[][] lines = new char[height][width];</span>
+<span class="nc" id="L32">            scanner.nextLine();</span>
+<span class="nc bnc" id="L33" title="All 2 branches missed.">            for(int i = 0; i&lt;height;i++) {</span>
+<span class="nc bnc" id="L34" title="All 2 branches missed.">                if(scanner.hasNextLine()) {</span>
+<span class="nc" id="L35">                    String line = scanner.nextLine();</span>
+<span class="nc" id="L36">                    char[] lineContent = line.toCharArray();</span>
+<span class="nc" id="L37">                    lines[i] = lineContent;</span>
                 }
                 
             }
 
-<span class="nc" id="L39">            newMap.setHeight(height);</span>
-<span class="nc" id="L40">            newMap.setWidth(width);</span>
-<span class="nc" id="L41">            newMap.setMap(lines);</span>
-<span class="nc" id="L42">            scanner.close();</span>
-<span class="nc" id="L43">        } catch (Exception e) {</span>
-<span class="nc" id="L44">            System.out.println(&quot;failed to read file&quot;);</span>
-<span class="nc" id="L45">            System.out.println(e.toString());</span>
-<span class="nc" id="L46">            return null;</span>
+<span class="nc" id="L42">            newMap.setHeight(height);</span>
+<span class="nc" id="L43">            newMap.setWidth(width);</span>
+<span class="nc" id="L44">            newMap.setMap(lines);</span>
+<span class="nc" id="L45">            scanner.close();</span>
+<span class="nc" id="L46">        } catch (Exception e) {</span>
+<span class="nc" id="L47">            System.out.println(&quot;failed to read file&quot;);</span>
+<span class="nc" id="L48">            System.out.println(e.toString());</span>
+<span class="nc" id="L49">            return null;</span>
             //TODO: handle exception
-<span class="nc" id="L48">        }</span>
+<span class="nc" id="L51">        }</span>
         
         
 
     
-<span class="nc" id="L53">        return newMap;</span>
+<span class="nc" id="L56">        return newMap;</span>
     }
     
 }

@@ -54,8 +54,6 @@ public class Cordinate implements Comparable<Cordinate>{
         return (int)(this.distanceEstimate - c.getDistanceEstimate());
     }
 
-
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -73,10 +71,5 @@ public class Cordinate implements Comparable<Cordinate>{
             return false;
         return true;
     }
-
-    
-
-   
-
 
 }

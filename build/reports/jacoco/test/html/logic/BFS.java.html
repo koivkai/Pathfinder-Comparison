@@ -4,6 +4,9 @@ import datastructures.Cordinate;
 import datastructures.CordinateQue;
 import datastructures.PathMap;
 
+/**
+ * Implementation of the Breadth-first-search pathfinding algorithm in a uniform grid.
+ */
 public class BFS {
     CordinateQue que;
     double[][]distance;
@@ -11,80 +14,80 @@ public class BFS {
     Cordinate[][]prev;
     PathMap map;
     
-<span class="fc" id="L14">    public BFS() {</span>
-<span class="fc" id="L15">    }</span>
+<span class="fc" id="L17">    public BFS() {</span>
+<span class="fc" id="L18">    }</span>
 
     public double findPath(PathMap map, int startLinenumber, int startColum, int goalLineNumber, int goalColum) {
-<span class="fc" id="L18">        this.map = map;</span>
-<span class="fc" id="L19">        distance = new double[map.getHeight()][map.getWidth()];</span>
-<span class="fc" id="L20">        visited = new boolean[map.getHeight()][map.getWidth()];</span>
-<span class="fc" id="L21">        prev = new Cordinate[map.getHeight()][map.getWidth()];</span>
-<span class="fc" id="L22">        que = new CordinateQue();</span>
-<span class="fc" id="L23">        Cordinate start = new Cordinate(startLinenumber, startColum);</span>
-<span class="fc" id="L24">        que.add(start);</span>
-<span class="fc" id="L25">        Cordinate current = new Cordinate(0, 0);</span>
-<span class="fc bfc" id="L26" title="All 2 branches covered.">        while(!que.isEmpty()) {</span>
-<span class="fc" id="L27">            current = que.poll();</span>
-<span class="fc" id="L28">            int line = current.getLineNumber();</span>
-<span class="fc" id="L29">            int colum = current.getColum();</span>
+<span class="fc" id="L21">        this.map = map;</span>
+<span class="fc" id="L22">        distance = new double[map.getHeight()][map.getWidth()];</span>
+<span class="fc" id="L23">        visited = new boolean[map.getHeight()][map.getWidth()];</span>
+<span class="fc" id="L24">        prev = new Cordinate[map.getHeight()][map.getWidth()];</span>
+<span class="fc" id="L25">        que = new CordinateQue();</span>
+<span class="fc" id="L26">        Cordinate start = new Cordinate(startLinenumber, startColum);</span>
+<span class="fc" id="L27">        que.add(start);</span>
+<span class="fc" id="L28">        Cordinate current = new Cordinate(0, 0);</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        while(!que.isEmpty()) {</span>
+<span class="fc" id="L30">            current = que.poll();</span>
+<span class="fc" id="L31">            int line = current.getLineNumber();</span>
+<span class="fc" id="L32">            int colum = current.getColum();</span>
             
-<span class="fc bfc" id="L31" title="All 4 branches covered.">            if(line == goalLineNumber &amp;&amp; colum == goalColum) {</span>
+<span class="fc bfc" id="L34" title="All 4 branches covered.">            if(line == goalLineNumber &amp;&amp; colum == goalColum) {</span>
                 //path found
-<span class="fc" id="L33">                return distance[line][colum];</span>
+<span class="fc" id="L36">                return distance[line][colum];</span>
             }
 
-<span class="fc bfc" id="L36" title="All 2 branches covered.">            if(visited[line][colum]) {</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">            if(visited[line][colum]) {</span>
                 // do nothing
             } else  {
-<span class="fc" id="L39">                visited[line][colum] = true;</span>
-<span class="fc" id="L40">                checkNorth(current);</span>
-<span class="fc" id="L41">                checkSouth(current);</span>
-<span class="fc" id="L42">                checkEast(current);</span>
-<span class="fc" id="L43">                checkWest(current);</span>
+<span class="fc" id="L42">                visited[line][colum] = true;</span>
+<span class="fc" id="L43">                checkNorth(current);</span>
+<span class="fc" id="L44">                checkSouth(current);</span>
+<span class="fc" id="L45">                checkEast(current);</span>
+<span class="fc" id="L46">                checkWest(current);</span>
             }
-<span class="fc" id="L45">        }</span>
-<span class="fc" id="L46">        return -1; // no path found</span>
+<span class="fc" id="L48">        }</span>
+<span class="fc" id="L49">        return -1; // no path found</span>
     }
 
     private void checkNorth(Cordinate current) {
-<span class="fc" id="L50">        int line = current.getLineNumber();</span>
-<span class="fc" id="L51">        int colum = current.getColum();</span>
-<span class="fc bfc" id="L52" title="All 2 branches covered.">        if(map.terrainPassableAt(line-1, colum)) {</span>
-<span class="fc" id="L53">            que.add(new Cordinate(line-1,colum));</span>
-<span class="fc" id="L54">            prev[line-1][colum] = current;</span>
-<span class="fc" id="L55">            distance[line-1][colum] = distance[line][colum] +1;</span>
+<span class="fc" id="L53">        int line = current.getLineNumber();</span>
+<span class="fc" id="L54">        int colum = current.getColum();</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        if(map.terrainPassableAt(line-1, colum)) {</span>
+<span class="fc" id="L56">            que.add(new Cordinate(line-1,colum));</span>
+<span class="fc" id="L57">            prev[line-1][colum] = current;</span>
+<span class="fc" id="L58">            distance[line-1][colum] = distance[line][colum] +1;</span>
         }
-<span class="fc" id="L57">    }</span>
+<span class="fc" id="L60">    }</span>
 
     private void checkSouth(Cordinate current) {
-<span class="fc" id="L60">        int line = current.getLineNumber();</span>
-<span class="fc" id="L61">        int colum = current.getColum();</span>
-<span class="fc bfc" id="L62" title="All 2 branches covered.">        if(map.terrainPassableAt(line+1, colum)) {</span>
-<span class="fc" id="L63">            que.add(new Cordinate(line+1,colum));</span>
-<span class="fc" id="L64">            prev[line+1][colum] = current;</span>
-<span class="fc" id="L65">            distance[line+1][colum] = distance[line][colum] +1;</span>
+<span class="fc" id="L63">        int line = current.getLineNumber();</span>
+<span class="fc" id="L64">        int colum = current.getColum();</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">        if(map.terrainPassableAt(line+1, colum)) {</span>
+<span class="fc" id="L66">            que.add(new Cordinate(line+1,colum));</span>
+<span class="fc" id="L67">            prev[line+1][colum] = current;</span>
+<span class="fc" id="L68">            distance[line+1][colum] = distance[line][colum] +1;</span>
         }
-<span class="fc" id="L67">    }</span>
+<span class="fc" id="L70">    }</span>
 
     private void checkEast(Cordinate current) {
-<span class="fc" id="L70">        int line = current.getLineNumber();</span>
-<span class="fc" id="L71">        int colum = current.getColum();</span>
-<span class="fc bfc" id="L72" title="All 2 branches covered.">        if(map.terrainPassableAt(line, colum+1)) {</span>
-<span class="fc" id="L73">            que.add(new Cordinate(line,colum+1));</span>
-<span class="fc" id="L74">            prev[line][colum+1] = current;</span>
-<span class="fc" id="L75">            distance[line][colum+1] = distance[line][colum] +1;</span>
+<span class="fc" id="L73">        int line = current.getLineNumber();</span>
+<span class="fc" id="L74">        int colum = current.getColum();</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">        if(map.terrainPassableAt(line, colum+1)) {</span>
+<span class="fc" id="L76">            que.add(new Cordinate(line,colum+1));</span>
+<span class="fc" id="L77">            prev[line][colum+1] = current;</span>
+<span class="fc" id="L78">            distance[line][colum+1] = distance[line][colum] +1;</span>
         }
-<span class="fc" id="L77">    }</span>
+<span class="fc" id="L80">    }</span>
 
     private void checkWest(Cordinate current) {
-<span class="fc" id="L80">        int line = current.getLineNumber();</span>
-<span class="fc" id="L81">        int colum = current.getColum();</span>
-<span class="fc bfc" id="L82" title="All 2 branches covered.">        if(map.terrainPassableAt(line, colum-1)) {</span>
-<span class="fc" id="L83">            que.add(new Cordinate(line,colum-1));</span>
-<span class="fc" id="L84">            prev[line][colum-1] = current;</span>
-<span class="fc" id="L85">            distance[line][colum-1] = distance[line][colum] +1;</span>
+<span class="fc" id="L83">        int line = current.getLineNumber();</span>
+<span class="fc" id="L84">        int colum = current.getColum();</span>
+<span class="fc bfc" id="L85" title="All 2 branches covered.">        if(map.terrainPassableAt(line, colum-1)) {</span>
+<span class="fc" id="L86">            que.add(new Cordinate(line,colum-1));</span>
+<span class="fc" id="L87">            prev[line][colum-1] = current;</span>
+<span class="fc" id="L88">            distance[line][colum-1] = distance[line][colum] +1;</span>
         }
-<span class="fc" id="L87">    }</span>
+<span class="fc" id="L90">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

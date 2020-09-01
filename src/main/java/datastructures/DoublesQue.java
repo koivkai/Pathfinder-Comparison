@@ -1,9 +1,6 @@
 package datastructures;
-
-import java.util.Arrays;
-
 /**
- * A datastructure(que) used by comparison engine
+ * A datastructure(que) used by comparison engine and PathMap.
  */
 public class DoublesQue {
     int size;
@@ -79,13 +76,4 @@ public class DoublesQue {
         this.tail = pos;
     }
 
-    @Override
-    public String toString() {
-        return "MyDeque " + Arrays.toString(array);
-    }
-
-    
-    
-
-    
 }

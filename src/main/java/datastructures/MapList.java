@@ -13,6 +13,12 @@ public class MapList {
         this.size = 10;
     }
 
+    public MapList(int size) {
+        this.list = new PathMap[size];
+        this.nextPos = 0;
+        this.size = size;
+    }
+
     public void add(PathMap map) {
         if(nextPos == size) {
             grow();

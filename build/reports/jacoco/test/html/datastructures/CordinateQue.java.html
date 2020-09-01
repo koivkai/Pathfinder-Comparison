@@ -2,6 +2,9 @@
 
 import java.util.Arrays;
 
+/**
+ * A datastructure(min-heap) used by A* and djikstra
+ */
 public class CordinateQue {
     int size;
     int used;
@@ -9,81 +12,81 @@ public class CordinateQue {
     int head;
     int tail;
 
-<span class="fc" id="L12">    public CordinateQue() {</span>
-<span class="fc" id="L13">        this.size = 50;</span>
-<span class="fc" id="L14">        this.array = new Cordinate[50];</span>
-<span class="fc" id="L15">        this.used = 0;</span>
-<span class="fc" id="L16">        this.head = 0;</span>
-<span class="fc" id="L17">        this.tail = 0;</span>
-<span class="fc" id="L18">    }</span>
+<span class="fc" id="L15">    public CordinateQue() {</span>
+<span class="fc" id="L16">        this.size = 50;</span>
+<span class="fc" id="L17">        this.array = new Cordinate[50];</span>
+<span class="fc" id="L18">        this.used = 0;</span>
+<span class="fc" id="L19">        this.head = 0;</span>
+<span class="fc" id="L20">        this.tail = 0;</span>
+<span class="fc" id="L21">    }</span>
 
-<span class="fc" id="L20">    public CordinateQue(int size) {</span>
-<span class="fc" id="L21">        this.size = size;</span>
-<span class="fc" id="L22">        this.array = new Cordinate[size];</span>
-<span class="fc" id="L23">        this.used = 0;</span>
-<span class="fc" id="L24">        this.head = 0;</span>
-<span class="fc" id="L25">        this.tail = 0;</span>
-<span class="fc" id="L26">    }</span>
+<span class="fc" id="L23">    public CordinateQue(int size) {</span>
+<span class="fc" id="L24">        this.size = size;</span>
+<span class="fc" id="L25">        this.array = new Cordinate[size];</span>
+<span class="fc" id="L26">        this.used = 0;</span>
+<span class="fc" id="L27">        this.head = 0;</span>
+<span class="fc" id="L28">        this.tail = 0;</span>
+<span class="fc" id="L29">    }</span>
 
     public void add(Cordinate c) {
-<span class="fc bfc" id="L29" title="All 2 branches covered.">        if (used &lt; size) {</span>
-<span class="fc" id="L30">            array[tail] = c;</span>
-<span class="fc" id="L31">            tail++;</span>
-<span class="fc" id="L32">            used++;</span>
-<span class="fc bfc" id="L33" title="All 2 branches covered.">            if (tail == size) {</span>
-<span class="fc" id="L34">                tail = 0;</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">        if (used &lt; size) {</span>
+<span class="fc" id="L33">            array[tail] = c;</span>
+<span class="fc" id="L34">            tail++;</span>
+<span class="fc" id="L35">            used++;</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">            if (tail == size) {</span>
+<span class="fc" id="L37">                tail = 0;</span>
             }
         } else {
-<span class="fc" id="L37">            grow();</span>
-<span class="fc" id="L38">            add(c);</span>
+<span class="fc" id="L40">            grow();</span>
+<span class="fc" id="L41">            add(c);</span>
         }
-<span class="fc" id="L40">    }</span>
+<span class="fc" id="L43">    }</span>
 
     public Cordinate poll() {
-<span class="fc" id="L43">        Cordinate c = array[head];</span>
-<span class="fc" id="L44">        head++;</span>
-<span class="fc" id="L45">        used--;</span>
-<span class="fc bfc" id="L46" title="All 2 branches covered.">        if (head == size) {</span>
-<span class="fc" id="L47">            head = 0;</span>
+<span class="fc" id="L46">        Cordinate c = array[head];</span>
+<span class="fc" id="L47">        head++;</span>
+<span class="fc" id="L48">        used--;</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        if (head == size) {</span>
+<span class="fc" id="L50">            head = 0;</span>
         }
 
-<span class="fc" id="L50">        return c;</span>
+<span class="fc" id="L53">        return c;</span>
     }
 
     public boolean isEmpty() {
-<span class="fc bfc" id="L54" title="All 2 branches covered.">        return this.used == 0;</span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">        return this.used == 0;</span>
     }
 
     private void grow() {
-<span class="fc" id="L58">        Cordinate[] newArray = new Cordinate[size * 2];</span>
-<span class="fc" id="L59">        int pos = 0;</span>
-<span class="fc" id="L60">        int i = head;</span>
-<span class="fc bfc" id="L61" title="All 2 branches covered.">        while (i &lt; size) {</span>
-<span class="fc" id="L62">            newArray[pos] = array[i];</span>
-<span class="fc" id="L63">            pos++;</span>
-<span class="fc" id="L64">            i++;</span>
+<span class="fc" id="L61">        Cordinate[] newArray = new Cordinate[size * 2];</span>
+<span class="fc" id="L62">        int pos = 0;</span>
+<span class="fc" id="L63">        int i = head;</span>
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        while (i &lt; size) {</span>
+<span class="fc" id="L65">            newArray[pos] = array[i];</span>
+<span class="fc" id="L66">            pos++;</span>
+<span class="fc" id="L67">            i++;</span>
         }
-<span class="fc" id="L66">        int j = 0;</span>
-<span class="fc bfc" id="L67" title="All 2 branches covered.">        while (j &lt; tail) {</span>
-<span class="fc" id="L68">            newArray[pos] = array[j];</span>
-<span class="fc" id="L69">            j++;</span>
-<span class="fc" id="L70">            pos++;</span>
+<span class="fc" id="L69">        int j = 0;</span>
+<span class="fc bfc" id="L70" title="All 2 branches covered.">        while (j &lt; tail) {</span>
+<span class="fc" id="L71">            newArray[pos] = array[j];</span>
+<span class="fc" id="L72">            j++;</span>
+<span class="fc" id="L73">            pos++;</span>
         }
 
-<span class="fc" id="L73">        this.array = newArray;</span>
-<span class="fc" id="L74">        this.size = size * 2;</span>
-<span class="fc" id="L75">        this.head = 0;</span>
-<span class="fc" id="L76">        this.tail = pos;</span>
-<span class="fc" id="L77">    }</span>
+<span class="fc" id="L76">        this.array = newArray;</span>
+<span class="fc" id="L77">        this.size = size * 2;</span>
+<span class="fc" id="L78">        this.head = 0;</span>
+<span class="fc" id="L79">        this.tail = pos;</span>
+<span class="fc" id="L80">    }</span>
 
     // returns number of cordinates remaining in que
     public int size() {
-<span class="nc" id="L81">        return used;</span>
+<span class="nc" id="L84">        return used;</span>
     }
 
     @Override
     public String toString() {
-<span class="fc" id="L86">        return &quot;MyDeque &quot; + Arrays.toString(this.array);</span>
+<span class="fc" id="L89">        return &quot;MyDeque &quot; + Arrays.toString(this.array);</span>
     }
 
 }

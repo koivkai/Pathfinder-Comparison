@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="logicTest.DijkstraTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2020-09-01T15:17:35" hostname="Kaius-MBP" time="0.004">
+<testsuite name="logicTest.DijkstraTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2020-09-01T16:13:29" hostname="Kaius-MBP" time="0.004">
   <properties/>
-  <testcase name="diagonalLinesReverse" classname="logicTest.DijkstraTest" time="0.0"/>
+  <testcase name="diagonalLinesReverse" classname="logicTest.DijkstraTest" time="0.001"/>
   <testcase name="findsPathTreeline" classname="logicTest.DijkstraTest" time="0.0"/>
-  <testcase name="diagonalLines" classname="logicTest.DijkstraTest" time="0.0"/>
+  <testcase name="diagonalLines" classname="logicTest.DijkstraTest" time="0.001"/>
   <testcase name="findsPathThreeTreelines" classname="logicTest.DijkstraTest" time="0.0"/>
   <testcase name="asd" classname="logicTest.DijkstraTest" time="0.0"/>
-  <testcase name="maze" classname="logicTest.DijkstraTest" time="0.001"/>
+  <testcase name="maze" classname="logicTest.DijkstraTest" time="0.0"/>
   <testcase name="findsPathNoObstacles" classname="logicTest.DijkstraTest" time="0.0"/>
   <testcase name="mazeReverse" classname="logicTest.DijkstraTest" time="0.001"/>
   <testcase name="noPathExits" classname="logicTest.DijkstraTest" time="0.0"/>
