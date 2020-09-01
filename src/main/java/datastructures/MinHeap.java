@@ -1,5 +1,8 @@
 package datastructures;
 
+/**
+ * A datastructure(minheap). Currently unused.
+ */
 public class MinHeap {
     Cordinate[]heap;
     int lastPos;

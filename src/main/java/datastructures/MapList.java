@@ -1,5 +1,7 @@
 package datastructures;
-
+/**
+ * A datastructure(list) used by comparison engine
+ */
 public class MapList {
     PathMap[] list;
     int nextPos;

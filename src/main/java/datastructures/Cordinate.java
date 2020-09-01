@@ -1,5 +1,8 @@
 package datastructures;
 
+/**
+ * A datastructure for a cordinate in a grid, which optionally contains third value such a fscore used in the A* algorithm
+ */
 public class Cordinate implements Comparable<Cordinate>{
     int lineNumber;
     int colum;

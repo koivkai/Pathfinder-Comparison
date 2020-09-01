@@ -1,5 +1,8 @@
 package datastructures;
 
+/**
+ * A datastructure(list) used by JPS
+ */
 public class CordinateList {
     Cordinate[] list;
     int nextPos;

@@ -1,5 +1,8 @@
 package datastructures;
 
+/**
+ * A datastructure for representing map as a uniform cost grid.
+ */
 public class PathMap {
 
     char[][] map;

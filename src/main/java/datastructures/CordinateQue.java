@@ -2,6 +2,9 @@ package datastructures;
 
 import java.util.Arrays;
 
+/**
+ * A datastructure(min-heap) used by A* and djikstra
+ */
 public class CordinateQue {
     int size;
     int used;

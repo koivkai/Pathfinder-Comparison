@@ -4,6 +4,9 @@ import java.io.File;
 import java.util.Scanner;
 import datastructures.PathMap;
 
+/**
+ * Reads PathMaps from .map files.
+ */
 public class MapReader {
 
     public MapReader() {

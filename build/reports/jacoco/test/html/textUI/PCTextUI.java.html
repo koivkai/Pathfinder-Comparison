@@ -43,79 +43,98 @@ public class PCTextUI {
 <span class="nc" id="L43">    }</span>
 
     private void usePreset() {
-<span class="nc" id="L46">        String mapPath1 = &quot;/Users/Kaius/TiraKartat/dao-map/brc203d.map&quot;;</span>
-<span class="nc" id="L47">        String scenPath1 = &quot;/Users/Kaius/TiraScenaariot/dao-scen/brc203d.map.scen&quot;;</span>
-<span class="nc" id="L48">        PathMap map1 = mapReader.Read(mapPath1);</span>
-<span class="nc" id="L49">        scenFileReader.read(scenPath1, map1);</span>
-<span class="nc" id="L50">        maps.add(map1);</span>
+        /*
+        String mapPath1 = &quot;/Users/Kaius/TiraKartat/dao-map/brc203d.map&quot;;
+        String scenPath1 = &quot;/Users/Kaius/TiraScenaariot/dao-scen/brc203d.map.scen&quot;;
+        PathMap map1 = mapReader.Read(mapPath1);
+        scenFileReader.read(scenPath1, map1);
+        maps.add(map1);
 
-        //String mapPath2 = &quot;/Users/Kaius/TiraKartat/maze512-1-0.map&quot;;
-        //String scenPath2 = &quot;/Users/Kaius/TiraScenaariot/maze512-1-0.map.scen&quot;;
-        //PathMap map2 = mapReader.Read(mapPath2);
-        //scenFileReader.read(scenPath2, map2);
-        //maps.add(map2);
+        String mapPath2 = &quot;/Users/Kaius/TiraKartat/maze512-1-0.map&quot;;
+        String scenPath2 = &quot;/Users/Kaius/TiraScenaariot/maze512-1-0.map.scen&quot;;
+        PathMap map2 = mapReader.Read(mapPath2);
+        scenFileReader.read(scenPath2, map2);
+        maps.add(map2);
 
-<span class="nc" id="L58">        String mapPath3 = &quot;/Users/Kaius/TiraKartat/Berlin_0_512.map&quot;;</span>
-<span class="nc" id="L59">        String scenPath3 = &quot;/Users/Kaius/TiraScenaariot/Berlin_0_512.map.scen&quot;;</span>
-<span class="nc" id="L60">        PathMap map3 = mapReader.Read(mapPath3);</span>
-<span class="nc" id="L61">        scenFileReader.read(scenPath3, map3);</span>
-<span class="nc" id="L62">        maps.add(map3);</span>
+        String mapPath3 = &quot;/Users/Kaius/TiraKartat/Berlin_0_512.map&quot;;
+        String scenPath3 = &quot;/Users/Kaius/TiraScenaariot/Berlin_0_512.map.scen&quot;;
+        PathMap map3 = mapReader.Read(mapPath3);
+        scenFileReader.read(scenPath3, map3);
+        maps.add(map3);
 
-<span class="nc" id="L64">        String mapPath4 = &quot;/Users/Kaius/TiraKartat/dao-map/den005d.map&quot;;</span>
-<span class="nc" id="L65">        String scenPath4 = &quot;/Users/Kaius/TiraScenaariot/dao-scen/den005d.map.scen&quot;;</span>
-<span class="nc" id="L66">        PathMap map4 = mapReader.Read(mapPath4);</span>
-<span class="nc" id="L67">        scenFileReader.read(scenPath4, map4);</span>
-<span class="nc" id="L68">        maps.add(map4);</span>
-<span class="nc" id="L69">    }</span>
+        String mapPath4 = &quot;/Users/Kaius/TiraKartat/dao-map/den005d.map&quot;;
+        String scenPath4 = &quot;/Users/Kaius/TiraScenaariot/dao-scen/den005d.map.scen&quot;;
+        PathMap map4 = mapReader.Read(mapPath4);
+        scenFileReader.read(scenPath4, map4);
+        maps.add(map4);
+        
+        String mapPath5 = &quot;/Users/Kaius/TiraKartat/Berlin_0_1024.map&quot;;
+        String scenPath5 = &quot;/Users/Kaius/TiraScenaariot/Berlin_0_1024.map.scen&quot;;
+        PathMap map5 = mapReader.Read(mapPath5);
+        scenFileReader.read(scenPath5, map5);
+        maps.add(map5);
+        
+        String mapPath6 = &quot;/Users/Kaius/TiraKartat/Berlin_0_256.map&quot;;
+        String scenPath6 = &quot;/Users/Kaius/TiraScenaariot/Berlin_0_256.map.scen&quot;;
+        PathMap map6 = mapReader.Read(mapPath6);
+        scenFileReader.read(scenPath6, map6);
+        maps.add(map6);
+        */
+<span class="nc" id="L83">        String mapPath7 = &quot;/Users/Kaius/TiraKartat/dao-map/den005d.map&quot;;</span>
+<span class="nc" id="L84">        String scenPath7 = &quot;/Users/Kaius/TiraScenaariot/dao-scen/den005d.map.scen&quot;;</span>
+<span class="nc" id="L85">        PathMap map7 = mapReader.Read(mapPath7);</span>
+<span class="nc" id="L86">        scenFileReader.read(scenPath7, map7);</span>
+<span class="nc" id="L87">        maps.add(map7);</span>
+<span class="nc" id="L88">    }</span>
 
     private int getUserInputInt(String prompt) {
-<span class="nc" id="L72">        System.out.println(prompt);</span>
-<span class="nc" id="L73">        int input = 0;</span>
-<span class="nc" id="L74">            String line = scanner.nextLine();</span>
+<span class="nc" id="L91">        System.out.println(prompt);</span>
+<span class="nc" id="L92">        int input = 0;</span>
+<span class="nc" id="L93">            String line = scanner.nextLine();</span>
             try{
-<span class="nc" id="L76">                input = Integer.parseInt(line);</span>
-<span class="nc" id="L77">            } catch (Exception e){</span>
-<span class="nc" id="L78">                System.out.println(e);</span>
-<span class="nc" id="L79">            }</span>
-<span class="nc" id="L80">        return input;</span>
+<span class="nc" id="L95">                input = Integer.parseInt(line);</span>
+<span class="nc" id="L96">            } catch (Exception e){</span>
+<span class="nc" id="L97">                System.out.println(e);</span>
+<span class="nc" id="L98">            }</span>
+<span class="nc" id="L99">        return input;</span>
     }
 
     private String getUserInputString(String prompt) {
-<span class="nc" id="L84">        System.out.println(prompt);</span>
-<span class="nc" id="L85">        String line = scanner.nextLine();</span>
-<span class="nc" id="L86">        return line;</span>
+<span class="nc" id="L103">        System.out.println(prompt);</span>
+<span class="nc" id="L104">        String line = scanner.nextLine();</span>
+<span class="nc" id="L105">        return line;</span>
     }
 
     private void getMapFromUser() {
-<span class="nc" id="L90">        String path = getUserInputString(&quot;Please give absolute filepath for .map file&quot;);</span>
+<span class="nc" id="L109">        String path = getUserInputString(&quot;Please give absolute filepath for .map file&quot;);</span>
         //path= &quot;/Users/Kaius/TiraKartat/da2-map/ca_cave.map&quot;;
-<span class="nc" id="L92">        path= &quot;/Users/Kaius/TiraKartat/dao-map/brc203d.map&quot;;</span>
+<span class="nc" id="L111">        path= &quot;/Users/Kaius/TiraKartat/dao-map/brc203d.map&quot;;</span>
 
-<span class="nc" id="L94">        System.out.println(&quot;reading &quot;+path);</span>
-<span class="nc" id="L95">        PathMap map = mapReader.Read(path);</span>
+<span class="nc" id="L113">        System.out.println(&quot;reading &quot;+path);</span>
+<span class="nc" id="L114">        PathMap map = mapReader.Read(path);</span>
         //map.print();
-<span class="nc" id="L97">        map.setName(path);</span>
+<span class="nc" id="L116">        map.setName(path);</span>
 
-<span class="nc" id="L99">        String anwser = getUserInputString(&quot;Get paths from scen file? y/n&quot;);</span>
-<span class="nc bnc" id="L100" title="All 2 branches missed.">            if(anwser.equals(&quot;y&quot;)) {</span>
-<span class="nc" id="L101">                getScenFileFromUser(map);</span>
+<span class="nc" id="L118">        String anwser = getUserInputString(&quot;Get paths from scen file? y/n&quot;);</span>
+<span class="nc bnc" id="L119" title="All 2 branches missed.">            if(anwser.equals(&quot;y&quot;)) {</span>
+<span class="nc" id="L120">                getScenFileFromUser(map);</span>
             } else {
-<span class="nc" id="L103">                getPathsForMap(map);</span>
+<span class="nc" id="L122">                getPathsForMap(map);</span>
             }
         
 
         
-<span class="nc" id="L108">        maps.add(map);</span>
-<span class="nc" id="L109">    }</span>
+<span class="nc" id="L127">        maps.add(map);</span>
+<span class="nc" id="L128">    }</span>
 
     private void getScenFileFromUser(PathMap map) {
-<span class="nc" id="L112">        String path = getUserInputString(&quot;Please give absolute filepath for .scen file&quot;);</span>
-<span class="nc" id="L113">        path= &quot;/Users/Kaius/TiraScenaariot/dao-scen/brc203d.map.scen&quot;;</span>
-<span class="nc" id="L114">        scenFileReader.read(path, map);</span>
-<span class="nc" id="L115">    }</span>
+<span class="nc" id="L131">        String path = getUserInputString(&quot;Please give absolute filepath for .scen file&quot;);</span>
+<span class="nc" id="L132">        path= &quot;/Users/Kaius/TiraScenaariot/dao-scen/brc203d.map.scen&quot;;</span>
+<span class="nc" id="L133">        scenFileReader.read(path, map);</span>
+<span class="nc" id="L134">    }</span>
 
     private void getPathsForMap(PathMap map) {
-<span class="nc" id="L118">        System.out.println(&quot;Give cordinates for paths on this map, input emtpy line as start line number to finish inputing lines&quot;);</span>
+<span class="nc" id="L137">        System.out.println(&quot;Give cordinates for paths on this map, input emtpy line as start line number to finish inputing lines&quot;);</span>
         while(true) {
             int startLineNumber;
             int startColum;
@@ -123,25 +142,25 @@ public class PCTextUI {
             int goalColum;
             int optimalLenght;
 
-<span class="nc" id="L126">            System.out.println(&quot;Give start line number&quot;);</span>
-<span class="nc" id="L127">            String startLine = scanner.nextLine();</span>
-<span class="nc bnc" id="L128" title="All 2 branches missed.">            if(startLine.isEmpty()) {</span>
-<span class="nc" id="L129">                break;</span>
+<span class="nc" id="L145">            System.out.println(&quot;Give start line number&quot;);</span>
+<span class="nc" id="L146">            String startLine = scanner.nextLine();</span>
+<span class="nc bnc" id="L147" title="All 2 branches missed.">            if(startLine.isEmpty()) {</span>
+<span class="nc" id="L148">                break;</span>
             }
             try{
-<span class="nc" id="L132">                startLineNumber = Integer.parseInt(startLine);</span>
-<span class="nc" id="L133">            } catch (Exception e){</span>
-<span class="nc" id="L134">                System.out.println(e);</span>
-<span class="nc" id="L135">                continue;</span>
-<span class="nc" id="L136">            }</span>
+<span class="nc" id="L151">                startLineNumber = Integer.parseInt(startLine);</span>
+<span class="nc" id="L152">            } catch (Exception e){</span>
+<span class="nc" id="L153">                System.out.println(e);</span>
+<span class="nc" id="L154">                continue;</span>
+<span class="nc" id="L155">            }</span>
 
-<span class="nc" id="L138">            startColum = getUserInputInt(&quot;Give start colum number&quot;);</span>
-<span class="nc" id="L139">            goalLineNumber = getUserInputInt(&quot;Give goal line number&quot;);</span>
-<span class="nc" id="L140">            goalColum = getUserInputInt(&quot;Give goal colum number&quot;);</span>
-<span class="nc" id="L141">            optimalLenght = getUserInputInt(&quot;Optimal lenght for this path&quot;);</span>
-<span class="nc" id="L142">            map.addPath(new Cordinate(startLineNumber, startColum), new Cordinate(goalLineNumber, goalColum), optimalLenght);</span>
-<span class="nc" id="L143">        }</span>
-<span class="nc" id="L144">    }</span>
+<span class="nc" id="L157">            startColum = getUserInputInt(&quot;Give start colum number&quot;);</span>
+<span class="nc" id="L158">            goalLineNumber = getUserInputInt(&quot;Give goal line number&quot;);</span>
+<span class="nc" id="L159">            goalColum = getUserInputInt(&quot;Give goal colum number&quot;);</span>
+<span class="nc" id="L160">            optimalLenght = getUserInputInt(&quot;Optimal lenght for this path&quot;);</span>
+<span class="nc" id="L161">            map.addPath(new Cordinate(startLineNumber, startColum), new Cordinate(goalLineNumber, goalColum), optimalLenght);</span>
+<span class="nc" id="L162">        }</span>
+<span class="nc" id="L163">    }</span>
     
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

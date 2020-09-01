@@ -4,6 +4,9 @@ import datastructures.Cordinate;
 import datastructures.CordinateQue;
 import datastructures.PathMap;
 
+/**
+ * Implementation of the Breadth-first-search pathfinding algorithm in a uniform grid.
+ */
 public class BFS {
     CordinateQue que;
     double[][]distance;

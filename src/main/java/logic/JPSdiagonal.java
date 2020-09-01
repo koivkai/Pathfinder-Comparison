@@ -5,6 +5,10 @@ import datastructures.CordinateList;
 import datastructures.MinHeap;
 import datastructures.PathMap;
 
+/**
+ * Implementation of the Jump Point Search pathfinding algorithm in a uniform grid.
+ * This version allows movement in 8 directions.(i.e. orthagonal and diagonal movement)
+ */
 public class JPSdiagonal {
     int goalLine;
     int goalColum;

@@ -43,17 +43,18 @@ public class PCTextUI {
     }
 
     private void usePreset() {
+        /*
         String mapPath1 = "/Users/Kaius/TiraKartat/dao-map/brc203d.map";
         String scenPath1 = "/Users/Kaius/TiraScenaariot/dao-scen/brc203d.map.scen";
         PathMap map1 = mapReader.Read(mapPath1);
         scenFileReader.read(scenPath1, map1);
         maps.add(map1);
 
-        //String mapPath2 = "/Users/Kaius/TiraKartat/maze512-1-0.map";
-        //String scenPath2 = "/Users/Kaius/TiraScenaariot/maze512-1-0.map.scen";
-        //PathMap map2 = mapReader.Read(mapPath2);
-        //scenFileReader.read(scenPath2, map2);
-        //maps.add(map2);
+        String mapPath2 = "/Users/Kaius/TiraKartat/maze512-1-0.map";
+        String scenPath2 = "/Users/Kaius/TiraScenaariot/maze512-1-0.map.scen";
+        PathMap map2 = mapReader.Read(mapPath2);
+        scenFileReader.read(scenPath2, map2);
+        maps.add(map2);
 
         String mapPath3 = "/Users/Kaius/TiraKartat/Berlin_0_512.map";
         String scenPath3 = "/Users/Kaius/TiraScenaariot/Berlin_0_512.map.scen";
@@ -66,6 +67,24 @@ public class PCTextUI {
         PathMap map4 = mapReader.Read(mapPath4);
         scenFileReader.read(scenPath4, map4);
         maps.add(map4);
+        
+        String mapPath5 = "/Users/Kaius/TiraKartat/Berlin_0_1024.map";
+        String scenPath5 = "/Users/Kaius/TiraScenaariot/Berlin_0_1024.map.scen";
+        PathMap map5 = mapReader.Read(mapPath5);
+        scenFileReader.read(scenPath5, map5);
+        maps.add(map5);
+        
+        String mapPath6 = "/Users/Kaius/TiraKartat/Berlin_0_256.map";
+        String scenPath6 = "/Users/Kaius/TiraScenaariot/Berlin_0_256.map.scen";
+        PathMap map6 = mapReader.Read(mapPath6);
+        scenFileReader.read(scenPath6, map6);
+        maps.add(map6);
+        */
+        String mapPath7 = "/Users/Kaius/TiraKartat/dao-map/den005d.map";
+        String scenPath7 = "/Users/Kaius/TiraScenaariot/dao-scen/den005d.map.scen";
+        PathMap map7 = mapReader.Read(mapPath7);
+        scenFileReader.read(scenPath7, map7);
+        maps.add(map7);
     }
 
     private int getUserInputInt(String prompt) {

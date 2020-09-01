@@ -5,6 +5,9 @@ import java.util.Scanner;
 import datastructures.Cordinate;
 import datastructures.PathMap;
 
+/**
+ * Reads pathfinding scenarious from .scen files.
+ */
 public class ScenFileReader {
 
     public ScenFileReader() {

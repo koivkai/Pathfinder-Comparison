@@ -2,7 +2,9 @@ package logic;
 
 import datastructures.Cordinate;
 import datastructures.PathMap;
-
+/**
+ * A utily class containing commonly needed helper functions
+ */
 public class Helpers {
     public final double twoSqrt = Math.sqrt(2);
 

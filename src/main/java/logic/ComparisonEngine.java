@@ -72,7 +72,7 @@ public class ComparisonEngine {
                 int goalLineNumber = goal.getLineNumber();
                 int goalColum = goal.getColum();
                 double optimalLenght = optimalLenghtQue.poll();
-                 System.out.println("Path from" + start + " to " + goal + " optimal lenght " +optimalLenght);
+                 //System.out.println("Path from" + start + " to " + goal + " optimal lenght " +optimalLenght);
 
 
                 // Dijkstra
@@ -81,7 +81,7 @@ public class ComparisonEngine {
                 long djikstraEndTime = System.nanoTime();
                 long djikstraPathTime = djikstraEndTime - dijkstraStartTime;
                 dijktraMapTotal += djikstraPathTime;
-                 System.out.println("Dijsktra " +convertNStoSessibleUnitOfTime(djikstraPathTime));
+                 //System.out.println("Dijsktra " +convertNStoSessibleUnitOfTime(djikstraPathTime));
 
                 // A*
                 long astarStartTime = System.nanoTime();
@@ -89,7 +89,7 @@ public class ComparisonEngine {
                 long astartEndTime = System.nanoTime();
                 long astartPathTime = astartEndTime - astarStartTime;
                 astarMapTotal += astartPathTime;
-                 System.out.println("A* " +convertNStoSessibleUnitOfTime(astartPathTime));
+                 //System.out.println("A* " +convertNStoSessibleUnitOfTime(astartPathTime));
 
                 // JPS
                 long jpsStartTime = System.nanoTime();
@@ -97,7 +97,7 @@ public class ComparisonEngine {
                 long jpsEndTime = System.nanoTime();
                 long jpsPathTime = jpsEndTime - jpsStartTime;
                 jpsMapTotal += jpsPathTime;
-                 System.out.println("JPS " +convertNStoSessibleUnitOfTime(jpsPathTime));
+                 //System.out.println("JPS " +convertNStoSessibleUnitOfTime(jpsPathTime));
 
                 
                 if(allAreAboutTheSame(dijkstraDistance, astartDistance, jpsDistance, optimalLenght)) {
@@ -112,6 +112,7 @@ public class ComparisonEngine {
             }
 
         if(numberOfPathsForThisMap > 1) {
+            System.out.println(map.getName());
             System.out.println("Total time spend on this map by Djikstra was "+ convertNStoSessibleUnitOfTime(dijktraMapTotal) + ", avg " + convertNStoSessibleUnitOfTime((dijktraMapTotal / numberOfPathsForThisMap)));
             System.out.println("Total time spend on this map by A* was "+ convertNStoSessibleUnitOfTime(astarMapTotal) + ", avg " + convertNStoSessibleUnitOfTime((astarMapTotal / numberOfPathsForThisMap)));
             System.out.println("Total time spend on this map by JPS was "+ convertNStoSessibleUnitOfTime(jpsMapTotal) + ", avg " + convertNStoSessibleUnitOfTime((jpsMapTotal / numberOfPathsForThisMap)));

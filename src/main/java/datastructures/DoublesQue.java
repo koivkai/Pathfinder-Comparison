@@ -2,6 +2,9 @@ package datastructures;
 
 import java.util.Arrays;
 
+/**
+ * A datastructure(que) used by comparison engine
+ */
 public class DoublesQue {
     int size;
     int used;

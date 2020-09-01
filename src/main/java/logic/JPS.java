@@ -5,6 +5,10 @@ import datastructures.CordinateList;
 import datastructures.MinHeap;
 import datastructures.PathMap;
 
+/**
+ * Implementation of the Jump Point Seach pathfinding algorithm in a uniform grid.
+ * This version only allows orthagonal movement
+ */
 public class JPS {
     int goalLine;
     int goalColum;

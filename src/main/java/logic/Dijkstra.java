@@ -4,6 +4,9 @@ import datastructures.Cordinate;
 import datastructures.MinHeap;
 import datastructures.PathMap;
 
+/**
+ * Implementation of Djikstra's algorithm in a uniform grid.
+ */
 public class Dijkstra {
     int goalLine;
     int goalColum;
