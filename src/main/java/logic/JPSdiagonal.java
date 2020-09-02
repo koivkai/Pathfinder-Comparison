@@ -109,239 +109,291 @@ public class JPSdiagonal {
         Cordinate parent = prev[currentLine][currentColum];
         Cordinate neighbour;
         if(parent == null) { // this is the starting square
-            if(map.terrainPassableAt(currentLine+1 , currentColum)) {
-                neighbours.add(new Cordinate(currentLine +1, currentColum));
-                distance[currentLine+1][currentColum] = 1;
-                prev[currentLine+1][currentColum] = current;
-            }
-            if(map.terrainPassableAt(currentLine-1 , currentColum)) {
-                neighbours.add(new Cordinate(currentLine -1, currentColum));
-                distance[currentLine-1][currentColum] = 1;
-                prev[currentLine-1][currentColum] = current;
-            }
-            if(map.terrainPassableAt(currentLine, currentColum+1)) {
-                neighbours.add(new Cordinate(currentLine, currentColum+1));
-                distance[currentLine][currentColum+1] = 1;
-                prev[currentLine][currentColum+1] = current;
-            }
-            if(map.terrainPassableAt(currentLine, currentColum-1)) {
-                neighbours.add(new Cordinate(currentLine, currentColum-1));
-                distance[currentLine][currentColum-1] = 1;
-                prev[currentLine][currentColum-1] = current;
-            }
-            if(map.canGoNorthEast(currentLine, currentColum)) {
-                neighbours.add(new Cordinate(currentLine-1, currentColum+1));
-                distance[currentLine-1][currentColum+1] = twosqrt;
-                prev[currentLine-1][currentColum+1] = current;
-            }
-            if(map.canGoNorthWest(currentLine, currentColum)) {
-                neighbours.add(new Cordinate(currentLine-1, currentColum-1));
-                distance[currentLine-1][currentColum-1] = twosqrt;
-                prev[currentLine-1][currentColum-1] = current;
-            }
-            if(map.canGoSouthEast(currentLine, currentColum)) {
-                neighbours.add(new Cordinate(currentLine+1, currentColum+1));
-                distance[currentLine+1][currentColum+1] = twosqrt;
-                prev[currentLine+1][currentColum+1] = current;
-            }
-            if(map.canGoSouthWest(currentLine, currentColum)) {
-                neighbours.add(new Cordinate(currentLine+1, currentColum-1));
-                distance[currentLine+1][currentColum-1] = twosqrt;
-                prev[currentLine+1][currentColum-1] = current;
-            }
-            
+            startingSquareNeighbours(current, neighbours);
         } else {
             int pLine = parent.getLineNumber();
             int pColum = parent.getColum();
             int verticalDistance = currentLine - pLine;
             int horizontalDistance = currentColum - pColum;
 
-            if (verticalDistance != 0 && horizontalDistance != 0) {
-                if (verticalDistance > 0 && horizontalDistance > 0) { // going south east
-                    if(map.terrainPassableAt(currentLine+1, currentColum)) {
-                        neighbour = new Cordinate(currentLine+1, currentColum);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.canGoSouthEast(currentLine, currentColum)) {
-                        neighbour = new Cordinate(currentLine+1, currentColum+1);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.terrainPassableAt(currentLine, currentColum+1)) {
-                        neighbour = new Cordinate(currentLine, currentColum+1);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-
+            if (verticalDistance != 0 && horizontalDistance != 0) { //traveling diagonally
+                if (verticalDistance > 0 && horizontalDistance > 0) { // going south east 
+                    findNeightboursWhenGoingSouthEast(current, neighbours);
                 } else if(verticalDistance < 0 && horizontalDistance < 0) { // going northwest
-                    if(map.terrainPassableAt(currentLine, currentColum-1)) {
-                        neighbour = new Cordinate(currentLine, currentColum-1);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.canGoNorthWest(currentLine, currentColum)) {
-                        neighbour = new Cordinate(currentLine-1, currentColum-1);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.terrainPassableAt(currentLine-1, currentColum)) {
-                        neighbour = new Cordinate(currentLine-1, currentColum);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-
-                } else if(verticalDistance > 0) { // going south west
-                    if(map.terrainPassableAt(currentLine, currentColum-1)) {
-                        neighbour = new Cordinate(currentLine, currentColum-1);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.canGoSouthWest(currentLine, currentColum)) {
-                        neighbour = new Cordinate(currentLine+1, currentColum-1);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.terrainPassableAt(currentLine+1, currentColum)) {
-                        neighbour = new Cordinate(currentLine+1, currentColum);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-
-                } else { // going north east
-                    if(map.canGoNorthEast(currentLine, currentColum)) {
-                        neighbour = new Cordinate(currentLine-1, currentColum+1);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.terrainPassableAt(currentLine-1, currentColum)) {
-                        neighbour = new Cordinate(currentLine-1, currentColum);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.terrainPassableAt(currentLine, currentColum+1)) {
-                        neighbour = new Cordinate(currentLine, currentColum+1);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-
+                    findNeightboursWhenGoingNorthWest(current, neighbours);
+                } else if(verticalDistance > 0) { // going south west        
+                    findNeightboursWhenGoingSouthWest(current, neighbours);
+                } else { // going north east               
+                    findNeightboursWhenGoingNorthEast(current, neighbours);
                 }
-
             }else if (verticalDistance != 0) { 
                 if(verticalDistance > 0) { // going south
-                    if(map.terrainPassableAt(currentLine+1, currentColum)) {
-                        neighbour = new Cordinate(currentLine+1, currentColum);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.canGoSouthEast(currentLine, currentColum)) {
-                        neighbour = new Cordinate(currentLine+1, currentColum+1);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.canGoSouthWest(currentLine, currentColum)) {
-                        neighbour = new Cordinate(currentLine+1, currentColum-1);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.terrainPassableAt(currentLine, currentColum-1) && !map.canGoNorthWest(currentLine, currentColum)) {
-                        neighbour = new Cordinate(currentLine, currentColum-1);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.terrainPassableAt(currentLine, currentColum+1) && !map.canGoNorthEast(currentLine, currentColum) ) {
-                        neighbour = new Cordinate(currentLine, currentColum+1);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
+                    findNeightboursWhenGoingSouth(current, neighbours);
                 } else { // going north
-                    if(map.terrainPassableAt(currentLine-1, currentColum)) {
-                        neighbour = new Cordinate(currentLine-1, currentColum);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.canGoNorthWest(currentLine, currentColum)) {
-                        neighbour = new Cordinate(currentLine-1, currentColum-1);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.canGoNorthEast(currentLine, currentColum)) {
-                        neighbour = new Cordinate(currentLine-1, currentColum+1);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.terrainPassableAt(currentLine, currentColum-1) && !map.canGoSouthWest(currentLine, currentColum)) {
-                        neighbour = new Cordinate(currentLine, currentColum-1);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.terrainPassableAt(currentLine, currentColum+1) && !map.canGoSouthEast(currentLine, currentColum) ) {
-                        neighbour = new Cordinate(currentLine, currentColum+1);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
+                    findNeightboursWhenGoingNorth(current, neighbours);
                 }
             } else if (horizontalDistance != 0) {
-
                 if(horizontalDistance > 0) { // going east
-                    if(map.terrainPassableAt(currentLine, currentColum+1)) {
-                        neighbour = new Cordinate(currentLine, currentColum+1);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.canGoNorthEast(currentLine, currentColum)) {
-                        neighbour = new Cordinate(currentLine-1, currentColum+1);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.canGoSouthEast(currentLine, currentColum)) {
-                        neighbour = new Cordinate(currentLine+1, currentColum+1);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.terrainPassableAt(currentLine-1, currentColum) && !map.canGoNorthWest(currentLine, currentColum)) {
-                        neighbour = new Cordinate(currentLine-1, currentColum);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.terrainPassableAt(currentLine+1, currentColum) && !map.canGoSouthWest(currentLine, currentColum)) {
-                        neighbour = new Cordinate(currentLine+1, currentColum);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-
+                    findNeightboursWhenGoingEast(current, neighbours);
                 } else { // going west
-                    if(map.terrainPassableAt(currentLine, currentColum-1)) {
-                        neighbour = new Cordinate(currentLine, currentColum-1);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.canGoSouthWest(currentLine, currentColum)) {
-                        neighbour = new Cordinate(currentLine+1, currentColum-1);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.canGoNorthWest(currentLine, currentColum)) {
-                        neighbour = new Cordinate(currentLine-1, currentColum-1);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.terrainPassableAt(currentLine-1, currentColum) && !map.canGoNorthEast(currentLine, currentColum)) {
-                        neighbour = new Cordinate(currentLine-1, currentColum);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
-                    if(map.terrainPassableAt(currentLine+1, currentColum) && !map.canGoSouthEast(currentLine, currentColum)) {
-                        neighbour = new Cordinate(currentLine+1, currentColum);
-                        neighbours.add(neighbour);
-                        updateDistance(current, neighbour);
-                    }
+                    findNeightboursWhenGoingWest(current, neighbours);
                 }
             }
-
         }
-
         return neighbours;
+    }
+
+    private void startingSquareNeighbours(Cordinate current, CordinateList neighbours) {
+        int currentLine = current.getLineNumber();
+        int currentColum = current.getColum();
+        if(map.terrainPassableAt(currentLine+1 , currentColum)) {
+            neighbours.add(new Cordinate(currentLine +1, currentColum));
+            distance[currentLine+1][currentColum] = 1;
+            prev[currentLine+1][currentColum] = current;
+        }
+        if(map.terrainPassableAt(currentLine-1 , currentColum)) {
+            neighbours.add(new Cordinate(currentLine -1, currentColum));
+            distance[currentLine-1][currentColum] = 1;
+            prev[currentLine-1][currentColum] = current;
+        }
+        if(map.terrainPassableAt(currentLine, currentColum+1)) {
+            neighbours.add(new Cordinate(currentLine, currentColum+1));
+            distance[currentLine][currentColum+1] = 1;
+            prev[currentLine][currentColum+1] = current;
+        }
+        if(map.terrainPassableAt(currentLine, currentColum-1)) {
+            neighbours.add(new Cordinate(currentLine, currentColum-1));
+            distance[currentLine][currentColum-1] = 1;
+            prev[currentLine][currentColum-1] = current;
+        }
+        if(map.canGoNorthEast(currentLine, currentColum)) {
+            neighbours.add(new Cordinate(currentLine-1, currentColum+1));
+            distance[currentLine-1][currentColum+1] = twosqrt;
+            prev[currentLine-1][currentColum+1] = current;
+        }
+        if(map.canGoNorthWest(currentLine, currentColum)) {
+            neighbours.add(new Cordinate(currentLine-1, currentColum-1));
+            distance[currentLine-1][currentColum-1] = twosqrt;
+            prev[currentLine-1][currentColum-1] = current;
+        }
+        if(map.canGoSouthEast(currentLine, currentColum)) {
+            neighbours.add(new Cordinate(currentLine+1, currentColum+1));
+            distance[currentLine+1][currentColum+1] = twosqrt;
+            prev[currentLine+1][currentColum+1] = current;
+        }
+        if(map.canGoSouthWest(currentLine, currentColum)) {
+            neighbours.add(new Cordinate(currentLine+1, currentColum-1));
+            distance[currentLine+1][currentColum-1] = twosqrt;
+            prev[currentLine+1][currentColum-1] = current;
+        }
+    }
+
+    private void findNeightboursWhenGoingSouthEast(Cordinate current, CordinateList neighbours) {
+        int currentLine = current.getLineNumber();
+        int currentColum = current.getColum();
+        Cordinate neighbour;
+        if(map.terrainPassableAt(currentLine+1, currentColum)) {
+            neighbour = new Cordinate(currentLine+1, currentColum);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.canGoSouthEast(currentLine, currentColum)) {
+            neighbour = new Cordinate(currentLine+1, currentColum+1);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.terrainPassableAt(currentLine, currentColum+1)) {
+            neighbour = new Cordinate(currentLine, currentColum+1);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+    }
+
+    private void findNeightboursWhenGoingNorthWest(Cordinate current, CordinateList neighbours) {
+        int currentLine = current.getLineNumber();
+        int currentColum = current.getColum();
+        Cordinate neighbour;
+        if(map.terrainPassableAt(currentLine, currentColum-1)) {
+            neighbour = new Cordinate(currentLine, currentColum-1);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.canGoNorthWest(currentLine, currentColum)) {
+            neighbour = new Cordinate(currentLine-1, currentColum-1);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.terrainPassableAt(currentLine-1, currentColum)) {
+            neighbour = new Cordinate(currentLine-1, currentColum);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+    }
+
+    private void findNeightboursWhenGoingSouthWest(Cordinate current, CordinateList neighbours) {
+        int currentLine = current.getLineNumber();
+        int currentColum = current.getColum();
+        Cordinate neighbour;
+        if(map.terrainPassableAt(currentLine, currentColum-1)) {
+            neighbour = new Cordinate(currentLine, currentColum-1);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.canGoSouthWest(currentLine, currentColum)) {
+            neighbour = new Cordinate(currentLine+1, currentColum-1);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.terrainPassableAt(currentLine+1, currentColum)) {
+            neighbour = new Cordinate(currentLine+1, currentColum);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+    }
+
+    private void findNeightboursWhenGoingNorthEast(Cordinate current, CordinateList neighbours) {
+        int currentLine = current.getLineNumber();
+        int currentColum = current.getColum();
+        Cordinate neighbour;
+        if(map.canGoNorthEast(currentLine, currentColum)) {
+            neighbour = new Cordinate(currentLine-1, currentColum+1);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.terrainPassableAt(currentLine-1, currentColum)) {
+            neighbour = new Cordinate(currentLine-1, currentColum);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.terrainPassableAt(currentLine, currentColum+1)) {
+            neighbour = new Cordinate(currentLine, currentColum+1);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+    }
+
+    private void findNeightboursWhenGoingSouth(Cordinate current, CordinateList neighbours) {
+        int currentLine = current.getLineNumber();
+        int currentColum = current.getColum();
+        Cordinate neighbour;
+        if(map.terrainPassableAt(currentLine+1, currentColum)) {
+            neighbour = new Cordinate(currentLine+1, currentColum);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.canGoSouthEast(currentLine, currentColum)) {
+            neighbour = new Cordinate(currentLine+1, currentColum+1);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.canGoSouthWest(currentLine, currentColum)) {
+            neighbour = new Cordinate(currentLine+1, currentColum-1);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.terrainPassableAt(currentLine, currentColum-1) && !map.canGoNorthWest(currentLine, currentColum)) {
+            neighbour = new Cordinate(currentLine, currentColum-1);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.terrainPassableAt(currentLine, currentColum+1) && !map.canGoNorthEast(currentLine, currentColum) ) {
+            neighbour = new Cordinate(currentLine, currentColum+1);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+    }
+
+    private void findNeightboursWhenGoingNorth(Cordinate current, CordinateList neighbours) {
+        int currentLine = current.getLineNumber();
+        int currentColum = current.getColum();
+        Cordinate neighbour;
+        if(map.terrainPassableAt(currentLine-1, currentColum)) {
+            neighbour = new Cordinate(currentLine-1, currentColum);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.canGoNorthWest(currentLine, currentColum)) {
+            neighbour = new Cordinate(currentLine-1, currentColum-1);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.canGoNorthEast(currentLine, currentColum)) {
+            neighbour = new Cordinate(currentLine-1, currentColum+1);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.terrainPassableAt(currentLine, currentColum-1) && !map.canGoSouthWest(currentLine, currentColum)) {
+            neighbour = new Cordinate(currentLine, currentColum-1);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.terrainPassableAt(currentLine, currentColum+1) && !map.canGoSouthEast(currentLine, currentColum) ) {
+            neighbour = new Cordinate(currentLine, currentColum+1);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+    }
+
+    private void findNeightboursWhenGoingEast(Cordinate current, CordinateList neighbours) {
+        int currentLine = current.getLineNumber();
+        int currentColum = current.getColum();
+        Cordinate neighbour;
+        if(map.terrainPassableAt(currentLine, currentColum+1)) {
+            neighbour = new Cordinate(currentLine, currentColum+1);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.canGoNorthEast(currentLine, currentColum)) {
+            neighbour = new Cordinate(currentLine-1, currentColum+1);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.canGoSouthEast(currentLine, currentColum)) {
+            neighbour = new Cordinate(currentLine+1, currentColum+1);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.terrainPassableAt(currentLine-1, currentColum) && !map.canGoNorthWest(currentLine, currentColum)) {
+            neighbour = new Cordinate(currentLine-1, currentColum);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.terrainPassableAt(currentLine+1, currentColum) && !map.canGoSouthWest(currentLine, currentColum)) {
+            neighbour = new Cordinate(currentLine+1, currentColum);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+    }
+
+    private void findNeightboursWhenGoingWest(Cordinate current, CordinateList neighbours) {
+        int currentLine = current.getLineNumber();
+        int currentColum = current.getColum();
+        Cordinate neighbour;
+        if(map.terrainPassableAt(currentLine, currentColum-1)) {
+            neighbour = new Cordinate(currentLine, currentColum-1);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.canGoSouthWest(currentLine, currentColum)) {
+            neighbour = new Cordinate(currentLine+1, currentColum-1);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.canGoNorthWest(currentLine, currentColum)) {
+            neighbour = new Cordinate(currentLine-1, currentColum-1);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.terrainPassableAt(currentLine-1, currentColum) && !map.canGoNorthEast(currentLine, currentColum)) {
+            neighbour = new Cordinate(currentLine-1, currentColum);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
+        if(map.terrainPassableAt(currentLine+1, currentColum) && !map.canGoSouthEast(currentLine, currentColum)) {
+            neighbour = new Cordinate(currentLine+1, currentColum);
+            neighbours.add(neighbour);
+            updateDistance(current, neighbour);
+        }
     }
 
     private Cordinate jump(Cordinate target, Cordinate prevCordinate) {

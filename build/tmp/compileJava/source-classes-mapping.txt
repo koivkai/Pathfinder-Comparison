@@ -10,8 +10,8 @@ textUI/PCTextUI.java
  textUI.PCTextUI
 Main.java
  Main
-logic/ComparisonEngine.java
- logic.ComparisonEngine
+datastructures/CordinateList.java
+ datastructures.CordinateList
 io/MapReader.java
  io.MapReader
 io/ScenFileReader.java
@@ -34,5 +34,5 @@ logic/JPS.java
  logic.JPS
 logic/JPSdiagonal.java
  logic.JPSdiagonal
-datastructures/CordinateList.java
- datastructures.CordinateList
+logic/ComparisonEngine.java
+ logic.ComparisonEngine
