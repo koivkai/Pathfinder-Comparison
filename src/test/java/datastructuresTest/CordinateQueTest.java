@@ -119,17 +119,4 @@ public class CordinateQueTest {
         assertEquals(c8, que.poll());
     }
 
-    @Test
-    public void toStringWorks() {
-        Cordinate c1 = new Cordinate(1,1);
-        Cordinate c2 = new Cordinate(2,2);
-        Cordinate c3 = new Cordinate(3,3);
-        Cordinate c4 = new Cordinate(4,4);
-        que.add(c1);
-        que.add(c2);
-        que.add(c3);
-        que.add(c4);
-        assertEquals("MyDeque [Cordinate [colum=1, lineNumber=1], Cordinate [colum=2, lineNumber=2], Cordinate [colum=3, lineNumber=3], Cordinate [colum=4, lineNumber=4]]",que.toString());
-        
-    }
 }

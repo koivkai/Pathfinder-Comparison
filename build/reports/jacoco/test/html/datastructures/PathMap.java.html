@@ -181,13 +181,13 @@ public class PathMap {
 <span class="nc" id="L181">    }</span>
 
     public char[][] getCopyOfMap() {
-<span class="nc" id="L184">        char[][]copy = new char[this.height][this.width];</span>
-<span class="nc bnc" id="L185" title="All 2 branches missed.">        for(int line = 0;line&lt;this.height;line++) {</span>
-<span class="nc bnc" id="L186" title="All 2 branches missed.">            for(int colum = 0;colum&lt;this.width;colum++) {</span>
-<span class="nc" id="L187">                copy[line][colum] = this.map[line][colum];</span>
+<span class="fc" id="L184">        char[][]copy = new char[this.height][this.width];</span>
+<span class="fc bfc" id="L185" title="All 2 branches covered.">        for(int line = 0;line&lt;this.height;line++) {</span>
+<span class="fc bfc" id="L186" title="All 2 branches covered.">            for(int colum = 0;colum&lt;this.width;colum++) {</span>
+<span class="fc" id="L187">                copy[line][colum] = this.map[line][colum];</span>
             }
         }
-<span class="nc" id="L190">        return copy;</span>
+<span class="fc" id="L190">        return copy;</span>
     }
 
     public CordinateQue getStartPosQue() {

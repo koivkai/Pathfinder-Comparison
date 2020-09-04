@@ -1,12 +1,13 @@
 package datastructures;
 
 /**
- * A datastructure for a cordinate in a grid, which optionally contains third value such a fscore used in the A* algorithm
+ * A datastructure for a cordinate in a grid, which optionally contains third value such the fscore used in the A* algorithm
  */
 public class Cordinate implements Comparable<Cordinate>{
     int lineNumber;
     int colum;
     double distanceEstimate;
+    int direction;
 
     public Cordinate(int lineNumber, int colum) {
         this.lineNumber = lineNumber;
@@ -46,7 +47,7 @@ public class Cordinate implements Comparable<Cordinate>{
 
     @Override
     public String toString() {
-        return "Cordinate [colum=" + colum + ", lineNumber=" + lineNumber + "]";
+        return "Cordinate [colum=" + colum + ", lineNumber=" + lineNumber  + ", direction="+ direction + "]";
     }
 
     @Override
@@ -70,6 +71,14 @@ public class Cordinate implements Comparable<Cordinate>{
         if (lineNumber != other.lineNumber)
             return false;
         return true;
+    }
+
+    public int getDirection() {
+        return direction;
+    }
+
+    public void setDirection(int direction) {
+        this.direction = direction;
     }
 
 }

@@ -7,70 +7,81 @@ public class Cordinate implements Comparable&lt;Cordinate&gt;{
     int lineNumber;
     int colum;
     double distanceEstimate;
+    int direction;
 
-<span class="fc" id="L11">    public Cordinate(int lineNumber, int colum) {</span>
-<span class="fc" id="L12">        this.lineNumber = lineNumber;</span>
-<span class="fc" id="L13">        this.colum = colum;</span>
-<span class="fc" id="L14">        this.distanceEstimate = 0;</span>
-<span class="fc" id="L15">    }</span>
+<span class="fc" id="L12">    public Cordinate(int lineNumber, int colum) {</span>
+<span class="fc" id="L13">        this.lineNumber = lineNumber;</span>
+<span class="fc" id="L14">        this.colum = colum;</span>
+<span class="fc" id="L15">        this.distanceEstimate = 0;</span>
+<span class="fc" id="L16">    }</span>
 
-<span class="fc" id="L17">    public Cordinate(int lineNumber, int colum, double distanceEstimate) {</span>
-<span class="fc" id="L18">        this.lineNumber = lineNumber;</span>
-<span class="fc" id="L19">        this.colum = colum;</span>
-<span class="fc" id="L20">        this.distanceEstimate = distanceEstimate;</span>
-<span class="fc" id="L21">    }</span>
+<span class="fc" id="L18">    public Cordinate(int lineNumber, int colum, double distanceEstimate) {</span>
+<span class="fc" id="L19">        this.lineNumber = lineNumber;</span>
+<span class="fc" id="L20">        this.colum = colum;</span>
+<span class="fc" id="L21">        this.distanceEstimate = distanceEstimate;</span>
+<span class="fc" id="L22">    }</span>
 
     public int getLineNumber() {
-<span class="fc" id="L24">        return lineNumber;</span>
+<span class="fc" id="L25">        return lineNumber;</span>
     }
 
     public void setLineNumber(int lineNumber) {
-<span class="nc" id="L28">        this.lineNumber = lineNumber;</span>
-<span class="nc" id="L29">    }</span>
+<span class="nc" id="L29">        this.lineNumber = lineNumber;</span>
+<span class="nc" id="L30">    }</span>
 
     public int getColum() {
-<span class="fc" id="L32">        return colum;</span>
+<span class="fc" id="L33">        return colum;</span>
     }
 
     public void setColum(int colum) {
-<span class="nc" id="L36">        this.colum = colum;</span>
-<span class="nc" id="L37">    }</span>
+<span class="nc" id="L37">        this.colum = colum;</span>
+<span class="nc" id="L38">    }</span>
 
     public double getDistanceEstimate() {
-<span class="fc" id="L40">        return distanceEstimate;</span>
+<span class="fc" id="L41">        return distanceEstimate;</span>
     }
 
     public void setDistanceEstimate(double distanceEstimate) {
-<span class="fc" id="L44">        this.distanceEstimate = distanceEstimate;</span>
-<span class="fc" id="L45">    }</span>
+<span class="fc" id="L45">        this.distanceEstimate = distanceEstimate;</span>
+<span class="fc" id="L46">    }</span>
+
+    
 
     @Override
     public String toString() {
-<span class="fc" id="L49">        return &quot;Cordinate [colum=&quot; + colum + &quot;, lineNumber=&quot; + lineNumber + &quot;]&quot;;</span>
+<span class="fc" id="L52">        return &quot;Cordinate [colum=&quot; + colum + &quot;, lineNumber=&quot; + lineNumber  + &quot;, direction=&quot;+ direction + &quot;]&quot;;</span>
     }
 
     @Override
     public int compareTo(Cordinate c) {
-<span class="nc" id="L54">        return (int)(this.distanceEstimate - c.getDistanceEstimate());</span>
+<span class="nc" id="L57">        return (int)(this.distanceEstimate - c.getDistanceEstimate());</span>
     }
 
     @Override
     public boolean equals(Object obj) {
-<span class="fc bfc" id="L59" title="All 2 branches covered.">        if (this == obj)</span>
-<span class="fc" id="L60">            return true;</span>
-<span class="fc bfc" id="L61" title="All 2 branches covered.">        if (obj == null)</span>
-<span class="fc" id="L62">            return false;</span>
-<span class="fc bfc" id="L63" title="All 2 branches covered.">        if (getClass() != obj.getClass())</span>
-<span class="fc" id="L64">            return false;</span>
-<span class="fc" id="L65">        Cordinate other = (Cordinate) obj;</span>
-<span class="fc bfc" id="L66" title="All 2 branches covered.">        if (colum != other.colum)</span>
+<span class="fc bfc" id="L62" title="All 2 branches covered.">        if (this == obj)</span>
+<span class="fc" id="L63">            return true;</span>
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        if (obj == null)</span>
+<span class="fc" id="L65">            return false;</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">        if (getClass() != obj.getClass())</span>
 <span class="fc" id="L67">            return false;</span>
-<span class="fc bfc" id="L68" title="All 2 branches covered.">        if (distanceEstimate != other.distanceEstimate)</span>
-<span class="fc" id="L69">            return false;</span>
-<span class="fc bfc" id="L70" title="All 2 branches covered.">        if (lineNumber != other.lineNumber)</span>
-<span class="fc" id="L71">            return false;</span>
-<span class="fc" id="L72">        return true;</span>
+<span class="fc" id="L68">        Cordinate other = (Cordinate) obj;</span>
+<span class="fc bfc" id="L69" title="All 2 branches covered.">        if (colum != other.colum)</span>
+<span class="fc" id="L70">            return false;</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">        if (distanceEstimate != other.distanceEstimate)</span>
+<span class="fc" id="L72">            return false;</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">        if (lineNumber != other.lineNumber)</span>
+<span class="fc" id="L74">            return false;</span>
+<span class="fc" id="L75">        return true;</span>
     }
+
+    public int getDirection() {
+<span class="fc" id="L79">        return direction;</span>
+    }
+
+    public void setDirection(int direction) {
+<span class="fc" id="L83">        this.direction = direction;</span>
+<span class="fc" id="L84">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

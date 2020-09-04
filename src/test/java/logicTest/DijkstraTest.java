@@ -161,8 +161,9 @@ public class DijkstraTest {
         PathMap testMap = new PathMap(arrayMap, 10, 10);
 
         double result = dijkstra.findPath(testMap, 8, 3, 2, 8);
-        assertEquals(15.8284, result, 0.1);
+        assertEquals(15.8284, result, 0.1); //15.8284
     }
+    
     @Test
     public void diagonalLinesReverse() {
         dijkstra = new Dijkstra();
@@ -193,18 +194,6 @@ public class DijkstraTest {
         double result = dijkstra.findPath(testMap, 2, 8, 8, 3);
         assertEquals(15.8284, result, 0.1);
     }
-    /*
-        char[] lineOne = {'@','@','@','@','@','@','@','@','@','@'};
-        char[] lineTwo = {'@','.','T','.','.','X','X','X','.','@'};
-        char[] lineTre = {'@','.','.','T','.','X','T','.','G','@'};
-        char[] lineFou = {'@','.','.','.','T','X','X','T','.','@'};
-        char[] lineFiv = {'@','.','.','.','.','T','X','.','T','@'};
-        char[] lineSix = {'@','.','X','X','X','X','X','.','.','@'};
-        char[] lineSev = {'@','.','X','T','.','.','.','.','.','@'};
-        char[] lineEig = {'@','.','X','.','T','.','.','.','.','@'};
-        char[] lineNin = {'@','.','.','S','.','T','.','.','.','@'};
-        char[] lineTen = {'@','@','@','@','@','@','@','@','@','@'};
-    */
 
     @Test
     public void maze() {
@@ -298,6 +287,6 @@ public class DijkstraTest {
         double result = dijkstra.findPath(testMap, 4, 7, 7, 2);
         assertEquals(6.2426, result, 0.1);
     }
-
     
+
 }

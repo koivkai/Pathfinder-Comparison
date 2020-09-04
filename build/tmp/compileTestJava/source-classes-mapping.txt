@@ -1,26 +1,26 @@
-logicTest/JPSdiagonalTest.java
- logicTest.JPSdiagonalTest
-logicTest/JPSTest.java
- logicTest.JPSTest
-datastructuresTest/PathMapTest.java
- datastructuresTest.PathMapTest
-logicTest/DijkstraTest.java
- logicTest.DijkstraTest
-datastructuresTest/MapListTest.java
- datastructuresTest.MapListTest
 datastructuresTest/DoublesQueTest.java
  datastructuresTest.DoublesQueTest
-logicTest/AstarTest.java
- logicTest.AstarTest
-datastructuresTest/CordinateListTest.java
- datastructuresTest.CordinateListTest
-logicTest/BFSTest.java
- logicTest.BFSTest
-datastructuresTest/CordinateQueTest.java
- datastructuresTest.CordinateQueTest
 datastructuresTest/MyDequeTest.java
  datastructuresTest.MyDequeTest
-datastructuresTest/MinHeapTest.java
- datastructuresTest.MinHeapTest
+logicTest/AstarTest.java
+ logicTest.AstarTest
 datastructuresTest/CordinateTest.java
  datastructuresTest.CordinateTest
+logicTest/JPSTest.java
+ logicTest.JPSTest
+datastructuresTest/CordinateListTest.java
+ datastructuresTest.CordinateListTest
+datastructuresTest/PathMapTest.java
+ datastructuresTest.PathMapTest
+logicTest/BFSTest.java
+ logicTest.BFSTest
+datastructuresTest/MinHeapTest.java
+ datastructuresTest.MinHeapTest
+datastructuresTest/CordinateQueTest.java
+ datastructuresTest.CordinateQueTest
+datastructuresTest/MapListTest.java
+ datastructuresTest.MapListTest
+logicTest/JPSdiagonalTest.java
+ logicTest.JPSdiagonalTest
+logicTest/DijkstraTest.java
+ logicTest.DijkstraTest

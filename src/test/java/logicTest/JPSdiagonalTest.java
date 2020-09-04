@@ -99,7 +99,7 @@ public class JPSdiagonalTest {
         double result = jps.findPath(testMap, 4, 1, 4, 8);
         assertEquals(10.0710, result, 0.01);
     }
-
+    
     @Test
     public void findsPathThreeTreelines() {
         jps = new JPSdiagonal();
@@ -347,4 +347,5 @@ public class JPSdiagonalTest {
         double result = jps.findPath(testMap, 4, 7, 7, 2);
         assertEquals(6.2426, result, 0.1);
     }
+    
 }

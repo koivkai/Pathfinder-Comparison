@@ -44,8 +44,9 @@ public class Dijkstra {
             int line = current.getLineNumber();
             int colum = current.getColum();
             if(foundGoal(line, colum)) {
-                 //Helpers.printPath(prev, goalLine, goalColum,startLineNumber,startColum);
-                 //Helpers.printMapWithPath(prev, goalLine, goalColum, startLineNumber, startColum, map);
+                System.out.println("Djikstra");
+                Helpers.printPath(prev, goalLine, goalColum,startLineNumber,startColum);
+                Helpers.printMapWithPath(prev, goalLine, goalColum, startLineNumber, startColum, map);
                 return distance[line][colum];
             }
             if(visited[line][colum]) {

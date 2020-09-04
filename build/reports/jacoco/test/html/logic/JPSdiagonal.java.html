@@ -27,498 +27,570 @@ public class JPSdiagonal {
 <span class="fc" id="L27">        visited = new boolean[map.getHeight()][map.getWidth()];</span>
 <span class="fc" id="L28">        prev = new Cordinate[map.getHeight()][map.getWidth()];</span>
 <span class="fc" id="L29">        distance = new double[map.getHeight()][map.getWidth()];</span>
-<span class="fc" id="L30">        que.add(new Cordinate(startLineNumber, startColum));</span>
-<span class="fc" id="L31">        this.goalLine = goalLineNumber;</span>
-<span class="fc" id="L32">        this.goalColum =goalColum;</span>
-<span class="fc" id="L33">        Cordinate current = new Cordinate (0,0);</span>
-<span class="fc" id="L34">        this.map = map;</span>
+<span class="fc" id="L30">        Cordinate start = new Cordinate(startLineNumber, startColum);</span>
+<span class="fc" id="L31">        start.setDirection(0);</span>
+<span class="fc" id="L32">        que.add(start);</span>
+<span class="fc" id="L33">        this.goalLine = goalLineNumber;</span>
+<span class="fc" id="L34">        this.goalColum =goalColum;</span>
+<span class="fc" id="L35">        Cordinate current = new Cordinate (0,0);</span>
+<span class="fc" id="L36">        this.map = map;</span>
 
-<span class="fc bfc" id="L36" title="All 2 branches covered.">        while(!que.isEmpty()) {</span>
-<span class="fc" id="L37">            current = que.poll();</span>
-            //System.out.println(&quot;current &quot;+current);
-<span class="fc" id="L39">            int line = current.getLineNumber();</span>
-<span class="fc" id="L40">            int colum = current.getColum();</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">        while(!que.isEmpty()) {</span>
+<span class="fc" id="L39">            current = que.poll();</span>
+<span class="fc" id="L40">            System.out.println(&quot;current &quot;+current);</span>
+<span class="fc" id="L41">            int line = current.getLineNumber();</span>
+<span class="fc" id="L42">            int colum = current.getColum();</span>
 
-<span class="fc bfc" id="L42" title="All 2 branches covered.">            if(visited[line][colum]) {</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">            if(visited[line][colum]) {</span>
                 //System.out.println(&quot;already visited&quot;);
                 // do nothing
             } else { 
-<span class="fc" id="L46">                visited[line][colum] = true;</span>
-<span class="fc bfc" id="L47" title="All 2 branches covered.">                if(foundGoal(current)) {</span>
-                    // System.out.println(&quot;JPS&quot;);
-                    //Helpers.printPath(prev, goalLine, goalColum, startLineNumber, startColum);
-                    //Helpers.printMapWithPath(prev, goalLine, goalColum, startLineNumber, startColum, map);
-<span class="fc" id="L51">                    return distance[line][colum];</span>
+<span class="fc" id="L48">                visited[line][colum] = true;</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">                if(foundGoal(current)) {</span>
+<span class="fc" id="L50">                    System.out.println(&quot;JPS&quot;);</span>
+<span class="fc" id="L51">                    Helpers.printPath(prev, goalLine, goalColum, startLineNumber, startColum);</span>
+<span class="fc" id="L52">                    Helpers.printMapWithPath(prev, goalLine, goalColum, startLineNumber, startColum, map);</span>
+<span class="fc" id="L53">                    return distance[line][colum];</span>
                 }
-<span class="fc" id="L53">                findSuccessors(current);</span>
+<span class="fc" id="L55">                findSuccessors(current);</span>
                 
             }
 
-<span class="fc" id="L57">        }</span>
-<span class="fc" id="L58">        return -1;</span>
+<span class="fc" id="L59">        }</span>
+<span class="fc" id="L60">        return -1;</span>
     }
     private void findSuccessors(Cordinate current) {
-<span class="fc" id="L61">        CordinateList neighbours = getNeightbours(current);</span>
+<span class="fc" id="L63">        CordinateList neighbours = getNeightbours(current);</span>
         //ArrayList&lt;Cordinate&gt; neigbours = getNeightbours(current);
         //System.out.println(&quot;neighbours &quot; +neigbours);
-<span class="fc bfc" id="L64" title="All 2 branches covered.">        for(int i = 0; i &lt; neighbours.size(); i++) {</span>
-<span class="fc" id="L65">            Cordinate neighbour = neighbours.get(i);</span>
-<span class="fc" id="L66">            Cordinate next = jump(neighbour, current);</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">        for(int i = 0; i &lt; neighbours.size(); i++) {</span>
+<span class="fc" id="L67">            Cordinate neighbour = neighbours.get(i);</span>
+<span class="fc" id="L68">            Cordinate next = jump(neighbour);</span>
             //System.out.println(&quot;next &quot;+next);
-<span class="fc bfc" id="L68" title="All 2 branches covered.">            if(next != null) {</span>
+<span class="fc bfc" id="L70" title="All 2 branches covered.">            if(next != null) {</span>
                 
-<span class="fc bfc" id="L70" title="All 2 branches covered.">                if(visited[next.getLineNumber()][next.getColum()]) {</span>
+<span class="fc bfc" id="L72" title="All 2 branches covered.">                if(visited[next.getLineNumber()][next.getColum()]) {</span>
                     // do nothing
                 } else {
                     //prev[next.getLineNumber()][next.getColum()] = current;
-<span class="fc" id="L74">                    updateDistance(current, next);</span>
-<span class="fc" id="L75">                    next.setDistanceEstimate(getFscore(next));</span>
-<span class="fc" id="L76">                    que.add(next);</span>
+<span class="fc" id="L76">                    updateDistance(current, next);</span>
+<span class="fc" id="L77">                    next.setDistanceEstimate(getFscore(next));</span>
+<span class="fc" id="L78">                    que.add(next);</span>
                 }
             }
         }
 
-<span class="fc" id="L81">    }</span>
+<span class="fc" id="L83">    }</span>
 
     private void updateDistance(Cordinate fromCordinate, Cordinate targetCordinate) {
-<span class="fc" id="L84">        int verticalDistance = targetCordinate.getLineNumber() - fromCordinate.getLineNumber();</span>
-<span class="fc" id="L85">        int horizontalDistance = targetCordinate.getColum() - fromCordinate.getColum();</span>
-<span class="fc" id="L86">        double oldDistanceToTarget = distance[targetCordinate.getLineNumber()][targetCordinate.getColum()];</span>
-<span class="fc" id="L87">        double prevDistance = distance[fromCordinate.getLineNumber()][fromCordinate.getColum()];</span>
+<span class="fc" id="L86">        int verticalDistance = targetCordinate.getLineNumber() - fromCordinate.getLineNumber();</span>
+<span class="fc" id="L87">        int horizontalDistance = targetCordinate.getColum() - fromCordinate.getColum();</span>
+<span class="fc" id="L88">        double oldDistanceToTarget = distance[targetCordinate.getLineNumber()][targetCordinate.getColum()];</span>
+<span class="fc" id="L89">        double prevDistance = distance[fromCordinate.getLineNumber()][fromCordinate.getColum()];</span>
 
-<span class="fc bfc" id="L89" title="All 4 branches covered.">        if(verticalDistance != 0 &amp;&amp; horizontalDistance != 0) { //moving diagonally</span>
-<span class="fc" id="L90">            double distanceFromHereToTarget = prevDistance + ((double)(Helpers.abs(verticalDistance)) * twosqrt);</span>
-<span class="pc bpc" id="L91" title="1 of 4 branches missed.">            if(oldDistanceToTarget == 0 || distanceFromHereToTarget &lt; oldDistanceToTarget) {</span>
-<span class="fc" id="L92">                distance[targetCordinate.getLineNumber()][targetCordinate.getColum()] = distanceFromHereToTarget;</span>
-<span class="fc" id="L93">                prev[targetCordinate.getLineNumber()][targetCordinate.getColum()] = fromCordinate;</span>
+<span class="fc bfc" id="L91" title="All 4 branches covered.">        if(verticalDistance != 0 &amp;&amp; horizontalDistance != 0) { //moving diagonally</span>
+<span class="fc" id="L92">            double distanceFromHereToTarget = prevDistance + ((double)(Helpers.abs(verticalDistance)) * twosqrt);</span>
+<span class="pc bpc" id="L93" title="1 of 4 branches missed.">            if(oldDistanceToTarget == 0 || distanceFromHereToTarget &lt; oldDistanceToTarget) {</span>
+<span class="fc" id="L94">                distance[targetCordinate.getLineNumber()][targetCordinate.getColum()] = distanceFromHereToTarget;</span>
+<span class="fc" id="L95">                prev[targetCordinate.getLineNumber()][targetCordinate.getColum()] = fromCordinate;</span>
             }
-<span class="fc" id="L95">        } else { // moving orthogonally</span>
-<span class="fc" id="L96">            int difference = Helpers.abs(verticalDistance)+Helpers.abs(horizontalDistance);</span>
-<span class="fc bfc" id="L97" title="All 4 branches covered.">            if(oldDistanceToTarget == 0 || (prevDistance + difference)&lt;oldDistanceToTarget) {</span>
-<span class="fc" id="L98">                distance[targetCordinate.getLineNumber()][targetCordinate.getColum()] = prevDistance + difference;</span>
-<span class="fc" id="L99">                prev[targetCordinate.getLineNumber()][targetCordinate.getColum()] = fromCordinate;</span>
+<span class="fc" id="L97">        } else { // moving orthogonally</span>
+<span class="fc" id="L98">            int difference = Helpers.abs(verticalDistance)+Helpers.abs(horizontalDistance);</span>
+<span class="fc bfc" id="L99" title="All 4 branches covered.">            if(oldDistanceToTarget == 0 || (prevDistance + difference)&lt;oldDistanceToTarget) {</span>
+<span class="fc" id="L100">                distance[targetCordinate.getLineNumber()][targetCordinate.getColum()] = prevDistance + difference;</span>
+<span class="fc" id="L101">                prev[targetCordinate.getLineNumber()][targetCordinate.getColum()] = fromCordinate;</span>
             }
         }
         
-<span class="fc" id="L103">    }</span>
+<span class="fc" id="L105">    }</span>
 
     private CordinateList getNeightbours(Cordinate current) {
-<span class="fc" id="L106">        CordinateList neighbours = new CordinateList();</span>
-<span class="fc" id="L107">        int currentLine = current.getLineNumber();</span>
-<span class="fc" id="L108">        int currentColum = current.getColum();</span>
-<span class="fc" id="L109">        Cordinate parent = prev[currentLine][currentColum];</span>
-<span class="fc bfc" id="L110" title="All 2 branches covered.">        if(parent == null) { // this is the starting square</span>
-<span class="fc" id="L111">            startingSquareNeighbours(current, neighbours);</span>
-        } else {
-<span class="fc" id="L113">            int pLine = parent.getLineNumber();</span>
-<span class="fc" id="L114">            int pColum = parent.getColum();</span>
-<span class="fc" id="L115">            int verticalDistance = currentLine - pLine;</span>
-<span class="fc" id="L116">            int horizontalDistance = currentColum - pColum;</span>
+<span class="fc" id="L108">        CordinateList neighbours = new CordinateList();</span>
+<span class="fc" id="L109">        int direction = current.getDirection();</span>
 
-<span class="fc bfc" id="L118" title="All 4 branches covered.">            if (verticalDistance != 0 &amp;&amp; horizontalDistance != 0) { //traveling diagonally</span>
-<span class="fc bfc" id="L119" title="All 4 branches covered.">                if (verticalDistance &gt; 0 &amp;&amp; horizontalDistance &gt; 0) { // going south east </span>
-<span class="fc" id="L120">                    findNeightboursWhenGoingSouthEast(current, neighbours);</span>
-<span class="fc bfc" id="L121" title="All 4 branches covered.">                } else if(verticalDistance &lt; 0 &amp;&amp; horizontalDistance &lt; 0) { // going northwest</span>
-<span class="fc" id="L122">                    findNeightboursWhenGoingNorthWest(current, neighbours);</span>
-<span class="fc bfc" id="L123" title="All 2 branches covered.">                } else if(verticalDistance &gt; 0) { // going south west        </span>
-<span class="fc" id="L124">                    findNeightboursWhenGoingSouthWest(current, neighbours);</span>
-                } else { // going north east               
-<span class="fc" id="L126">                    findNeightboursWhenGoingNorthEast(current, neighbours);</span>
-                }
-<span class="fc bfc" id="L128" title="All 2 branches covered.">            }else if (verticalDistance != 0) { </span>
-<span class="fc bfc" id="L129" title="All 2 branches covered.">                if(verticalDistance &gt; 0) { // going south</span>
-<span class="fc" id="L130">                    findNeightboursWhenGoingSouth(current, neighbours);</span>
-                } else { // going north
-<span class="fc" id="L132">                    findNeightboursWhenGoingNorth(current, neighbours);</span>
-                }
-<span class="pc bpc" id="L134" title="1 of 2 branches missed.">            } else if (horizontalDistance != 0) {</span>
-<span class="fc bfc" id="L135" title="All 2 branches covered.">                if(horizontalDistance &gt; 0) { // going east</span>
-<span class="fc" id="L136">                    findNeightboursWhenGoingEast(current, neighbours);</span>
-                } else { // going west
-<span class="fc" id="L138">                    findNeightboursWhenGoingWest(current, neighbours);</span>
-                }
-            }
+<span class="pc bpc" id="L111" title="1 of 10 branches missed.">        switch(direction) {</span>
+            case 0:
+<span class="fc" id="L113">                startingSquareNeighbours(current, neighbours);</span>
+<span class="fc" id="L114">                break;</span>
+            case 1:
+<span class="fc" id="L116">                findNeightboursWhenGoingNorth(current, neighbours);</span>
+<span class="fc" id="L117">                break;</span>
+            case 2:
+<span class="fc" id="L119">                findNeightboursWhenGoingNorthEast(current, neighbours);</span>
+<span class="fc" id="L120">                break;</span>
+            case 3:
+<span class="fc" id="L122">                findNeightboursWhenGoingEast(current, neighbours);</span>
+<span class="fc" id="L123">                break;</span>
+            case 4:
+<span class="fc" id="L125">                findNeightboursWhenGoingSouthEast(current, neighbours);</span>
+<span class="fc" id="L126">                break;</span>
+            case 5:
+<span class="fc" id="L128">                findNeightboursWhenGoingSouth(current, neighbours);</span>
+<span class="fc" id="L129">                break;</span>
+            case 6:
+<span class="fc" id="L131">                findNeightboursWhenGoingSouthWest(current, neighbours);</span>
+<span class="fc" id="L132">                break;</span>
+            case 7:
+<span class="fc" id="L134">                findNeightboursWhenGoingWest(current, neighbours);</span>
+<span class="fc" id="L135">                break;</span>
+            case 8:
+<span class="fc" id="L137">                findNeightboursWhenGoingNorthWest(current, neighbours);</span>
+                break;      
         }
-<span class="fc" id="L142">        return neighbours;</span>
+<span class="fc" id="L140">        return neighbours;</span>
     }
 
     private void startingSquareNeighbours(Cordinate current, CordinateList neighbours) {
-<span class="fc" id="L146">        int currentLine = current.getLineNumber();</span>
-<span class="fc" id="L147">        int currentColum = current.getColum();</span>
-<span class="fc bfc" id="L148" title="All 2 branches covered.">        if(map.terrainPassableAt(currentLine+1 , currentColum)) {</span>
-<span class="fc" id="L149">            neighbours.add(new Cordinate(currentLine +1, currentColum));</span>
-<span class="fc" id="L150">            distance[currentLine+1][currentColum] = 1;</span>
-<span class="fc" id="L151">            prev[currentLine+1][currentColum] = current;</span>
+<span class="fc" id="L144">        int currentLine = current.getLineNumber();</span>
+<span class="fc" id="L145">        int currentColum = current.getColum();</span>
+        Cordinate neighbour;
+<span class="fc bfc" id="L147" title="All 2 branches covered.">        if(map.terrainPassableAt(currentLine+1 , currentColum)) {</span>
+<span class="fc" id="L148">            neighbour = new Cordinate(currentLine +1, currentColum);</span>
+<span class="fc" id="L149">            neighbour.setDirection(5);</span>
+<span class="fc" id="L150">            neighbours.add(neighbour);</span>
+<span class="fc" id="L151">            distance[currentLine+1][currentColum] = 1;</span>
+<span class="fc" id="L152">            prev[currentLine+1][currentColum] = current;</span>
         }
-<span class="fc bfc" id="L153" title="All 2 branches covered.">        if(map.terrainPassableAt(currentLine-1 , currentColum)) {</span>
-<span class="fc" id="L154">            neighbours.add(new Cordinate(currentLine -1, currentColum));</span>
-<span class="fc" id="L155">            distance[currentLine-1][currentColum] = 1;</span>
-<span class="fc" id="L156">            prev[currentLine-1][currentColum] = current;</span>
+<span class="fc bfc" id="L154" title="All 2 branches covered.">        if(map.terrainPassableAt(currentLine-1 , currentColum)) {</span>
+<span class="fc" id="L155">            neighbour = new Cordinate(currentLine -1, currentColum);</span>
+<span class="fc" id="L156">            neighbour.setDirection(1);</span>
+<span class="fc" id="L157">            neighbours.add(neighbour);</span>
+<span class="fc" id="L158">            distance[currentLine-1][currentColum] = 1;</span>
+<span class="fc" id="L159">            prev[currentLine-1][currentColum] = current;</span>
         }
-<span class="fc bfc" id="L158" title="All 2 branches covered.">        if(map.terrainPassableAt(currentLine, currentColum+1)) {</span>
-<span class="fc" id="L159">            neighbours.add(new Cordinate(currentLine, currentColum+1));</span>
-<span class="fc" id="L160">            distance[currentLine][currentColum+1] = 1;</span>
-<span class="fc" id="L161">            prev[currentLine][currentColum+1] = current;</span>
+<span class="fc bfc" id="L161" title="All 2 branches covered.">        if(map.terrainPassableAt(currentLine, currentColum+1)) {</span>
+<span class="fc" id="L162">            neighbour = new Cordinate(currentLine, currentColum+1);</span>
+<span class="fc" id="L163">            neighbour.setDirection(3);</span>
+<span class="fc" id="L164">            neighbours.add(neighbour);</span>
+<span class="fc" id="L165">            distance[currentLine][currentColum+1] = 1;</span>
+<span class="fc" id="L166">            prev[currentLine][currentColum+1] = current;</span>
         }
-<span class="fc bfc" id="L163" title="All 2 branches covered.">        if(map.terrainPassableAt(currentLine, currentColum-1)) {</span>
-<span class="fc" id="L164">            neighbours.add(new Cordinate(currentLine, currentColum-1));</span>
-<span class="fc" id="L165">            distance[currentLine][currentColum-1] = 1;</span>
-<span class="fc" id="L166">            prev[currentLine][currentColum-1] = current;</span>
+<span class="fc bfc" id="L168" title="All 2 branches covered.">        if(map.terrainPassableAt(currentLine, currentColum-1)) {</span>
+<span class="fc" id="L169">            neighbour = new Cordinate(currentLine, currentColum-1);</span>
+<span class="fc" id="L170">            neighbour.setDirection(7);</span>
+<span class="fc" id="L171">            neighbours.add(neighbour);</span>
+<span class="fc" id="L172">            distance[currentLine][currentColum-1] = 1;</span>
+<span class="fc" id="L173">            prev[currentLine][currentColum-1] = current;</span>
         }
-<span class="fc bfc" id="L168" title="All 2 branches covered.">        if(map.canGoNorthEast(currentLine, currentColum)) {</span>
-<span class="fc" id="L169">            neighbours.add(new Cordinate(currentLine-1, currentColum+1));</span>
-<span class="fc" id="L170">            distance[currentLine-1][currentColum+1] = twosqrt;</span>
-<span class="fc" id="L171">            prev[currentLine-1][currentColum+1] = current;</span>
+<span class="fc bfc" id="L175" title="All 2 branches covered.">        if(map.canGoNorthEast(currentLine, currentColum)) {</span>
+<span class="fc" id="L176">            neighbour = new Cordinate(currentLine-1, currentColum+1);</span>
+<span class="fc" id="L177">            neighbour.setDirection(2);</span>
+<span class="fc" id="L178">            neighbours.add(neighbour);</span>
+<span class="fc" id="L179">            distance[currentLine-1][currentColum+1] = twosqrt;</span>
+<span class="fc" id="L180">            prev[currentLine-1][currentColum+1] = current;</span>
         }
-<span class="fc bfc" id="L173" title="All 2 branches covered.">        if(map.canGoNorthWest(currentLine, currentColum)) {</span>
-<span class="fc" id="L174">            neighbours.add(new Cordinate(currentLine-1, currentColum-1));</span>
-<span class="fc" id="L175">            distance[currentLine-1][currentColum-1] = twosqrt;</span>
-<span class="fc" id="L176">            prev[currentLine-1][currentColum-1] = current;</span>
+<span class="fc bfc" id="L182" title="All 2 branches covered.">        if(map.canGoNorthWest(currentLine, currentColum)) {</span>
+<span class="fc" id="L183">            neighbour = new Cordinate(currentLine-1, currentColum-1);</span>
+<span class="fc" id="L184">            neighbour.setDirection(8);</span>
+<span class="fc" id="L185">            neighbours.add(neighbour);</span>
+<span class="fc" id="L186">            distance[currentLine-1][currentColum-1] = twosqrt;</span>
+<span class="fc" id="L187">            prev[currentLine-1][currentColum-1] = current;</span>
         }
-<span class="fc bfc" id="L178" title="All 2 branches covered.">        if(map.canGoSouthEast(currentLine, currentColum)) {</span>
-<span class="fc" id="L179">            neighbours.add(new Cordinate(currentLine+1, currentColum+1));</span>
-<span class="fc" id="L180">            distance[currentLine+1][currentColum+1] = twosqrt;</span>
-<span class="fc" id="L181">            prev[currentLine+1][currentColum+1] = current;</span>
+<span class="fc bfc" id="L189" title="All 2 branches covered.">        if(map.canGoSouthEast(currentLine, currentColum)) {</span>
+<span class="fc" id="L190">            neighbour = new Cordinate(currentLine+1, currentColum+1);</span>
+<span class="fc" id="L191">            neighbour.setDirection(4);</span>
+<span class="fc" id="L192">            neighbours.add(neighbour);</span>
+<span class="fc" id="L193">            distance[currentLine+1][currentColum+1] = twosqrt;</span>
+<span class="fc" id="L194">            prev[currentLine+1][currentColum+1] = current;</span>
         }
-<span class="fc bfc" id="L183" title="All 2 branches covered.">        if(map.canGoSouthWest(currentLine, currentColum)) {</span>
-<span class="fc" id="L184">            neighbours.add(new Cordinate(currentLine+1, currentColum-1));</span>
-<span class="fc" id="L185">            distance[currentLine+1][currentColum-1] = twosqrt;</span>
-<span class="fc" id="L186">            prev[currentLine+1][currentColum-1] = current;</span>
+<span class="fc bfc" id="L196" title="All 2 branches covered.">        if(map.canGoSouthWest(currentLine, currentColum)) {</span>
+<span class="fc" id="L197">            neighbour = new Cordinate(currentLine+1, currentColum-1);</span>
+<span class="fc" id="L198">            neighbour.setDirection(6);</span>
+<span class="fc" id="L199">            neighbours.add(neighbour);</span>
+<span class="fc" id="L200">            distance[currentLine+1][currentColum-1] = twosqrt;</span>
+<span class="fc" id="L201">            prev[currentLine+1][currentColum-1] = current;</span>
         }
-<span class="fc" id="L188">    }</span>
+<span class="fc" id="L203">    }</span>
 
     private void findNeightboursWhenGoingSouthEast(Cordinate current, CordinateList neighbours) {
-<span class="fc" id="L191">        int currentLine = current.getLineNumber();</span>
-<span class="fc" id="L192">        int currentColum = current.getColum();</span>
+<span class="fc" id="L206">        int currentLine = current.getLineNumber();</span>
+<span class="fc" id="L207">        int currentColum = current.getColum();</span>
         Cordinate neighbour;
-<span class="pc bpc" id="L194" title="1 of 2 branches missed.">        if(map.terrainPassableAt(currentLine+1, currentColum)) {</span>
-<span class="fc" id="L195">            neighbour = new Cordinate(currentLine+1, currentColum);</span>
-<span class="fc" id="L196">            neighbours.add(neighbour);</span>
-<span class="fc" id="L197">            updateDistance(current, neighbour);</span>
+<span class="pc bpc" id="L209" title="1 of 2 branches missed.">        if(map.terrainPassableAt(currentLine+1, currentColum)) {</span>
+<span class="fc" id="L210">            neighbour = new Cordinate(currentLine+1, currentColum);</span>
+<span class="fc" id="L211">            neighbour.setDirection(5);</span>
+<span class="fc" id="L212">            neighbours.add(neighbour);</span>
+<span class="fc" id="L213">            updateDistance(current, neighbour);</span>
         }
-<span class="pc bpc" id="L199" title="1 of 2 branches missed.">        if(map.canGoSouthEast(currentLine, currentColum)) {</span>
-<span class="nc" id="L200">            neighbour = new Cordinate(currentLine+1, currentColum+1);</span>
-<span class="nc" id="L201">            neighbours.add(neighbour);</span>
-<span class="nc" id="L202">            updateDistance(current, neighbour);</span>
+<span class="pc bpc" id="L215" title="1 of 2 branches missed.">        if(map.canGoSouthEast(currentLine, currentColum)) {</span>
+<span class="nc" id="L216">            neighbour = new Cordinate(currentLine+1, currentColum+1);</span>
+<span class="nc" id="L217">            neighbour.setDirection(4);</span>
+<span class="nc" id="L218">            neighbours.add(neighbour);</span>
+<span class="nc" id="L219">            updateDistance(current, neighbour);</span>
         }
-<span class="pc bpc" id="L204" title="1 of 2 branches missed.">        if(map.terrainPassableAt(currentLine, currentColum+1)) {</span>
-<span class="nc" id="L205">            neighbour = new Cordinate(currentLine, currentColum+1);</span>
-<span class="nc" id="L206">            neighbours.add(neighbour);</span>
-<span class="nc" id="L207">            updateDistance(current, neighbour);</span>
+<span class="pc bpc" id="L221" title="1 of 2 branches missed.">        if(map.terrainPassableAt(currentLine, currentColum+1)) {</span>
+<span class="nc" id="L222">            neighbour = new Cordinate(currentLine, currentColum+1);</span>
+<span class="nc" id="L223">            neighbour.setDirection(3);</span>
+<span class="nc" id="L224">            neighbours.add(neighbour);</span>
+<span class="nc" id="L225">            updateDistance(current, neighbour);</span>
         }
-<span class="fc" id="L209">    }</span>
+<span class="fc" id="L227">    }</span>
 
     private void findNeightboursWhenGoingNorthWest(Cordinate current, CordinateList neighbours) {
-<span class="fc" id="L212">        int currentLine = current.getLineNumber();</span>
-<span class="fc" id="L213">        int currentColum = current.getColum();</span>
+<span class="fc" id="L230">        int currentLine = current.getLineNumber();</span>
+<span class="fc" id="L231">        int currentColum = current.getColum();</span>
         Cordinate neighbour;
-<span class="fc bfc" id="L215" title="All 2 branches covered.">        if(map.terrainPassableAt(currentLine, currentColum-1)) {</span>
-<span class="fc" id="L216">            neighbour = new Cordinate(currentLine, currentColum-1);</span>
-<span class="fc" id="L217">            neighbours.add(neighbour);</span>
-<span class="fc" id="L218">            updateDistance(current, neighbour);</span>
+<span class="fc bfc" id="L233" title="All 2 branches covered.">        if(map.terrainPassableAt(currentLine, currentColum-1)) {</span>
+<span class="fc" id="L234">            neighbour = new Cordinate(currentLine, currentColum-1);</span>
+<span class="fc" id="L235">            neighbour.setDirection(7);</span>
+<span class="fc" id="L236">            neighbours.add(neighbour);</span>
+<span class="fc" id="L237">            updateDistance(current, neighbour);</span>
         }
-<span class="fc bfc" id="L220" title="All 2 branches covered.">        if(map.canGoNorthWest(currentLine, currentColum)) {</span>
-<span class="fc" id="L221">            neighbour = new Cordinate(currentLine-1, currentColum-1);</span>
-<span class="fc" id="L222">            neighbours.add(neighbour);</span>
-<span class="fc" id="L223">            updateDistance(current, neighbour);</span>
+<span class="fc bfc" id="L239" title="All 2 branches covered.">        if(map.canGoNorthWest(currentLine, currentColum)) {</span>
+<span class="fc" id="L240">            neighbour = new Cordinate(currentLine-1, currentColum-1);</span>
+<span class="fc" id="L241">            neighbour.setDirection(8);</span>
+<span class="fc" id="L242">            neighbours.add(neighbour);</span>
+<span class="fc" id="L243">            updateDistance(current, neighbour);</span>
         }
-<span class="fc bfc" id="L225" title="All 2 branches covered.">        if(map.terrainPassableAt(currentLine-1, currentColum)) {</span>
-<span class="fc" id="L226">            neighbour = new Cordinate(currentLine-1, currentColum);</span>
-<span class="fc" id="L227">            neighbours.add(neighbour);</span>
-<span class="fc" id="L228">            updateDistance(current, neighbour);</span>
-        }
-<span class="fc" id="L230">    }</span>
-
-    private void findNeightboursWhenGoingSouthWest(Cordinate current, CordinateList neighbours) {
-<span class="fc" id="L233">        int currentLine = current.getLineNumber();</span>
-<span class="fc" id="L234">        int currentColum = current.getColum();</span>
-        Cordinate neighbour;
-<span class="pc bpc" id="L236" title="1 of 2 branches missed.">        if(map.terrainPassableAt(currentLine, currentColum-1)) {</span>
-<span class="fc" id="L237">            neighbour = new Cordinate(currentLine, currentColum-1);</span>
-<span class="fc" id="L238">            neighbours.add(neighbour);</span>
-<span class="fc" id="L239">            updateDistance(current, neighbour);</span>
-        }
-<span class="fc bfc" id="L241" title="All 2 branches covered.">        if(map.canGoSouthWest(currentLine, currentColum)) {</span>
-<span class="fc" id="L242">            neighbour = new Cordinate(currentLine+1, currentColum-1);</span>
-<span class="fc" id="L243">            neighbours.add(neighbour);</span>
-<span class="fc" id="L244">            updateDistance(current, neighbour);</span>
-        }
-<span class="fc bfc" id="L246" title="All 2 branches covered.">        if(map.terrainPassableAt(currentLine+1, currentColum)) {</span>
-<span class="fc" id="L247">            neighbour = new Cordinate(currentLine+1, currentColum);</span>
+<span class="fc bfc" id="L245" title="All 2 branches covered.">        if(map.terrainPassableAt(currentLine-1, currentColum)) {</span>
+<span class="fc" id="L246">            neighbour = new Cordinate(currentLine-1, currentColum);</span>
+<span class="fc" id="L247">            neighbour.setDirection(1);</span>
 <span class="fc" id="L248">            neighbours.add(neighbour);</span>
 <span class="fc" id="L249">            updateDistance(current, neighbour);</span>
         }
 <span class="fc" id="L251">    }</span>
 
-    private void findNeightboursWhenGoingNorthEast(Cordinate current, CordinateList neighbours) {
+    private void findNeightboursWhenGoingSouthWest(Cordinate current, CordinateList neighbours) {
 <span class="fc" id="L254">        int currentLine = current.getLineNumber();</span>
 <span class="fc" id="L255">        int currentColum = current.getColum();</span>
         Cordinate neighbour;
-<span class="pc bpc" id="L257" title="1 of 2 branches missed.">        if(map.canGoNorthEast(currentLine, currentColum)) {</span>
-<span class="nc" id="L258">            neighbour = new Cordinate(currentLine-1, currentColum+1);</span>
-<span class="nc" id="L259">            neighbours.add(neighbour);</span>
-<span class="nc" id="L260">            updateDistance(current, neighbour);</span>
+<span class="pc bpc" id="L257" title="1 of 2 branches missed.">        if(map.terrainPassableAt(currentLine, currentColum-1)) {</span>
+<span class="fc" id="L258">            neighbour = new Cordinate(currentLine, currentColum-1);</span>
+<span class="fc" id="L259">            neighbour.setDirection(7);</span>
+<span class="fc" id="L260">            neighbours.add(neighbour);</span>
+<span class="fc" id="L261">            updateDistance(current, neighbour);</span>
         }
-<span class="pc bpc" id="L262" title="1 of 2 branches missed.">        if(map.terrainPassableAt(currentLine-1, currentColum)) {</span>
-<span class="nc" id="L263">            neighbour = new Cordinate(currentLine-1, currentColum);</span>
-<span class="nc" id="L264">            neighbours.add(neighbour);</span>
-<span class="nc" id="L265">            updateDistance(current, neighbour);</span>
+<span class="fc bfc" id="L263" title="All 2 branches covered.">        if(map.canGoSouthWest(currentLine, currentColum)) {</span>
+<span class="fc" id="L264">            neighbour = new Cordinate(currentLine+1, currentColum-1);</span>
+<span class="fc" id="L265">            neighbour.setDirection(6);</span>
+<span class="fc" id="L266">            neighbours.add(neighbour);</span>
+<span class="fc" id="L267">            updateDistance(current, neighbour);</span>
         }
-<span class="pc bpc" id="L267" title="1 of 2 branches missed.">        if(map.terrainPassableAt(currentLine, currentColum+1)) {</span>
-<span class="fc" id="L268">            neighbour = new Cordinate(currentLine, currentColum+1);</span>
-<span class="fc" id="L269">            neighbours.add(neighbour);</span>
-<span class="fc" id="L270">            updateDistance(current, neighbour);</span>
+<span class="fc bfc" id="L269" title="All 2 branches covered.">        if(map.terrainPassableAt(currentLine+1, currentColum)) {</span>
+<span class="fc" id="L270">            neighbour = new Cordinate(currentLine+1, currentColum);</span>
+<span class="fc" id="L271">            neighbour.setDirection(5);</span>
+<span class="fc" id="L272">            neighbours.add(neighbour);</span>
+<span class="fc" id="L273">            updateDistance(current, neighbour);</span>
         }
-<span class="fc" id="L272">    }</span>
+<span class="fc" id="L275">    }</span>
+
+    private void findNeightboursWhenGoingNorthEast(Cordinate current, CordinateList neighbours) {
+<span class="fc" id="L278">        int currentLine = current.getLineNumber();</span>
+<span class="fc" id="L279">        int currentColum = current.getColum();</span>
+        Cordinate neighbour;
+<span class="pc bpc" id="L281" title="1 of 2 branches missed.">        if(map.canGoNorthEast(currentLine, currentColum)) {</span>
+<span class="nc" id="L282">            neighbour = new Cordinate(currentLine-1, currentColum+1);</span>
+<span class="nc" id="L283">            neighbour.setDirection(2);</span>
+<span class="nc" id="L284">            neighbours.add(neighbour);</span>
+<span class="nc" id="L285">            updateDistance(current, neighbour);</span>
+        }
+<span class="pc bpc" id="L287" title="1 of 2 branches missed.">        if(map.terrainPassableAt(currentLine-1, currentColum)) {</span>
+<span class="nc" id="L288">            neighbour = new Cordinate(currentLine-1, currentColum);</span>
+<span class="nc" id="L289">            neighbour.setDirection(1);</span>
+<span class="nc" id="L290">            neighbours.add(neighbour);</span>
+<span class="nc" id="L291">            updateDistance(current, neighbour);</span>
+        }
+<span class="pc bpc" id="L293" title="1 of 2 branches missed.">        if(map.terrainPassableAt(currentLine, currentColum+1)) {</span>
+<span class="fc" id="L294">            neighbour = new Cordinate(currentLine, currentColum+1);</span>
+<span class="fc" id="L295">            neighbour.setDirection(3);</span>
+<span class="fc" id="L296">            neighbours.add(neighbour);</span>
+<span class="fc" id="L297">            updateDistance(current, neighbour);</span>
+        }
+<span class="fc" id="L299">    }</span>
 
     private void findNeightboursWhenGoingSouth(Cordinate current, CordinateList neighbours) {
-<span class="fc" id="L275">        int currentLine = current.getLineNumber();</span>
-<span class="fc" id="L276">        int currentColum = current.getColum();</span>
+<span class="fc" id="L302">        int currentLine = current.getLineNumber();</span>
+<span class="fc" id="L303">        int currentColum = current.getColum();</span>
         Cordinate neighbour;
-<span class="fc bfc" id="L278" title="All 2 branches covered.">        if(map.terrainPassableAt(currentLine+1, currentColum)) {</span>
-<span class="fc" id="L279">            neighbour = new Cordinate(currentLine+1, currentColum);</span>
-<span class="fc" id="L280">            neighbours.add(neighbour);</span>
-<span class="fc" id="L281">            updateDistance(current, neighbour);</span>
+<span class="fc bfc" id="L305" title="All 2 branches covered.">        if(map.terrainPassableAt(currentLine+1, currentColum)) {</span>
+<span class="fc" id="L306">            neighbour = new Cordinate(currentLine+1, currentColum);</span>
+<span class="fc" id="L307">            neighbour.setDirection(5);</span>
+<span class="fc" id="L308">            neighbours.add(neighbour);</span>
+<span class="fc" id="L309">            updateDistance(current, neighbour);</span>
         }
-<span class="fc bfc" id="L283" title="All 2 branches covered.">        if(map.canGoSouthEast(currentLine, currentColum)) {</span>
-<span class="fc" id="L284">            neighbour = new Cordinate(currentLine+1, currentColum+1);</span>
-<span class="fc" id="L285">            neighbours.add(neighbour);</span>
-<span class="fc" id="L286">            updateDistance(current, neighbour);</span>
+<span class="fc bfc" id="L311" title="All 4 branches covered.">        if(map.terrainPassableAt(currentLine, currentColum-1) &amp;&amp; !map.canGoNorthWest(currentLine, currentColum)) {</span>
+<span class="fc" id="L312">            neighbour = new Cordinate(currentLine, currentColum-1);</span>
+<span class="fc" id="L313">            neighbour.setDirection(7);</span>
+<span class="fc" id="L314">            neighbours.add(neighbour);</span>
+<span class="fc" id="L315">            updateDistance(current, neighbour);</span>
+<span class="fc bfc" id="L316" title="All 2 branches covered.">            if(map.canGoSouthWest(currentLine, currentColum)) {</span>
+<span class="fc" id="L317">                neighbour = new Cordinate(currentLine+1, currentColum-1);</span>
+<span class="fc" id="L318">                neighbour.setDirection(6);</span>
+<span class="fc" id="L319">                neighbours.add(neighbour);</span>
+<span class="fc" id="L320">                updateDistance(current, neighbour); </span>
+            }
+
         }
-<span class="fc bfc" id="L288" title="All 2 branches covered.">        if(map.canGoSouthWest(currentLine, currentColum)) {</span>
-<span class="fc" id="L289">            neighbour = new Cordinate(currentLine+1, currentColum-1);</span>
-<span class="fc" id="L290">            neighbours.add(neighbour);</span>
-<span class="fc" id="L291">            updateDistance(current, neighbour);</span>
+<span class="fc bfc" id="L324" title="All 4 branches covered.">        if(map.terrainPassableAt(currentLine, currentColum+1) &amp;&amp; !map.canGoNorthEast(currentLine, currentColum) ) {</span>
+<span class="fc" id="L325">            neighbour = new Cordinate(currentLine, currentColum+1);</span>
+<span class="fc" id="L326">            neighbour.setDirection(3);</span>
+<span class="fc" id="L327">            neighbours.add(neighbour);</span>
+<span class="fc" id="L328">            updateDistance(current, neighbour);</span>
+<span class="fc bfc" id="L329" title="All 2 branches covered.">            if(map.canGoSouthEast(currentLine, currentColum)) {</span>
+<span class="fc" id="L330">                neighbour = new Cordinate(currentLine+1, currentColum+1);</span>
+<span class="fc" id="L331">                neighbour.setDirection(4);</span>
+<span class="fc" id="L332">                neighbours.add(neighbour);</span>
+<span class="fc" id="L333">                updateDistance(current, neighbour);</span>
+            }
+
         }
-<span class="fc bfc" id="L293" title="All 4 branches covered.">        if(map.terrainPassableAt(currentLine, currentColum-1) &amp;&amp; !map.canGoNorthWest(currentLine, currentColum)) {</span>
-<span class="fc" id="L294">            neighbour = new Cordinate(currentLine, currentColum-1);</span>
-<span class="fc" id="L295">            neighbours.add(neighbour);</span>
-<span class="fc" id="L296">            updateDistance(current, neighbour);</span>
-        }
-<span class="fc bfc" id="L298" title="All 4 branches covered.">        if(map.terrainPassableAt(currentLine, currentColum+1) &amp;&amp; !map.canGoNorthEast(currentLine, currentColum) ) {</span>
-<span class="fc" id="L299">            neighbour = new Cordinate(currentLine, currentColum+1);</span>
-<span class="fc" id="L300">            neighbours.add(neighbour);</span>
-<span class="fc" id="L301">            updateDistance(current, neighbour);</span>
-        }
-<span class="fc" id="L303">    }</span>
+<span class="fc" id="L337">    }</span>
 
     private void findNeightboursWhenGoingNorth(Cordinate current, CordinateList neighbours) {
-<span class="fc" id="L306">        int currentLine = current.getLineNumber();</span>
-<span class="fc" id="L307">        int currentColum = current.getColum();</span>
+<span class="fc" id="L340">        int currentLine = current.getLineNumber();</span>
+<span class="fc" id="L341">        int currentColum = current.getColum();</span>
         Cordinate neighbour;
-<span class="fc bfc" id="L309" title="All 2 branches covered.">        if(map.terrainPassableAt(currentLine-1, currentColum)) {</span>
-<span class="fc" id="L310">            neighbour = new Cordinate(currentLine-1, currentColum);</span>
-<span class="fc" id="L311">            neighbours.add(neighbour);</span>
-<span class="fc" id="L312">            updateDistance(current, neighbour);</span>
+<span class="fc bfc" id="L343" title="All 2 branches covered.">        if(map.terrainPassableAt(currentLine-1, currentColum)) {</span>
+<span class="fc" id="L344">            neighbour = new Cordinate(currentLine-1, currentColum);</span>
+<span class="fc" id="L345">            neighbour.setDirection(1);</span>
+<span class="fc" id="L346">            neighbours.add(neighbour);</span>
+<span class="fc" id="L347">            updateDistance(current, neighbour);</span>
         }
-<span class="fc bfc" id="L314" title="All 2 branches covered.">        if(map.canGoNorthWest(currentLine, currentColum)) {</span>
-<span class="fc" id="L315">            neighbour = new Cordinate(currentLine-1, currentColum-1);</span>
-<span class="fc" id="L316">            neighbours.add(neighbour);</span>
-<span class="fc" id="L317">            updateDistance(current, neighbour);</span>
-        }
-<span class="fc bfc" id="L319" title="All 2 branches covered.">        if(map.canGoNorthEast(currentLine, currentColum)) {</span>
-<span class="fc" id="L320">            neighbour = new Cordinate(currentLine-1, currentColum+1);</span>
-<span class="fc" id="L321">            neighbours.add(neighbour);</span>
-<span class="fc" id="L322">            updateDistance(current, neighbour);</span>
-        }
-<span class="fc bfc" id="L324" title="All 4 branches covered.">        if(map.terrainPassableAt(currentLine, currentColum-1) &amp;&amp; !map.canGoSouthWest(currentLine, currentColum)) {</span>
-<span class="fc" id="L325">            neighbour = new Cordinate(currentLine, currentColum-1);</span>
-<span class="fc" id="L326">            neighbours.add(neighbour);</span>
-<span class="fc" id="L327">            updateDistance(current, neighbour);</span>
-        }
-<span class="pc bpc" id="L329" title="1 of 4 branches missed.">        if(map.terrainPassableAt(currentLine, currentColum+1) &amp;&amp; !map.canGoSouthEast(currentLine, currentColum) ) {</span>
-<span class="fc" id="L330">            neighbour = new Cordinate(currentLine, currentColum+1);</span>
-<span class="fc" id="L331">            neighbours.add(neighbour);</span>
-<span class="fc" id="L332">            updateDistance(current, neighbour);</span>
-        }
-<span class="fc" id="L334">    }</span>
-
-    private void findNeightboursWhenGoingEast(Cordinate current, CordinateList neighbours) {
-<span class="fc" id="L337">        int currentLine = current.getLineNumber();</span>
-<span class="fc" id="L338">        int currentColum = current.getColum();</span>
-        Cordinate neighbour;
-<span class="fc bfc" id="L340" title="All 2 branches covered.">        if(map.terrainPassableAt(currentLine, currentColum+1)) {</span>
-<span class="fc" id="L341">            neighbour = new Cordinate(currentLine, currentColum+1);</span>
-<span class="fc" id="L342">            neighbours.add(neighbour);</span>
-<span class="fc" id="L343">            updateDistance(current, neighbour);</span>
-        }
-<span class="fc bfc" id="L345" title="All 2 branches covered.">        if(map.canGoNorthEast(currentLine, currentColum)) {</span>
-<span class="fc" id="L346">            neighbour = new Cordinate(currentLine-1, currentColum+1);</span>
-<span class="fc" id="L347">            neighbours.add(neighbour);</span>
-<span class="fc" id="L348">            updateDistance(current, neighbour);</span>
-        }
-<span class="fc bfc" id="L350" title="All 2 branches covered.">        if(map.canGoSouthEast(currentLine, currentColum)) {</span>
-<span class="fc" id="L351">            neighbour = new Cordinate(currentLine+1, currentColum+1);</span>
+<span class="fc bfc" id="L349" title="All 4 branches covered.">        if(map.terrainPassableAt(currentLine, currentColum-1) &amp;&amp; !map.canGoSouthWest(currentLine, currentColum)) {</span>
+<span class="fc" id="L350">            neighbour = new Cordinate(currentLine, currentColum-1);</span>
+<span class="fc" id="L351">            neighbour.setDirection(7);</span>
 <span class="fc" id="L352">            neighbours.add(neighbour);</span>
 <span class="fc" id="L353">            updateDistance(current, neighbour);</span>
+<span class="fc bfc" id="L354" title="All 2 branches covered.">            if(map.canGoNorthWest(currentLine, currentColum)) {</span>
+<span class="fc" id="L355">                neighbour = new Cordinate(currentLine-1, currentColum-1);</span>
+<span class="fc" id="L356">                neighbour.setDirection(8);</span>
+<span class="fc" id="L357">                neighbours.add(neighbour);</span>
+<span class="fc" id="L358">                updateDistance(current, neighbour);</span>
+            }
         }
-<span class="fc bfc" id="L355" title="All 4 branches covered.">        if(map.terrainPassableAt(currentLine-1, currentColum) &amp;&amp; !map.canGoNorthWest(currentLine, currentColum)) {</span>
-<span class="fc" id="L356">            neighbour = new Cordinate(currentLine-1, currentColum);</span>
-<span class="fc" id="L357">            neighbours.add(neighbour);</span>
-<span class="fc" id="L358">            updateDistance(current, neighbour);</span>
+<span class="pc bpc" id="L361" title="1 of 4 branches missed.">        if(map.terrainPassableAt(currentLine, currentColum+1) &amp;&amp; !map.canGoSouthEast(currentLine, currentColum) ) {</span>
+<span class="fc" id="L362">            neighbour = new Cordinate(currentLine, currentColum+1);</span>
+<span class="fc" id="L363">            neighbour.setDirection(3);</span>
+<span class="fc" id="L364">            neighbours.add(neighbour);</span>
+<span class="fc" id="L365">            updateDistance(current, neighbour);</span>
+<span class="fc bfc" id="L366" title="All 2 branches covered.">            if(map.canGoNorthEast(currentLine, currentColum)) {</span>
+<span class="fc" id="L367">                neighbour = new Cordinate(currentLine-1, currentColum+1);</span>
+<span class="fc" id="L368">                neighbour.setDirection(2);</span>
+<span class="fc" id="L369">                neighbours.add(neighbour);</span>
+<span class="fc" id="L370">                updateDistance(current, neighbour);  </span>
+            }
         }
-<span class="fc bfc" id="L360" title="All 4 branches covered.">        if(map.terrainPassableAt(currentLine+1, currentColum) &amp;&amp; !map.canGoSouthWest(currentLine, currentColum)) {</span>
-<span class="fc" id="L361">            neighbour = new Cordinate(currentLine+1, currentColum);</span>
-<span class="fc" id="L362">            neighbours.add(neighbour);</span>
-<span class="fc" id="L363">            updateDistance(current, neighbour);</span>
-        }
-<span class="fc" id="L365">    }</span>
+<span class="fc" id="L373">    }</span>
 
-    private void findNeightboursWhenGoingWest(Cordinate current, CordinateList neighbours) {
-<span class="fc" id="L368">        int currentLine = current.getLineNumber();</span>
-<span class="fc" id="L369">        int currentColum = current.getColum();</span>
+    private void findNeightboursWhenGoingEast(Cordinate current, CordinateList neighbours) {
+<span class="fc" id="L376">        int currentLine = current.getLineNumber();</span>
+<span class="fc" id="L377">        int currentColum = current.getColum();</span>
         Cordinate neighbour;
-<span class="fc bfc" id="L371" title="All 2 branches covered.">        if(map.terrainPassableAt(currentLine, currentColum-1)) {</span>
-<span class="fc" id="L372">            neighbour = new Cordinate(currentLine, currentColum-1);</span>
-<span class="fc" id="L373">            neighbours.add(neighbour);</span>
-<span class="fc" id="L374">            updateDistance(current, neighbour);</span>
+<span class="fc bfc" id="L379" title="All 2 branches covered.">        if(map.terrainPassableAt(currentLine, currentColum+1)) {</span>
+<span class="fc" id="L380">            neighbour = new Cordinate(currentLine, currentColum+1);</span>
+<span class="fc" id="L381">            neighbour.setDirection(3);</span>
+<span class="fc" id="L382">            neighbours.add(neighbour);</span>
+<span class="fc" id="L383">            updateDistance(current, neighbour);</span>
         }
-<span class="fc bfc" id="L376" title="All 2 branches covered.">        if(map.canGoSouthWest(currentLine, currentColum)) {</span>
-<span class="fc" id="L377">            neighbour = new Cordinate(currentLine+1, currentColum-1);</span>
-<span class="fc" id="L378">            neighbours.add(neighbour);</span>
-<span class="fc" id="L379">            updateDistance(current, neighbour);</span>
-        }
-<span class="fc bfc" id="L381" title="All 2 branches covered.">        if(map.canGoNorthWest(currentLine, currentColum)) {</span>
-<span class="fc" id="L382">            neighbour = new Cordinate(currentLine-1, currentColum-1);</span>
-<span class="fc" id="L383">            neighbours.add(neighbour);</span>
-<span class="fc" id="L384">            updateDistance(current, neighbour);</span>
-        }
-<span class="fc bfc" id="L386" title="All 4 branches covered.">        if(map.terrainPassableAt(currentLine-1, currentColum) &amp;&amp; !map.canGoNorthEast(currentLine, currentColum)) {</span>
-<span class="fc" id="L387">            neighbour = new Cordinate(currentLine-1, currentColum);</span>
+<span class="fc bfc" id="L385" title="All 4 branches covered.">        if(map.terrainPassableAt(currentLine-1, currentColum) &amp;&amp; !map.canGoNorthWest(currentLine, currentColum)) {</span>
+<span class="fc" id="L386">            neighbour = new Cordinate(currentLine-1, currentColum);</span>
+<span class="fc" id="L387">            neighbour.setDirection(1);</span>
 <span class="fc" id="L388">            neighbours.add(neighbour);</span>
 <span class="fc" id="L389">            updateDistance(current, neighbour);</span>
+<span class="fc bfc" id="L390" title="All 2 branches covered.">            if(map.canGoNorthEast(currentLine, currentColum)) {</span>
+<span class="fc" id="L391">                neighbour = new Cordinate(currentLine-1, currentColum+1);</span>
+<span class="fc" id="L392">                neighbour.setDirection(2);</span>
+<span class="fc" id="L393">                neighbours.add(neighbour);</span>
+<span class="fc" id="L394">                updateDistance(current, neighbour);  </span>
+            }
         }
-<span class="fc bfc" id="L391" title="All 4 branches covered.">        if(map.terrainPassableAt(currentLine+1, currentColum) &amp;&amp; !map.canGoSouthEast(currentLine, currentColum)) {</span>
-<span class="fc" id="L392">            neighbour = new Cordinate(currentLine+1, currentColum);</span>
-<span class="fc" id="L393">            neighbours.add(neighbour);</span>
-<span class="fc" id="L394">            updateDistance(current, neighbour);</span>
+<span class="fc bfc" id="L397" title="All 4 branches covered.">        if(map.terrainPassableAt(currentLine+1, currentColum) &amp;&amp; !map.canGoSouthWest(currentLine, currentColum)) {</span>
+<span class="fc" id="L398">            neighbour = new Cordinate(currentLine+1, currentColum);</span>
+<span class="fc" id="L399">            neighbour.setDirection(5);</span>
+<span class="fc" id="L400">            neighbours.add(neighbour);</span>
+<span class="fc" id="L401">            updateDistance(current, neighbour);</span>
+<span class="fc bfc" id="L402" title="All 2 branches covered.">            if(map.canGoSouthEast(currentLine, currentColum)) {</span>
+<span class="fc" id="L403">                neighbour = new Cordinate(currentLine+1, currentColum+1);</span>
+<span class="fc" id="L404">                neighbour.setDirection(4);</span>
+<span class="fc" id="L405">                neighbours.add(neighbour);</span>
+<span class="fc" id="L406">                updateDistance(current, neighbour);</span>
+            }
         }
-<span class="fc" id="L396">    }</span>
+<span class="fc" id="L409">    }</span>
 
-    private Cordinate jump(Cordinate target, Cordinate prevCordinate) {
-        //System.out.println(&quot;jumping to &quot;+target+&quot; from &quot;+prevCordinate);
-<span class="fc" id="L400">        int currentLine = target.getLineNumber(); // change to target line</span>
-<span class="fc" id="L401">        int currentColum = target.getColum(); // change to target colum</span>
-<span class="fc bfc" id="L402" title="All 2 branches covered.">        if(foundGoal(target)) {</span>
-<span class="fc" id="L403">            return target;</span>
+    private void findNeightboursWhenGoingWest(Cordinate current, CordinateList neighbours) {
+<span class="fc" id="L412">        int currentLine = current.getLineNumber();</span>
+<span class="fc" id="L413">        int currentColum = current.getColum();</span>
+        Cordinate neighbour;
+<span class="fc bfc" id="L415" title="All 2 branches covered.">        if(map.terrainPassableAt(currentLine, currentColum-1)) {</span>
+<span class="fc" id="L416">            neighbour = new Cordinate(currentLine, currentColum-1);</span>
+<span class="fc" id="L417">            neighbour.setDirection(7);</span>
+<span class="fc" id="L418">            neighbours.add(neighbour);</span>
+<span class="fc" id="L419">            updateDistance(current, neighbour);</span>
+        }
+<span class="fc bfc" id="L421" title="All 4 branches covered.">        if(map.terrainPassableAt(currentLine-1, currentColum) &amp;&amp; !map.canGoNorthEast(currentLine, currentColum)) {</span>
+<span class="fc" id="L422">            neighbour = new Cordinate(currentLine-1, currentColum);</span>
+<span class="fc" id="L423">            neighbour.setDirection(1);</span>
+<span class="fc" id="L424">            neighbours.add(neighbour);</span>
+<span class="fc" id="L425">            updateDistance(current, neighbour);</span>
+<span class="fc bfc" id="L426" title="All 2 branches covered.">            if(map.canGoNorthWest(currentLine, currentColum)) {</span>
+<span class="fc" id="L427">                neighbour = new Cordinate(currentLine-1, currentColum-1);</span>
+<span class="fc" id="L428">                neighbour.setDirection(8);</span>
+<span class="fc" id="L429">                neighbours.add(neighbour);</span>
+<span class="fc" id="L430">                updateDistance(current, neighbour);</span>
+            }
+        }
+<span class="fc bfc" id="L433" title="All 4 branches covered.">        if(map.terrainPassableAt(currentLine+1, currentColum) &amp;&amp; !map.canGoSouthEast(currentLine, currentColum)) {</span>
+<span class="fc" id="L434">            neighbour = new Cordinate(currentLine+1, currentColum);</span>
+<span class="fc" id="L435">            neighbour.setDirection(5);</span>
+<span class="fc" id="L436">            neighbours.add(neighbour);</span>
+<span class="fc" id="L437">            updateDistance(current, neighbour);</span>
+<span class="fc bfc" id="L438" title="All 2 branches covered.">            if(map.canGoSouthWest(currentLine, currentColum)) {</span>
+<span class="fc" id="L439">                neighbour = new Cordinate(currentLine+1, currentColum-1);</span>
+<span class="fc" id="L440">                neighbour.setDirection(6);</span>
+<span class="fc" id="L441">                neighbours.add(neighbour);</span>
+<span class="fc" id="L442">                updateDistance(current, neighbour); </span>
+            }
+        }
+<span class="fc" id="L445">    }</span>
+
+    private Cordinate jump(Cordinate target) {
+        //System.out.println(&quot;jumping to &quot;+target+&quot; direction &quot;+target.getDirection());
+<span class="fc" id="L449">        int currentLine = target.getLineNumber(); // change to target line</span>
+<span class="fc" id="L450">        int currentColum = target.getColum(); // change to target colum</span>
+<span class="fc bfc" id="L451" title="All 2 branches covered.">        if(foundGoal(target)) {</span>
+<span class="fc" id="L452">            return target;</span>
         }
 
-<span class="fc bfc" id="L406" title="All 2 branches covered.">        if (!map.terrainPassableAt(currentLine,currentColum)) {</span>
-<span class="fc" id="L407">            return null;</span>
+<span class="fc bfc" id="L455" title="All 2 branches covered.">        if (!map.terrainPassableAt(currentLine,currentColum)) {</span>
+<span class="fc" id="L456">            return null;</span>
         }
 
-<span class="fc" id="L410">        int pLine = prevCordinate.getLineNumber();</span>
-<span class="fc" id="L411">        int pColum = prevCordinate.getColum();</span>
-<span class="fc" id="L412">        int verticalDistance = currentLine - pLine;</span>
-<span class="fc" id="L413">        int horizontalDistance = currentColum - pColum;</span>
-        
-<span class="fc bfc" id="L415" title="All 4 branches covered.">        if(horizontalDistance != 0 &amp;&amp; verticalDistance != 0) { // diagonal</span>
-<span class="fc bfc" id="L416" title="All 4 branches covered.">            if(verticalDistance &gt; 0 &amp;&amp; horizontalDistance &gt; 0) { // going south east</span>
+<span class="fc" id="L459">        int direction = target.getDirection();</span>
+        Cordinate nextTarget;
+<span class="pc bpc" id="L461" title="1 of 9 branches missed.">        switch(direction) {</span>
+            case 1: //north
+<span class="fc bfc" id="L463" title="All 4 branches covered.">            if(map.terrainPassableAt(currentLine, currentColum-1) &amp;&amp; !map.canGoSouthWest(currentLine, currentColum)) {</span>
+<span class="fc" id="L464">                return target;</span>
+            }
+<span class="fc bfc" id="L466" title="All 4 branches covered.">            if(map.terrainPassableAt(currentLine, currentColum+1) &amp;&amp; !map.canGoSouthEast(currentLine, currentColum) ) {</span>
+<span class="fc" id="L467">                return target;</span>
+            }
+<span class="fc" id="L469">            nextTarget = new Cordinate(currentLine-1, currentColum);</span>
+<span class="fc" id="L470">            nextTarget.setDirection(1);</span>
+<span class="fc" id="L471">            return jump(nextTarget);</span>
+            case 2: //north east
                 // when moving diagonally must check for vertical and horizontal jumppoints
-<span class="pc bpc" id="L418" title="1 of 2 branches missed.">                if(jump(new Cordinate(currentLine, currentColum+1), target) != null) { // check east</span>
-<span class="nc" id="L419">                    return target;</span>
+<span class="fc" id="L474">                nextTarget = new Cordinate(currentLine-1, currentColum);</span>
+<span class="fc" id="L475">                nextTarget.setDirection(1);</span>
+<span class="pc bpc" id="L476" title="1 of 2 branches missed.">                if(jump(nextTarget) != null) { // check north</span>
+<span class="nc" id="L477">                    return target;</span>
                 }
-<span class="fc bfc" id="L421" title="All 2 branches covered.">                if(jump(new Cordinate(currentLine+1, currentColum), target) != null) { // check south</span>
-<span class="fc" id="L422">                    return target;</span>
-                }
-                // jump south east
-<span class="fc bfc" id="L425" title="All 2 branches covered.">                if(map.canGoSouthEast(currentLine, currentColum)) {</span>
-<span class="fc" id="L426">                    return jump(new Cordinate(currentLine+1, currentColum+1),target);</span>
-                }
-                
-<span class="fc bfc" id="L429" title="All 4 branches covered.">            } else if (verticalDistance &lt; 0 &amp;&amp; horizontalDistance &lt; 0) { // going north west</span>
-                // when moving diagonally must check for vertical and horizontal jumppoints
-<span class="fc bfc" id="L431" title="All 2 branches covered.">                if(jump(new Cordinate(currentLine, currentColum-1), target) != null) { // check west</span>
-<span class="fc" id="L432">                    return target;</span>
-                }
-<span class="fc bfc" id="L434" title="All 2 branches covered.">                if(jump(new Cordinate(currentLine-1, currentColum), target) != null) { // check north</span>
-<span class="fc" id="L435">                    return target;</span>
-                }
-                // jump north west
-<span class="fc bfc" id="L438" title="All 2 branches covered.">                if(map.canGoNorthWest(currentLine, currentColum)) {</span>
-<span class="fc" id="L439">                    return jump(new Cordinate(currentLine-1, currentColum-1),target);</span>
-                }
-<span class="fc bfc" id="L441" title="All 2 branches covered.">            } else if (verticalDistance &gt; 0) { // going south west</span>
-                // when moving diagonally must check for vertical and horizontal jumppoints
-<span class="fc bfc" id="L443" title="All 2 branches covered.">                if(jump(new Cordinate(currentLine, currentColum-1), target) != null) { // check west</span>
-<span class="fc" id="L444">                    return target;</span>
-                }
-<span class="pc bpc" id="L446" title="1 of 2 branches missed.">                if(jump(new Cordinate(currentLine+1, currentColum), target) != null) { // check south</span>
-<span class="nc" id="L447">                    return target;</span>
-                }
-                // jump south west
-<span class="fc bfc" id="L450" title="All 2 branches covered.">                if(map.canGoSouthWest(currentLine, currentColum)) {</span>
-<span class="fc" id="L451">                    return jump(new Cordinate(currentLine+1, currentColum-1), target);</span>
-                }
-            } else { // going north east
-                // when moving diagonally must check for vertical and horizontal jumppoints
-<span class="pc bpc" id="L455" title="1 of 2 branches missed.">                if(jump(new Cordinate(currentLine-1, currentColum), target) != null) { // check north</span>
-<span class="nc" id="L456">                    return target;</span>
-                }
-<span class="fc bfc" id="L458" title="All 2 branches covered.">                if(jump(new Cordinate(currentLine, currentColum+1), target) != null) { // check east</span>
-<span class="fc" id="L459">                    return target;</span>
+<span class="fc" id="L479">                nextTarget = new Cordinate(currentLine, currentColum+1);</span>
+<span class="fc" id="L480">                nextTarget.setDirection(3);</span>
+<span class="fc bfc" id="L481" title="All 2 branches covered.">                if(jump(nextTarget) != null) { // check east</span>
+<span class="fc" id="L482">                    return target;</span>
                 }
                 // jump north east
-<span class="fc bfc" id="L462" title="All 2 branches covered.">                if(map.canGoNorthEast(currentLine, currentColum)) {</span>
-<span class="fc" id="L463">                    return jump(new Cordinate(currentLine-1, currentColum+1), target);</span>
+<span class="fc bfc" id="L485" title="All 2 branches covered.">                if(map.canGoNorthEast(currentLine, currentColum)) {</span>
+<span class="fc" id="L486">                    nextTarget = new Cordinate(currentLine-1, currentColum+1);</span>
+<span class="fc" id="L487">                    nextTarget.setDirection(2);</span>
+<span class="fc" id="L488">                    return jump(nextTarget);</span>
                 }
-            }
-<span class="fc bfc" id="L466" title="All 2 branches covered.">        } else if(horizontalDistance != 0) {</span>
-<span class="fc bfc" id="L467" title="All 2 branches covered.">            if(horizontalDistance &gt; 0) { // going east</span>
-<span class="fc bfc" id="L468" title="All 4 branches covered.">                if(map.terrainPassableAt(currentLine-1, currentColum) &amp;&amp; !map.canGoNorthWest(currentLine, currentColum)) {</span>
-<span class="fc" id="L469">                    return target;</span>
+                break;
+            case 3: // east
+<span class="fc bfc" id="L492" title="All 4 branches covered.">                if(map.terrainPassableAt(currentLine-1, currentColum) &amp;&amp; !map.canGoNorthWest(currentLine, currentColum)) {</span>
+<span class="fc" id="L493">                    return target;</span>
                 }
-<span class="fc bfc" id="L471" title="All 4 branches covered.">                if(map.terrainPassableAt(currentLine+1, currentColum) &amp;&amp; !map.canGoSouthWest(currentLine, currentColum)) {</span>
-<span class="fc" id="L472">                    return target;</span>
+<span class="fc bfc" id="L495" title="All 4 branches covered.">                if(map.terrainPassableAt(currentLine+1, currentColum) &amp;&amp; !map.canGoSouthWest(currentLine, currentColum)) {</span>
+<span class="fc" id="L496">                    return target;</span>
                 }
-<span class="fc" id="L474">                return jump(new Cordinate(currentLine,currentColum+1), target);</span>
-            } else { // going west
-<span class="fc bfc" id="L476" title="All 4 branches covered.">                if(map.terrainPassableAt(currentLine-1, currentColum) &amp;&amp; !map.canGoNorthEast(currentLine, currentColum)) {</span>
-<span class="fc" id="L477">                    return target;</span>
+<span class="fc" id="L498">                nextTarget = new Cordinate(currentLine,currentColum+1);</span>
+<span class="fc" id="L499">                nextTarget.setDirection(3);</span>
+<span class="fc" id="L500">                return jump(nextTarget);</span>
+            case 4: // south east
+                // when moving diagonally must check for vertical and horizontal jumppoints
+<span class="fc" id="L503">                nextTarget = new Cordinate(currentLine,currentColum+1);</span>
+<span class="fc" id="L504">                nextTarget.setDirection(3);</span>
+<span class="pc bpc" id="L505" title="1 of 2 branches missed.">                if(jump(nextTarget) != null) { // check east</span>
+<span class="nc" id="L506">                    return target;</span>
                 }
-<span class="fc bfc" id="L479" title="All 4 branches covered.">                if(map.terrainPassableAt(currentLine+1, currentColum) &amp;&amp; !map.canGoSouthEast(currentLine, currentColum)) {</span>
-<span class="fc" id="L480">                    return target;</span>
+<span class="fc" id="L508">                nextTarget = new Cordinate(currentLine+1, currentColum);</span>
+<span class="fc" id="L509">                nextTarget.setDirection(5);</span>
+<span class="fc bfc" id="L510" title="All 2 branches covered.">                if(jump(nextTarget) != null) { // check south</span>
+<span class="fc" id="L511">                    return target;</span>
                 }
-<span class="fc" id="L482">                return jump(new Cordinate(currentLine,currentColum-1), target);</span>
-            }
-<span class="pc bpc" id="L484" title="1 of 2 branches missed.">        } else if (verticalDistance != 0) {</span>
-<span class="fc bfc" id="L485" title="All 2 branches covered.">            boolean goingSouth = verticalDistance &gt; 0;</span>
-<span class="fc bfc" id="L486" title="All 2 branches covered.">            if(goingSouth) { // going south</span>
-<span class="fc bfc" id="L487" title="All 4 branches covered.">                if(map.terrainPassableAt(currentLine, currentColum-1) &amp;&amp; !map.canGoNorthWest(currentLine, currentColum)) {</span>
-<span class="fc" id="L488">                    return target;</span>
+                // jump south east
+<span class="fc bfc" id="L514" title="All 2 branches covered.">                if(map.canGoSouthEast(currentLine, currentColum)) {</span>
+<span class="fc" id="L515">                    nextTarget = new Cordinate(currentLine+1, currentColum+1);</span>
+<span class="fc" id="L516">                    nextTarget.setDirection(4);</span>
+<span class="fc" id="L517">                    return jump(nextTarget);</span>
                 }
-<span class="fc bfc" id="L490" title="All 4 branches covered.">                if(map.terrainPassableAt(currentLine, currentColum+1) &amp;&amp; !map.canGoNorthEast(currentLine, currentColum) ) {</span>
-<span class="fc" id="L491">                    return target;</span>
+                break;
+            case 5: // south
+<span class="fc bfc" id="L521" title="All 4 branches covered.">                if(map.terrainPassableAt(currentLine, currentColum-1) &amp;&amp; !map.canGoNorthWest(currentLine, currentColum)) {</span>
+<span class="fc" id="L522">                    return target;</span>
                 }
-<span class="fc" id="L493">                return jump(new Cordinate(currentLine+1, currentColum),target);</span>
-                
-            } else { // going north
-<span class="fc bfc" id="L496" title="All 4 branches covered.">                if(map.terrainPassableAt(currentLine, currentColum-1) &amp;&amp; !map.canGoSouthWest(currentLine, currentColum)) {</span>
-<span class="fc" id="L497">                    return target;</span>
+<span class="fc bfc" id="L524" title="All 4 branches covered.">                if(map.terrainPassableAt(currentLine, currentColum+1) &amp;&amp; !map.canGoNorthEast(currentLine, currentColum) ) {</span>
+<span class="fc" id="L525">                    return target;</span>
                 }
-<span class="fc bfc" id="L499" title="All 4 branches covered.">                if(map.terrainPassableAt(currentLine, currentColum+1) &amp;&amp; !map.canGoSouthEast(currentLine, currentColum) ) {</span>
-<span class="fc" id="L500">                    return target;</span>
+<span class="fc" id="L527">                nextTarget = new Cordinate(currentLine+1, currentColum);</span>
+<span class="fc" id="L528">                nextTarget.setDirection(5);</span>
+<span class="fc" id="L529">                return jump(nextTarget);</span>
+            case 6: // south west
+                // when moving diagonally must check for vertical and horizontal jumppoints
+<span class="fc" id="L532">                nextTarget = new Cordinate(currentLine, currentColum-1);</span>
+<span class="fc" id="L533">                nextTarget.setDirection(7);</span>
+<span class="fc bfc" id="L534" title="All 2 branches covered.">                if(jump(nextTarget) != null) { // check west</span>
+<span class="fc" id="L535">                    return target;</span>
                 }
-<span class="fc" id="L502">                return jump(new Cordinate(currentLine-1, currentColum), target);</span>
-            }
-
-        } 
-        
-<span class="fc" id="L507">        return null;</span>
+<span class="fc" id="L537">                nextTarget = new Cordinate(currentLine+1, currentColum);</span>
+<span class="fc" id="L538">                nextTarget.setDirection(5);</span>
+<span class="pc bpc" id="L539" title="1 of 2 branches missed.">                if(jump(nextTarget) != null) { // check south</span>
+<span class="nc" id="L540">                    return target;</span>
+                }
+                // jump south west
+<span class="fc bfc" id="L543" title="All 2 branches covered.">                if(map.canGoSouthWest(currentLine, currentColum)) {</span>
+<span class="fc" id="L544">                    nextTarget = new Cordinate(currentLine+1, currentColum-1);</span>
+<span class="fc" id="L545">                    nextTarget.setDirection(6);</span>
+<span class="fc" id="L546">                    return jump(nextTarget);</span>
+                }
+                break;
+            case 7: // west
+<span class="fc bfc" id="L550" title="All 4 branches covered.">                if(map.terrainPassableAt(currentLine-1, currentColum) &amp;&amp; !map.canGoNorthEast(currentLine, currentColum)) {</span>
+<span class="fc" id="L551">                    return target;</span>
+                }
+<span class="fc bfc" id="L553" title="All 4 branches covered.">                if(map.terrainPassableAt(currentLine+1, currentColum) &amp;&amp; !map.canGoSouthEast(currentLine, currentColum)) {</span>
+<span class="fc" id="L554">                    return target;</span>
+                }
+<span class="fc" id="L556">                nextTarget = new Cordinate(currentLine, currentColum-1);</span>
+<span class="fc" id="L557">                nextTarget.setDirection(7);</span>
+<span class="fc" id="L558">                return jump(nextTarget);</span>
+            case 8: // north west
+                // when moving diagonally must check for vertical and horizontal jumppoints
+<span class="fc" id="L561">                nextTarget = new Cordinate(currentLine, currentColum-1);</span>
+<span class="fc" id="L562">                nextTarget.setDirection(7);</span>
+<span class="fc bfc" id="L563" title="All 2 branches covered.">                if(jump(nextTarget) != null) { // check west</span>
+<span class="fc" id="L564">                    return target;</span>
+                }
+<span class="fc" id="L566">                nextTarget = new Cordinate(currentLine-1, currentColum);</span>
+<span class="fc" id="L567">                nextTarget.setDirection(1);</span>
+<span class="fc bfc" id="L568" title="All 2 branches covered.">                if(jump(nextTarget) != null) { // check north</span>
+<span class="fc" id="L569">                    return target;</span>
+                }
+                // jump north west
+<span class="fc bfc" id="L572" title="All 2 branches covered.">                if(map.canGoNorthWest(currentLine, currentColum)) {</span>
+<span class="fc" id="L573">                    nextTarget = new Cordinate(currentLine-1, currentColum-1);</span>
+<span class="fc" id="L574">                    nextTarget.setDirection(8);</span>
+<span class="fc" id="L575">                    return jump(nextTarget);</span>
+                }
+                break;      
+        }   
+<span class="fc" id="L579">        return null;</span>
     }
 
     private boolean foundGoal(Cordinate c) {
-<span class="fc bfc" id="L511" title="All 4 branches covered.">        if (c.getLineNumber() == this.goalLine &amp;&amp; c.getColum() == this.goalColum) {</span>
-<span class="fc" id="L512">            return true;</span>
+<span class="fc bfc" id="L583" title="All 4 branches covered.">        if (c.getLineNumber() == this.goalLine &amp;&amp; c.getColum() == this.goalColum) {</span>
+<span class="fc" id="L584">            return true;</span>
         }
-<span class="fc" id="L514">        return false;</span>
+<span class="fc" id="L586">        return false;</span>
     }
     
     private double getFscore(Cordinate c) {
-<span class="fc" id="L518">        int line = c.getLineNumber();</span>
-<span class="fc" id="L519">        int colum = c.getColum();</span>
-<span class="fc" id="L520">        double estimate = Math.max(Helpers.abs((line -this.goalLine)), Helpers.abs((colum - goalColum)));</span>
-<span class="fc" id="L521">        return estimate + distance[line][colum];</span>
+<span class="fc" id="L590">        int line = c.getLineNumber();</span>
+<span class="fc" id="L591">        int colum = c.getColum();</span>
+<span class="fc" id="L592">        double estimate = Math.max(Helpers.abs((line -this.goalLine)), Helpers.abs((colum - goalColum)));</span>
+<span class="fc" id="L593">        return estimate + distance[line][colum];</span>
     }
     
 }

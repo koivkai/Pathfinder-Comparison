@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="datastructuresTest.MinHeapTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-09-04T11:54:57" hostname="Kaius-MBP" time="0.001">
+<testsuite name="datastructuresTest.MinHeapTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-09-04T17:09:52" hostname="Kaius-MBP" time="0.001">
   <properties/>
-  <testcase name="addAndPollWork" classname="datastructuresTest.MinHeapTest" time="0.001"/>
+  <testcase name="addAndPollWork" classname="datastructuresTest.MinHeapTest" time="0.0"/>
   <testcase name="pollsHasCurrectOrder" classname="datastructuresTest.MinHeapTest" time="0.0"/>
-  <testcase name="heapGrowingWorks" classname="datastructuresTest.MinHeapTest" time="0.0"/>
+  <testcase name="heapGrowingWorks" classname="datastructuresTest.MinHeapTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
