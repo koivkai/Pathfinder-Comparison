@@ -107,7 +107,6 @@ public class JPSdiagonal {
         int currentLine = current.getLineNumber();
         int currentColum = current.getColum();
         Cordinate parent = prev[currentLine][currentColum];
-        Cordinate neighbour;
         if(parent == null) { // this is the starting square
             startingSquareNeighbours(current, neighbours);
         } else {
@@ -407,7 +406,6 @@ public class JPSdiagonal {
         if (!map.terrainPassableAt(currentLine,currentColum)) {
             return null;
         }
-        
 
         int pLine = prevCordinate.getLineNumber();
         int pColum = prevCordinate.getColum();
@@ -506,8 +504,6 @@ public class JPSdiagonal {
 
         } 
         
-
-
         return null;
     }
 

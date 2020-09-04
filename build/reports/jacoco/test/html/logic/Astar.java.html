@@ -212,7 +212,7 @@ public class Astar {
     }
 
     private double estimate(int line, int colum) {
-<span class="fc" id="L215">        return Math.max(Helpers.abs((line -this.goalLine)), Helpers.abs((colum - goalColum)));</span>
+<span class="fc" id="L215">        return (double)Helpers.max(Helpers.abs((line -this.goalLine)), Helpers.abs((colum - goalColum)));</span>
     }
 
 }

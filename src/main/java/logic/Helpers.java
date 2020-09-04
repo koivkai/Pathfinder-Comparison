@@ -23,7 +23,6 @@ public class Helpers {
             return i;
         } 
         return -i;
-
     }
 
     public static void printPath(Cordinate[][] prevArray, int goalLine, int goalColum, int startLineNumber, int startColum) {
@@ -65,7 +64,13 @@ public class Helpers {
             return i;
         } 
         return -i;
+    }
 
+    public static int max(int a, int b) {
+        if(a>=b) {
+            return a;
+        }
+        return b;
     }
     
 }
