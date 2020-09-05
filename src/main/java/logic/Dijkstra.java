@@ -27,12 +27,6 @@ public class Dijkstra {
         this.goalColum =goalColum;
         boolean[][] visited = new boolean[map.getHeight()][map.getWidth()];
         prev = new Cordinate[map.getHeight()][map.getWidth()];
-        //System.out.println("Djikstra");
-        //System.out.println("map height " + map.getHeight());
-        //System.out.println("map width " + map.getWidth());
-        //System.out.println("startLine " + startLineNumber+ " startColum " + startColum);
-        //System.out.println("goalLine "+goalLineNumber+" goalColum "+goalColum);
-        //prepDistance(map.getHeight(), map.getWidth());
         distance = new double[map.getHeight()][map.getWidth()];
         distance[startLineNumber][startColum] = 0;
         Cordinate start = new Cordinate(startLineNumber, startColum);

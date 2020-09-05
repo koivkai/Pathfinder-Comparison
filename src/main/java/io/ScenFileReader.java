@@ -32,13 +32,11 @@ public class ScenFileReader {
         } catch (Exception e) {
             System.out.println("failed to read scenarios");
             System.out.println(e.toString());
-            //TODO: handle exception
         }
     }
 
     private void processScenFileLine(String line, PathMap map, boolean isFirst) {
         String[] values= line.split("\\s+");
-                //String scenLinenumber = values[0];
                 String mapName = values[1];
 
                 if(isFirst) {

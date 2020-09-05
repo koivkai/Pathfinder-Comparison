@@ -63,7 +63,6 @@ public class ComparisonEngine {
         long astarMapTotal = 0;
         long jpsMapTotal = 0;
 
-        //map.print();
         System.out.println("Stats for "+map.getName());
 
             while(!goalQue.isEmpty()) {

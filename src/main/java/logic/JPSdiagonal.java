@@ -35,25 +35,17 @@ public class JPSdiagonal {
 
         while(!que.isEmpty()) {
             current = que.poll();
-            //System.out.println("current "+current);
             int line = current.getLineNumber();
             int colum = current.getColum();
-
             if(visited[line][colum]) {
-                //System.out.println("already visited");
-                // do nothing
+                continue;
             } else { 
                 visited[line][colum] = true;
                 if(foundGoal(current)) {
-                    // System.out.println("JPS");
-                    //Helpers.printPath(prev, goalLine, goalColum, startLineNumber, startColum);
-                    //Helpers.printMapWithPath(prev, goalLine, goalColum, startLineNumber, startColum, map);
                     return distance[line][colum];
                 }
                 findSuccessors(current);
-                
             }
-
         }
         return -1;
     }
@@ -63,18 +55,13 @@ public class JPSdiagonal {
     */
     private void findSuccessors(Cordinate current) {
         CordinateList neighbours = getNeightbours(current);
-        //ArrayList<Cordinate> neigbours = getNeightbours(current);
-        //System.out.println("neighbours " +neigbours);
         for(int i = 0; i < neighbours.size(); i++) {
             Cordinate neighbour = neighbours.get(i);
             Cordinate next = jump(neighbour, current);
-            //System.out.println("next "+next);
             if(next != null) {
-                
                 if(visited[next.getLineNumber()][next.getColum()]) {
-                    // do nothing
+                    continue;
                 } else {
-                    //prev[next.getLineNumber()][next.getColum()] = current;
                     updateDistance(current, next);
                     next.setDistanceEstimate(getFscore(next));
                     que.add(next);
@@ -406,110 +393,109 @@ public class JPSdiagonal {
     * Checks if target cordinate is a jumppoint, if not contiues seacrh in direction infered from prevCordinate until a jump point is found or an obstacle encountered.
     */
     private Cordinate jump(Cordinate target, Cordinate prevCordinate) {
-        //System.out.println("jumping to "+target+" from "+prevCordinate);
-        int currentLine = target.getLineNumber(); // change to target line
-        int currentColum = target.getColum(); // change to target colum
+        int targetLine = target.getLineNumber();
+        int targetColum = target.getColum();
         if(foundGoal(target)) {
             return target;
         }
 
-        if (!map.terrainPassableAt(currentLine,currentColum)) {
+        if (!map.terrainPassableAt(targetLine,targetColum)) {
             return null;
         }
 
         int pLine = prevCordinate.getLineNumber();
         int pColum = prevCordinate.getColum();
-        int verticalDistance = currentLine - pLine;
-        int horizontalDistance = currentColum - pColum;
+        int verticalDistance = targetLine - pLine;
+        int horizontalDistance = targetColum - pColum;
         
         if(horizontalDistance != 0 && verticalDistance != 0) { // diagonal
             if(verticalDistance > 0 && horizontalDistance > 0) { // going south east
                 // when moving diagonally must check for vertical and horizontal jumppoints
-                if(jump(new Cordinate(currentLine, currentColum+1), target) != null) { // check east
+                if(jump(new Cordinate(targetLine, targetColum+1), target) != null) { // check east
                     return target;
                 }
-                if(jump(new Cordinate(currentLine+1, currentColum), target) != null) { // check south
+                if(jump(new Cordinate(targetLine+1, targetColum), target) != null) { // check south
                     return target;
                 }
                 // jump south east
-                if(map.canGoSouthEast(currentLine, currentColum)) {
-                    return jump(new Cordinate(currentLine+1, currentColum+1),target);
+                if(map.canGoSouthEast(targetLine, targetColum)) {
+                    return jump(new Cordinate(targetLine+1, targetColum+1),target);
                 }
                 
             } else if (verticalDistance < 0 && horizontalDistance < 0) { // going north west
                 // when moving diagonally must check for vertical and horizontal jumppoints
-                if(jump(new Cordinate(currentLine, currentColum-1), target) != null) { // check west
+                if(jump(new Cordinate(targetLine, targetColum-1), target) != null) { // check west
                     return target;
                 }
-                if(jump(new Cordinate(currentLine-1, currentColum), target) != null) { // check north
+                if(jump(new Cordinate(targetLine-1, targetColum), target) != null) { // check north
                     return target;
                 }
                 // jump north west
-                if(map.canGoNorthWest(currentLine, currentColum)) {
-                    return jump(new Cordinate(currentLine-1, currentColum-1),target);
+                if(map.canGoNorthWest(targetLine, targetColum)) {
+                    return jump(new Cordinate(targetLine-1, targetColum-1),target);
                 }
             } else if (verticalDistance > 0) { // going south west
                 // when moving diagonally must check for vertical and horizontal jumppoints
-                if(jump(new Cordinate(currentLine, currentColum-1), target) != null) { // check west
+                if(jump(new Cordinate(targetLine, targetColum-1), target) != null) { // check west
                     return target;
                 }
-                if(jump(new Cordinate(currentLine+1, currentColum), target) != null) { // check south
+                if(jump(new Cordinate(targetLine+1, targetColum), target) != null) { // check south
                     return target;
                 }
                 // jump south west
-                if(map.canGoSouthWest(currentLine, currentColum)) {
-                    return jump(new Cordinate(currentLine+1, currentColum-1), target);
+                if(map.canGoSouthWest(targetLine, targetColum)) {
+                    return jump(new Cordinate(targetLine+1, targetColum-1), target);
                 }
             } else { // going north east
                 // when moving diagonally must check for vertical and horizontal jumppoints
-                if(jump(new Cordinate(currentLine-1, currentColum), target) != null) { // check north
+                if(jump(new Cordinate(targetLine-1, targetColum), target) != null) { // check north
                     return target;
                 }
-                if(jump(new Cordinate(currentLine, currentColum+1), target) != null) { // check east
+                if(jump(new Cordinate(targetLine, targetColum+1), target) != null) { // check east
                     return target;
                 }
                 // jump north east
-                if(map.canGoNorthEast(currentLine, currentColum)) {
-                    return jump(new Cordinate(currentLine-1, currentColum+1), target);
+                if(map.canGoNorthEast(targetLine, targetColum)) {
+                    return jump(new Cordinate(targetLine-1, targetColum+1), target);
                 }
             }
         } else if(horizontalDistance != 0) {
             if(horizontalDistance > 0) { // going east
-                if(map.terrainPassableAt(currentLine-1, currentColum) && !map.canGoNorthWest(currentLine, currentColum)) {
+                if(map.terrainPassableAt(targetLine-1, targetColum) && !map.canGoNorthWest(targetLine, targetColum)) {
                     return target;
                 }
-                if(map.terrainPassableAt(currentLine+1, currentColum) && !map.canGoSouthWest(currentLine, currentColum)) {
+                if(map.terrainPassableAt(targetLine+1, targetColum) && !map.canGoSouthWest(targetLine, targetColum)) {
                     return target;
                 }
-                return jump(new Cordinate(currentLine,currentColum+1), target);
+                return jump(new Cordinate(targetLine,targetColum+1), target);
             } else { // going west
-                if(map.terrainPassableAt(currentLine-1, currentColum) && !map.canGoNorthEast(currentLine, currentColum)) {
+                if(map.terrainPassableAt(targetLine-1, targetColum) && !map.canGoNorthEast(targetLine, targetColum)) {
                     return target;
                 }
-                if(map.terrainPassableAt(currentLine+1, currentColum) && !map.canGoSouthEast(currentLine, currentColum)) {
+                if(map.terrainPassableAt(targetLine+1, targetColum) && !map.canGoSouthEast(targetLine, targetColum)) {
                     return target;
                 }
-                return jump(new Cordinate(currentLine,currentColum-1), target);
+                return jump(new Cordinate(targetLine,targetColum-1), target);
             }
         } else if (verticalDistance != 0) {
             boolean goingSouth = verticalDistance > 0;
             if(goingSouth) { // going south
-                if(map.terrainPassableAt(currentLine, currentColum-1) && !map.canGoNorthWest(currentLine, currentColum)) {
+                if(map.terrainPassableAt(targetLine, targetColum-1) && !map.canGoNorthWest(targetLine, targetColum)) {
                     return target;
                 }
-                if(map.terrainPassableAt(currentLine, currentColum+1) && !map.canGoNorthEast(currentLine, currentColum) ) {
+                if(map.terrainPassableAt(targetLine, targetColum+1) && !map.canGoNorthEast(targetLine, targetColum) ) {
                     return target;
                 }
-                return jump(new Cordinate(currentLine+1, currentColum),target);
+                return jump(new Cordinate(targetLine+1, targetColum),target);
                 
             } else { // going north
-                if(map.terrainPassableAt(currentLine, currentColum-1) && !map.canGoSouthWest(currentLine, currentColum)) {
+                if(map.terrainPassableAt(targetLine, targetColum-1) && !map.canGoSouthWest(targetLine, targetColum)) {
                     return target;
                 }
-                if(map.terrainPassableAt(currentLine, currentColum+1) && !map.canGoSouthEast(currentLine, currentColum) ) {
+                if(map.terrainPassableAt(targetLine, targetColum+1) && !map.canGoSouthEast(targetLine, targetColum) ) {
                     return target;
                 }
-                return jump(new Cordinate(currentLine-1, currentColum), target);
+                return jump(new Cordinate(targetLine-1, targetColum), target);
             }
 
         } 

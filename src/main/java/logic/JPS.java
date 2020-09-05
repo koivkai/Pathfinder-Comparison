@@ -62,7 +62,6 @@ public class JPS {
                 if(visited[next.getLineNumber()][next.getColum()]) {
                     // do nothing
                 } else {
-                    //prev[next.getLineNumber()][next.getColum()] = current;
                     updateDistance(current, next);
                     next.setDistanceEstimate(getFscore(next));
                     que.add(next);
@@ -83,28 +82,6 @@ public class JPS {
         }
     }
 
-    private void updateDistance(int targetLine, int targetColum, int prevLine, int prevColum) {
-        int old = distance[targetLine][targetColum];
-        int difference = Helpers.abs(prevLine-targetLine)+Helpers.abs(prevColum-targetColum);
-        int prevDistance = distance[prevLine][prevColum];
-
-        if(old == 0 || (prevDistance + difference)<old) {
-            distance[targetLine][targetColum] = prevDistance + difference;
-        }
-    }
-
-    private void updateDistance(Cordinate target, int prevLine, int prevColum) {
-        int targetLine = target.getLineNumber();
-        int targetColum = target.getColum();
-        int old = distance[targetLine][targetColum];
-        int difference = Helpers.abs(prevLine-targetLine)+Helpers.abs(prevColum-targetColum);
-        int prevDistance = distance[prevLine][prevColum];
-
-        if(old == 0 || (prevDistance + difference)<old) {
-            distance[targetLine][targetColum] = prevDistance + difference;
-            prev[targetLine][targetColum] = new Cordinate(prevLine, prevColum);
-        }
-    }
 
     private CordinateList getNeightbours(Cordinate current) {
         CordinateList neighbours = new CordinateList();
@@ -267,22 +244,11 @@ public class JPS {
         return null;
     }
 
-    private boolean foundGoal(int line, int colum) {
-        if (line == this.goalLine && colum == this.goalColum) {
-            return true;
-        }
-        return false;
-    }
     private boolean foundGoal(Cordinate c) {
         if (c.getLineNumber() == this.goalLine && c.getColum() == this.goalColum) {
             return true;
         }
         return false;
-    }
-
-    private int getFscore(int line, int colum) {
-        int estimate = Helpers.abs((line -this.goalLine)) + Helpers.abs((colum - goalColum));
-        return estimate + distance[line][colum];
     }
     
     private int getFscore(Cordinate c) {

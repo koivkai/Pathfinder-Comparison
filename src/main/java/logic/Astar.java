@@ -40,14 +40,13 @@ public class Astar {
 
         while(!que.isEmpty()) {
             current = que.poll();
-            //System.out.println(current);
             int line = current.getLineNumber();
             int colum = current.getColum();
             if(foundGoal(line, colum)) {
                 return distance[line][colum];
             }
             if(visited[line][colum]) {
-                // do nothing
+                continue;
             } else {
                 visited[line][colum] = true;
                 checkNorth(current);

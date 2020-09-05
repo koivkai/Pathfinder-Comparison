@@ -37,7 +37,7 @@ public class BFS {
             }
 
             if(visited[line][colum]) {
-                // do nothing
+                continue;
             } else  {
                 visited[line][colum] = true;
                 checkNorth(current);
