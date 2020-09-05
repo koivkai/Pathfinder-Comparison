@@ -1,8 +1,11 @@
 # Pathfinder-Comparison
 
 [Määrittelydokumentti](https://github.com/koivkai/Pathfinder-Comparison/blob/master/dokumentaatio/m%C3%A4%C3%A4rittely.md)
+
 [Käyttöohje](https://github.com/koivkai/Pathfinder-Comparison/blob/master/dokumentaatio/kayttoohje.md)
+
 [Toteutusdokumentti](https://github.com/koivkai/Pathfinder-Comparison/blob/master/dokumentaatio/toteutusdokumentti.md)
+
 [Testausdokumentti](https://github.com/koivkai/Pathfinder-Comparison/blob/master/dokumentaatio/testausdokumentti.md)
 
 ## Viikkoraportit
