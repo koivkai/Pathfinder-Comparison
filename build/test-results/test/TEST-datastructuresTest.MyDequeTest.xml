@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="datastructuresTest.MyDequeTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2020-09-05T11:00:40" hostname="Kaius-MBP" time="0.003">
+<testsuite name="datastructuresTest.MyDequeTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2020-09-05T11:28:40" hostname="Kaius-MBP" time="0.003">
   <properties/>
-  <testcase name="addAndPollWork" classname="datastructuresTest.MyDequeTest" time="0.001"/>
+  <testcase name="addAndPollWork" classname="datastructuresTest.MyDequeTest" time="0.0"/>
   <testcase name="queGrows" classname="datastructuresTest.MyDequeTest" time="0.0"/>
   <testcase name="queGrowsWhenTailIsBeforeHead" classname="datastructuresTest.MyDequeTest" time="0.0"/>
   <testcase name="isEmptyWhenCreated" classname="datastructuresTest.MyDequeTest" time="0.0"/>

@@ -75,6 +75,9 @@ public class PathMap {
         return false;
     }
 
+    /**
+    * Checks if moving northeast is a legal move from specified point in map.
+    */
     public boolean canGoNorthEast(int currentLine, int currentColum) {
         int nwLine = currentLine -1;
         int nwColum = currentColum +1;
@@ -98,6 +101,9 @@ public class PathMap {
         return true;
     }
 
+    /**
+    * Checks if moving northwest is a legal move from specified point in map.
+    */
     public boolean canGoNorthWest(int currentLine, int currentColum) {
         int neLine = currentLine -1;
         int neColum = currentColum -1;
@@ -121,6 +127,9 @@ public class PathMap {
         return true;
     }
 
+    /**
+    * Checks if moving southeast is a legal move from specified point in map.
+    */
     public boolean canGoSouthEast(int currentLine, int currentColum) {
         int seLine = currentLine +1;
         int seColum = currentColum +1;
@@ -144,6 +153,9 @@ public class PathMap {
         return true;
     }
 
+    /**
+    * Checks if moving southwest is a legal move from specified point in map.
+    */
     public boolean canGoSouthWest(int currentLine, int currentColum) {
         int swLine = currentLine +1;
         int swColum = currentColum -1;
@@ -179,7 +191,9 @@ public class PathMap {
             }
         }
     }
-
+    /**
+    * Return a character array representation of this map, this it not the same object as this.map, but has the same contents.
+    */
     public char[][] getCopyOfMap() {
         char[][]copy = new char[this.height][this.width];
         for(int line = 0;line<this.height;line++) {
@@ -205,7 +219,9 @@ public class PathMap {
     public void setGoalPosQue(CordinateQue goalPosQue) {
         this.goalPosQue = goalPosQue;
     }
-
+    /**
+    * Adds a new path from start to goal, with expected optimal lengh for testing pathfinding algorithms on this map.
+    */
     public void addPath(Cordinate start, Cordinate goal, double optimalLenght) {
         if(this.goalPosQue == null || this.startPosQue == null || this.optimalPathLenghtQue == null) { // in only one exits they wont work anyway so reset both
             this.goalPosQue = new CordinateQue(5);
@@ -219,7 +235,7 @@ public class PathMap {
 
     public String getName() {
         if(name == null) {
-            return "unnamed map";
+            return "nameless map";
         }
         return name;
     }

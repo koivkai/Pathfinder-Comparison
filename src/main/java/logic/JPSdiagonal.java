@@ -7,7 +7,7 @@ import datastructures.PathMap;
 
 /**
  * Implementation of the Jump Point Search pathfinding algorithm in a uniform grid.
- * This version allows movement in 8 directions.(i.e. orthagonal and diagonal movement)
+ * This version allows movement in 8 directions.(i.e. both orthagonal and diagonal movement)
  */
 public class JPSdiagonal {
     int goalLine;
@@ -57,6 +57,10 @@ public class JPSdiagonal {
         }
         return -1;
     }
+
+    /**
+    * Finds jump points and adds them to the que
+    */
     private void findSuccessors(Cordinate current) {
         CordinateList neighbours = getNeightbours(current);
         //ArrayList<Cordinate> neigbours = getNeightbours(current);
@@ -102,6 +106,9 @@ public class JPSdiagonal {
         
     }
 
+    /**
+    * Finds neighbours and forced neighbours for the given cordinate.
+    */
     private CordinateList getNeightbours(Cordinate current) {
         CordinateList neighbours = new CordinateList();
         int currentLine = current.getLineNumber();
@@ -395,6 +402,9 @@ public class JPSdiagonal {
         }
     }
 
+    /**
+    * Checks if target cordinate is a jumppoint, if not contiues seacrh in direction infered from prevCordinate until a jump point is found or an obstacle encountered.
+    */
     private Cordinate jump(Cordinate target, Cordinate prevCordinate) {
         //System.out.println("jumping to "+target+" from "+prevCordinate);
         int currentLine = target.getLineNumber(); // change to target line

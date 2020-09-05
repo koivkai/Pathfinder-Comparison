@@ -24,7 +24,9 @@ public class Helpers {
         } 
         return -i;
     }
-
+    /**
+    * Prints the path an algorithm took as cordinates starting from the goal.
+    */
     public static void printPath(Cordinate[][] prevArray, int goalLine, int goalColum, int startLineNumber, int startColum) {
         Cordinate prev = prevArray[goalLine][goalColum];
         System.out.println("Printing path");
@@ -35,7 +37,9 @@ public class Helpers {
         }
         System.out.println("start "+prev);
     }
-
+    /**
+    * Prints a character representation of the given map with the path given shown on the map to system.out
+    */
     public static void printMapWithPath(Cordinate[][] prevArray, int goalLine, int goalColum, int startLineNumber, int startColum, PathMap map) {
         char[][] mapWithPath = map.getCopyOfMap();
         Cordinate prev = prevArray[goalLine][goalColum];

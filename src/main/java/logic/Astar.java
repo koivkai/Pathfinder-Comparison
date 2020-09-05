@@ -64,6 +64,10 @@ public class Astar {
     return -1;
     }
 
+    /**
+    * Checks if moving north is a legal move from specified cordinate.
+    * If so, adds the northern cordinate to the que.
+    */
     private void checkNorth(Cordinate current) {
         int line = current.getLineNumber();
         int colum = current.getColum();
@@ -81,6 +85,10 @@ public class Astar {
         } 
     }
 
+    /**
+    * Checks if moving south is a legal move from specified cordinate.
+    * If so, adds the southern cordinate to the que.
+    */
     private void checkSouth(Cordinate current) {
         int line = current.getLineNumber();
         int colum = current.getColum();
@@ -99,6 +107,10 @@ public class Astar {
         }
     }
 
+    /**
+    * Checks if moving east is a legal move from specified cordinate.
+    * If so, adds the eastern cordinate to the que.
+    */
     private void checkEast(Cordinate current) {
         int line = current.getLineNumber();
         int colum = current.getColum();
@@ -117,6 +129,10 @@ public class Astar {
         }
     }
 
+    /**
+    * Checks if moving west is a legal move from specified cordinate.
+    * If so, adds the western cordinate to the que.
+    */
     private void checkWest(Cordinate current) {
         int line = current.getLineNumber();
         int colum = current.getColum();
@@ -135,6 +151,10 @@ public class Astar {
         }
     }
 
+    /**
+    * Checks if moving northeast is a legal move from specified cordinate.
+    * If so, adds the northeastern cordinate to the que.
+    */
     private void checkNorthEast(Cordinate current) {
         int line = current.getLineNumber();
         int colum = current.getColum();
@@ -152,6 +172,10 @@ public class Astar {
         }
     }
 
+    /**
+    * Checks if moving northwest is a legal move from specified cordinate.
+    * If so, adds the northwestern cordinate to the que.
+    */
     private void checkNorthWest(Cordinate current) {
         int line = current.getLineNumber();
         int colum = current.getColum();
@@ -169,6 +193,10 @@ public class Astar {
         }
     }
 
+    /**
+    * Checks if moving southeast is a legal move from specified cordinate.
+    * If so, adds the southeastern cordinate to the que.
+    */
     private void checkSouthEast(Cordinate current) {
         int line = current.getLineNumber();
         int colum = current.getColum();
@@ -186,6 +214,10 @@ public class Astar {
         }
     }
 
+    /**
+    * Checks if moving southwest is a legal move from specified cordinate.
+    * If so, adds the southwestern cordinate to the que.
+    */
     private void checkSouthWest(Cordinate current) {
         int line = current.getLineNumber();
         int colum = current.getColum();

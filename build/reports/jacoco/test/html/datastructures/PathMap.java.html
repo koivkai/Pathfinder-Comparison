@@ -75,166 +75,182 @@ public class PathMap {
 <span class="fc" id="L75">        return false;</span>
     }
 
+    /**
+    * Checks if moving northeast is a legal move from specified point in map.
+    */
     public boolean canGoNorthEast(int currentLine, int currentColum) {
-<span class="fc" id="L79">        int nwLine = currentLine -1;</span>
-<span class="fc" id="L80">        int nwColum = currentColum +1;</span>
-<span class="pc bpc" id="L81" title="3 of 8 branches missed.">        if(nwLine &gt;= this.height || nwColum &gt;= this.width || nwLine &lt; 0 || nwColum &lt; 0) {</span>
-<span class="fc" id="L82">            return false;</span>
+<span class="fc" id="L82">        int nwLine = currentLine -1;</span>
+<span class="fc" id="L83">        int nwColum = currentColum +1;</span>
+<span class="pc bpc" id="L84" title="3 of 8 branches missed.">        if(nwLine &gt;= this.height || nwColum &gt;= this.width || nwLine &lt; 0 || nwColum &lt; 0) {</span>
+<span class="fc" id="L85">            return false;</span>
         }
-<span class="fc" id="L84">        char terrain = this.map[nwLine][nwColum]; </span>
-<span class="pc bpc" id="L85" title="1 of 4 branches missed.">        if(terrain != '.' &amp;&amp; terrain != 'G') {</span>
-<span class="fc" id="L86">            return false;</span>
+<span class="fc" id="L87">        char terrain = this.map[nwLine][nwColum]; </span>
+<span class="pc bpc" id="L88" title="1 of 4 branches missed.">        if(terrain != '.' &amp;&amp; terrain != 'G') {</span>
+<span class="fc" id="L89">            return false;</span>
         }
 
         //cant cut corners
-<span class="fc" id="L90">        int upLine = currentLine -1;</span>
-<span class="fc" id="L91">        int upColum = currentColum;</span>
-<span class="fc" id="L92">        int rightLine = currentLine;</span>
-<span class="fc" id="L93">        int rightColum = currentColum+1;</span>
-<span class="fc bfc" id="L94" title="All 4 branches covered.">        if(!terrainPassableAt(upLine, upColum) || !terrainPassableAt(rightLine, rightColum)) {</span>
-<span class="fc" id="L95">            return false;</span>
+<span class="fc" id="L93">        int upLine = currentLine -1;</span>
+<span class="fc" id="L94">        int upColum = currentColum;</span>
+<span class="fc" id="L95">        int rightLine = currentLine;</span>
+<span class="fc" id="L96">        int rightColum = currentColum+1;</span>
+<span class="fc bfc" id="L97" title="All 4 branches covered.">        if(!terrainPassableAt(upLine, upColum) || !terrainPassableAt(rightLine, rightColum)) {</span>
+<span class="fc" id="L98">            return false;</span>
         }
 
-<span class="fc" id="L98">        return true;</span>
+<span class="fc" id="L101">        return true;</span>
     }
 
+    /**
+    * Checks if moving northwest is a legal move from specified point in map.
+    */
     public boolean canGoNorthWest(int currentLine, int currentColum) {
-<span class="fc" id="L102">        int neLine = currentLine -1;</span>
-<span class="fc" id="L103">        int neColum = currentColum -1;</span>
-<span class="pc bpc" id="L104" title="4 of 8 branches missed.">        if(neLine &gt;= this.height || neColum &gt;= this.width || neLine &lt; 0 || neColum &lt; 0) {</span>
-<span class="nc" id="L105">            return false;</span>
+<span class="fc" id="L108">        int neLine = currentLine -1;</span>
+<span class="fc" id="L109">        int neColum = currentColum -1;</span>
+<span class="pc bpc" id="L110" title="4 of 8 branches missed.">        if(neLine &gt;= this.height || neColum &gt;= this.width || neLine &lt; 0 || neColum &lt; 0) {</span>
+<span class="nc" id="L111">            return false;</span>
         }
-<span class="fc" id="L107">        char terrain = this.map[neLine][neColum]; </span>
-<span class="pc bpc" id="L108" title="1 of 4 branches missed.">        if(terrain != '.' &amp;&amp; terrain != 'G') {</span>
-<span class="fc" id="L109">            return false;</span>
+<span class="fc" id="L113">        char terrain = this.map[neLine][neColum]; </span>
+<span class="pc bpc" id="L114" title="1 of 4 branches missed.">        if(terrain != '.' &amp;&amp; terrain != 'G') {</span>
+<span class="fc" id="L115">            return false;</span>
         }
 
         //cant cut corners
-<span class="fc" id="L113">        int upLine = currentLine -1;</span>
-<span class="fc" id="L114">        int upColum = currentColum;</span>
-<span class="fc" id="L115">        int leftLine = currentLine;</span>
-<span class="fc" id="L116">        int leftColum = currentColum-1;</span>
-<span class="fc bfc" id="L117" title="All 4 branches covered.">        if(!terrainPassableAt(upLine, upColum) || !terrainPassableAt(leftLine, leftColum)) {</span>
-<span class="fc" id="L118">            return false;</span>
+<span class="fc" id="L119">        int upLine = currentLine -1;</span>
+<span class="fc" id="L120">        int upColum = currentColum;</span>
+<span class="fc" id="L121">        int leftLine = currentLine;</span>
+<span class="fc" id="L122">        int leftColum = currentColum-1;</span>
+<span class="fc bfc" id="L123" title="All 4 branches covered.">        if(!terrainPassableAt(upLine, upColum) || !terrainPassableAt(leftLine, leftColum)) {</span>
+<span class="fc" id="L124">            return false;</span>
         }
 
-<span class="fc" id="L121">        return true;</span>
+<span class="fc" id="L127">        return true;</span>
     }
 
+    /**
+    * Checks if moving southeast is a legal move from specified point in map.
+    */
     public boolean canGoSouthEast(int currentLine, int currentColum) {
-<span class="fc" id="L125">        int seLine = currentLine +1;</span>
-<span class="fc" id="L126">        int seColum = currentColum +1;</span>
-<span class="pc bpc" id="L127" title="3 of 8 branches missed.">        if(seLine &gt;= this.height || seColum &gt;= this.width || seLine &lt; 0 || seColum &lt; 0) {</span>
-<span class="fc" id="L128">            return false;</span>
+<span class="fc" id="L134">        int seLine = currentLine +1;</span>
+<span class="fc" id="L135">        int seColum = currentColum +1;</span>
+<span class="pc bpc" id="L136" title="3 of 8 branches missed.">        if(seLine &gt;= this.height || seColum &gt;= this.width || seLine &lt; 0 || seColum &lt; 0) {</span>
+<span class="fc" id="L137">            return false;</span>
         }
-<span class="fc" id="L130">        char terrain = this.map[seLine][seColum]; </span>
-<span class="pc bpc" id="L131" title="1 of 4 branches missed.">        if(terrain != '.' &amp;&amp; terrain != 'G') {</span>
-<span class="fc" id="L132">            return false;</span>
-        }
-
-        //cant cut corners
-<span class="fc" id="L136">        int downLine = currentLine +1;</span>
-<span class="fc" id="L137">        int downColum = currentColum;</span>
-<span class="fc" id="L138">        int rightLine = currentLine;</span>
-<span class="fc" id="L139">        int rightColum = currentColum+1;</span>
-<span class="fc bfc" id="L140" title="All 4 branches covered.">        if(!terrainPassableAt(downLine, downColum) || !terrainPassableAt(rightLine, rightColum)) {</span>
+<span class="fc" id="L139">        char terrain = this.map[seLine][seColum]; </span>
+<span class="pc bpc" id="L140" title="1 of 4 branches missed.">        if(terrain != '.' &amp;&amp; terrain != 'G') {</span>
 <span class="fc" id="L141">            return false;</span>
         }
 
-<span class="fc" id="L144">        return true;</span>
+        //cant cut corners
+<span class="fc" id="L145">        int downLine = currentLine +1;</span>
+<span class="fc" id="L146">        int downColum = currentColum;</span>
+<span class="fc" id="L147">        int rightLine = currentLine;</span>
+<span class="fc" id="L148">        int rightColum = currentColum+1;</span>
+<span class="fc bfc" id="L149" title="All 4 branches covered.">        if(!terrainPassableAt(downLine, downColum) || !terrainPassableAt(rightLine, rightColum)) {</span>
+<span class="fc" id="L150">            return false;</span>
+        }
+
+<span class="fc" id="L153">        return true;</span>
     }
 
+    /**
+    * Checks if moving southwest is a legal move from specified point in map.
+    */
     public boolean canGoSouthWest(int currentLine, int currentColum) {
-<span class="fc" id="L148">        int swLine = currentLine +1;</span>
-<span class="fc" id="L149">        int swColum = currentColum -1;</span>
-<span class="pc bpc" id="L150" title="4 of 8 branches missed.">        if(swLine &gt;= this.height || swColum &gt;= this.width || swLine &lt; 0 || swColum &lt; 0) {</span>
-<span class="nc" id="L151">            return false;</span>
+<span class="fc" id="L160">        int swLine = currentLine +1;</span>
+<span class="fc" id="L161">        int swColum = currentColum -1;</span>
+<span class="pc bpc" id="L162" title="4 of 8 branches missed.">        if(swLine &gt;= this.height || swColum &gt;= this.width || swLine &lt; 0 || swColum &lt; 0) {</span>
+<span class="nc" id="L163">            return false;</span>
         }
-<span class="fc" id="L153">        char terrain = this.map[swLine][swColum]; </span>
-<span class="pc bpc" id="L154" title="1 of 4 branches missed.">        if(terrain != '.' &amp;&amp; terrain != 'G') {</span>
-<span class="fc" id="L155">            return false;</span>
+<span class="fc" id="L165">        char terrain = this.map[swLine][swColum]; </span>
+<span class="pc bpc" id="L166" title="1 of 4 branches missed.">        if(terrain != '.' &amp;&amp; terrain != 'G') {</span>
+<span class="fc" id="L167">            return false;</span>
         }
 
         //cant cut corners
-<span class="fc" id="L159">        int downLine = currentLine +1;</span>
-<span class="fc" id="L160">        int downColum = currentColum;</span>
-<span class="fc" id="L161">        int leftLine = currentLine;</span>
-<span class="fc" id="L162">        int leftColum = currentColum-1;</span>
-<span class="fc bfc" id="L163" title="All 4 branches covered.">        if(!terrainPassableAt(downLine, downColum) || !terrainPassableAt(leftLine, leftColum)) {</span>
-<span class="fc" id="L164">            return false;</span>
+<span class="fc" id="L171">        int downLine = currentLine +1;</span>
+<span class="fc" id="L172">        int downColum = currentColum;</span>
+<span class="fc" id="L173">        int leftLine = currentLine;</span>
+<span class="fc" id="L174">        int leftColum = currentColum-1;</span>
+<span class="fc bfc" id="L175" title="All 4 branches covered.">        if(!terrainPassableAt(downLine, downColum) || !terrainPassableAt(leftLine, leftColum)) {</span>
+<span class="fc" id="L176">            return false;</span>
         }
 
-<span class="fc" id="L167">        return true;</span>
+<span class="fc" id="L179">        return true;</span>
     }
     
 
     public void print() {
-<span class="nc" id="L172">        System.out.println(&quot;Printing map&quot;);</span>
-<span class="nc bnc" id="L173" title="All 2 branches missed.">        for(int lineNumber=0; lineNumber&lt;this.height;lineNumber++){</span>
-<span class="nc bnc" id="L174" title="All 2 branches missed.">            for(int colum = 0; colum &lt;this.width;colum++) {</span>
-<span class="nc" id="L175">                System.out.print(this.map[lineNumber][colum]);</span>
+<span class="nc" id="L184">        System.out.println(&quot;Printing map&quot;);</span>
+<span class="nc bnc" id="L185" title="All 2 branches missed.">        for(int lineNumber=0; lineNumber&lt;this.height;lineNumber++){</span>
+<span class="nc bnc" id="L186" title="All 2 branches missed.">            for(int colum = 0; colum &lt;this.width;colum++) {</span>
+<span class="nc" id="L187">                System.out.print(this.map[lineNumber][colum]);</span>
             }
-<span class="nc bnc" id="L177" title="All 2 branches missed.">            if(lineNumber != this.height -1){</span>
-<span class="nc" id="L178">                System.out.println(&quot;&quot;);</span>
+<span class="nc bnc" id="L189" title="All 2 branches missed.">            if(lineNumber != this.height -1){</span>
+<span class="nc" id="L190">                System.out.println(&quot;&quot;);</span>
             }
         }
-<span class="nc" id="L181">    }</span>
-
+<span class="nc" id="L193">    }</span>
+    /**
+    * Return a character array representation of this map, this it not the same object as this.map, but has the same contents.
+    */
     public char[][] getCopyOfMap() {
-<span class="nc" id="L184">        char[][]copy = new char[this.height][this.width];</span>
-<span class="nc bnc" id="L185" title="All 2 branches missed.">        for(int line = 0;line&lt;this.height;line++) {</span>
-<span class="nc bnc" id="L186" title="All 2 branches missed.">            for(int colum = 0;colum&lt;this.width;colum++) {</span>
-<span class="nc" id="L187">                copy[line][colum] = this.map[line][colum];</span>
+<span class="nc" id="L198">        char[][]copy = new char[this.height][this.width];</span>
+<span class="nc bnc" id="L199" title="All 2 branches missed.">        for(int line = 0;line&lt;this.height;line++) {</span>
+<span class="nc bnc" id="L200" title="All 2 branches missed.">            for(int colum = 0;colum&lt;this.width;colum++) {</span>
+<span class="nc" id="L201">                copy[line][colum] = this.map[line][colum];</span>
             }
         }
-<span class="nc" id="L190">        return copy;</span>
+<span class="nc" id="L204">        return copy;</span>
     }
 
     public CordinateQue getStartPosQue() {
-<span class="nc" id="L194">        return startPosQue;</span>
+<span class="nc" id="L208">        return startPosQue;</span>
     }
 
     public void setStartPosQue(CordinateQue startPosQue) {
-<span class="nc" id="L198">        this.startPosQue = startPosQue;</span>
-<span class="nc" id="L199">    }</span>
+<span class="nc" id="L212">        this.startPosQue = startPosQue;</span>
+<span class="nc" id="L213">    }</span>
 
     public CordinateQue getGoalPosQue() {
-<span class="nc" id="L202">        return goalPosQue;</span>
+<span class="nc" id="L216">        return goalPosQue;</span>
     }
 
     public void setGoalPosQue(CordinateQue goalPosQue) {
-<span class="nc" id="L206">        this.goalPosQue = goalPosQue;</span>
-<span class="nc" id="L207">    }</span>
-
+<span class="nc" id="L220">        this.goalPosQue = goalPosQue;</span>
+<span class="nc" id="L221">    }</span>
+    /**
+    * Adds a new path from start to goal, with expected optimal lengh for testing pathfinding algorithms on this map.
+    */
     public void addPath(Cordinate start, Cordinate goal, double optimalLenght) {
-<span class="nc bnc" id="L210" title="All 6 branches missed.">        if(this.goalPosQue == null || this.startPosQue == null || this.optimalPathLenghtQue == null) { // in only one exits they wont work anyway so reset both</span>
-<span class="nc" id="L211">            this.goalPosQue = new CordinateQue(5);</span>
-<span class="nc" id="L212">            this.startPosQue = new CordinateQue(5);</span>
-<span class="nc" id="L213">            this.optimalPathLenghtQue = new DoublesQue(5);</span>
+<span class="nc bnc" id="L226" title="All 6 branches missed.">        if(this.goalPosQue == null || this.startPosQue == null || this.optimalPathLenghtQue == null) { // in only one exits they wont work anyway so reset both</span>
+<span class="nc" id="L227">            this.goalPosQue = new CordinateQue(5);</span>
+<span class="nc" id="L228">            this.startPosQue = new CordinateQue(5);</span>
+<span class="nc" id="L229">            this.optimalPathLenghtQue = new DoublesQue(5);</span>
         }
-<span class="nc" id="L215">        this.startPosQue.add(start);</span>
-<span class="nc" id="L216">        this.goalPosQue.add(goal);</span>
-<span class="nc" id="L217">        this.optimalPathLenghtQue.add(optimalLenght);</span>
-<span class="nc" id="L218">    }</span>
+<span class="nc" id="L231">        this.startPosQue.add(start);</span>
+<span class="nc" id="L232">        this.goalPosQue.add(goal);</span>
+<span class="nc" id="L233">        this.optimalPathLenghtQue.add(optimalLenght);</span>
+<span class="nc" id="L234">    }</span>
 
     public String getName() {
-<span class="nc bnc" id="L221" title="All 2 branches missed.">        if(name == null) {</span>
-<span class="nc" id="L222">            return &quot;unnamed map&quot;;</span>
+<span class="nc bnc" id="L237" title="All 2 branches missed.">        if(name == null) {</span>
+<span class="nc" id="L238">            return &quot;nameless map&quot;;</span>
         }
-<span class="nc" id="L224">        return name;</span>
+<span class="nc" id="L240">        return name;</span>
     }
 
     public void setName(String name) {
-<span class="nc" id="L228">        this.name = name;</span>
-<span class="nc" id="L229">    }</span>
+<span class="nc" id="L244">        this.name = name;</span>
+<span class="nc" id="L245">    }</span>
 
     public DoublesQue getOptimalPathLenghtQue() {
-<span class="nc" id="L232">        return optimalPathLenghtQue;</span>
+<span class="nc" id="L248">        return optimalPathLenghtQue;</span>
     }
 
     public void setOptimalPathLenghtQue(DoublesQue optimalPathLenghtQue) {
-<span class="nc" id="L236">        this.optimalPathLenghtQue = optimalPathLenghtQue;</span>
-<span class="nc" id="L237">    }</span>
+<span class="nc" id="L252">        this.optimalPathLenghtQue = optimalPathLenghtQue;</span>
+<span class="nc" id="L253">    }</span>
 
     
 
