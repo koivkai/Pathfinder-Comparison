@@ -63,89 +63,88 @@ public class ComparisonEngine {
 <span class="nc" id="L63">        long astarMapTotal = 0;</span>
 <span class="nc" id="L64">        long jpsMapTotal = 0;</span>
 
-        //map.print();
-<span class="nc" id="L67">        System.out.println(&quot;Stats for &quot;+map.getName());</span>
+<span class="nc" id="L66">        System.out.println(&quot;Stats for &quot;+map.getName());</span>
 
-<span class="nc bnc" id="L69" title="All 2 branches missed.">            while(!goalQue.isEmpty()) {</span>
-<span class="nc" id="L70">                start = startQue.poll();</span>
-<span class="nc" id="L71">                goal = goalQue.poll();</span>
-<span class="nc" id="L72">                int startLineNumber = start.getLineNumber();</span>
-<span class="nc" id="L73">                int startColum = start.getColum();</span>
-<span class="nc" id="L74">                int goalLineNumber = goal.getLineNumber();</span>
-<span class="nc" id="L75">                int goalColum = goal.getColum();</span>
-<span class="nc" id="L76">                double optimalLenght = optimalLenghtQue.poll();</span>
+<span class="nc bnc" id="L68" title="All 2 branches missed.">            while(!goalQue.isEmpty()) {</span>
+<span class="nc" id="L69">                start = startQue.poll();</span>
+<span class="nc" id="L70">                goal = goalQue.poll();</span>
+<span class="nc" id="L71">                int startLineNumber = start.getLineNumber();</span>
+<span class="nc" id="L72">                int startColum = start.getColum();</span>
+<span class="nc" id="L73">                int goalLineNumber = goal.getLineNumber();</span>
+<span class="nc" id="L74">                int goalColum = goal.getColum();</span>
+<span class="nc" id="L75">                double optimalLenght = optimalLenghtQue.poll();</span>
                  //System.out.println(&quot;Path from&quot; + start + &quot; to &quot; + goal + &quot; optimal lenght &quot; +optimalLenght);
 
 
                 // Dijkstra
-<span class="nc" id="L81">                long dijkstraStartTime = System.nanoTime();</span>
-<span class="nc" id="L82">                dijkstraDistance = dijkstra.findPath(map, startLineNumber, startColum, goalLineNumber, goalColum);</span>
-<span class="nc" id="L83">                long djikstraEndTime = System.nanoTime();</span>
-<span class="nc" id="L84">                long djikstraPathTime = djikstraEndTime - dijkstraStartTime;</span>
-<span class="nc" id="L85">                dijktraMapTotal += djikstraPathTime;</span>
+<span class="nc" id="L80">                long dijkstraStartTime = System.nanoTime();</span>
+<span class="nc" id="L81">                dijkstraDistance = dijkstra.findPath(map, startLineNumber, startColum, goalLineNumber, goalColum);</span>
+<span class="nc" id="L82">                long djikstraEndTime = System.nanoTime();</span>
+<span class="nc" id="L83">                long djikstraPathTime = djikstraEndTime - dijkstraStartTime;</span>
+<span class="nc" id="L84">                dijktraMapTotal += djikstraPathTime;</span>
                  //System.out.println(&quot;Dijsktra &quot; +convertNStoSessibleUnitOfTime(djikstraPathTime));
 
                 // A*
-<span class="nc" id="L89">                long astarStartTime = System.nanoTime();</span>
-<span class="nc" id="L90">                astartDistance = astar.findPath(map, startLineNumber, startColum, goalLineNumber, goalColum);</span>
-<span class="nc" id="L91">                long astartEndTime = System.nanoTime();</span>
-<span class="nc" id="L92">                long astartPathTime = astartEndTime - astarStartTime;</span>
-<span class="nc" id="L93">                astarMapTotal += astartPathTime;</span>
+<span class="nc" id="L88">                long astarStartTime = System.nanoTime();</span>
+<span class="nc" id="L89">                astartDistance = astar.findPath(map, startLineNumber, startColum, goalLineNumber, goalColum);</span>
+<span class="nc" id="L90">                long astartEndTime = System.nanoTime();</span>
+<span class="nc" id="L91">                long astartPathTime = astartEndTime - astarStartTime;</span>
+<span class="nc" id="L92">                astarMapTotal += astartPathTime;</span>
                  //System.out.println(&quot;A* &quot; +convertNStoSessibleUnitOfTime(astartPathTime));
 
                 // JPS
-<span class="nc" id="L97">                long jpsStartTime = System.nanoTime();</span>
-<span class="nc" id="L98">                jpsDistance = jps.findPath(map, startLineNumber, startColum, goalLineNumber, goalColum);</span>
-<span class="nc" id="L99">                long jpsEndTime = System.nanoTime();</span>
-<span class="nc" id="L100">                long jpsPathTime = jpsEndTime - jpsStartTime;</span>
-<span class="nc" id="L101">                jpsMapTotal += jpsPathTime;</span>
+<span class="nc" id="L96">                long jpsStartTime = System.nanoTime();</span>
+<span class="nc" id="L97">                jpsDistance = jps.findPath(map, startLineNumber, startColum, goalLineNumber, goalColum);</span>
+<span class="nc" id="L98">                long jpsEndTime = System.nanoTime();</span>
+<span class="nc" id="L99">                long jpsPathTime = jpsEndTime - jpsStartTime;</span>
+<span class="nc" id="L100">                jpsMapTotal += jpsPathTime;</span>
                  //System.out.println(&quot;JPS &quot; +convertNStoSessibleUnitOfTime(jpsPathTime));
 
                 
-<span class="nc bnc" id="L105" title="All 2 branches missed.">                if(allAreAboutTheSame(dijkstraDistance, astartDistance, jpsDistance, optimalLenght)) {</span>
+<span class="nc bnc" id="L104" title="All 2 branches missed.">                if(allAreAboutTheSame(dijkstraDistance, astartDistance, jpsDistance, optimalLenght)) {</span>
                     //System.out.println(&quot;Distance was &quot;+dijkstraDistance);
                 } else {
-<span class="nc" id="L108">                    pathLenghtMisMatch = true;</span>
-<span class="nc" id="L109">                    System.out.println(&quot;WARNING diverge in path lenght between algorithms in Path from&quot; + start + &quot; to &quot; + goal);</span>
-<span class="nc" id="L110">                    System.out.println(&quot;dijkstra &quot; +dijkstraDistance+ &quot; astar &quot; + astartDistance + &quot; jps &quot; + jpsDistance + &quot; scen optimal lenght &quot; + optimalLenght);</span>
+<span class="nc" id="L107">                    pathLenghtMisMatch = true;</span>
+<span class="nc" id="L108">                    System.out.println(&quot;WARNING diverge in path lenght between algorithms in Path from&quot; + start + &quot; to &quot; + goal);</span>
+<span class="nc" id="L109">                    System.out.println(&quot;dijkstra &quot; +dijkstraDistance+ &quot; astar &quot; + astartDistance + &quot; jps &quot; + jpsDistance + &quot; scen optimal lenght &quot; + optimalLenght);</span>
                 }
                 
 
-<span class="nc" id="L114">            }</span>
+<span class="nc" id="L113">            }</span>
 
-<span class="nc bnc" id="L116" title="All 2 branches missed.">        if(numberOfPathsForThisMap &gt; 1) {</span>
-<span class="nc" id="L117">            System.out.println(map.getName());</span>
-<span class="nc" id="L118">            System.out.println(&quot;Total time spend on this map by Djikstra was &quot;+ convertNStoSessibleUnitOfTime(dijktraMapTotal) + &quot;, avg &quot; + convertNStoSessibleUnitOfTime((dijktraMapTotal / numberOfPathsForThisMap)));</span>
-<span class="nc" id="L119">            System.out.println(&quot;Total time spend on this map by A* was &quot;+ convertNStoSessibleUnitOfTime(astarMapTotal) + &quot;, avg &quot; + convertNStoSessibleUnitOfTime((astarMapTotal / numberOfPathsForThisMap)));</span>
-<span class="nc" id="L120">            System.out.println(&quot;Total time spend on this map by JPS was &quot;+ convertNStoSessibleUnitOfTime(jpsMapTotal) + &quot;, avg &quot; + convertNStoSessibleUnitOfTime((jpsMapTotal / numberOfPathsForThisMap)));</span>
+<span class="nc bnc" id="L115" title="All 2 branches missed.">        if(numberOfPathsForThisMap &gt; 1) {</span>
+<span class="nc" id="L116">            System.out.println(map.getName());</span>
+<span class="nc" id="L117">            System.out.println(&quot;Total time spend on this map by Djikstra was &quot;+ convertNStoSessibleUnitOfTime(dijktraMapTotal) + &quot;, avg &quot; + convertNStoSessibleUnitOfTime((dijktraMapTotal / numberOfPathsForThisMap)));</span>
+<span class="nc" id="L118">            System.out.println(&quot;Total time spend on this map by A* was &quot;+ convertNStoSessibleUnitOfTime(astarMapTotal) + &quot;, avg &quot; + convertNStoSessibleUnitOfTime((astarMapTotal / numberOfPathsForThisMap)));</span>
+<span class="nc" id="L119">            System.out.println(&quot;Total time spend on this map by JPS was &quot;+ convertNStoSessibleUnitOfTime(jpsMapTotal) + &quot;, avg &quot; + convertNStoSessibleUnitOfTime((jpsMapTotal / numberOfPathsForThisMap)));</span>
         }
         
-<span class="nc" id="L123">        dijkstraTotalTime += dijktraMapTotal;</span>
-<span class="nc" id="L124">        astartTotalTime += astarMapTotal;</span>
-<span class="nc" id="L125">        jpsTotalTime += jpsMapTotal;</span>
+<span class="nc" id="L122">        dijkstraTotalTime += dijktraMapTotal;</span>
+<span class="nc" id="L123">        astartTotalTime += astarMapTotal;</span>
+<span class="nc" id="L124">        jpsTotalTime += jpsMapTotal;</span>
 
-<span class="nc" id="L127">    }</span>
+<span class="nc" id="L126">    }</span>
 
     private String convertNStoSessibleUnitOfTime(long timeInNanoSeconds) {
-<span class="nc" id="L130">        long ms = timeInNanoSeconds / 1000000;</span>
-<span class="nc bnc" id="L131" title="All 2 branches missed.">        if(ms &lt; 1) {</span>
-<span class="nc" id="L132">            long microSeconds = timeInNanoSeconds / 1000;</span>
-<span class="nc" id="L133">            return Long.toString(microSeconds) +&quot; microseconds&quot;;</span>
+<span class="nc" id="L129">        long ms = timeInNanoSeconds / 1000000;</span>
+<span class="nc bnc" id="L130" title="All 2 branches missed.">        if(ms &lt; 1) {</span>
+<span class="nc" id="L131">            long microSeconds = timeInNanoSeconds / 1000;</span>
+<span class="nc" id="L132">            return Long.toString(microSeconds) +&quot; microseconds&quot;;</span>
         }
-<span class="nc" id="L135">        return  Long.toString(ms) +&quot; ms&quot;;</span>
+<span class="nc" id="L134">        return  Long.toString(ms) +&quot; ms&quot;;</span>
     }
 
     private boolean allAreAboutTheSame(double a, double b, double c, double d) {
-<span class="nc bnc" id="L139" title="All 2 branches missed.">        if(Helpers.abs(a-b) &gt; 0.01) {</span>
-<span class="nc" id="L140">            return false; </span>
+<span class="nc bnc" id="L138" title="All 2 branches missed.">        if(Helpers.abs(a-b) &gt; 0.01) {</span>
+<span class="nc" id="L139">            return false; </span>
         }
-<span class="nc bnc" id="L142" title="All 2 branches missed.">        if(Helpers.abs(b-c) &gt; 0.01) {</span>
-<span class="nc" id="L143">            return false; </span>
+<span class="nc bnc" id="L141" title="All 2 branches missed.">        if(Helpers.abs(b-c) &gt; 0.01) {</span>
+<span class="nc" id="L142">            return false; </span>
         }
-<span class="nc bnc" id="L145" title="All 2 branches missed.">        if(Helpers.abs(c-d) &gt; 0.01) {</span>
-<span class="nc" id="L146">            return false; </span>
+<span class="nc bnc" id="L144" title="All 2 branches missed.">        if(Helpers.abs(c-d) &gt; 0.01) {</span>
+<span class="nc" id="L145">            return false; </span>
         }
-<span class="nc" id="L148">        return true;</span>
+<span class="nc" id="L147">        return true;</span>
     }
     
 }

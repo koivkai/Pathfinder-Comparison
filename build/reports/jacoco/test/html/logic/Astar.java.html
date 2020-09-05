@@ -40,28 +40,27 @@ public class Astar {
 
 <span class="fc bfc" id="L41" title="All 2 branches covered.">        while(!que.isEmpty()) {</span>
 <span class="fc" id="L42">            current = que.poll();</span>
-            //System.out.println(current);
-<span class="fc" id="L44">            int line = current.getLineNumber();</span>
-<span class="fc" id="L45">            int colum = current.getColum();</span>
-<span class="fc bfc" id="L46" title="All 2 branches covered.">            if(foundGoal(line, colum)) {</span>
-<span class="fc" id="L47">                return distance[line][colum];</span>
+<span class="fc" id="L43">            int line = current.getLineNumber();</span>
+<span class="fc" id="L44">            int colum = current.getColum();</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">            if(foundGoal(line, colum)) {</span>
+<span class="fc" id="L46">                return distance[line][colum];</span>
             }
-<span class="fc bfc" id="L49" title="All 2 branches covered.">            if(visited[line][colum]) {</span>
-                // do nothing
+<span class="fc bfc" id="L48" title="All 2 branches covered.">            if(visited[line][colum]) {</span>
+<span class="fc" id="L49">                continue;</span>
             } else {
-<span class="fc" id="L52">                visited[line][colum] = true;</span>
-<span class="fc" id="L53">                checkNorth(current);</span>
-<span class="fc" id="L54">                checkSouth(current);</span>
-<span class="fc" id="L55">                checkEast(current);</span>
-<span class="fc" id="L56">                checkWest(current);</span>
-<span class="fc" id="L57">                checkNorthEast(current);</span>
-<span class="fc" id="L58">                checkNorthWest(current);</span>
-<span class="fc" id="L59">                checkSouthEast(current);</span>
-<span class="fc" id="L60">                checkSouthWest(current);</span>
+<span class="fc" id="L51">                visited[line][colum] = true;</span>
+<span class="fc" id="L52">                checkNorth(current);</span>
+<span class="fc" id="L53">                checkSouth(current);</span>
+<span class="fc" id="L54">                checkEast(current);</span>
+<span class="fc" id="L55">                checkWest(current);</span>
+<span class="fc" id="L56">                checkNorthEast(current);</span>
+<span class="fc" id="L57">                checkNorthWest(current);</span>
+<span class="fc" id="L58">                checkSouthEast(current);</span>
+<span class="fc" id="L59">                checkSouthWest(current);</span>
             }
-<span class="fc" id="L62">        }</span>
+<span class="fc" id="L61">        }</span>
         
-<span class="fc" id="L64">    return -1;</span>
+<span class="fc" id="L63">    return -1;</span>
     }
 
     /**
@@ -69,182 +68,182 @@ public class Astar {
     * If so, adds the northern cordinate to the que.
     */
     private void checkNorth(Cordinate current) {
-<span class="fc" id="L72">        int line = current.getLineNumber();</span>
-<span class="fc" id="L73">        int colum = current.getColum();</span>
-<span class="fc bfc" id="L74" title="All 2 branches covered.">        if (map.terrainPassableAt(line-1, colum)) {</span>
-<span class="fc" id="L75">            double currentDistance = distance[line-1][colum];</span>
-<span class="fc" id="L76">            double newDistance = distance[line][colum]+1;</span>
+<span class="fc" id="L71">        int line = current.getLineNumber();</span>
+<span class="fc" id="L72">        int colum = current.getColum();</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">        if (map.terrainPassableAt(line-1, colum)) {</span>
+<span class="fc" id="L74">            double currentDistance = distance[line-1][colum];</span>
+<span class="fc" id="L75">            double newDistance = distance[line][colum]+1;</span>
 
-<span class="fc bfc" id="L78" title="All 4 branches covered.">            if(newDistance &lt; currentDistance || currentDistance == 0) {</span>
-<span class="fc" id="L79">                distance[line-1][colum] = distance[line][colum] +1;</span>
-<span class="fc" id="L80">                prev[line-1][colum] = current;</span>
-<span class="fc" id="L81">                double fscore = distance[line-1][colum] + estimate(line-1, colum);</span>
-<span class="fc" id="L82">                que.add(new Cordinate(line-1,colum, fscore));</span>
+<span class="fc bfc" id="L77" title="All 4 branches covered.">            if(newDistance &lt; currentDistance || currentDistance == 0) {</span>
+<span class="fc" id="L78">                distance[line-1][colum] = distance[line][colum] +1;</span>
+<span class="fc" id="L79">                prev[line-1][colum] = current;</span>
+<span class="fc" id="L80">                double fscore = distance[line-1][colum] + estimate(line-1, colum);</span>
+<span class="fc" id="L81">                que.add(new Cordinate(line-1,colum, fscore));</span>
                 
             }            
         } 
-<span class="fc" id="L86">    }</span>
+<span class="fc" id="L85">    }</span>
 
     /**
     * Checks if moving south is a legal move from specified cordinate.
     * If so, adds the southern cordinate to the que.
     */
     private void checkSouth(Cordinate current) {
-<span class="fc" id="L93">        int line = current.getLineNumber();</span>
-<span class="fc" id="L94">        int colum = current.getColum();</span>
-<span class="fc bfc" id="L95" title="All 2 branches covered.">        if (map.terrainPassableAt(line+1, colum)) {</span>
-<span class="fc" id="L96">            double currentDistance = distance[line+1][colum];</span>
-<span class="fc" id="L97">            double newDistance = distance[line][colum]+1;</span>
+<span class="fc" id="L92">        int line = current.getLineNumber();</span>
+<span class="fc" id="L93">        int colum = current.getColum();</span>
+<span class="fc bfc" id="L94" title="All 2 branches covered.">        if (map.terrainPassableAt(line+1, colum)) {</span>
+<span class="fc" id="L95">            double currentDistance = distance[line+1][colum];</span>
+<span class="fc" id="L96">            double newDistance = distance[line][colum]+1;</span>
 
-<span class="fc bfc" id="L99" title="All 4 branches covered.">            if(newDistance &lt; currentDistance || currentDistance == 0) {</span>
-<span class="fc" id="L100">                distance[line+1][colum] = distance[line][colum] +1;</span>
-<span class="fc" id="L101">                prev[line+1][colum] = current;</span>
-<span class="fc" id="L102">                double fscore = distance[line+1][colum] + estimate(line+1, colum);</span>
-<span class="fc" id="L103">                que.add(new Cordinate(line+1,colum, fscore));</span>
+<span class="fc bfc" id="L98" title="All 4 branches covered.">            if(newDistance &lt; currentDistance || currentDistance == 0) {</span>
+<span class="fc" id="L99">                distance[line+1][colum] = distance[line][colum] +1;</span>
+<span class="fc" id="L100">                prev[line+1][colum] = current;</span>
+<span class="fc" id="L101">                double fscore = distance[line+1][colum] + estimate(line+1, colum);</span>
+<span class="fc" id="L102">                que.add(new Cordinate(line+1,colum, fscore));</span>
                 
             }
             
         }
-<span class="fc" id="L108">    }</span>
+<span class="fc" id="L107">    }</span>
 
     /**
     * Checks if moving east is a legal move from specified cordinate.
     * If so, adds the eastern cordinate to the que.
     */
     private void checkEast(Cordinate current) {
-<span class="fc" id="L115">        int line = current.getLineNumber();</span>
-<span class="fc" id="L116">        int colum = current.getColum();</span>
-<span class="fc bfc" id="L117" title="All 2 branches covered.">        if(map.terrainPassableAt(line, colum+1)) {</span>
-<span class="fc" id="L118">            double currentDistance = distance[line][colum+1];</span>
-<span class="fc" id="L119">            double newDistance = distance[line][colum]+1;</span>
+<span class="fc" id="L114">        int line = current.getLineNumber();</span>
+<span class="fc" id="L115">        int colum = current.getColum();</span>
+<span class="fc bfc" id="L116" title="All 2 branches covered.">        if(map.terrainPassableAt(line, colum+1)) {</span>
+<span class="fc" id="L117">            double currentDistance = distance[line][colum+1];</span>
+<span class="fc" id="L118">            double newDistance = distance[line][colum]+1;</span>
 
-<span class="fc bfc" id="L121" title="All 4 branches covered.">            if(newDistance &lt; currentDistance || currentDistance == 0) {</span>
-<span class="fc" id="L122">                distance[line][colum+1] = distance[line][colum] +1;</span>
-<span class="fc" id="L123">                prev[line][colum+1] = current;</span>
-<span class="fc" id="L124">                double fscore = distance[line][colum+1] + estimate(line, colum+1);</span>
-<span class="fc" id="L125">                que.add(new Cordinate(line,colum+1, fscore));</span>
+<span class="fc bfc" id="L120" title="All 4 branches covered.">            if(newDistance &lt; currentDistance || currentDistance == 0) {</span>
+<span class="fc" id="L121">                distance[line][colum+1] = distance[line][colum] +1;</span>
+<span class="fc" id="L122">                prev[line][colum+1] = current;</span>
+<span class="fc" id="L123">                double fscore = distance[line][colum+1] + estimate(line, colum+1);</span>
+<span class="fc" id="L124">                que.add(new Cordinate(line,colum+1, fscore));</span>
                 
             }
             
         }
-<span class="fc" id="L130">    }</span>
+<span class="fc" id="L129">    }</span>
 
     /**
     * Checks if moving west is a legal move from specified cordinate.
     * If so, adds the western cordinate to the que.
     */
     private void checkWest(Cordinate current) {
-<span class="fc" id="L137">        int line = current.getLineNumber();</span>
-<span class="fc" id="L138">        int colum = current.getColum();</span>
-<span class="fc bfc" id="L139" title="All 2 branches covered.">        if(map.terrainPassableAt(line, colum-1)) {</span>
-<span class="fc" id="L140">            double currentDistance = distance[line][colum-1];</span>
-<span class="fc" id="L141">            double newDistance = distance[line][colum]+1;</span>
+<span class="fc" id="L136">        int line = current.getLineNumber();</span>
+<span class="fc" id="L137">        int colum = current.getColum();</span>
+<span class="fc bfc" id="L138" title="All 2 branches covered.">        if(map.terrainPassableAt(line, colum-1)) {</span>
+<span class="fc" id="L139">            double currentDistance = distance[line][colum-1];</span>
+<span class="fc" id="L140">            double newDistance = distance[line][colum]+1;</span>
 
-<span class="fc bfc" id="L143" title="All 4 branches covered.">            if(newDistance &lt; currentDistance || currentDistance == 0) {</span>
-<span class="fc" id="L144">                distance[line][colum-1] = distance[line][colum] +1;</span>
-<span class="fc" id="L145">                prev[line][colum-1] = current;</span>
-<span class="fc" id="L146">                double fscore = distance[line][colum-1] + estimate(line, colum-1);</span>
-<span class="fc" id="L147">                que.add(new Cordinate(line,colum-1, fscore));</span>
+<span class="fc bfc" id="L142" title="All 4 branches covered.">            if(newDistance &lt; currentDistance || currentDistance == 0) {</span>
+<span class="fc" id="L143">                distance[line][colum-1] = distance[line][colum] +1;</span>
+<span class="fc" id="L144">                prev[line][colum-1] = current;</span>
+<span class="fc" id="L145">                double fscore = distance[line][colum-1] + estimate(line, colum-1);</span>
+<span class="fc" id="L146">                que.add(new Cordinate(line,colum-1, fscore));</span>
                 
             }
             
         }
-<span class="fc" id="L152">    }</span>
+<span class="fc" id="L151">    }</span>
 
     /**
     * Checks if moving northeast is a legal move from specified cordinate.
     * If so, adds the northeastern cordinate to the que.
     */
     private void checkNorthEast(Cordinate current) {
-<span class="fc" id="L159">        int line = current.getLineNumber();</span>
-<span class="fc" id="L160">        int colum = current.getColum();</span>
-<span class="fc bfc" id="L161" title="All 2 branches covered.">        if(map.canGoNorthEast(line, colum)) {</span>
-<span class="fc" id="L162">            double currentDistance = distance[line-1][colum+1];</span>
-<span class="fc" id="L163">            double newDistance = distance[line][colum]+twosqrt;</span>
+<span class="fc" id="L158">        int line = current.getLineNumber();</span>
+<span class="fc" id="L159">        int colum = current.getColum();</span>
+<span class="fc bfc" id="L160" title="All 2 branches covered.">        if(map.canGoNorthEast(line, colum)) {</span>
+<span class="fc" id="L161">            double currentDistance = distance[line-1][colum+1];</span>
+<span class="fc" id="L162">            double newDistance = distance[line][colum]+twosqrt;</span>
 
-<span class="fc bfc" id="L165" title="All 4 branches covered.">            if(newDistance &lt; currentDistance || currentDistance == 0) {</span>
-<span class="fc" id="L166">                distance[line-1][colum+1] = newDistance;</span>
-<span class="fc" id="L167">                prev[line-1][colum+1] = current;</span>
-<span class="fc" id="L168">                double fscore = distance[line-1][colum+1] + estimate(line-1, colum+1);</span>
-<span class="fc" id="L169">                que.add(new Cordinate(line-1,colum+1, fscore));</span>
+<span class="fc bfc" id="L164" title="All 4 branches covered.">            if(newDistance &lt; currentDistance || currentDistance == 0) {</span>
+<span class="fc" id="L165">                distance[line-1][colum+1] = newDistance;</span>
+<span class="fc" id="L166">                prev[line-1][colum+1] = current;</span>
+<span class="fc" id="L167">                double fscore = distance[line-1][colum+1] + estimate(line-1, colum+1);</span>
+<span class="fc" id="L168">                que.add(new Cordinate(line-1,colum+1, fscore));</span>
                 
             }
         }
-<span class="fc" id="L173">    }</span>
+<span class="fc" id="L172">    }</span>
 
     /**
     * Checks if moving northwest is a legal move from specified cordinate.
     * If so, adds the northwestern cordinate to the que.
     */
     private void checkNorthWest(Cordinate current) {
-<span class="fc" id="L180">        int line = current.getLineNumber();</span>
-<span class="fc" id="L181">        int colum = current.getColum();</span>
-<span class="fc bfc" id="L182" title="All 2 branches covered.">        if(map.canGoNorthWest(line, colum)) {</span>
-<span class="fc" id="L183">            double currentDistance = distance[line-1][colum-1];</span>
-<span class="fc" id="L184">            double newDistance = distance[line][colum]+twosqrt;</span>
+<span class="fc" id="L179">        int line = current.getLineNumber();</span>
+<span class="fc" id="L180">        int colum = current.getColum();</span>
+<span class="fc bfc" id="L181" title="All 2 branches covered.">        if(map.canGoNorthWest(line, colum)) {</span>
+<span class="fc" id="L182">            double currentDistance = distance[line-1][colum-1];</span>
+<span class="fc" id="L183">            double newDistance = distance[line][colum]+twosqrt;</span>
 
-<span class="pc bpc" id="L186" title="1 of 4 branches missed.">            if(newDistance &lt; currentDistance || currentDistance == 0) {</span>
-<span class="fc" id="L187">                distance[line-1][colum-1] = newDistance;</span>
-<span class="fc" id="L188">                prev[line-1][colum-1] = current;</span>
-<span class="fc" id="L189">                double fscore = distance[line-1][colum-1] + estimate(line-1, colum-1);</span>
-<span class="fc" id="L190">                que.add(new Cordinate(line-1,colum-1, fscore));</span>
+<span class="pc bpc" id="L185" title="1 of 4 branches missed.">            if(newDistance &lt; currentDistance || currentDistance == 0) {</span>
+<span class="fc" id="L186">                distance[line-1][colum-1] = newDistance;</span>
+<span class="fc" id="L187">                prev[line-1][colum-1] = current;</span>
+<span class="fc" id="L188">                double fscore = distance[line-1][colum-1] + estimate(line-1, colum-1);</span>
+<span class="fc" id="L189">                que.add(new Cordinate(line-1,colum-1, fscore));</span>
                 
             }
         }
-<span class="fc" id="L194">    }</span>
+<span class="fc" id="L193">    }</span>
 
     /**
     * Checks if moving southeast is a legal move from specified cordinate.
     * If so, adds the southeastern cordinate to the que.
     */
     private void checkSouthEast(Cordinate current) {
-<span class="fc" id="L201">        int line = current.getLineNumber();</span>
-<span class="fc" id="L202">        int colum = current.getColum();</span>
-<span class="fc bfc" id="L203" title="All 2 branches covered.">        if(map.canGoSouthEast(line, colum)) {</span>
-<span class="fc" id="L204">            double currentDistance = distance[line+1][colum+1];</span>
-<span class="fc" id="L205">            double newDistance = distance[line][colum]+twosqrt;</span>
+<span class="fc" id="L200">        int line = current.getLineNumber();</span>
+<span class="fc" id="L201">        int colum = current.getColum();</span>
+<span class="fc bfc" id="L202" title="All 2 branches covered.">        if(map.canGoSouthEast(line, colum)) {</span>
+<span class="fc" id="L203">            double currentDistance = distance[line+1][colum+1];</span>
+<span class="fc" id="L204">            double newDistance = distance[line][colum]+twosqrt;</span>
 
-<span class="fc bfc" id="L207" title="All 4 branches covered.">            if(newDistance &lt; currentDistance || currentDistance == 0) {</span>
-<span class="fc" id="L208">                distance[line+1][colum+1] = distance[line][colum] +twosqrt;</span>
-<span class="fc" id="L209">                prev[line+1][colum+1] = current;</span>
-<span class="fc" id="L210">                double fscore = distance[line+1][colum+1] + estimate(line+1, colum+1);</span>
-<span class="fc" id="L211">                que.add(new Cordinate(line+1,colum+1, fscore));</span>
+<span class="fc bfc" id="L206" title="All 4 branches covered.">            if(newDistance &lt; currentDistance || currentDistance == 0) {</span>
+<span class="fc" id="L207">                distance[line+1][colum+1] = distance[line][colum] +twosqrt;</span>
+<span class="fc" id="L208">                prev[line+1][colum+1] = current;</span>
+<span class="fc" id="L209">                double fscore = distance[line+1][colum+1] + estimate(line+1, colum+1);</span>
+<span class="fc" id="L210">                que.add(new Cordinate(line+1,colum+1, fscore));</span>
                 
             }
         }
-<span class="fc" id="L215">    }</span>
+<span class="fc" id="L214">    }</span>
 
     /**
     * Checks if moving southwest is a legal move from specified cordinate.
     * If so, adds the southwestern cordinate to the que.
     */
     private void checkSouthWest(Cordinate current) {
-<span class="fc" id="L222">        int line = current.getLineNumber();</span>
-<span class="fc" id="L223">        int colum = current.getColum();</span>
-<span class="fc bfc" id="L224" title="All 2 branches covered.">        if(map.canGoSouthWest(line, colum)) {</span>
-<span class="fc" id="L225">            double currentDistance = distance[line+1][colum-1];</span>
-<span class="fc" id="L226">            double newDistance = distance[line][colum]+twosqrt;</span>
+<span class="fc" id="L221">        int line = current.getLineNumber();</span>
+<span class="fc" id="L222">        int colum = current.getColum();</span>
+<span class="fc bfc" id="L223" title="All 2 branches covered.">        if(map.canGoSouthWest(line, colum)) {</span>
+<span class="fc" id="L224">            double currentDistance = distance[line+1][colum-1];</span>
+<span class="fc" id="L225">            double newDistance = distance[line][colum]+twosqrt;</span>
 
-<span class="pc bpc" id="L228" title="1 of 4 branches missed.">            if(newDistance &lt; currentDistance || currentDistance == 0) {</span>
-<span class="fc" id="L229">                distance[line+1][colum-1] = distance[line][colum] +twosqrt;</span>
-<span class="fc" id="L230">                prev[line+1][colum-1] = current;</span>
-<span class="fc" id="L231">                double fscore = distance[line+1][colum-1] + estimate(line+1, colum-1);</span>
-<span class="fc" id="L232">                que.add(new Cordinate(line+1,colum-1, fscore));</span>
+<span class="pc bpc" id="L227" title="1 of 4 branches missed.">            if(newDistance &lt; currentDistance || currentDistance == 0) {</span>
+<span class="fc" id="L228">                distance[line+1][colum-1] = distance[line][colum] +twosqrt;</span>
+<span class="fc" id="L229">                prev[line+1][colum-1] = current;</span>
+<span class="fc" id="L230">                double fscore = distance[line+1][colum-1] + estimate(line+1, colum-1);</span>
+<span class="fc" id="L231">                que.add(new Cordinate(line+1,colum-1, fscore));</span>
                 
             }
         }
-<span class="fc" id="L236">    }</span>
+<span class="fc" id="L235">    }</span>
     
 
     private boolean foundGoal(int line, int colum) {
-<span class="fc bfc" id="L240" title="All 4 branches covered.">        if (line == this.goalLine &amp;&amp; colum == this.goalColum) {</span>
-<span class="fc" id="L241">            return true;</span>
+<span class="fc bfc" id="L239" title="All 4 branches covered.">        if (line == this.goalLine &amp;&amp; colum == this.goalColum) {</span>
+<span class="fc" id="L240">            return true;</span>
         }
-<span class="fc" id="L243">        return false;</span>
+<span class="fc" id="L242">        return false;</span>
     }
 
     private double estimate(int line, int colum) {
-<span class="fc" id="L247">        return (double)Helpers.max(Helpers.abs((line -this.goalLine)), Helpers.abs((colum - goalColum)));</span>
+<span class="fc" id="L246">        return (double)Helpers.max(Helpers.abs((line -this.goalLine)), Helpers.abs((colum - goalColum)));</span>
     }
 
 }
