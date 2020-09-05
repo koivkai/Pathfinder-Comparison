@@ -47,7 +47,6 @@ public class MapReader {
             System.out.println("failed to read file");
             System.out.println(e.toString());
             return null;
-            //TODO: handle exception
         }
         
         

@@ -206,8 +206,6 @@ public class PathMap {
         this.goalPosQue = goalPosQue;
     }
 
-    
-
     public void addPath(Cordinate start, Cordinate goal, double optimalLenght) {
         if(this.goalPosQue == null || this.startPosQue == null || this.optimalPathLenghtQue == null) { // in only one exits they wont work anyway so reset both
             this.goalPosQue = new CordinateQue(5);

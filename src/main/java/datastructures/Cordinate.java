@@ -7,7 +7,6 @@ public class Cordinate implements Comparable<Cordinate>{
     int lineNumber;
     int colum;
     double distanceEstimate;
-    int direction;
 
     public Cordinate(int lineNumber, int colum) {
         this.lineNumber = lineNumber;
@@ -47,7 +46,7 @@ public class Cordinate implements Comparable<Cordinate>{
 
     @Override
     public String toString() {
-        return "Cordinate [colum=" + colum + ", lineNumber=" + lineNumber  + ", direction="+ direction + "]";
+        return "Cordinate [colum=" + colum + ", lineNumber=" + lineNumber + "]";
     }
 
     @Override
@@ -71,14 +70,6 @@ public class Cordinate implements Comparable<Cordinate>{
         if (lineNumber != other.lineNumber)
             return false;
         return true;
-    }
-
-    public int getDirection() {
-        return direction;
-    }
-
-    public void setDirection(int direction) {
-        this.direction = direction;
     }
 
 }

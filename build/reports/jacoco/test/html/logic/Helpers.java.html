@@ -26,38 +26,38 @@ public class Helpers {
     }
 
     public static void printPath(Cordinate[][] prevArray, int goalLine, int goalColum, int startLineNumber, int startColum) {
-<span class="fc" id="L29">        Cordinate prev = prevArray[goalLine][goalColum];</span>
-<span class="fc" id="L30">        System.out.println(&quot;Printing path&quot;);</span>
-<span class="fc" id="L31">        System.out.println(&quot;goal &quot; + new Cordinate(goalLine, goalColum));</span>
-<span class="fc bfc" id="L32" title="All 4 branches covered.">        while(!(prev.getLineNumber() == startLineNumber &amp;&amp; prev.getColum() == startColum)) {</span>
-<span class="fc" id="L33">            System.out.println(prev);</span>
-<span class="fc" id="L34">            prev = prevArray[prev.getLineNumber()][prev.getColum()];</span>
+<span class="nc" id="L29">        Cordinate prev = prevArray[goalLine][goalColum];</span>
+<span class="nc" id="L30">        System.out.println(&quot;Printing path&quot;);</span>
+<span class="nc" id="L31">        System.out.println(&quot;goal &quot; + new Cordinate(goalLine, goalColum));</span>
+<span class="nc bnc" id="L32" title="All 4 branches missed.">        while(!(prev.getLineNumber() == startLineNumber &amp;&amp; prev.getColum() == startColum)) {</span>
+<span class="nc" id="L33">            System.out.println(prev);</span>
+<span class="nc" id="L34">            prev = prevArray[prev.getLineNumber()][prev.getColum()];</span>
         }
-<span class="fc" id="L36">        System.out.println(&quot;start &quot;+prev);</span>
-<span class="fc" id="L37">    }</span>
+<span class="nc" id="L36">        System.out.println(&quot;start &quot;+prev);</span>
+<span class="nc" id="L37">    }</span>
 
     public static void printMapWithPath(Cordinate[][] prevArray, int goalLine, int goalColum, int startLineNumber, int startColum, PathMap map) {
-<span class="fc" id="L40">        char[][] mapWithPath = map.getCopyOfMap();</span>
-<span class="fc" id="L41">        Cordinate prev = prevArray[goalLine][goalColum];</span>
-<span class="fc" id="L42">        mapWithPath[goalLine][goalColum] = 'G';</span>
-<span class="fc bfc" id="L43" title="All 4 branches covered.">        while(!(prev.getLineNumber() == startLineNumber &amp;&amp; prev.getColum() == startColum)) {</span>
-<span class="fc" id="L44">            mapWithPath[prev.getLineNumber()][prev.getColum()] = 'X';</span>
-<span class="fc" id="L45">            prev = prevArray[prev.getLineNumber()][prev.getColum()];</span>
+<span class="nc" id="L40">        char[][] mapWithPath = map.getCopyOfMap();</span>
+<span class="nc" id="L41">        Cordinate prev = prevArray[goalLine][goalColum];</span>
+<span class="nc" id="L42">        mapWithPath[goalLine][goalColum] = 'G';</span>
+<span class="nc bnc" id="L43" title="All 4 branches missed.">        while(!(prev.getLineNumber() == startLineNumber &amp;&amp; prev.getColum() == startColum)) {</span>
+<span class="nc" id="L44">            mapWithPath[prev.getLineNumber()][prev.getColum()] = 'X';</span>
+<span class="nc" id="L45">            prev = prevArray[prev.getLineNumber()][prev.getColum()];</span>
         }
-<span class="fc" id="L47">        mapWithPath[prev.getLineNumber()][prev.getColum()] = 'S';</span>
-<span class="fc" id="L48">        printCharArray(mapWithPath, map.getHeight(), map.getWidth());</span>
-<span class="fc" id="L49">    }</span>
+<span class="nc" id="L47">        mapWithPath[prev.getLineNumber()][prev.getColum()] = 'S';</span>
+<span class="nc" id="L48">        printCharArray(mapWithPath, map.getHeight(), map.getWidth());</span>
+<span class="nc" id="L49">    }</span>
 
     public static void printCharArray(char[][] map, int height, int width) {
-<span class="fc bfc" id="L52" title="All 2 branches covered.">        for(int lineNumber=0; lineNumber&lt;height;lineNumber++){</span>
-<span class="fc bfc" id="L53" title="All 2 branches covered.">            for(int colum = 0; colum &lt;width;colum++) {</span>
-<span class="fc" id="L54">                System.out.print(map[lineNumber][colum]);</span>
+<span class="nc bnc" id="L52" title="All 2 branches missed.">        for(int lineNumber=0; lineNumber&lt;height;lineNumber++){</span>
+<span class="nc bnc" id="L53" title="All 2 branches missed.">            for(int colum = 0; colum &lt;width;colum++) {</span>
+<span class="nc" id="L54">                System.out.print(map[lineNumber][colum]);</span>
             }
-<span class="fc bfc" id="L56" title="All 2 branches covered.">            if(lineNumber != height -1){</span>
-<span class="fc" id="L57">                System.out.println(&quot;&quot;);</span>
+<span class="nc bnc" id="L56" title="All 2 branches missed.">            if(lineNumber != height -1){</span>
+<span class="nc" id="L57">                System.out.println(&quot;&quot;);</span>
             }
         }
-<span class="fc" id="L60">    }</span>
+<span class="nc" id="L60">    }</span>
 
     public static double abs(double i) {
 <span class="nc bnc" id="L63" title="All 2 branches missed.">        if(i &gt;= 0) {</span>

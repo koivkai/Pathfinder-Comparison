@@ -9,36 +9,6 @@ import logic.Astar;
 public class AstarTest {
     PathMap testMap;
     Astar testStar;
-    
-    /*
-    @Before
-    public void initialize() {
-        testStar = new Astar();
-        char[][] arrayMap = new char[10][10];
-        char[] lineOne = {'@','@','@','@','@','@','@','@','@','@'};
-        char[] lineTwo = {'@','.','.','.','.','.','.','.','.','@'};
-        char[] lineTre = {'@','.','.','.','.','.','.','.','.','@'};
-        char[] lineFou = {'@','.','.','.','.','.','.','.','.','@'};
-        char[] lineFiv = {'@','.','.','.','.','.','.','.','.','@'};
-        char[] lineSix = {'@','.','.','.','.','.','.','.','.','@'};
-        char[] lineSev = {'@','.','.','.','.','.','.','.','.','@'};
-        char[] lineEig = {'@','.','.','.','.','.','.','.','.','@'};
-        char[] lineNin = {'@','.','.','.','.','.','.','.','.','@'};
-        char[] lineTen = {'@','@','@','@','@','@','@','@','@','@'};
-        arrayMap[0] = lineOne;
-        arrayMap[1] = lineTwo;
-        arrayMap[2] = lineTre;
-        arrayMap[3] = lineFou;
-        arrayMap[4] = lineFiv;
-        arrayMap[5] = lineSix;
-        arrayMap[6] = lineSev;
-        arrayMap[7] = lineEig;
-        arrayMap[8] = lineNin;
-        arrayMap[9] = lineTen;
-
-        noObstacles = new PathMap(arrayMap, 10, 10);
-    }
-    */
 
     @Test
     public void findsPathNoObstacles() {
@@ -192,6 +162,68 @@ public class AstarTest {
 
         double result = testStar.findPath(testMap, 4, 1, 4, 8);
         assertEquals(-1, result, 0.01);
+    }
+
+    @Test
+    public void diagonalLines() {
+        testStar = new Astar();
+        char[][] arrayMap = new char[10][10];
+        char[] lineOne = {'@','@','@','@','@','@','@','@','@','@'};
+        char[] lineTwo = {'@','.','T','.','.','.','.','.','.','@'};
+        char[] lineTre = {'@','.','.','T','.','.','T','.','.','@'};
+        char[] lineFou = {'@','.','.','.','T','.','.','T','.','@'};
+        char[] lineFiv = {'@','.','.','.','.','T','.','.','T','@'};
+        char[] lineSix = {'@','.','.','.','.','.','.','.','.','@'};
+        char[] lineSev = {'@','.','.','T','.','.','.','.','.','@'};
+        char[] lineEig = {'@','.','.','.','T','.','.','.','.','@'};
+        char[] lineNin = {'@','.','.','.','.','T','.','.','.','@'};
+        char[] lineTen = {'@','@','@','@','@','@','@','@','@','@'};
+        arrayMap[0] = lineOne;
+        arrayMap[1] = lineTwo;
+        arrayMap[2] = lineTre;
+        arrayMap[3] = lineFou;
+        arrayMap[4] = lineFiv;
+        arrayMap[5] = lineSix;
+        arrayMap[6] = lineSev;
+        arrayMap[7] = lineEig;
+        arrayMap[8] = lineNin;
+        arrayMap[9] = lineTen;
+
+        PathMap testMap = new PathMap(arrayMap, 10, 10);
+
+        double result = testStar.findPath(testMap, 8, 3, 2, 8);
+        assertEquals(15.8284, result, 0.1); //15.8284
+    }
+    
+    @Test
+    public void diagonalLinesReverse() {
+        testStar = new Astar();
+        char[][] arrayMap = new char[10][10];
+        char[] lineOne = {'@','@','@','@','@','@','@','@','@','@'};
+        char[] lineTwo = {'@','.','T','.','.','.','.','.','.','@'};
+        char[] lineTre = {'@','.','.','T','.','.','T','.','.','@'};
+        char[] lineFou = {'@','.','.','.','T','.','.','T','.','@'};
+        char[] lineFiv = {'@','.','.','.','.','T','.','.','T','@'};
+        char[] lineSix = {'@','.','.','.','.','.','.','.','.','@'};
+        char[] lineSev = {'@','.','.','T','.','.','.','.','.','@'};
+        char[] lineEig = {'@','.','.','.','T','.','.','.','.','@'};
+        char[] lineNin = {'@','.','.','.','.','T','.','.','.','@'};
+        char[] lineTen = {'@','@','@','@','@','@','@','@','@','@'};
+        arrayMap[0] = lineOne;
+        arrayMap[1] = lineTwo;
+        arrayMap[2] = lineTre;
+        arrayMap[3] = lineFou;
+        arrayMap[4] = lineFiv;
+        arrayMap[5] = lineSix;
+        arrayMap[6] = lineSev;
+        arrayMap[7] = lineEig;
+        arrayMap[8] = lineNin;
+        arrayMap[9] = lineTen;
+
+        PathMap testMap = new PathMap(arrayMap, 10, 10);
+
+        double result = testStar.findPath(testMap, 2, 8, 8, 3);
+        assertEquals(15.8284, result, 0.1);
     }
 
     

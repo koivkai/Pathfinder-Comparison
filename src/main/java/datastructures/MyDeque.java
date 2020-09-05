@@ -83,9 +83,5 @@ public class MyDeque {
     public String toString() {
         return "MyDeque " + Arrays.toString(array);
     }
-
-    
-    
-
     
 }

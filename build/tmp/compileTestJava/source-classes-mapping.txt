@@ -4,8 +4,8 @@ datastructuresTest/MyDequeTest.java
  datastructuresTest.MyDequeTest
 logicTest/AstarTest.java
  logicTest.AstarTest
-datastructuresTest/CordinateTest.java
- datastructuresTest.CordinateTest
+logicTest/JPSdiagonalTest.java
+ logicTest.JPSdiagonalTest
 logicTest/JPSTest.java
  logicTest.JPSTest
 datastructuresTest/CordinateListTest.java
@@ -14,13 +14,13 @@ datastructuresTest/PathMapTest.java
  datastructuresTest.PathMapTest
 logicTest/BFSTest.java
  logicTest.BFSTest
-datastructuresTest/MinHeapTest.java
- datastructuresTest.MinHeapTest
+logicTest/DijkstraTest.java
+ logicTest.DijkstraTest
 datastructuresTest/CordinateQueTest.java
  datastructuresTest.CordinateQueTest
 datastructuresTest/MapListTest.java
  datastructuresTest.MapListTest
-logicTest/JPSdiagonalTest.java
- logicTest.JPSdiagonalTest
-logicTest/DijkstraTest.java
- logicTest.DijkstraTest
+datastructuresTest/MinHeapTest.java
+ datastructuresTest.MinHeapTest
+datastructuresTest/CordinateTest.java
+ datastructuresTest.CordinateTest

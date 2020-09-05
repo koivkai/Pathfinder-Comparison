@@ -7,3 +7,7 @@ Ohjelma on jaettu neljään pakkaukseen. Datastructures pitää sisällää ohje
 ##Saavutetut aika ja tilavaativuudet
 
 ##Työn puuteet ja parannusehdotukset
+
+A*:rin ja JPS:än tehokkuus suhteessa djikstraan ja erityisesti JPS:än tapauksessa toivutta selvästi pienemmäksi. Kokeilin hieman erilaista versiota JPS:stä, mutta en saanut sitä toimimaan ajoissa. Tämän hetkinen versio tutkii liian monia viereisiä ruutuja silloinkin kuin ne eivät ole pakotettuja naapureita. 
+
+Käyttöliittymä on hyvin minimaalinen, on käytännössä helpompaa kovakoodata halutut testi tapaukset kun lisätä niitä käsin.

@@ -79,7 +79,9 @@ public class CordinateQue {
         this.tail = pos;
     }
 
-    // returns number of cordinates remaining in que
+    /**
+    * Returns the number of cordinates remaining in this que
+    */
     public int size() {
         return used;
     }

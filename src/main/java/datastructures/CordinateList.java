@@ -48,7 +48,5 @@ public class CordinateList {
         size = size * 2;
         this.list = newList;
     }
-
-
     
 }

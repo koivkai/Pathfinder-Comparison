@@ -47,7 +47,4 @@ public class MapList {
         size = size * 2;
         this.list = newList;
     }
-
-
-    
 }

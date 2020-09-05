@@ -79,14 +79,16 @@ public class CordinateQue {
 <span class="fc" id="L79">        this.tail = pos;</span>
 <span class="fc" id="L80">    }</span>
 
-    // returns number of cordinates remaining in que
+    /**
+    * Returns the number of cordinates remaining in this que
+    */
     public int size() {
-<span class="nc" id="L84">        return used;</span>
+<span class="nc" id="L86">        return used;</span>
     }
 
     @Override
     public String toString() {
-<span class="nc" id="L89">        return &quot;MyDeque &quot; + Arrays.toString(this.array);</span>
+<span class="nc" id="L91">        return &quot;MyDeque &quot; + Arrays.toString(this.array);</span>
     }
 
 }

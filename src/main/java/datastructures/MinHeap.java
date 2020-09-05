@@ -29,7 +29,7 @@ public class MinHeap {
 
     private void checkHeapRuleBottomUp(int pos) {
         if(pos == 1) {
-            //done
+            return;
         } else {
             Cordinate child = heap[pos];
             int parentPos = pos/2;

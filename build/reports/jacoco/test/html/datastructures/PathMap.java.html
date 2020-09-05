@@ -181,13 +181,13 @@ public class PathMap {
 <span class="nc" id="L181">    }</span>
 
     public char[][] getCopyOfMap() {
-<span class="fc" id="L184">        char[][]copy = new char[this.height][this.width];</span>
-<span class="fc bfc" id="L185" title="All 2 branches covered.">        for(int line = 0;line&lt;this.height;line++) {</span>
-<span class="fc bfc" id="L186" title="All 2 branches covered.">            for(int colum = 0;colum&lt;this.width;colum++) {</span>
-<span class="fc" id="L187">                copy[line][colum] = this.map[line][colum];</span>
+<span class="nc" id="L184">        char[][]copy = new char[this.height][this.width];</span>
+<span class="nc bnc" id="L185" title="All 2 branches missed.">        for(int line = 0;line&lt;this.height;line++) {</span>
+<span class="nc bnc" id="L186" title="All 2 branches missed.">            for(int colum = 0;colum&lt;this.width;colum++) {</span>
+<span class="nc" id="L187">                copy[line][colum] = this.map[line][colum];</span>
             }
         }
-<span class="fc" id="L190">        return copy;</span>
+<span class="nc" id="L190">        return copy;</span>
     }
 
     public CordinateQue getStartPosQue() {
@@ -206,37 +206,35 @@ public class PathMap {
 <span class="nc" id="L206">        this.goalPosQue = goalPosQue;</span>
 <span class="nc" id="L207">    }</span>
 
-    
-
     public void addPath(Cordinate start, Cordinate goal, double optimalLenght) {
-<span class="nc bnc" id="L212" title="All 6 branches missed.">        if(this.goalPosQue == null || this.startPosQue == null || this.optimalPathLenghtQue == null) { // in only one exits they wont work anyway so reset both</span>
-<span class="nc" id="L213">            this.goalPosQue = new CordinateQue(5);</span>
-<span class="nc" id="L214">            this.startPosQue = new CordinateQue(5);</span>
-<span class="nc" id="L215">            this.optimalPathLenghtQue = new DoublesQue(5);</span>
+<span class="nc bnc" id="L210" title="All 6 branches missed.">        if(this.goalPosQue == null || this.startPosQue == null || this.optimalPathLenghtQue == null) { // in only one exits they wont work anyway so reset both</span>
+<span class="nc" id="L211">            this.goalPosQue = new CordinateQue(5);</span>
+<span class="nc" id="L212">            this.startPosQue = new CordinateQue(5);</span>
+<span class="nc" id="L213">            this.optimalPathLenghtQue = new DoublesQue(5);</span>
         }
-<span class="nc" id="L217">        this.startPosQue.add(start);</span>
-<span class="nc" id="L218">        this.goalPosQue.add(goal);</span>
-<span class="nc" id="L219">        this.optimalPathLenghtQue.add(optimalLenght);</span>
-<span class="nc" id="L220">    }</span>
+<span class="nc" id="L215">        this.startPosQue.add(start);</span>
+<span class="nc" id="L216">        this.goalPosQue.add(goal);</span>
+<span class="nc" id="L217">        this.optimalPathLenghtQue.add(optimalLenght);</span>
+<span class="nc" id="L218">    }</span>
 
     public String getName() {
-<span class="nc bnc" id="L223" title="All 2 branches missed.">        if(name == null) {</span>
-<span class="nc" id="L224">            return &quot;unnamed map&quot;;</span>
+<span class="nc bnc" id="L221" title="All 2 branches missed.">        if(name == null) {</span>
+<span class="nc" id="L222">            return &quot;unnamed map&quot;;</span>
         }
-<span class="nc" id="L226">        return name;</span>
+<span class="nc" id="L224">        return name;</span>
     }
 
     public void setName(String name) {
-<span class="nc" id="L230">        this.name = name;</span>
-<span class="nc" id="L231">    }</span>
+<span class="nc" id="L228">        this.name = name;</span>
+<span class="nc" id="L229">    }</span>
 
     public DoublesQue getOptimalPathLenghtQue() {
-<span class="nc" id="L234">        return optimalPathLenghtQue;</span>
+<span class="nc" id="L232">        return optimalPathLenghtQue;</span>
     }
 
     public void setOptimalPathLenghtQue(DoublesQue optimalPathLenghtQue) {
-<span class="nc" id="L238">        this.optimalPathLenghtQue = optimalPathLenghtQue;</span>
-<span class="nc" id="L239">    }</span>
+<span class="nc" id="L236">        this.optimalPathLenghtQue = optimalPathLenghtQue;</span>
+<span class="nc" id="L237">    }</span>
 
     
 

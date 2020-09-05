@@ -23,7 +23,7 @@ public class Astar {
 <span class="fc" id="L23">    }</span>
 
     public double findPath(PathMap map, int startLineNumber, int startColum, int goalLineNumber, int goalColum) {
-<span class="pc bpc" id="L26" title="2 of 4 branches missed.">        if(startLineNumber == goalLineNumber &amp;&amp; startColum == goalColum) {</span>
+<span class="pc bpc" id="L26" title="1 of 4 branches missed.">        if(startLineNumber == goalLineNumber &amp;&amp; startColum == goalColum) {</span>
 <span class="nc" id="L27">            return 0;</span>
         }
 <span class="fc" id="L29">        this.que = new MinHeap();</span>
@@ -106,7 +106,7 @@ public class Astar {
 <span class="fc" id="L106">            double currentDistance = distance[line][colum+1];</span>
 <span class="fc" id="L107">            double newDistance = distance[line][colum]+1;</span>
 
-<span class="pc bpc" id="L109" title="1 of 4 branches missed.">            if(newDistance &lt; currentDistance || currentDistance == 0) {</span>
+<span class="fc bfc" id="L109" title="All 4 branches covered.">            if(newDistance &lt; currentDistance || currentDistance == 0) {</span>
 <span class="fc" id="L110">                distance[line][colum+1] = distance[line][colum] +1;</span>
 <span class="fc" id="L111">                prev[line][colum+1] = current;</span>
 <span class="fc" id="L112">                double fscore = distance[line][colum+1] + estimate(line, colum+1);</span>
@@ -124,7 +124,7 @@ public class Astar {
 <span class="fc" id="L124">            double currentDistance = distance[line][colum-1];</span>
 <span class="fc" id="L125">            double newDistance = distance[line][colum]+1;</span>
 
-<span class="pc bpc" id="L127" title="1 of 4 branches missed.">            if(newDistance &lt; currentDistance || currentDistance == 0) {</span>
+<span class="fc bfc" id="L127" title="All 4 branches covered.">            if(newDistance &lt; currentDistance || currentDistance == 0) {</span>
 <span class="fc" id="L128">                distance[line][colum-1] = distance[line][colum] +1;</span>
 <span class="fc" id="L129">                prev[line][colum-1] = current;</span>
 <span class="fc" id="L130">                double fscore = distance[line][colum-1] + estimate(line, colum-1);</span>
