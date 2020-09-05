@@ -15,4 +15,4 @@ Vertailin algoritmeja seuraavilla kartoilla ja niihin liittyvillä scenaariolla:
 
 Testeissä osoittautui että A* oli keskimäärin 1.32 kertaa nopeampi kuin djikstra, kun taas A* oli keskimäärin 1,68 kertaa nopeampi kui djikstra. Vaihtelu väli A*:rilla oli 0.88-1.78 ja JPS:llä 1.25-2.18. Erityisesti JPS:ltä oli voinut odattaa selkeästi parempia tuloksia. 
 
-
+![suhteellinen nopeutus](https://github.com/koivkai/Pathfinder-Comparison/blob/master/dokumentaatio/kuvat/suhteellinen%20nopeutus.png)
